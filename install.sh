@@ -3,29 +3,32 @@
 # Dotfiles installer
 # By Pierre Faivre
 
-always_overwrite=0
-overwrite_once=0
+
+always_overwrite=false
+overwrite_once=false
 
 function ask_overwrite() {
     echo -ne "Overwrite? (y\033[00;30mes\033[00;00m/n\033[00;30mo\033[00;00m/a\033[00;30mlways\033[00;00m) "
     read answer
 
     if [ $answer = "y" ]; then
-        overwrite_once=1
-    elif [ $answer = "n" ]; then
-        overwrite_once=0
+        overwrite_once=true
+    elif [ $answer = "a" ]; then
+        overwrite_once=true
+        always_overwrite=true
     else
-        overwrite_once=1
-        always_overwrite=1
+        overwrite_once=false
     fi
 }
 
-function install_dependencies() {
-    echo ""
-    echo -e "\033[00;33mInstalling dependencies...\033[00;00m"
 
-    # TODO
+function pre_install() {
+    echo ""
+    echo -e "\033[00;33mPre-installation...\033[00;00m"
+
+    source ./pre_install.sh
 }
+
 
 function create_links() {
     echo ""
@@ -43,26 +46,22 @@ function create_links() {
         elif [ -f $element ]; then
             # If it doesn't exist yet, just create the link
             if [ ! -f "$HOME/$element" ]; then
-                ln ./$element $HOME/$element
-                echo -ne "\033[01;36mLinked\033[00;00m "
-                echo $HOME/$element
+                ln -s `pwd`/$element $HOME/$element
+                echo -e "\033[01;36mLinked\033[00;00m $HOME/$element"
             else
                 # If it does exists but the user gave his/her consent
-                if [ $always_overwrite = "1" ]; then
+                if [ $always_overwrite = true ]; then
                     rm $HOME/$element
-                    ln ./$element $HOME/$element
-                    echo -ne "\033[01;36mLinked\033[00;00m "
-                    echo $HOME/$element
+                    ln -s `pwd`/$element $HOME/$element
+                    echo -e "\033[01;36mLinked\033[00;00m $HOME/$element"
                 # Else, we ask him/her what to do
                 else
-                    echo -ne "\033[00;31mExisting\033[00;00m "
-                    echo $HOME/$element
+                    echo -e "\033[00;31mExisting\033[00;00m $HOME/$element"
                     ask_overwrite
-                    if [ $overwrite_once = "1" ]; then
+                    if [ $overwrite_once = true ]; then
                         rm $HOME/$element
-                        ln ./$element $HOME/$element
-                        echo -ne "\033[01;36mLinked\033[00;00m "
-                        echo $HOME/$element
+                        ln -s `pwd`/$element $HOME/$element
+                        echo -e "\033[01;36mLinked\033[00;00m $HOME/$element"
                     fi
                 fi
             fi
@@ -73,7 +72,7 @@ function create_links() {
 }
 
 function install() {
-    install_dependencies
+    pre_install
 
     create_links
 
@@ -84,9 +83,11 @@ function install() {
 
 echo "┌──────────────────────────────────────────────────────────────────────────────┐"
 echo "│                             Dotfiles installer                               │"
-echo -e "│ \033[01;31mWarning:\033[01;00m This dotfiles repository is a personal set of configuration files.  │"
-echo "│ It will probably not suit your needs.                                        │"
-echo "│ Moreover it is only intended to work on Linux Mint 18.1.                     │"
+echo "│                                                                              │"
+echo "│ Before starting, make sure that you:                                         │"
+echo "│  * correctly edited pre_install.sh                                           │"
+echo "│  * placed your dotfiles into \"home\"                                          │"
+echo "│                                                                              │"
 echo "│ More info at https://github.com/pfaivre/dotfiles                             │"
 echo "└──────────────────────────────────────────────────────────────────────────────┘"
 echo ""
