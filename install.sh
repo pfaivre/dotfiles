@@ -24,7 +24,7 @@ function ask_overwrite() {
 
 function pre_install() {
     echo ""
-    echo -e "\033[00;33mPre-installation...\033[00;00m"
+    echo -e "\033[00;33m => Pre-installation...\033[00;00m"
 
     source ./pre_install.sh
 }
@@ -32,9 +32,9 @@ function pre_install() {
 
 function create_links() {
     echo ""
-    echo -e "\033[00;33mLinking the files into your home directory...\033[00;00m"
+    echo -e "\033[00;33m => Linking the files into your home directory...\033[00;00m"
 
-    cd ./home
+    pushd ./home > /dev/null
 
     # Loops recursively into the local "home" directory
     for element in `find . -printf '%P\n'`
@@ -68,7 +68,7 @@ function create_links() {
         fi
     done
 
-    cd - > /dev/null 2>&1
+    popd > /dev/null
 }
 
 function install() {
