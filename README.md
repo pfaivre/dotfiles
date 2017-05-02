@@ -2,11 +2,11 @@
 
 An automated dotfiles installer (featuring my personal set of dotfiles).
 
-I've done a pretty neat install.sh, so you will be able to use it for your own dotfiles without dirty hack.
+I've done a pretty neat install.sh, so you will be able to use it for your own dotfiles (be aware of what you are doing).
 
 ## How to use it
 
-Start by forking this repo.
+Start by forking/cloning this repo.
 
 There is only 2 things to edit to make this yours:
 * Put your dot files and folders in the "home" folder.
