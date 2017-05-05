@@ -10,6 +10,10 @@
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Fixes an issue with the background color when on a tmux terminal
+" https://sunaku.github.io/vim-256color-bce.html
+set t_ut=
+
 
 " ------------------------------
 "  User Interface

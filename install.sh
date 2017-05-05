@@ -34,7 +34,7 @@ function create_links() {
     echo ""
     echo -e "\033[00;33m => Linking the files into your home directory...\033[00;00m"
 
-    pushd ./home > /dev/null
+    pushd "$(dirname "$0")/home" > /dev/null
 
     # Loops recursively into the local "home" directory
     for element in `find . -printf '%P\n'`

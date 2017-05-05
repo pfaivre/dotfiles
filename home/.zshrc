@@ -55,35 +55,10 @@ plugins=(git command-not-found sudo colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=fr_FR.UTF-8
 export LC_ALL=fr_FR.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # use 256 color terminal
 export TERM=xterm-256color
@@ -95,5 +70,11 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # Base16 Shell Theme
 source $HOME/.config/base16-shell/scripts/base16-dracula.sh
 
-
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ------------------------------
+#  Aliases
+# ------------------------------
+
+alias htop="TERM=screen htop" # Workaround for htop in tmux
+alias iptraf="TERM=screen iptraf" # Workaround for iptraf in tmux
