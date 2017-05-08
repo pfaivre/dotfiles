@@ -72,6 +72,10 @@ source $HOME/.config/base16-shell/scripts/base16-dracula.sh
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Make LINES and COLUMS usable in scripts
+export LINES
+export COLUMNS
+
 # ------------------------------
 #  Aliases
 # ------------------------------

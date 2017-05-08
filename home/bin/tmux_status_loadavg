@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Don't show if the terminal is too small
+if [ $1 -lt 82 ];then
+    exit
+fi
+
+load=`cat /proc/loadavg`
+load1m=`echo $load | awk '{print $1}'`
+load5m=`echo $load | awk '{print $2}'`
+load15m=`echo $load | awk '{print $3}'`
+
+
+ret="#[bg=colour238] $load1m #[fg=colour252]$load5m #[fg=colour249]$load15m #[fg=colour241,bg=0]▐"
+
+echo $ret

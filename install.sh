@@ -77,7 +77,11 @@ function install() {
     create_links
 
     echo ""
-    echo -e "\033[00;32mAll set up.\033[00;00m"
+    if  which lolcat >/dev/null 2>&1; then
+        echo "You are good to go." | lolcat -p .5
+    else
+        echo "You are good to go."
+    fi
 }
 
 

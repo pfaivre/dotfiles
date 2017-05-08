@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Don't show if the terminal is too small
+if [ $1 -lt 47 ];then
+    exit
+fi
+
+BATPATH=/sys/class/power_supply/BAT1
+BAT_FULL=$BATPATH/charge_full
+BAT_NOW=$BATPATH/charge_now
+bf=$(cat $BAT_FULL)
+bn=$(cat $BAT_NOW)
+
+level=$(( (100 * $bn + ($bf/2)) / $bf )) # ($bf/2) is here to round the division
+
+NB_HEARTS=6
+
+count=0
+alive_heart=$(( ($level * $NB_HEARTS + (100/2)) / 100))
+
+style_alert=""
+if [ $level -lt 15 ]; then
+    style_alert="#[fg=colour0,bg=colour196,bold]"
+fi
+
+ret="#[fg=colour196,bg=colour238,bold]$style_alert "
+
+for (( i=1; i<=$alive_heart; i++ )); do
+    ret="$ret♥"
+    ((count++))
+done
+ret="$ret#[fg=colour250]$style_alert"
+while [ $count -lt $NB_HEARTS ]; do
+    ret="$ret♥"
+    ((count++))
+done
+
+ret="$ret #[fg=colour241,bg=0]▐"
+
+echo $ret

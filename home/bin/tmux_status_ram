@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Don't show if the terminal is too small
+if [ $1 -lt 65 ];then
+    exit
+fi
+
+memtotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+memavailable=$(grep MemAvailable /proc/meminfo | awk '{print $2}')
+memused=$(( memtotal - memavailable ))
+
+level=$(( ($memused * 100 + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
+
+if [ $level -le 75 ]; then
+    colour="colour34"
+elif [ $level -le 90 ]; then
+    colour="colour187"
+else
+    colour="colour196"
+fi
+
+NB_BARS=6
+
+count=0
+highlighted_bars=$(( ($memused * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
+
+ret="#[fg=$colour,bg=colour238,none] "
+
+for (( i=1; i<=$highlighted_bars; i++ )); do
+    ret="$ret━"
+    ((count++))
+done
+ret="$ret#[fg=colour248,dim]"
+while [ $count -lt $NB_BARS ]; do
+    ret="$ret━"
+    ((count++))
+done
+
+ret="$ret #[fg=colour241,bg=0]▐"
+
+echo $ret
