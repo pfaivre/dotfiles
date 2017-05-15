@@ -23,9 +23,9 @@ The install.sh script will start by executing pre_install.sh.
 
 Then it will recursively loop into the local "home" folder.
 
-For each file found, a link will be created in the `$HOME` directory, keeping of course its subdirectory strucure.
+For each file found, a link will be created in the `$HOME` directory, keeping of course its subdirectory structure.
 
-## What does it look like
+## What it looks like
 
 <p align="center">
   <img src="docs/screenshot.png" alt="A swaggy tmux">

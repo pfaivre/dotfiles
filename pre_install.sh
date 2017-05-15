@@ -15,7 +15,7 @@ pushd ~
 
 applications=(
     # Command line utilities
-    htop most git vim pwgen sloccount tmux \
+    htop most git vim pwgen sloccount tmux ranger \
     
     # Some usefull applications
     p7zip-full sublime-text redshift-gtk \

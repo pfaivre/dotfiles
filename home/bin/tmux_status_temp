@@ -5,12 +5,14 @@ if [ $1 -lt 56 ];then
     exit
 fi
 
-t=$(sensors | awk '/Core\ 0/ {gsub(/\+/,"",$3); gsub(/\..+/,"",$3)    ; print $3}')
+t=$(sensors 2> /dev/null | grep "Core 0" | awk '/Core\ 0/ {gsub(/\+/,"",$3); gsub(/\..+/,"",$3)    ; print $3}')
 
-if [ $t -ge 70 ]; then
-    style="#[fg=colour232,bg=colour196,bold]"
-else
-    style="#[fg=colour214,bg=colour238,bold]"
+if [[ $t && ${t-x} ]]; then
+    if [ $t -ge 70 ]; then
+        style="#[fg=colour232,bg=colour196,bold]"
+    else
+        style="#[fg=colour214,bg=colour238,bold]"
+    fi
+
+    echo "$style🌡 #[fg=colour15,bg=colour238,bold] $t°C #[fg=colour241,bg=0]▐"
 fi
-
-echo "$style🌡 #[fg=colour15,bg=colour238,bold] $t°C #[fg=colour241,bg=0]▐"
