@@ -57,8 +57,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 # You may need to manually set your language environment
-export LANG=fr_FR.UTF-8
-export LC_ALL=fr_FR.UTF-8
+#export LANG=fr_FR.UTF-8
+#export LC_ALL=fr_FR.UTF-8
 
 # use 256 color terminal
 export TERM=xterm-256color
@@ -76,9 +76,15 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LINES
 export COLUMNS
 
+
 # ------------------------------
 #  Aliases
 # ------------------------------
 
 alias htop="TERM=screen htop" # Workaround for htop in tmux
 alias iptraf="TERM=screen iptraf" # Workaround for iptraf in tmux
+
+alias gitlog="git log --pretty='%h %s' --graph"
+
+alias pwgen="pwgen -c -n -y 16"
+
