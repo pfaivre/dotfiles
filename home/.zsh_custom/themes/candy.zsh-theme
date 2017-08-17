@@ -6,10 +6,10 @@
 
 if tty | fgrep pts > /dev/null; then
     # If on PTS, prints a pretty "❯" unicode char
-    local ret_status="%(?:%F{magenta}:%{$fg_bold[red]%})❯"
+    local ret_status="%(?:%F{magenta}:%{$fg_bold[red]%})❯%{$reset_color%}"
 else
     # If on a TTY, prints the plain old ">" ASCII
-    local ret_status="%(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%})>"
+    local ret_status="%(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%})>%{$reset_color%}"
 fi
 
 display_prompt() {
