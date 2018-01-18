@@ -34,6 +34,12 @@ set hlsearch
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+" Lightline statusline
+call plug#begin('~/.vim/plugged')
+Plug 'itchyny/lightline.vim'
+set laststatus=2
+set noshowmode
+call plug#end()
 
 " ------------------------------
 "  Editor

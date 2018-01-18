@@ -15,7 +15,7 @@ pushd ~
 
 applications=(
     # Command line utilities
-    htop most git vim pwgen sloccount tmux ranger \
+    htop most git vim pwgen sloccount tmux ranger ncdu \
     
     # Some usefull applications
     p7zip-full sublime-text redshift-gtk \
@@ -36,6 +36,10 @@ if ! which ranger >/dev/null 2>&1; then
 else
     echo "Ranger already installed"
 fi
+
+# Vim-plug (for Vim's Lightline)
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 # ------------------------------
