@@ -36,10 +36,14 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " Lightline statusline
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim'
+    Plug 'itchyny/lightline.vim'
+call plug#end()
 set laststatus=2
 set noshowmode
-call plug#end()
+
+let g:lightline = { 
+    \ 'colorscheme': 'wombat',
+    \} 
 
 " ------------------------------
 "  Editor
@@ -71,7 +75,7 @@ set showmatch
 "  Files, backups and undo
 " ------------------------------
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off, since most stuff is in SVN, git, etc. anyway...
 set nobackup
 set nowb
 set noswapfile
@@ -94,3 +98,4 @@ set tabstop=4
 set ai " Auto indent
 set si " Smart indent
 set wrap " Wrap lines
+
