@@ -5,7 +5,11 @@ if [ $1 -lt 47 ];then
     exit
 fi
 
-BATPATH=/sys/class/power_supply/BAT1
+if [ -d /sys/class/power_supply/BAT0 ]; then
+    BATPATH=/sys/class/power_supply/BAT0
+else
+    BATPATH=/sys/class/power_supply/BAT1
+fi
 
 if [ -d $BATPATH ]; then
     BAT_FULL=$BATPATH/charge_full
