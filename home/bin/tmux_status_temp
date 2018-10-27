@@ -5,8 +5,10 @@ if [ $1 -lt 56 ];then
     exit
 fi
 
-t=$(sensors 2> /dev/null | grep "Core 0" | awk '/Core\ 0/ {gsub(/\+/,"",$3); gsub(/\..+/,"",$3)    ; print $3}')
+# Get the highest temperature reading (integer value)
+t=$(sensors | grep 'temp[0-9]\|Core [0-9]' | cut -d '(' -f1 | cut -d '+' -f2 | cut -d '.' -f1 | sort -n | tail -n 1)
 
+# Display the badge with a different style depending on the threshold value
 if [[ $t && ${t-x} ]]; then
     if [ $t -ge 70 ]; then
         style="#[fg=colour232,bg=colour196,bold]"
