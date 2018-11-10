@@ -22,7 +22,10 @@ applications=(
 
     # Extra packages
     fonts-crosextra-carlito fonts-cantarell ttf-mscorefonts-installer \
-    screenfetch lolcat toilet cmatrix
+    screenfetch lolcat toilet cmatrix \
+
+    # i3 window manager
+    i3 dunst compton i3lock-fancy suckless-tools nitrogen feh
 )
 
 echo "Installing applications..."
