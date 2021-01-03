@@ -18,28 +18,18 @@ applications=(
     htop most git vim pwgen sloccount tmux ranger ncdu pv \
     
     # Some usefull applications
-    p7zip-full sublime-text redshift-gtk \
+    p7zip-full \
 
     # Extra packages
     fonts-crosextra-carlito fonts-cantarell ttf-mscorefonts-installer \
     screenfetch lolcat toilet cmatrix \
 
     # i3 window manager
-    i3 dunst compton i3lock-fancy suckless-tools nitrogen feh
+    # i3 dunst compton i3lock-fancy suckless-tools nitrogen feh
 )
 
 echo "Installing applications..."
 sudo apt-get -qy install ${applications[*]}
-
-# Ranger
-if ! which ranger >/dev/null 2>&1; then
-    git clone -q git://git.savannah.nongnu.org/ranger.git /tmp/ranger
-    pushd /tmp/ranger
-    sudo make install
-    popd
-else
-    echo "Ranger already installed"
-fi
 
 # Vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
