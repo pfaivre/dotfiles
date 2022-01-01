@@ -25,25 +25,25 @@ NB_BARS=6
 count=0
 
 highlighted_bars=$(( ($memused * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
-ret="#[fg=$colour,bg=colour238,none] "
+ret="#[fg=colour238,bg=colour238,none]|#[fg=$colour,bg=colour238,none]"
 for (( i=1; i<=$highlighted_bars; i++ )); do
     ret+="━"
     ((count++))
 done
 
 highlighted_bars=$(( ($memcached * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
-ret+="#[fg=colour250,dim]"
+ret+="#[fg=colour247,dim]"
 for (( i=1; i<=$highlighted_bars; i++ )); do
     ret+="━"
     ((count++))
 done
 
-ret+="#[fg=colour248,dim]"
+ret+="#[fg=colour243,dim]"
 while [ $count -lt $NB_BARS ]; do
     ret+="━"
     ((count++))
 done
 
-ret+=" #[fg=colour241,bg=0]▐"
+ret+=" #[fg=colour241,bg=colour238,none]│"
 
 echo $ret

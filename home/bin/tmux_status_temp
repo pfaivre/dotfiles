@@ -13,8 +13,10 @@ if [[ $t && ${t-x} ]]; then
     if [ $t -ge 70 ]; then
         style="#[fg=colour232,bg=colour196,bold]"
     else
-        style="#[fg=colour214,bg=colour238,bold]"
+        style="#[fg=colour214,bg=colour238,none]"
     fi
 
-    echo "$style🌡 #[fg=colour15,bg=colour238,bold] $t°C #[fg=colour241,bg=0]▐"
+    ret="#[fg=colour238,bg=colour238,none]|$style🌡 #[fg=colour15,bg=colour238,none]$t°C "
+    ret+=" #[fg=colour241,bg=colour238,none]│"
+    echo $ret
 fi

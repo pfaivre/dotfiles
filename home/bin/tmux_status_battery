@@ -41,7 +41,7 @@ if [ -d $BATPATH ]; then
         ((count++))
     done
 
-    ret="$ret #[fg=colour241,bg=0]▐"
+    ret="$ret #[fg=colour241] "
 
     echo $ret
 fi

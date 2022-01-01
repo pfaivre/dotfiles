@@ -11,6 +11,8 @@ load5m=`echo $load | awk '{print $2}'`
 load15m=`echo $load | awk '{print $3}'`
 
 
-ret="#[bg=colour238] $load1m #[fg=colour252]$load5m #[fg=colour249]$load15m #[fg=colour241,bg=0]▐"
+ret="#[bg=colour238] $load1m #[fg=colour249]$load5m #[fg=colour245]$load15m"
+
+ret+=" #[fg=colour241,bg=colour238,none]│"
 
 echo $ret
