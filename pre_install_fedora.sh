@@ -14,8 +14,8 @@ pushd ~ > /dev/null
 # ------------------------------
 
 echo "Adding RPM Fusion repositories..."
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -qy install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -qy install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 echo ""
 
@@ -31,16 +31,60 @@ applications=(
 )
 
 echo "Installing applications..."
-sudo apt -qy install ${applications[*]}
+sudo dnf -qy install ${applications[*]}
 
 echo ""
 
 packages_to_remove=(
-    
+    aajohan*
+    akonadi*
+    akregator
+    elisa-player
+    espeak-ng
+    gdouros-*
+    google-noto-cjk-fonts*
+    google-noto-naskh
+    google-noto-naskh*
+    google-noto-sans-arabic*
+    google-noto-sans-armenian*
+    google-noto-sans-canadian
+    google-noto-sans-canadian*
+    google-noto-sans-cherokee*
+    google-noto-sans-cjk*
+    google-noto-sans-ethiopic*
+    google-noto-sans-georgian*
+    google-noto-sans-gurmukhi*
+    google-noto-sans-hebrew*
+    google-noto-sans-lao*
+    google-noto-sans-sinhala*
+    google-noto-sans-thaana*
+    jomolhari-fonts
+    kaddressbook
+    kde-connect
+    khmer-os*
+    kmahjongg
+    kmail
+    kmines
+    kmouth
+    kolourpaint
+    kontact
+    konversation
+    korganizer
+    kpatience
+    krdc
+    krfb
+    lohit-*
+    paktype-*-fonts
+    plasma-welcome
+    qt5-qdbusviewer
+    rit-*-fonts
+    sil-*-fonts
+    thai-*-fonts
+    vazirmatn-*-fonts
 )
 
 echo "Removing selection of packages..."
-sudo dnf remove -qy ${packages_to_remove[*]}
+sudo dnf remove ${packages_to_remove[*]}
 
 echo ""
 
@@ -60,7 +104,7 @@ echo ""
 # Zsh
 if ! which zsh >/dev/null 2>&1; then
     echo "Installing zsh..."
-    sudo dnf install zsh
+    sudo dnf -qy install zsh
     chsh -s `which zsh`
 else
     echo "Zsh already installed"
@@ -71,7 +115,7 @@ echo ""
 # Oh-My-Zsh
 if [ ! -d ~/.oh-my-zsh ]; then
     echo "Installing Oh My Zsh..."
-    git clone -q git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone -q https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     git clone -q https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 else
     echo "Oh My Zsh already installed"
@@ -92,7 +136,7 @@ echo ""
 # Remove portal detector
 # This causes constant calls to fedoraproject.org
 echo "Disabling Fedora's connectivity checking network portal detector thing..."
-sudo dnf remove NetworkManager-config-connectivity-fedora
+sudo dnf -qy remove NetworkManager-config-connectivity-fedora
 
 # Disable automatic dnf cache refresher
 echo "Disabling automatic dnf cache refresher..."
