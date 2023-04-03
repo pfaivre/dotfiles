@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -61,11 +61,11 @@ source $ZSH/oh-my-zsh.sh
 #export LC_ALL=fr_FR.UTF-8
 
 # use 256 color terminal
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
-# https://github.com/chriskempson/base16-shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# # https://github.com/chriskempson/base16-shell
+# BASE16_SHELL=$HOME/.config/base16-shell/
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Base16 Shell Theme
 source $HOME/.config/base16-shell/scripts/base16-dracula.sh
@@ -80,9 +80,6 @@ export COLUMNS
 # ------------------------------
 #  Aliases
 # ------------------------------
-
-alias htop="TERM=screen htop" # Workaround for htop in tmux
-alias iptraf="TERM=screen iptraf" # Workaround for iptraf in tmux
 
 alias gitlog="git log --pretty='%h %s' --graph"
 

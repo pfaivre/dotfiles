@@ -26,7 +26,18 @@ function pre_install() {
     echo ""
     echo -e "\033[00;33m => Pre-installation...\033[00;00m"
 
-    source ./pre_install.sh
+    . /etc/os-release 
+
+    if [ -z ${ID+x} ]; then
+        echo "Could not detect the OS, skipped pre-installation."
+    else
+        echo "Detected OS: $ID"
+        if [ -f ./pre_install_$ID.sh ]; then
+            source ./pre_install_$ID.sh
+        else
+            echo "File pre_install_$ID.sh not found, skipped pre-installation."
+        fi
+    fi
 }
 
 
@@ -78,7 +89,7 @@ function install() {
 
     echo ""
     if  which lolcat >/dev/null 2>&1; then
-        echo "You are good to go." | lolcat -p .5
+        echo "You are good to go." | lolcat
     else
         echo "You are good to go."
     fi

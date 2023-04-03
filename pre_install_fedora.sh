@@ -13,24 +13,34 @@ pushd ~ > /dev/null
 #  Applications
 # ------------------------------
 
+echo "Adding RPM Fusion repositories..."
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+echo ""
+
 applications=(
     # Command line utilities
-    htop most git vim pwgen sloccount tmux ranger ncdu pv \
-    
-    # Some usefull applications
-    p7zip-full \
-    # redshift-gtk \
+    htop most git vim pwgen sloccount tmux ranger ncdu pv zsh wireguard-tools
 
     # Extra packages
-    fonts-crosextra-carlito fonts-cantarell ttf-mscorefonts-installer \
-    screenfetch lolcat toilet cmatrix \
+    neofetch lolcat toilet cmatrix \
 
-    # i3 window manager
-    #i3 dunst compton i3lock-fancy suckless-tools nitrogen feh
+    # Applications
+    vlc
 )
 
 echo "Installing applications..."
-sudo apt -qqy install ${applications[*]}
+sudo apt -qy install ${applications[*]}
+
+echo ""
+
+packages_to_remove=(
+    
+)
+
+echo "Removing selection of packages..."
+sudo dnf remove -qy ${packages_to_remove[*]}
 
 echo ""
 
@@ -50,7 +60,7 @@ echo ""
 # Zsh
 if ! which zsh >/dev/null 2>&1; then
     echo "Installing zsh..."
-    sudo apt -qqy install zsh
+    sudo dnf install zsh
     chsh -s `which zsh`
 else
     echo "Zsh already installed"
@@ -78,6 +88,15 @@ else
 fi
 
 echo ""
+
+# Remove portal detector
+# This causes constant calls to fedoraproject.org
+echo "Disabling Fedora's connectivity checking network portal detector thing..."
+sudo dnf remove NetworkManager-config-connectivity-fedora
+
+# Disable automatic dnf cache refresher
+echo "Disabling automatic dnf cache refresher..."
+sudo systemctl disable --now dnf-makecache.timer
 
 popd > /dev/null # Restoring previous location
 
