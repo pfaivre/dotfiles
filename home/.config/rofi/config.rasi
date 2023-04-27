@@ -1,0 +1,4 @@
+configuration {
+ font: "hack 11";
+}
+@theme "gruvbox-dark"

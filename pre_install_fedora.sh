@@ -21,13 +21,16 @@ echo ""
 
 applications=(
     # Command line utilities
-    htop most git vim pwgen sloccount tmux ranger ncdu pv zsh wireguard-tools
+    btop htop most git vim pwgen sloccount tmux ranger ncdu pv zsh wireguard-tools
 
     # Extra packages
     neofetch lolcat toilet cmatrix \
 
     # Applications
     vlc
+
+    # for Fedora i3 spin
+    # picom rofi xautolock
 )
 
 echo "Installing applications..."
@@ -56,8 +59,10 @@ packages_to_remove=(
     google-noto-sans-gurmukhi*
     google-noto-sans-hebrew*
     google-noto-sans-lao*
+    google-noto-sans-mono-vf-fonts*
     google-noto-sans-sinhala*
     google-noto-sans-thaana*
+    google-noto-serif-vf-fonts*
     jomolhari-fonts
     kaddressbook
     kde-connect
@@ -141,6 +146,10 @@ sudo dnf -qy remove NetworkManager-config-connectivity-fedora
 # Disable automatic dnf cache refresher
 echo "Disabling automatic dnf cache refresher..."
 sudo systemctl disable --now dnf-makecache.timer
+
+# Disable hibernation
+echo "Disabling hibernation..."
+sudo systemctl mask hibernate.target
 
 popd > /dev/null # Restoring previous location
 
