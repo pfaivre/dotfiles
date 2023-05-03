@@ -1,0 +1,121 @@
+# This playbook defines tasks specific to Fedora
+
+- name: Adding RPM Fusion Free
+  ansible.builtin.yum_repository:
+    name: rpmfusion-free
+    description: RPM Fusion for Fedora $releasever - Free
+    baseurl: http://mirrors.rpmfusion.org/free/fedora/$releasever/$basearch
+
+- name: Adding RPM Fusion Free Update
+  ansible.builtin.yum_repository:
+    name: rpmfusion-free-updates
+    description: RPM Fusion for Fedora $releasever - Free - Updates
+    baseurl: http://mirrors.rpmfusion.org/free/fedora/updates/$releasever/$basearch
+
+- name: Adding RPM Fusion Nonfree
+  ansible.builtin.yum_repository:
+    name: rpmfusion-nonfree
+    description: RPM Fusion for Fedora $releasever - Nonfree
+    baseurl: http://mirrors.rpmfusion.org/nonfree/fedora/$releasever/$basearch
+
+- name: Adding RPM Fusion Nonfree Update
+  ansible.builtin.yum_repository:
+    name: rpmfusion-nonfree-updates
+    description: RPM Fusion for Fedora $releasever - Nonfree - Updates
+    baseurl: http://mirrors.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch
+
+- name: Installing packages
+  become: true
+  become_user: root
+  dnf:
+    state: latest
+    name:
+      - btop
+      - cmatrix
+      - git 
+      - htop
+      - lolcat
+      - most 
+      - ncdu 
+      - neofetch
+      - pv
+      - pwgen
+      - ranger
+      - sloccount
+      - tmux
+      - toilet
+      - vim
+      - vlc
+      - wireguard-tools
+      - zsh
+      - zsh
+
+- name: Removing packages
+  become: true
+  become_user: root
+  dnf:
+    state: absent
+    name:
+      - aajohan*
+      - akonadi*
+      - akregator
+      - elisa-player
+      - espeak-ng
+      - gdouros-*
+      - google-noto-cjk-fonts*
+      - google-noto-naskh
+      - google-noto-naskh*
+      - google-noto-sans-arabic*
+      - google-noto-sans-armenian*
+      - google-noto-sans-canadian
+      - google-noto-sans-canadian*
+      - google-noto-sans-cherokee*
+      - google-noto-sans-cjk*
+      - google-noto-sans-ethiopic*
+      - google-noto-sans-georgian*
+      - google-noto-sans-gurmukhi*
+      - google-noto-sans-hebrew*
+      - google-noto-sans-lao*
+      - google-noto-sans-mono-vf-fonts*
+      - google-noto-sans-sinhala*
+      - google-noto-sans-thaana*
+      - google-noto-serif-vf-fonts*
+      - jomolhari-fonts
+      - kaddressbook
+      - kde-connect
+      - khmer-os*
+      - kmahjongg
+      - kmail
+      - kmines
+      - kmouth
+      - kolourpaint
+      - kontact
+      - konversation
+      - korganizer
+      - kpatience
+      - krdc
+      - krfb
+      - lohit-*
+      - NetworkManager-config-connectivity-fedora
+      - paktype-*-fonts
+      - plasma-welcome
+      - qt5-qdbusviewer
+      - rit-*-fonts
+      - sil-*-fonts
+      - thai-*-fonts
+      - vazirmatn-*-fonts
+
+# Disable automatic dnf cache refresher
+- name: Disabling service (dnf-makecache.timer)
+  become: yes
+  ansible.builtin.systemd:
+    enabled: false
+    state: stopped
+    name: dnf-makecache.timer
+
+# Disable hibernation
+- name: Masking service (hibernate.target)
+  become: yes
+  ansible.builtin.systemd:
+    masked: true
+    name: hibernate.target

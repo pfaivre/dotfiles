@@ -1,0 +1,94 @@
+- name: ansible-main
+  hosts: localhost
+  become: no
+  vars:
+    user_id: "{{ ansible_user_id }}"
+
+  tasks:
+
+    - name: Show user ID
+      ansible.builtin.debug:
+        var: user_id
+
+    - name: Show detected distribution
+      ansible.builtin.debug:
+        var: ansible_facts['distribution']
+
+    #####################
+    # OS specific tasks #
+    #####################
+
+    - name: Apply Fedora specifics
+      ansible.builtin.include_tasks: ansible-fedora.yaml
+      when: ansible_facts['distribution'] == "Fedora"
+
+    - name: Apply Ubuntu specifics
+      ansible.builtin.include_tasks: ansible-ubuntu.yaml
+      when: ansible_facts['distribution'] == "Ubuntu"
+
+    ################
+    # Common tasks #
+    ################
+
+    - name: Installing Vim-plug (creating folder)
+      ansible.builtin.file:
+        path: ~/.vim/autoload/
+        state: directory
+
+    - name: Installing Vim-plug
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: ~/.vim/autoload/
+
+    - name: Changing shell to zsh
+      become: yes
+      user:
+        name: "{{ user_id }}"
+        shell: /bin/zsh
+
+    - name: Installing Oh My Zsh (creating folder)
+      ansible.builtin.file:
+        path: ~/.oh-my-zsh/custom/plugins
+        state: directory
+
+    - name: Installing Oh My Zsh
+      ansible.builtin.git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: ~/.oh-my-zsh/
+
+    - name: Installing Oh My Zsh (zsh-syntax-highlighting)
+      ansible.builtin.git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
+
+    - name: Installing Base16 Shell
+      ansible.builtin.git:
+        repo: https://github.com/chriskempson/base16-shell.git
+        dest: ~/.config/base16-shell
+
+    #####################
+    # Links to dotfiles #
+    #####################
+
+    - name: Find files to link
+      find:
+        paths: ./home/
+        recurse: yes
+      register: results
+
+    # Extract dotfiles paths from find
+    - set_fact:
+        dotfiles: "{{ results.files | map(attribute='path') | list }}"
+
+    - name: Creating folders for symlinks to user's home
+      file:
+        path: "~/{{ '/'.join(item.split('/')[1:]) | dirname }}"
+        state: directory
+      with_items: "{{ dotfiles }}"
+
+    - name: Creating symlinks to user's home
+      file:
+        src: "{{ playbook_dir }}/{{ item }}"
+        path: "~/{{ '/'.join(item.split('/')[1:]) }}"
+        state: link
+      with_items: "{{ dotfiles }}"
