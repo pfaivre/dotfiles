@@ -53,6 +53,12 @@ function install() {
     fi
 
     run_ansible
+    
+    if [ $? -ne 0 ]; then
+        echo "The configuration failed, see above for details"
+        echo ""
+        exit 1
+    fi
 
     echo ""
     if  which lolcat >/dev/null 2>&1; then
