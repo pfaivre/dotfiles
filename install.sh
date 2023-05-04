@@ -68,18 +68,33 @@ function install() {
     fi
 }
 
+RESET="\x1B[0m"
+CLREOL="\x1B[K" # Needed to continue background color to the end of the line
+bg_black="\x1b[48;2;0;0;0m"
+fg_white="\x1b[38;5;255m"
+fg_red="\x1b[38;5;197m"
+fg_orange="\x1b[38;5;208m"
+fg_yellow="\x1b[38;5;226m"
+fg_green="\x1b[38;5;118m"
+fg_turqoise="\x1b[38;5;121m"
+fg_cyan="\x1b[38;5;51m"
+fg_blue="\x1b[38;5;33m"
+fg_violet="\x1b[38;5;55m"
 
-echo "┌──────────────────────────────────────────────────────────────────────────────┐"
-echo "│                             Dotfiles installer                               │"
-echo "│                                                                              │"
-echo "│ Before starting, make sure that you:                                         │"
-echo "│  * correctly edited ansible files                                            │"
-echo "│  * placed your dotfiles into \"home\"                                          │"
-echo "│                                                                              │"
-echo "│ More info at https://github.com/pfaivre/dotfiles                             │"
-echo "└──────────────────────────────────────────────────────────────────────────────┘"
-echo ""
+echo -e "$bg_black$fg_white┌──────────────────────────────────────────────────────────────────┐$CLREOL"
+echo -e "$fg_white│                 $fg_violet░█▀▄░$fg_blue▄▀▀▄░$fg_cyan▀█▀░$fg_turqoise█▀▀░$fg_green░▀░░$fg_yellow█░░$fg_orange█▀▀░$fg_red█▀▀$fg_white                 │$CLREOL"
+echo -e "$fg_white│                 $fg_violet░█░█░$fg_blue█░░█░$fg_cyan░█░░$fg_turqoise█▀░░$fg_green░█▀░$fg_yellow█░░$fg_orange█▀▀░$fg_red▀▀▄$fg_white                 |$CLREOL"
+echo -e "$fg_white│                 $fg_violet░▀▀░░$fg_blue░▀▀░░$fg_cyan░▀░░$fg_turqoise▀░░░$fg_green▀▀▀░$fg_yellow▀▀░$fg_orange▀▀▀░$fg_red▀▀▀$fg_white                 │$CLREOL"
+echo -e "$fg_white│                                                                  │$CLREOL"
+echo -e "$fg_white│ Before starting, make sure that you:                             │$CLREOL"
+echo -e "$fg_white│  * correctly edited ansible files                                │$CLREOL"
+echo -e "$fg_white│  * placed your dotfiles into \"home\"                              │$CLREOL"
+echo -e "$fg_white│                                                                  │$CLREOL"
+echo -e "$fg_white│ More info at https://github.com/pfaivre/dotfiles                 │$CLREOL"
+echo -e "$fg_white└──────────────────────────────────────────────────────────────────┘$CLREOL"
+echo -e "$fg_white$CLREOL"
 read -p "Do you wish to continue? (y/n) " confirm
+echo -e "$RESET"
 
 if [ $confirm = "y" ]; then
     install
