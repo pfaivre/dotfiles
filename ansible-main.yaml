@@ -46,15 +46,15 @@
         name: "{{ user_id }}"
         shell: /bin/zsh
 
-    - name: Installing Oh My Zsh (creating folder)
-      ansible.builtin.file:
-        path: ~/.oh-my-zsh/custom/plugins
-        state: directory
-
     - name: Installing Oh My Zsh
       ansible.builtin.git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
         dest: ~/.oh-my-zsh/
+
+    - name: Installing Oh My Zsh (creating folder)
+      ansible.builtin.file:
+        path: ~/.oh-my-zsh/custom/plugins
+        state: directory
 
     - name: Installing Oh My Zsh (zsh-syntax-highlighting)
       ansible.builtin.git:
@@ -70,10 +70,12 @@
     # Links to dotfiles #
     #####################
 
+    # List all files in the local "./home" folder
     - name: Find files to link
       find:
         paths: ./home/
-        recurse: yes
+        recurse: true
+        hidden: true
       register: results
 
     # Extract dotfiles paths from find

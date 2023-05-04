@@ -1,1 +1,81 @@
 # This playbook defines tasks specific to Ubuntu
+
+- name: Installing packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - cmatrix
+      - fonts-cantarell
+      - fonts-crosextra-carlito
+      - git
+      - htop
+      - lolcat
+      - most
+      - ncdu
+      - p7zip-full
+      - pv
+      - pwgen
+      - ranger
+      - screenfetch
+      - sloccount
+      - tmux
+      - toilet
+      - ttf-mscorefonts-installer
+      - vim
+
+      # i3 window manager
+      # - i3
+      # - dunst
+      # - compton
+      # - i3lock-fancy
+      # - suckless-tools
+      # - nitrogen
+      # - feh
+    state: present
+
+- name: Removing packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - fonts-beng
+      - fonts-beng-extra
+      - fonts-deva
+      - fonts-deva-extra
+      - fonts-gargi
+      - fonts-gubbi
+      - fonts-gujr
+      - fonts-gujr-extra
+      - fonts-guru
+      - fonts-guru-extra
+      - fonts-indic
+      - fonts-kacst
+      - fonts-kacst-one
+      - fonts-kalapi
+      - fonts-khmeros-core
+      - fonts-knda
+      - fonts-lao
+      - fonts-lato
+      - fonts-lklug-sinhala
+      - fonts-lohit*
+      - fonts-mlym
+      - fonts-nakula
+      - fonts-navilu
+      - fonts-noto-cjk
+      - fonts-orya
+      - fonts-orya-extra
+      - fonts-pagul
+      - fonts-sahadeva
+      - fonts-samyak*
+      - fonts-sarai
+      - fonts-sil-abyssinica
+      - fonts-sil-padauk
+      - fonts-smc*
+      - fonts-taml
+      - fonts-telu
+      - fonts-telu-extra
+      - fonts-teluguvijayam
+      - fonts-thai-tlwg
+      - fonts-tibetan-machine
+      - fonts-tlwg*
+      - fonts-yrsa-rasa
+    state: absent

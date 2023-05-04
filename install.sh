@@ -1,91 +1,58 @@
 #!/bin/bash
 
-# Dotfiles installer
+# Dotfiles installer with Ansible
 # By Pierre Faivre
 
 
-always_overwrite=false
-overwrite_once=false
-
-function ask_overwrite() {
-    echo -ne "Overwrite? (y\033[00;30mes\033[00;00m/n\033[00;30mo\033[00;00m/a\033[00;30mlways\033[00;00m) "
-    read answer
-
-    if [ $answer = "y" ]; then
-        overwrite_once=true
-    elif [ $answer = "a" ]; then
-        overwrite_once=true
-        always_overwrite=true
-    else
-        overwrite_once=false
-    fi
-}
-
-
-function pre_install() {
+function install_ansible() {
     echo ""
-    echo -e "\033[00;33m => Pre-installation...\033[00;00m"
+    echo -e "\033[00;33m => Install Ansible...\033[00;00m"
 
-    . /etc/os-release 
+    . /etc/os-release
 
     if [ -z ${ID+x} ]; then
-        echo "Could not detect the OS, skipped pre-installation."
+        echo "Could not detect the OS, abort."
+        exit 1
     else
         echo "Detected OS: $ID"
-        if [ -f ./pre_install_$ID.sh ]; then
-            source ./pre_install_$ID.sh
-        else
-            echo "File pre_install_$ID.sh not found, skipped pre-installation."
-        fi
+
+        case $ID in
+
+        ubuntu)
+            sudo apt install -qy ansible-core
+            ;;
+
+        fedora)
+            sudo dnf install -qy ansible-core
+            ;;
+
+        *)
+            echo "OS not supported, abort."
+            exit 1
+            ;;
+        esac
     fi
 }
 
 
-function create_links() {
-    echo ""
-    echo -e "\033[00;33m => Linking the files into your home directory...\033[00;00m"
+function run_ansible() {
+    # Suppress warning about inventory not set
+    # That's normal because we only configure the local computer
+    export ANSIBLE_LOCALHOST_WARNING=False
+    export ANSIBLE_INVENTORY_UNPARSED_WARNING=False
 
-    pushd "$(dirname "$0")/home" > /dev/null
-
-    # Loops recursively into the local "home" directory
-    for element in `find . -printf '%P\n'`
-    do
-        ### Directory ###
-        if [ -d $element ]; then
-            mkdir -p "$HOME/$element"
-        ### File ###
-        elif [ -f $element ]; then
-            # If it doesn't exist yet, just create the link
-            if [ ! -f "$HOME/$element" ]; then
-                ln -s `pwd`/$element $HOME/$element
-                echo -e "\033[01;36mLinked\033[00;00m $HOME/$element"
-            else
-                # If it does exists but the user gave his/her consent
-                if [ $always_overwrite = true ]; then
-                    rm $HOME/$element
-                    ln -s `pwd`/$element $HOME/$element
-                    echo -e "\033[01;36mLinked\033[00;00m $HOME/$element"
-                # Else, we ask him/her what to do
-                else
-                    echo -e "\033[00;31mExisting\033[00;00m $HOME/$element"
-                    ask_overwrite
-                    if [ $overwrite_once = true ]; then
-                        rm $HOME/$element
-                        ln -s `pwd`/$element $HOME/$element
-                        echo -e "\033[01;36mLinked\033[00;00m $HOME/$element"
-                    fi
-                fi
-            fi
-        fi
-    done
-
-    popd > /dev/null
+    ansible-playbook --ask-become-pass $(dirname "$0")/ansible-main.yaml
 }
 
-function install() {
-    pre_install
 
-    create_links
+function install() {
+    if  which ansible-playbook >/dev/null 2>&1; then
+        echo -e "\nAnsible is available\n"
+    else
+        install_ansible
+    fi
+
+    run_ansible
 
     echo ""
     if  which lolcat >/dev/null 2>&1; then
@@ -100,7 +67,7 @@ echo "┌───────────────────────�
 echo "│                             Dotfiles installer                               │"
 echo "│                                                                              │"
 echo "│ Before starting, make sure that you:                                         │"
-echo "│  * correctly edited pre_install.sh                                           │"
+echo "│  * correctly edited ansible files                                            │"
 echo "│  * placed your dotfiles into \"home\"                                          │"
 echo "│                                                                              │"
 echo "│ More info at https://github.com/pfaivre/dotfiles                             │"

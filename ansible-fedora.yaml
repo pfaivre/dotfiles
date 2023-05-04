@@ -1,42 +1,29 @@
 # This playbook defines tasks specific to Fedora
 
 - name: Adding RPM Fusion Free
-  ansible.builtin.yum_repository:
-    name: rpmfusion-free
-    description: RPM Fusion for Fedora $releasever - Free
-    baseurl: http://mirrors.rpmfusion.org/free/fedora/$releasever/$basearch
-
-- name: Adding RPM Fusion Free Update
-  ansible.builtin.yum_repository:
-    name: rpmfusion-free-updates
-    description: RPM Fusion for Fedora $releasever - Free - Updates
-    baseurl: http://mirrors.rpmfusion.org/free/fedora/updates/$releasever/$basearch
+  become: true
+  ansible.builtin.dnf:
+    state: present
+    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
 - name: Adding RPM Fusion Nonfree
-  ansible.builtin.yum_repository:
-    name: rpmfusion-nonfree
-    description: RPM Fusion for Fedora $releasever - Nonfree
-    baseurl: http://mirrors.rpmfusion.org/nonfree/fedora/$releasever/$basearch
-
-- name: Adding RPM Fusion Nonfree Update
-  ansible.builtin.yum_repository:
-    name: rpmfusion-nonfree-updates
-    description: RPM Fusion for Fedora $releasever - Nonfree - Updates
-    baseurl: http://mirrors.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch
+  become: true
+  ansible.builtin.dnf:
+    state: present
+    name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
 - name: Installing packages
   become: true
-  become_user: root
-  dnf:
+  ansible.builtin.dnf:
     state: latest
     name:
       - btop
       - cmatrix
-      - git 
+      - git
       - htop
       - lolcat
-      - most 
-      - ncdu 
+      - most
+      - ncdu
       - neofetch
       - pv
       - pwgen
@@ -48,12 +35,10 @@
       - vlc
       - wireguard-tools
       - zsh
-      - zsh
 
 - name: Removing packages
   become: true
-  become_user: root
-  dnf:
+  ansible.builtin.dnf:
     state: absent
     name:
       - aajohan*
