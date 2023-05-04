@@ -49,7 +49,8 @@
       - elisa-player
       - espeak-ng
       - gdouros-*
-      - google-noto-cjk-fonts*
+      - google-noto-cjk-fonts
+      - google-noto-cjk-fonts-common
       - google-noto-naskh
       - google-noto-naskh*
       - google-noto-sans-arabic*

@@ -83,6 +83,7 @@ read -p "Do you wish to continue? (y/n) " confirm
 
 if [ $confirm = "y" ]; then
     install
+    echo ""
 else
     echo "Aborted"
     exit 0
