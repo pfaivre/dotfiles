@@ -48,7 +48,8 @@ function run_ansible() {
 
 
 function install() {
-    if ! [ which ansible-playbook >/dev/null 2>&1 ]; then
+    if ! ansible-playbook --version &> /dev/null
+    then
         install_ansible
     fi
 
