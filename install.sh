@@ -6,7 +6,7 @@
 
 function install_ansible() {
     echo ""
-    echo -e "\033[00;33m => Install Ansible...\033[00;00m"
+    echo -e "\033[00;33m => Installing Ansible...\033[00;00m"
 
     . /etc/os-release
 
@@ -41,14 +41,14 @@ function run_ansible() {
     export ANSIBLE_LOCALHOST_WARNING=False
     export ANSIBLE_INVENTORY_UNPARSED_WARNING=False
 
+    ansible --version | grep core
+
     ansible-playbook --ask-become-pass $(dirname "$0")/ansible-main.yaml
 }
 
 
 function install() {
-    if  which ansible-playbook >/dev/null 2>&1; then
-        echo -e "\nAnsible is available\n"
-    else
+    if ! [ which ansible-playbook >/dev/null 2>&1 ]; then
         install_ansible
     fi
 
@@ -81,18 +81,18 @@ fg_cyan="\x1b[38;5;51m"
 fg_blue="\x1b[38;5;33m"
 fg_violet="\x1b[38;5;55m"
 
-echo -e "$bg_black$fg_white┌──────────────────────────────────────────────────────────────────┐$CLREOL"
-echo -e "$fg_white│                 $fg_violet░█▀▄░$fg_blue▄▀▀▄░$fg_cyan▀█▀░$fg_turqoise█▀▀░$fg_green░▀░░$fg_yellow█░░$fg_orange█▀▀░$fg_red█▀▀$fg_white                 │$CLREOL"
-echo -e "$fg_white│                 $fg_violet░█░█░$fg_blue█░░█░$fg_cyan░█░░$fg_turqoise█▀░░$fg_green░█▀░$fg_yellow█░░$fg_orange█▀▀░$fg_red▀▀▄$fg_white                 |$CLREOL"
-echo -e "$fg_white│                 $fg_violet░▀▀░░$fg_blue░▀▀░░$fg_cyan░▀░░$fg_turqoise▀░░░$fg_green▀▀▀░$fg_yellow▀▀░$fg_orange▀▀▀░$fg_red▀▀▀$fg_white                 │$CLREOL"
-echo -e "$fg_white│                                                                  │$CLREOL"
-echo -e "$fg_white│ Before starting, make sure that you:                             │$CLREOL"
-echo -e "$fg_white│  * correctly edited ansible files                                │$CLREOL"
-echo -e "$fg_white│  * placed your dotfiles into \"home\"                              │$CLREOL"
-echo -e "$fg_white│                                                                  │$CLREOL"
-echo -e "$fg_white│ More info at https://github.com/pfaivre/dotfiles                 │$CLREOL"
-echo -e "$fg_white└──────────────────────────────────────────────────────────────────┘$CLREOL"
-echo -e "$fg_white$CLREOL"
+echo -e "$bg_black$fg_white$CLREOL"
+echo -e "$fg_violet░█▀▄░$fg_blue▄▀▀▄░$fg_cyan▀█▀░$fg_turqoise█▀▀░$fg_green░▀░░$fg_yellow█░░$fg_orange█▀▀░$fg_red█▀▀$fg_white$CLREOL"
+echo -e "$fg_violet░█░█░$fg_blue█░░█░$fg_cyan░█░░$fg_turqoise█▀░░$fg_green░█▀░$fg_yellow█░░$fg_orange█▀▀░$fg_red▀▀▄$fg_white$CLREOL"
+echo -e "$fg_violet░▀▀░░$fg_blue░▀▀░░$fg_cyan░▀░░$fg_turqoise▀░░░$fg_green▀▀▀░$fg_yellow▀▀░$fg_orange▀▀▀░$fg_red▀▀▀$fg_white$CLREOL"
+echo -e "$CLREOL"
+echo -e "$fg_white Before starting, make sure that you$CLREOL"
+echo -e "$fg_white  * correctly edited ansible files$CLREOL"
+echo -e "$fg_white  * placed your dotfiles into \"home\"$CLREOL"
+echo -e "$CLREOL"
+echo -e "$fg_white More info at https://github.com/pfaivre/dotfiles$CLREOL"
+echo -e "$CLREOL"
+echo -ne "$CLREOL"
 read -p "Do you wish to continue? (y/n) " confirm
 echo -e "$RESET"
 

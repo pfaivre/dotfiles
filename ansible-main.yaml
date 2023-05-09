@@ -6,13 +6,11 @@
 
   tasks:
 
-    - name: Show user ID
+    - name: Show the environment
       ansible.builtin.debug:
-        var: user_id
-
-    - name: Show detected distribution
-      ansible.builtin.debug:
-        var: ansible_facts['distribution']
+        msg:
+          - "distribution: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
+          - "user: {{ user_id }}"
 
     #####################
     # OS specific tasks #
