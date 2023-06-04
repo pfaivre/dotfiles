@@ -29,7 +29,7 @@ if [ -d $BATPATH ]; then
         style_alert="#[fg=colour0,bg=colour196,bold]"
     fi
 
-    ret="#[fg=colour196,bg=colour238,bold]$style_alert "
+    ret="#[fg=colour196,bg=colour240,bold]$style_alert "
 
     for (( i=1; i<=$alive_heart; i++ )); do
         ret="$ret♥"
@@ -41,7 +41,7 @@ if [ -d $BATPATH ]; then
         ((count++))
     done
 
-    ret="$ret #[fg=colour241] "
+    ret+=" #[fg=colour240,bg=default,none]─"
 
     echo $ret
 fi

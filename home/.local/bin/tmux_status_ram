@@ -12,38 +12,42 @@ memcached=$(( $(grep "^Cached*" /proc/meminfo | awk '{print $2}') + $(grep Buffe
 
 level=$(( ($memused * 100 + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
 
+# Change used memory bar color depending of usage
 if [ $level -le 75 ]; then
-    colour="colour34"
+    colour="colour40" # Green
 elif [ $level -le 90 ]; then
-    colour="colour187"
+    colour="colour227" # Yellow
 else
-    colour="colour196"
+    colour="colour196" # Red
 fi
 
 NB_BARS=6
 
 count=0
 
+# First bar: used memory
 highlighted_bars=$(( ($memused * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
-ret="#[fg=colour238,bg=colour238,none]|#[fg=$colour,bg=colour238,none]"
+ret="#[fg=colour240,bg=colour240,none]|#[fg=$colour,bg=colour240,none]"
 for (( i=1; i<=$highlighted_bars; i++ )); do
     ret+="━"
     ((count++))
 done
 
+# Second bar: cached memory
 highlighted_bars=$(( ($memcached * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
-ret+="#[fg=colour247,dim]"
+ret+="#[fg=colour246,dim]"
 for (( i=1; i<=$highlighted_bars; i++ )); do
     ret+="━"
     ((count++))
 done
 
-ret+="#[fg=colour243,dim]"
+# Third bar: free space
+ret+="#[fg=colour242,dim]"
 while [ $count -lt $NB_BARS ]; do
     ret+="━"
     ((count++))
 done
 
-ret+=" #[fg=colour241,bg=colour238,none]│"
+ret+=" #[fg=colour240,bg=default]─"
 
 echo $ret

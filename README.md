@@ -8,15 +8,15 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 
 ## Featuring
 
-## jpeg-compressor.sh
+### jpeg-compressor.sh
 A handy script to compress a bunch of JPEG files at once.
 <p align="center">
   <img src="docs/jpeg-compressor_screenshot.png" alt="jpeg-compressor screenshot">
 </p>
 
-## tmux theme
+### tmux theme
 <p align="center">
-  <img src="docs/screenshot.png" alt="A swaggy tmux">
+  <img src="docs/tmux_screenshot.png" alt="A swaggy tmux">
 </p>
 
 ## How to use it
