@@ -34,9 +34,11 @@
       - tmux
       - toilet
       - vim
-      - vlc
       - wireguard-tools
       - zsh
+      # TODO separate desktop role from core
+      - vlc
+      - libreoffice-langpack-fr
 
 - name: Removing packages
   become: true
@@ -71,9 +73,12 @@
       - jomolhari-fonts
       - kaddressbook
       - kde-connect
+      - kf5-akonadi-contacts
+      - kf5-kontacts
       - khmer-os*
       - kmahjongg
       - kmail
+      - kmail-account-wizard
       - kmines
       - kmouth
       - kolourpaint
@@ -86,6 +91,7 @@
       - lohit-*
       - NetworkManager-config-connectivity-fedora
       - paktype-*-fonts
+      - pim-sieve-editor
       - plasma-welcome
       - qt5-qdbusviewer
       - rit-*-fonts
