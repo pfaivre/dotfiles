@@ -46,7 +46,7 @@
     state: absent
     name:
       - aajohan*
-      - akonadi*
+      - akonadi
       - akregator
       - elisa-player
       - espeak-ng
@@ -74,8 +74,11 @@
       - kaddressbook
       - kde-connect
       - kf5-akonadi-contacts
+      - kf5-akonadi-server
+      - kf5-akonadi-server-mysql
       - kf5-kontacts
       - khmer-os*
+      - kio-gdrive
       - kmahjongg
       - kmail
       - kmail-account-wizard

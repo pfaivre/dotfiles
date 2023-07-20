@@ -85,3 +85,4 @@ alias gitlog="git log --pretty='%h %s' --graph"
 
 alias pwgen="pwgen -c -n -y 16"
 
+alias u="sudo dnf update; flatpak update -y"
