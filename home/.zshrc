@@ -53,6 +53,7 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found sudo colored-man-pages)
 
+export DISABLE_UPDATE_PROMPT=true
 source $ZSH/oh-my-zsh.sh
 
 

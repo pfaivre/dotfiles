@@ -55,7 +55,7 @@ total_source_size=0
 total_compressed_size=0
 total_destination_size=0
 
-echo -e "\nLimiting quality of $(ls -1q $input_files | wc -l) files to $target_quality%...\n"
+echo -e "\nLimiting quality of $(ls -1q $input_files | wc -l) files to $target_quality% JPEG...\n"
 
 for source_path in $input_files; do
     if ! [ -f $source_path ]; then
@@ -65,7 +65,8 @@ for source_path in $input_files; do
 
     source_quality=$(identify -format '%Q' "$source_path")
     source_size=$(stat -c %s "$source_path")
-    destination_path="c_$source_path"
+
+    destination_path="c_${source_path%.*}.jpg" # Impose jpg extension to tell convert JPEG is the target format
 
     if [[ $source_quality -ge $target_quality ]]; then
         convert -quality $target_quality "$source_path" "$destination_path"
