@@ -1,4 +1,4 @@
-# This playbook defines tasks specific to Ubuntu
+# This role defines tasks specific to Ubuntu (CLI environment)
 
 - name: Installing packages
   become: true
@@ -22,15 +22,6 @@
       - toilet
       - ttf-mscorefonts-installer
       - vim
-
-      # i3 window manager
-      # - i3
-      # - dunst
-      # - compton
-      # - i3lock-fancy
-      # - suckless-tools
-      # - nitrogen
-      # - feh
     state: present
 
 - name: Removing packages

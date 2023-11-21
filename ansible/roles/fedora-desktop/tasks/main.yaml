@@ -1,0 +1,14 @@
+# This role defines tasks specific to Fedora (desktop environment)
+
+- name: Installing packages
+  become: true
+  ansible.builtin.dnf:
+    state: latest
+    name:
+      - audacious
+      - eog
+      - gimp
+      - inkscape
+      - libreoffice-langpack-fr
+      - simple-scan
+      - vlc

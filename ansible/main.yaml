@@ -1,0 +1,16 @@
+- name: ansible-main
+  hosts: localhost
+  become: no
+  vars:
+    user_id: "{{ ansible_user_id }}"
+
+  tasks:
+    - name: Fedora desktop
+      include_role:
+        name: fedora-desktop
+      when: ansible_facts['distribution'] == "Fedora"
+
+    - name: Ubuntu CLI
+      include_role:
+        name: ubuntu-cli
+      when: ansible_facts['distribution'] == "Ubuntu"
