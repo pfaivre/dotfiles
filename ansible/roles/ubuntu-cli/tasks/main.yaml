@@ -22,6 +22,7 @@
       - toilet
       - ttf-mscorefonts-installer
       - vim
+      - zsh
     state: present
 
 - name: Removing packages
@@ -70,3 +71,9 @@
       - fonts-tlwg*
       - fonts-yrsa-rasa
     state: absent
+
+- name: Changing shell to zsh
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

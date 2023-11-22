@@ -113,3 +113,9 @@
   ansible.builtin.systemd:
     masked: true
     name: hibernate.target
+
+- name: Changing shell to zsh
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
