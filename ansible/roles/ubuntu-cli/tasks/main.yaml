@@ -1,4 +1,4 @@
-# This playbook defines tasks specific to Ubuntu
+# This role defines tasks specific to Ubuntu (CLI environment)
 
 - name: Installing packages
   become: true
@@ -22,15 +22,7 @@
       - toilet
       - ttf-mscorefonts-installer
       - vim
-
-      # i3 window manager
-      # - i3
-      # - dunst
-      # - compton
-      # - i3lock-fancy
-      # - suckless-tools
-      # - nitrogen
-      # - feh
+      - zsh
     state: present
 
 - name: Removing packages
@@ -79,3 +71,9 @@
       - fonts-tlwg*
       - fonts-yrsa-rasa
     state: absent
+
+- name: Changing shell to zsh
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

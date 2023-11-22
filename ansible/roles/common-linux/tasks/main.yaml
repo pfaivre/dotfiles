@@ -1,0 +1,71 @@
+- name: Show the environment
+  debug:
+    msg:
+      - "distribution: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
+      - "user: {{ ansible_user_id }}"
+
+
+################
+# Common tasks #
+################
+
+- name: Installing Vim-plug (creating folder)
+  ansible.builtin.file:
+    path: ~/.vim/autoload/
+    state: directory
+
+- name: Installing Vim-plug
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/
+
+- name: Installing Oh My Zsh
+  ansible.builtin.git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh/
+
+- name: Installing Oh My Zsh (creating folder)
+  ansible.builtin.file:
+    path: ~/.oh-my-zsh/custom/plugins
+    state: directory
+
+- name: Installing Oh My Zsh (zsh-syntax-highlighting)
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
+
+- name: Installing Base16 Shell
+  ansible.builtin.git:
+    repo: https://github.com/chriskempson/base16-shell.git
+    dest: ~/.config/base16-shell
+
+
+#####################
+# Links to dotfiles #
+#####################
+
+# List all files in the local "./home" folder
+- name: Find files to link
+  find:
+    paths: "./roles/common-linux/files/home/"
+    recurse: true
+    hidden: true
+  register: results
+
+# Extract dotfiles paths from find
+- set_fact:
+    dotfiles: "{{ results.files | map(attribute='path') | list }}"
+
+- name: Creating folders for symlinks to user's home
+  file:
+    # The split here serves to get the relative path from files/home/ folder
+    path: "~/{{ '/'.join(item.split('/')[4:]) | dirname }}"
+    state: directory
+  with_items: "{{ dotfiles }}"
+
+- name: Creating symlinks to user's home
+  file:
+    src: "{{ playbook_dir }}/{{ item }}"
+    path: "~/{{ '/'.join(item.split('/')[4:]) }}"
+    state: link
+  with_items: "{{ dotfiles }}"

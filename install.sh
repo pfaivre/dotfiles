@@ -43,7 +43,7 @@ function run_ansible() {
 
     ansible --version | grep core
 
-    ansible-playbook --ask-become-pass $(dirname "$0")/ansible-main.yaml
+    ansible-playbook --ask-become-pass $(dirname "$0")/ansible/main.yaml
 }
 
 
@@ -54,7 +54,7 @@ function install() {
     fi
 
     run_ansible
-    
+
     if [ $? -ne 0 ]; then
         echo "The configuration failed, see above for details"
         echo ""
@@ -89,12 +89,12 @@ echo -e "$fg_violet░▀▀░░$fg_blue░▀▀░░$fg_cyan░▀░░$fg
 echo -e "$CLREOL"
 echo -e "$fg_white Before starting, make sure that you$CLREOL"
 echo -e "$fg_white  * correctly edited ansible files$CLREOL"
-echo -e "$fg_white  * placed your dotfiles into \"home\"$CLREOL"
+echo -e "$fg_white  * placed your dotfiles into \"ansible/roles/common-linux/files/home\"$CLREOL"
 echo -e "$CLREOL"
 echo -e "$fg_white More info at https://github.com/pfaivre/dotfiles$CLREOL"
 echo -e "$CLREOL"
 echo -ne "$CLREOL"
-read -p "Do you wish to continue? (y/n) " confirm
+read -p "Do you wish to continue? (y/N) " confirm
 echo -e "$RESET"
 
 if [ $confirm = "y" ]; then

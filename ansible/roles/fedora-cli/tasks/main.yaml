@@ -1,4 +1,4 @@
-# This playbook defines tasks specific to Fedora
+# This role defines tasks specific to Fedora (CLI environment)
 
 - name: Adding RPM Fusion Free
   become: true
@@ -36,9 +36,6 @@
       - vim
       - wireguard-tools
       - zsh
-      # TODO separate desktop role from core
-      - vlc
-      - libreoffice-langpack-fr
 
 - name: Removing packages
   become: true
@@ -116,3 +113,9 @@
   ansible.builtin.systemd:
     masked: true
     name: hibernate.target
+
+- name: Changing shell to zsh
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

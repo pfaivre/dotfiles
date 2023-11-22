@@ -1,0 +1,32 @@
+- name: ansible-main
+  hosts: localhost
+  become: no
+  vars:
+    # The presence of the XDG_SESSION_DESKTOP env var seems to be the strongest way to determine if we are in a GUI
+    is_desktop: "{{ True if lookup('ansible.builtin.env', 'XDG_SESSION_DESKTOP') else False }}"
+
+  tasks:
+    - name: Show the environment
+      debug:
+        msg:
+          - "is desktop: {{ is_desktop }}"
+
+    - name: Fedora CLI
+      include_role:
+        name: fedora-cli
+      when: ansible_facts['distribution'] == "Fedora" and not is_desktop
+
+    - name: Fedora desktop
+      include_role:
+        name: fedora-desktop
+      when: ansible_facts['distribution'] == "Fedora" and is_desktop
+
+    - name: Ubuntu CLI
+      include_role:
+        name: ubuntu-cli
+      when: ansible_facts['distribution'] == "Ubuntu" and not is_desktop
+
+    - name: Ubuntu desktop
+      include_role:
+        name: ubuntu-desktop
+      when: ansible_facts['distribution'] == "Ubuntu" and is_desktop

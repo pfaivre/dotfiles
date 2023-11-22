@@ -24,7 +24,7 @@ A handy script to compress a bunch of JPEG files at once.
 Start by forking/cloning this repo.
 
 There is 2 things to edit to make this yours:
-* Put your dot files and folders in the "home" folder
+* Put your dot files and folders in the "[ansible/roles/common-linux/files/home](ansible/roles/common-linux/files/home)" folder
 * Define the desired configurations in the ansible playbooks
 
 Then, just execute the script:
@@ -37,5 +37,9 @@ Then, just execute the script:
 The install.sh script will start by installing Ansible.
 
 Then it will run the main playbook to:
-- apply a set of configurations
-- recursively loop into the local "home" folder. For each file found, a link will be created in the `$HOME` directory, keeping its subdirectory structure.
+- apply a set of configurations depending on the platform
+- recursively loop into the "ansible/roles/common-linux/files/home" folder. For each file found, a link will be created in the `$HOME` directory, keeping its subdirectory structure.
+
+> **But why a link???**
+
+Putting a link for configuration files instead of copying them, allows to re-run the dotfiles installer without erasing the locally modified configurations.
