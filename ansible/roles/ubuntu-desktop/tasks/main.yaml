@@ -1,2 +1,11 @@
 # This role defines tasks specific to Ubuntu (desktop environment)
 
+- name: Installing packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - audacious
+      - gimp
+      - inkscape
+      - vlc
+    state: present

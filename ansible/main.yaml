@@ -10,6 +10,7 @@
       debug:
         msg:
           - "is desktop: {{ is_desktop }}"
+          - "user: {{ ansible_user_id }}"
 
     - name: Fedora CLI
       include_role:
