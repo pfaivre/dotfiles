@@ -23,10 +23,12 @@
       - cmatrix
       - git
       - htop
+      - lm_sensors
       - lolcat
       - most
       - ncdu
       - neofetch
+      - p7zip
       - pv
       - pwgen
       - ranger
@@ -48,6 +50,7 @@
       - elisa-player
       - espeak-ng
       - gdouros-*
+      - gnome-tour
       - google-noto-cjk-fonts
       - google-noto-cjk-fonts-common
       - google-noto-naskh
@@ -106,6 +109,22 @@
     enabled: false
     state: stopped
     name: dnf-makecache.timer
+
+# Disable qemu-guest-agent service
+- name: Disabling service (qemu-guest-agent.service)
+  become: yes
+  ansible.builtin.systemd:
+    enabled: false
+    state: stopped
+    name: qemu-guest-agent.service
+
+# Disable flatpak-add-fedora-repos service
+- name: Disabling service (flatpak-add-fedora-repos.service)
+  become: yes
+  ansible.builtin.systemd:
+    enabled: false
+    state: stopped
+    name: flatpak-add-fedora-repos.service
 
 # Disable hibernation
 - name: Masking service (hibernate.target)
