@@ -6,8 +6,6 @@
     name:
       - btop
       - cmatrix
-      - fonts-cantarell
-      - fonts-crosextra-carlito
       - git
       - htop
       - lolcat
@@ -21,7 +19,6 @@
       - sloccount
       - tmux
       - toilet
-      - ttf-mscorefonts-installer
       - vim
       - zsh
     state: present

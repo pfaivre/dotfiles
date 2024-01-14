@@ -8,6 +8,7 @@
       - audacious
       - eog
       - gimp
+      - heif-pixbuf-loader
       - inkscape
       - libreoffice-langpack-fr
       - simple-scan

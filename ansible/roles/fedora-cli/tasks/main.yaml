@@ -53,22 +53,46 @@
       - gnome-tour
       - google-noto-cjk-fonts
       - google-noto-cjk-fonts-common
-      - google-noto-naskh
       - google-noto-naskh*
       - google-noto-sans-arabic*
       - google-noto-sans-armenian*
-      - google-noto-sans-canadian
+      - google-noto-sans-bengali*
       - google-noto-sans-canadian*
       - google-noto-sans-cherokee*
       - google-noto-sans-cjk*
+      - google-noto-sans-devanagari*
       - google-noto-sans-ethiopic*
       - google-noto-sans-georgian*
+      - google-noto-sans-gujarati*
       - google-noto-sans-gurmukhi*
       - google-noto-sans-hebrew*
+      - google-noto-sans-kannada*
+      - google-noto-sans-khmer*
       - google-noto-sans-lao*
+      - google-noto-sans-mono-cjk*
       - google-noto-sans-mono-vf-fonts*
+      - google-noto-sans-oriya*
       - google-noto-sans-sinhala*
+      - google-noto-sans-tamil*
+      - google-noto-sans-telugu*
       - google-noto-sans-thaana*
+      - google-noto-sans-thai*
+      - google-noto-serif-armenian*
+      - google-noto-serif-bengali*
+      - google-noto-serif-cjk*
+      - google-noto-serif-devanagari*
+      - google-noto-serif-georgian*
+      - google-noto-serif-gujarati*
+      - google-noto-serif-gurmukhi*
+      - google-noto-serif-hebrew*
+      - google-noto-serif-kannada*
+      - google-noto-serif-khmer*
+      - google-noto-serif-lao*
+      - google-noto-serif-oriya*
+      - google-noto-serif-sinhala*
+      - google-noto-serif-tamil*
+      - google-noto-serif-telugu*
+      - google-noto-serif-thai*
       - google-noto-serif-vf-fonts*
       - jomolhari-fonts
       - kaddressbook

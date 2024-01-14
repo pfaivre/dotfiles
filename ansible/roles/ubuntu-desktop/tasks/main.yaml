@@ -5,7 +5,10 @@
   ansible.builtin.apt:
     name:
       - audacious
+      - fonts-cantarell
+      - fonts-crosextra-carlito
       - gimp
       - inkscape
+      - ttf-mscorefonts-installer
       - vlc
     state: present
