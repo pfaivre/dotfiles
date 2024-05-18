@@ -1,6 +1,6 @@
 - name: ansible-main
   hosts: localhost
-  become: no
+  become: false
   vars:
     # The presence of the XDG_SESSION_DESKTOP env var seems to be the strongest way to determine if we are in a GUI
     is_desktop: "{{ True if lookup('ansible.builtin.env', 'XDG_SESSION_DESKTOP') else False }}"

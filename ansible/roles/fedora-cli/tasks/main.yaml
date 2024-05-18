@@ -123,10 +123,11 @@
       - sil-*-fonts
       - thai-*-fonts
       - vazirmatn-*-fonts
+      - xwaylandvideobridge
 
 # Disable automatic dnf cache refresher
 - name: Disabling service (dnf-makecache.timer)
-  become: yes
+  become: true
   ansible.builtin.systemd:
     enabled: false
     state: stopped
@@ -134,7 +135,7 @@
 
 # Disable qemu-guest-agent service
 - name: Disabling service (qemu-guest-agent.service)
-  become: yes
+  become: true
   ansible.builtin.systemd:
     enabled: false
     state: stopped
@@ -142,7 +143,7 @@
 
 # Disable flatpak-add-fedora-repos service
 - name: Disabling service (flatpak-add-fedora-repos.service)
-  become: yes
+  become: true
   ansible.builtin.systemd:
     enabled: false
     state: stopped
@@ -150,13 +151,13 @@
 
 # Disable hibernation
 - name: Masking service (hibernate.target)
-  become: yes
+  become: true
   ansible.builtin.systemd:
     masked: true
     name: hibernate.target
 
 - name: Changing shell to zsh
-  become: yes
+  become: true
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh

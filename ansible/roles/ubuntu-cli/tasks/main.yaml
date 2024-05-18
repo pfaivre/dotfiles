@@ -71,7 +71,7 @@
     state: absent
 
 - name: Changing shell to zsh
-  become: yes
+  become: true
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
