@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "pfaivre"
+            }
+        ],
+        "Id": "pokemon_or_argent_fr",
+        "License": "CC-BY-SA-4.0",
+        "Name": "Pokémon Version Or et Argent"
+    }
+}

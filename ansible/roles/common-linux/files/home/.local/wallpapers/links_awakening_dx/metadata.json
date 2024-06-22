@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "pfaivre"
+            }
+        ],
+        "Id": "links_awakening_dx",
+        "License": "CC-BY-SA-4.0",
+        "Name": "Link's Awakening DX"
+    }
+}

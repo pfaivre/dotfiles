@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Apple Inc."
+            }
+        ],
+        "Id": "apple_macos_mojave",
+        "License": "",
+        "Name": "Apple macOS Mojave"
+    }
+}
