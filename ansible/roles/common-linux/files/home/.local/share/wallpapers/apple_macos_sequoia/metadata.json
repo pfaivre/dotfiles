@@ -1,0 +1,14 @@
+{
+    "KPlugin":
+    {
+        "Authors":
+        [
+            {
+                "Name": "Apple Inc."
+            }
+        ],
+        "Id": "apple_macos_sequoia",
+        "License": "",
+        "Name": "Apple macOS Sequoia"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "KPlugin":
+    {
+        "Authors":
+        [
+            {
+                "Name": "Apple Inc."
+            }
+        ],
+        "Id": "apple_macos_macintosh_macwrite",
+        "License": "",
+        "Name": "Apple macOS Macintosh (MacWrite)"
+    }
+}

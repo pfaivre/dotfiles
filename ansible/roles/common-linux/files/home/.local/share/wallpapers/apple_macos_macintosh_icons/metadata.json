@@ -1,0 +1,14 @@
+{
+    "KPlugin":
+    {
+        "Authors":
+        [
+            {
+                "Name": "Apple Inc., Susan Kare"
+            }
+        ],
+        "Id": "apple_macos_macintosh_icons",
+        "License": "",
+        "Name": "Apple macOS Macintosh (Icons)"
+    }
+}

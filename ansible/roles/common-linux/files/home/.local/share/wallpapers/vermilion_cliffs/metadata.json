@@ -1,0 +1,14 @@
+{
+    "KPlugin":
+    {
+        "Authors":
+        [
+            {
+                "Name": "Apple Inc."
+            }
+        ],
+        "Id": "vermilion_cliffs",
+        "License": "",
+        "Name": "Vermillion Cliffs"
+    }
+}
