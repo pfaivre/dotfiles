@@ -48,18 +48,15 @@
       - akonadi
       - akregator
       - elisa-player
-      - espeak-ng
       - gdouros-*
       - gnome-tour
-      - google-noto-cjk-fonts
-      - google-noto-cjk-fonts-common
+      - google-noto-*-cjk-*
       - google-noto-naskh*
       - google-noto-sans-arabic*
       - google-noto-sans-armenian*
       - google-noto-sans-bengali*
       - google-noto-sans-canadian*
       - google-noto-sans-cherokee*
-      - google-noto-sans-cjk*
       - google-noto-sans-devanagari*
       - google-noto-sans-ethiopic*
       - google-noto-sans-georgian*
@@ -78,7 +75,6 @@
       - google-noto-sans-thai*
       - google-noto-serif-armenian*
       - google-noto-serif-bengali*
-      - google-noto-serif-cjk*
       - google-noto-serif-devanagari*
       - google-noto-serif-georgian*
       - google-noto-serif-gujarati*
@@ -98,7 +94,7 @@
       - kf5-akonadi-contacts
       - kf5-akonadi-server
       - kf5-akonadi-server-mysql
-      - kf5-kontacts
+      # - kf5-kontacts
       - khmer-os*
       - kio-gdrive
       - kmahjongg
@@ -110,7 +106,7 @@
       - kontact
       - konversation
       - korganizer
-      - kpatience
+      # - kpatience
       - krdc
       - krfb
       - lohit-*
@@ -125,13 +121,13 @@
       - vazirmatn-*-fonts
       - xwaylandvideobridge
 
-# Disable automatic dnf cache refresher
-- name: Disabling service (dnf-makecache.timer)
-  become: true
-  ansible.builtin.systemd:
-    enabled: false
-    state: stopped
-    name: dnf-makecache.timer
+# # Disable automatic dnf cache refresher
+# - name: Disabling service (dnf-makecache.timer)
+#   become: true
+#   ansible.builtin.systemd:
+#     enabled: false
+#     state: stopped
+#     name: dnf-makecache.timer
 
 # Disable qemu-guest-agent service
 - name: Disabling service (qemu-guest-agent.service)
