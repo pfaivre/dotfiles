@@ -69,7 +69,7 @@ source $ZSH/oh-my-zsh.sh
 # [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Base16 Shell Theme
-source $HOME/.config/base16-shell/scripts/base16-dracula.sh
+# source $HOME/.config/base16-shell/scripts/base16-dracula.sh
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -84,6 +84,6 @@ export COLUMNS
 
 alias gitlog="git log --pretty='%h %s' --graph"
 
-alias pwgen="pwgen -c -n -y 16"
+alias pwgen="pwgen -c -n -y -s 16"
 
 alias u="sudo dnf update; flatpak update -y"

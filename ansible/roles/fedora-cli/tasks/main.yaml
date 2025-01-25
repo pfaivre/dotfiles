@@ -27,8 +27,8 @@
       - lolcat
       - most
       - ncdu
-      - neofetch
-      - p7zip
+      # - neofetch  # Abandonned
+      # - p7zip  # Dangerously outdated, do not install
       - pv
       - pwgen
       - ranger
@@ -44,12 +44,13 @@
   ansible.builtin.dnf:
     state: absent
     name:
+      # Various stuff I don't use
+      - NetworkManager-config-connectivity-fedora
+      - xwaylandvideobridge
+
+      # Fonts I can't read anyway
       - aajohan*
-      - akonadi
-      - akregator
-      - elisa-player
       - gdouros-*
-      - gnome-tour
       - google-noto-*-cjk-*
       - google-noto-naskh*
       - google-noto-sans-arabic*
@@ -89,37 +90,44 @@
       - google-noto-serif-telugu*
       - google-noto-serif-thai*
       - jomolhari-fonts
-      - kaddressbook
-      - kde-connect
-      - kf5-akonadi-contacts
-      - kf5-akonadi-server
-      - kf5-akonadi-server-mysql
-      # - kf5-kontacts
       - khmer-os*
-      - kio-gdrive
-      - kmahjongg
-      - kmail
-      - kmail-account-wizard
-      - kmines
-      - kmouth
-      - kolourpaint
-      - kontact
-      - konversation
-      - korganizer
-      # - kpatience
-      - krdc
-      - krfb
       - lohit-*
-      - NetworkManager-config-connectivity-fedora
       - paktype-*-fonts
       - pim-sieve-editor
-      - plasma-welcome
-      - qt5-qdbusviewer
       - rit-*-fonts
       - sil-*-fonts
       - thai-*-fonts
       - vazirmatn-*-fonts
-      - xwaylandvideobridge
+
+      # Gnome stuff
+      - gnome-tour
+
+      # KDE stuff
+      # - akonadi
+      # - akregator
+      # - elisa-player
+      # - kaddressbook
+      # - kde-connect
+      # - kf5-akonadi-contacts
+      # - kf5-akonadi-server
+      # - kf5-akonadi-server-mysql
+      # - kf5-kontacts
+      # - kio-gdrive
+      # - kmahjongg
+      # - kmail
+      # - kmail-account-wizard
+      # - kmines
+      # - kmouth
+      # - kolourpaint
+      # - kontact
+      # - konversation
+      # - korganizer
+      # - kpatience
+      # - krdc
+      # - krfb
+      # - plasma-welcome
+      # - qt5-qdbusviewer
+
 
 # # Disable automatic dnf cache refresher
 # - name: Disabling service (dnf-makecache.timer)

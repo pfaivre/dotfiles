@@ -5,11 +5,13 @@
   ansible.builtin.dnf:
     state: latest
     name:
-      - audacious
-      - eog
+      # - audacious
+      # - eog
+      - ffmpeg
       - gimp
       - heif-pixbuf-loader
       - inkscape
+      - libheif-freeworld
       - libreoffice-langpack-fr
-      - simple-scan
+      # - simple-scan
       - vlc
