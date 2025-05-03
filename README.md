@@ -8,16 +8,21 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 
 ## Featuring
 
-### jpeg-compressor.sh
-A handy script to compress a bunch of JPEG files at once.
+### Hyprland desktop configuration with an Everforest theme
+
 <p align="center">
-  <img src="docs/jpeg-compressor_screenshot.png" alt="jpeg-compressor screenshot">
+  <img src="docs/desktop-screenshot.jpg" alt="Hyprland desktop with Everforest dark theme" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
 </p>
 
-### tmux theme
-<p align="center">
-  <img src="docs/tmux_screenshot.png" alt="A swaggy tmux">
-</p>
+- Window manager: [Hyprland](https://github.com/hyprwm/Hyprland)
+- Top bar: [Waybar](https://github.com/Alexays/Waybar)
+- App launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
+- Terminal: [Alacritty](https://github.com/alacritty/alacritty)
+- Notification deamon: [Dunst](https://github.com/dunst-project/dunst)
+
+#### Credits
+
+[summer-day-and-night](https://github.com/MathisP75/summer-day-and-night) by [@MathisP75](https://github.com/MathisP75)
 
 ## How to use it
 
@@ -39,7 +44,5 @@ The install.sh script will start by installing Ansible.
 Then it will run the main playbook to:
 - apply a set of configurations depending on the platform
 - recursively loop into the "ansible/roles/common-linux/files/home" folder. For each file found, a link will be created in the `$HOME` directory, keeping its subdirectory structure.
-
-> **But why a link???**
 
 Putting a link for configuration files instead of copying them, allows to re-run the dotfiles installer without erasing the locally modified configurations.

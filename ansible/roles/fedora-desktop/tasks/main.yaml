@@ -13,5 +13,33 @@
       - inkscape
       - libheif-freeworld
       - libreoffice-langpack-fr
-      # - simple-scan
       - vlc
+
+      # Hyprland desktop
+      - dunst
+      - fontawesome-fonts-all
+      - hypridle
+      - hyprland
+      - hyprlock
+      - hyprpaper
+      - hyprpicker
+      - hyprpolkitagent
+      - alacritty
+      - libnotify
+      - network-manager-applet
+      - nwg-dock-hyprland
+      - pavucontrol
+      - qt5-qtwayland
+      - qt6-qtwayland
+      - qt5ct
+      - qt6ct
+      - rofi
+      - waybar
+      - waypaper
+      - wlogout
+      - xdg-desktop-portal-hyprland
+      - hyprsunset
+      - sassc
+      - gtk-murrine-engine
+      - gnome-themes-extra
+      - hyprshot

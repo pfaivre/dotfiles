@@ -1,0 +1,46 @@
+// -*- mode: jsonc -*-
+{
+    "margin-top": 0,
+    "margin-left": 120,
+    "margin-bottom": 0,
+    "margin-right": 120,
+    "height": 60,
+    "layer": "top",
+    "position": "top",
+    "spacing": 15,
+
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+
+    "modules-left": [
+        "custom/launcher",
+        "clock",
+        "clock#date"
+        // "wlr/taskbar",
+        // "hyprland/window"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "mpd",
+        // "idle_inhibitor",
+        "pulseaudio",
+        // "tray",
+        // "network",
+        // "power-profiles-daemon",
+        // "cpu",
+        // "memory",
+        // "temperature",
+        "backlight",
+        "keyboard-state",
+        // "hyprland/language",
+        // "battery",
+        // "battery#bat2",
+        "group/trayicons",
+        "custom/powermenu"
+    ]
+}

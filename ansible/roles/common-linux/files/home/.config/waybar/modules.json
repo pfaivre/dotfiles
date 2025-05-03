@@ -1,0 +1,328 @@
+{
+    // Workspaces
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 3
+        }
+    },
+
+    // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "Alacritty",
+            "kitty"
+        ],
+        "app_ids-mapping": {
+            // "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+
+    // Hyprland Window
+    "hyprland/window": {
+        "max-length": 60,
+        "rewrite": {
+            "(.*) - Chromium": "$1"
+        },
+        "separate-outputs": true
+    },
+
+    // Empty
+    "custom/empty": {
+        "format": ""
+    },
+
+    // Wofi Application Launcher
+    "custom/launcher": {
+        // START APPS LABEL
+        "format": "Apps",
+        // END APPS LABEL
+        "on-click": "pkill wofi; wofi --style ~/.config/wofi/themes/everforest.css",
+        // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+    },
+
+    "custom/powermenu": {
+        "format": "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/menus/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "suspend": "systemctl suspend",
+            "lock": "hyprlock",
+            "shutdown": "systemctl poweroff -i",
+            "reboot": "reboot"
+        }
+    },
+
+    // Hyprshade
+    "custom/hyprshade": {
+        "format": "",
+        "tooltip-format": "Toggle Screen Shader",
+        "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+        "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+    },
+
+    // Keyboard State
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    // Idle inhibitor
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    // System tray
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+        "format": " {:%A %d %B %Y}",
+        "tooltip-format": "<span color='#d3c6aa'><tt><small>{calendar}</small></tt></span>",
+        "calendar": {
+            "mode-mon-col"      : 4,
+            "weeks-pos"         : "left",
+            "on-scroll"         : 1,
+            "on-click-left"    : "mode",
+            "format": {
+                "months":   "<span color='#56635F'><b>{}</b></span>",
+                "weeks":    "<span color='#56635F'><b>{}</b></span>",
+                "weekdays": "<span color='#56635F'><b>{}</b></span>",
+                "today":    "<span color='#232A2E' background='#E69875'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right"    : "mode",
+            "on-scroll-up"      : "shift_up",
+            "on-scroll-down"    : "shift_down"
+        },
+        "tooltip": true
+    },
+
+    // CPU
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "{}% "
+    },
+
+    // Harddisc space used
+    "disk": {
+        "interval": 30,
+        "format": "D {percentage_used}% ",
+        "path": "/"
+    },
+
+    "hyprland/language": {
+        "format": "/ K {short}"
+    },
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "disk",
+            "cpu",
+            "memory",
+            "hyprland/language"
+        ]
+    },
+
+    // Group Tools
+    "group/tools": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/tools",
+            "custom/cliphist",
+            "custom/hypridle",
+            "custom/hyprshade"
+        ]
+    },
+
+    // Group Settings
+    "group/settings": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/settings",
+            "custom/waybarthemes",
+            "custom/wallpaper"
+        ]
+    },
+
+    // Battery
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    // Power Profiles Daemon
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    // Pulseaudio
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": " muet",
+        "format-muted": " muet",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click-right": "pavucontrol",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
+    },
+
+    // Other
+    "user": {
+        "format": "{user}",
+        "interval": 60,
+        "icon": false
+    },
+
+    // backlight:
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "group/trayicons": {
+        "orientation": "inherit",
+        // "drawer": {
+        //     "transition-duration": 300,
+        //     "children-class": "not-memory",
+        //     "transition-left-to-right": true
+        // },
+        "modules": [
+            // "pulseaudio",
+            "tray",
+            "power-profiles-daemon",
+            "battery"
+        ]
+    }
+}

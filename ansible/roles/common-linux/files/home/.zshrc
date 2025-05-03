@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 #export LC_ALL=fr_FR.UTF-8
 
 # use 256 color terminal
-#export TERM=xterm-256color
+# export TERM=xterm-256color
 
 # # https://github.com/chriskempson/base16-shell
 # BASE16_SHELL=$HOME/.config/base16-shell/
@@ -87,3 +87,7 @@ alias gitlog="git log --pretty='%h %s' --graph"
 alias pwgen="pwgen -c -n -y -s 16"
 
 alias u="sudo dnf update; flatpak update -y"
+
+alias fastfetch="fastfetch --config ~/.config/fastfetch/config.jsonc"
+
+alias cls="clear"

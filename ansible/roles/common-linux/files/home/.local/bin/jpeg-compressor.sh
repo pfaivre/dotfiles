@@ -69,7 +69,7 @@ for source_path in $input_files; do
     destination_path="c_${source_path%.*}.jpg" # Impose jpg extension to tell convert JPEG is the target format
 
     if [[ $source_quality -ge $target_quality ]]; then
-        convert -quality $target_quality "$source_path" "$destination_path"
+        magick -quality $target_quality "$source_path" "$destination_path"
     else
         cp "$source_path" "$destination_path"
     fi

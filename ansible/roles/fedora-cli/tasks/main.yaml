@@ -138,12 +138,12 @@
 #     name: dnf-makecache.timer
 
 # Disable qemu-guest-agent service
-- name: Disabling service (qemu-guest-agent.service)
-  become: true
-  ansible.builtin.systemd:
-    enabled: false
-    state: stopped
-    name: qemu-guest-agent.service
+# - name: Disabling service (qemu-guest-agent.service)
+#   become: true
+#   ansible.builtin.systemd:
+#     enabled: false
+#     state: stopped
+#     name: qemu-guest-agent.service
 
 # Disable flatpak-add-fedora-repos service
 - name: Disabling service (flatpak-add-fedora-repos.service)
