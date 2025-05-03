@@ -56,7 +56,7 @@
         // START APPS LABEL
         "format": "Apps",
         // END APPS LABEL
-        "on-click": "pkill wofi; wofi --style ~/.config/wofi/themes/everforest.css",
+        "on-click": "pkill wofi; wofi --style ~/.config/wofi/themes/everforest/style.css",
         // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
     },

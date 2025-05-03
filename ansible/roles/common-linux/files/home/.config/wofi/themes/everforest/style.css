@@ -5,6 +5,7 @@
     font-size: 17px;
     border-radius: 10px;
     border: none;
+    color: @bg0;
 }
 
 window {
@@ -54,11 +55,12 @@ window {
 #text {
     margin-left: 15px;
     margin-right: 15px;
+    color: @bg0;
 }
 
 #entry {
     border: none;
-    padding: 4px;
+    padding: 2px;
     margin: 0px;
 }
 
@@ -71,3 +73,6 @@ window {
     border-bottom-style: solid;
 }
 
+#entry:selected #text {
+    color: @fg;
+}

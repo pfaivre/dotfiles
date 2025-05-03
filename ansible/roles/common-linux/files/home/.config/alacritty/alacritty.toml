@@ -1,27 +1,19 @@
 [general]
-
 import = [
     "./themes/everforest.toml"
 ]
 
-
 [window]
-
 opacity = 1
-
 padding.x = 4
 padding.y = 4
-
 decorations = "Full"
 decorations_theme_variant = "Dark"
 
-
 [font]
-
 normal.family = "Liberation Mono"
 bold.family = "Liberation Mono"
 italic.family = "Liberation Mono"
 bold_italic.family = "Liberation Mono"
-
 size = 10.0
 
