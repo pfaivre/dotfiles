@@ -1,6 +1,6 @@
 [general]
 import = [
-    "./themes/everforest.toml"
+    "~/.config/mydesktop/current-theme/alacritty/colors.toml"
 ]
 
 [window]

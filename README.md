@@ -18,7 +18,12 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 - Top bar: [Waybar](https://github.com/Alexays/Waybar)
 - App launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
 - Terminal: [Alacritty](https://github.com/alacritty/alacritty)
-- Notification deamon: [Dunst](https://github.com/dunst-project/dunst)
+- Notification deamon: [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
+
+### Automated theme switcher
+
+All theme files (css, config, etc.) are gathered in a single folder that is dynamically selected via a symbolic link.
+This allows to easily change theme and apply it immediately.
 
 #### Credits
 

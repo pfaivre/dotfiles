@@ -1,5 +1,13 @@
 # This role defines tasks specific to Fedora (desktop environment)
 
+# Disabled for now because it requires to install ansible package, which is quite big
+# - name: Enabling community repository solopasha/hyprland
+#   become: true
+#   community.general.copr:
+#     host: copr.fedorainfracloud.org
+#     state: enabled
+#     name: solopasha/hyprland
+
 - name: Installing packages
   become: true
   ansible.builtin.dnf:
@@ -16,7 +24,6 @@
       - vlc
 
       # Hyprland desktop
-      - dunst
       - fontawesome-fonts-all
       - hypridle
       - hyprland
@@ -27,15 +34,12 @@
       - alacritty
       - libnotify
       - network-manager-applet
-      - nwg-dock-hyprland
       - pavucontrol
       - qt5-qtwayland
       - qt6-qtwayland
       - qt5ct
       - qt6ct
-      - rofi
       - waybar
-      - waypaper
       - wlogout
       - xdg-desktop-portal-hyprland
       - hyprsunset
@@ -43,3 +47,5 @@
       - gtk-murrine-engine
       - gnome-themes-extra
       - hyprshot
+      - SwayNotificationCenter
+      - hyprland-plugin-hyprexpo

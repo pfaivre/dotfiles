@@ -28,6 +28,7 @@
     "modules-right": [
         "mpd",
         // "idle_inhibitor",
+        "custom/notificationcenter",
         "pulseaudio",
         // "tray",
         // "network",

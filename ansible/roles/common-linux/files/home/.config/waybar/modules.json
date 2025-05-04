@@ -56,9 +56,15 @@
         // START APPS LABEL
         "format": "Apps",
         // END APPS LABEL
-        "on-click": "pkill wofi; wofi --style ~/.config/wofi/themes/everforest/style.css",
+        "on-click": "pkill wofi; wofi --style ~/.config/mydesktop/current-theme/wofi/style.css",
         // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+    },
+
+    "custom/notificationcenter": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "swaync-client -t"
     },
 
     "custom/powermenu": {
@@ -129,7 +135,7 @@
             }
         },
         "actions": {
-            "on-click-right"    : "mode",
+            "on-click"    : "mode",
             "on-scroll-up"      : "shift_up",
             "on-scroll-down"    : "shift_down"
         },
