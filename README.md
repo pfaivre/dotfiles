@@ -8,7 +8,7 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 
 ## Featuring
 
-### Hyprland desktop configuration with an Everforest theme
+### Hyprland desktop configuration with an Everforest inspired theme
 
 <p align="center">
   <img src="docs/desktop-screenshot.jpg" alt="Hyprland desktop with Everforest dark theme" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
@@ -19,15 +19,30 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 - App launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
 - Terminal: [Alacritty](https://github.com/alacritty/alacritty)
 - Notification deamon: [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- Logout menu: [wlogout](https://github.com/ArtsyMacaw/wlogout/)
 
 ### Automated theme switcher
 
 All theme files (css, config, etc.) are gathered in a single folder that is dynamically selected via a symbolic link.
 This allows to easily change theme and apply it immediately.
 
+```
+~/.config/mydesktop
+├── current-theme -> ~/.config/mydesktop/themes/everforest-light
+└── themes
+    ├── everforest
+    ├── everforest-light
+    └── ...
+```
+
+The script [theme-switcher.sh](ansible/roles/common-linux/files/home/.config/wofi/scripts/theme-switcher.sh) Opens a
+Wofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current-theme accordingly.
+
 #### Credits
 
 [summer-day-and-night](https://github.com/MathisP75/summer-day-and-night) by [@MathisP75](https://github.com/MathisP75)
+
+[everforest](https://github.com/sainnhe/everforest) by [@sainnhe](https://github.com/sainnhe)
 
 ## How to use it
 

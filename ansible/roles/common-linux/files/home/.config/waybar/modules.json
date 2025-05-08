@@ -70,14 +70,7 @@
     "custom/powermenu": {
         "format": "⏻",
         "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/menus/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-            "suspend": "systemctl suspend",
-            "lock": "hyprlock",
-            "shutdown": "systemctl poweroff -i",
-            "reboot": "reboot"
-        }
+        "on-click": "wlogout --css ~/.config/mydesktop/current-theme/wlogout/style.css -b 4"
     },
 
     // Hyprshade

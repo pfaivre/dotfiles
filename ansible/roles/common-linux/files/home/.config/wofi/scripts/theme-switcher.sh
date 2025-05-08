@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Work in progress.
-# This will be a theme selector
-
 entries="Everforest\nEverforest-Light"
 
 selected=$(echo -e $entries|wofi --dmenu $2 --style .config/mydesktop/current-theme/wofi/style.css --hide-scroll --cache-file /dev/null)

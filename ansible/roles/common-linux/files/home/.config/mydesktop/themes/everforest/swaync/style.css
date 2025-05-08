@@ -1,18 +1,18 @@
-/* Swaync theme for Everforest */
+/* Everforest Light theme for Swaync */
 
-@define-color cc-bg #d3c6aa;
-@define-color noti-border-color #d3c6aa;
-@define-color noti-bg #2d353b;
-@define-color noti-bg-opaque #2d353b;
-@define-color noti-bg-darker #56635f;
-@define-color noti-bg-hover #475258;
-@define-color noti-bg-hover-opaque #475258;
-@define-color noti-bg-focus #475258;
-@define-color noti-close-bg #475258;
-@define-color noti-close-bg-hover #56635f;
-@define-color text-color #d3c6aa;
-@define-color cc-text-color #2d353b;
-@define-color text-color-disabled #56635f;
+@define-color cc-bg #2d353b;
+@define-color noti-border-color #2d353b;
+@define-color noti-bg #d3c6aa;
+@define-color noti-bg-opaque #d3c6aa;
+@define-color noti-bg-darker lime;
+@define-color noti-bg-hover #e6e2cc;
+@define-color noti-bg-hover-opaque #e6e2cc;
+@define-color noti-bg-focus #e6e2cc;
+@define-color noti-close-bg #e6e2cc;
+@define-color noti-close-bg-hover #bdc3af;
+@define-color text-color #2d353b;
+@define-color cc-text-color #d3c6aa;
+@define-color text-color-disabled #bdc3af;
 @define-color bg-selected #a7c080;
 
 .notification-row {
@@ -271,11 +271,10 @@
   margin: 16px;
   background: @cc-bg;
   color: @cc-text-color;
+  border-color: #161a1d;
   border-radius: 15px;
-  border-bottom: 5px solid #7d6a40;
-  border-left: 0 solid #7d6a40;
-  border-right: 0 solid #7d6a40;
-  /* box-shadow: 0 8px 14px #7d6a40; */
+  border-width: 0 0 5px 0;
+  box-shadow: 0 8px 14px #161a1d;
 }
 
 .control-center .control-center-list-placeholder {
@@ -291,10 +290,8 @@
 .control-center .control-center-list .notification {
   box-shadow: none; /* Shadows here slow down the animations significantly */
 
-  border-bottom: 5px solid #161a1d;
-  border-top: 0 solid #161a1d;
-  border-left: 0 solid #161a1d;
-  border-right: 0 solid #161a1d;
+  border-color: #7d6a40;
+  border-width: 0 0 5px 0;
 }
 
 .control-center .control-center-list .notification .notification-default-action,
@@ -334,9 +331,8 @@
   text-shadow: none;
   background: @noti-bg;
   /* border: 3px solid @noti-border-color; */
-  border-bottom: 5px solid #161a1d;
-  border-left: 0 solid #161a1d;
-  border-right: 0 solid #161a1d;
+  border-color: #7d6a40;
+  border-width: 0 0 5px 0;
   box-shadow: none;
   border-radius: 10px;
 }

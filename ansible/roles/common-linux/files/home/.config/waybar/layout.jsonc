@@ -1,0 +1,34 @@
+// -*- mode: jsonc -*-
+{
+    "modules-left": [
+        "custom/launcher",
+        "clock",
+        "clock#date"
+        // "wlr/taskbar",
+        // "hyprland/window"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "mpd",
+        // "idle_inhibitor",
+        "custom/notificationcenter",
+        "pulseaudio",
+        // "tray",
+        // "network",
+        // "power-profiles-daemon",
+        // "cpu",
+        // "memory",
+        // "temperature",
+        "backlight",
+        "keyboard-state",
+        // "hyprland/language",
+        // "battery",
+        // "battery#bat2",
+        "group/trayicons",
+        "custom/powermenu"
+    ]
+}
