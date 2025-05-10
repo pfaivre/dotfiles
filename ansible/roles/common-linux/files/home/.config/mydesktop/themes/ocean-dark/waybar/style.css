@@ -1,39 +1,34 @@
-/* Everforest Light style for Waybar */
+/* Base16-ocean inspired style for Waybar */
 
 @import "./colors.css";
 
 * {
   font-family: Liberation Mono, FontAwesome;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 tooltip {
   padding: 8px;
-  border-radius: 15px;
   background-color: @bg0;
-  border: 3px solid @fg;
+  border: 1px solid @fg;
+  border-radius: 0;
 }
 
 window#waybar {
-  background-color: @fg;
+  background-color: transparent;
   color: @bg0;
   transition-property: background-color;
   transition-duration: .5s;
-  border-radius: 0px 0px 15px 15px;
-
-  border-bottom-width: 5px;
-  border-bottom-color: #2e3538;
-  border-bottom-style: solid;
+  border-radius: 0;
 }
 
 #tray {
   color: @fg;
-  margin-top: 2px;
-  margin-right: 4px;
 }
 
 #power-profiles-daemon {
+  padding-left: 4px;
   min-width: 24px;
 }
 
@@ -61,18 +56,24 @@ window#waybar {
   background-color: @bg0;
   color: @fg;
 
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 7px;
-  margin-bottom: 12px;
-	border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 0;
+}
 
-  border-bottom-width: 5px;
-  border-bottom-color: @bg5;
-  border-bottom-style: solid;
+#pulseaudio:hover,
+#custom-notificationcenter:hover,
+#trayicons:hover {
+  background-color: @bg3;
+}
+
+#custom-notificationcenter {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 #pulseaudio {
+  /* min-width: 54px; */
 }
 
 #pulseaudio.muted {
@@ -84,16 +85,16 @@ window#waybar {
 }
 
 #workspaces button {
+  padding: 0 14px;
   background: none;
   color: @fg;
   border-radius: 0;
-  margin-bottom: 0px;
-  border-width: 0 0 5px 0;
+  border-width: 0;
   transition: none;
 }
 
 #workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: @bg3;
   text-shadow: none;
 }
 
@@ -101,66 +102,39 @@ window#waybar {
   background-color: @blue;
   color: @bg0;
 
-	border-radius: 0;
-
-  margin-bottom: -5px;
-
-  border-bottom-width: 5px;
-  border-bottom-color: #1c4a62;
-  border-bottom-style: solid;
-  border-left-width: 0px;
-  border-left-color: #366660;
-  border-left-style: solid;
-  border-right-width: 0px;
-  border-right-color: #366660;
-  border-right-style: solid;
+  border-radius: 0;
 }
 
 #workspaces button:first-child {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 #workspaces button:last-child {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 #custom-launcher {
   background-color: @green;
   color: @bg0;
-  border-bottom-color: #465000;
 
-  margin-left: 15px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 #custom-launcher:hover {
-  /* background-color: @green; */
-  margin-top: 5px;
-  border-bottom-width: 7px;
+  background: #b4d6ac;
 }
 
 #custom-launcher:active {
   background-color: @red;
-  margin-top:12px;
-  border-bottom-width: 0;
 }
 
 #custom-powermenu {
   background-color: @red;
   color: @bg0;
-  border-bottom-color: #951c1f;
   font-size: 28px;
-
-  margin-right: 15px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 #custom-powermenu:hover {
-  margin-top: 5px;
-  border-bottom-width: 7px;
+  background-color: #d8848e;
 }
-

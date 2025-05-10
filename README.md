@@ -8,7 +8,7 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 
 ## Featuring
 
-### Hyprland desktop configuration with an Everforest inspired theme
+### Hyprland desktop configuration with a selection of themes
 
 <p align="center">
   <img src="docs/desktop-screenshot.jpg" alt="Hyprland desktop with Everforest dark theme" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
@@ -28,10 +28,11 @@ This allows to easily change theme and apply it immediately.
 
 ```
 ~/.config/mydesktop
-├── current-theme -> ~/.config/mydesktop/themes/everforest-light
-└── themes
-    ├── everforest
-    ├── everforest-light
+├── current-theme ---------------.
+└── themes                       |
+    ├── everforest               | symlink
+    ├── everforest-light         |
+    ├── ocean-dark <-------------'
     └── ...
 ```
 
@@ -40,9 +41,8 @@ Wofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current
 
 #### Credits
 
-[summer-day-and-night](https://github.com/MathisP75/summer-day-and-night) by [@MathisP75](https://github.com/MathisP75)
-
-[everforest](https://github.com/sainnhe/everforest) by [@sainnhe](https://github.com/sainnhe)
+- [summer-day-and-night](https://github.com/MathisP75/summer-day-and-night) by [@MathisP75](https://github.com/MathisP75)
+- [everforest](https://github.com/sainnhe/everforest) by [@sainnhe](https://github.com/sainnhe)
 
 ## How to use it
 

@@ -1,0 +1,28 @@
+# Colors (base16-ocean inspired)
+
+# Default colors
+[colors.primary]
+background = '#2b303b'
+foreground = '#eff1f5'
+
+# Normal colors
+[colors.normal]
+black   = '#14161b'
+red     = '#ce5564'
+green   = '#98c38c'
+yellow  = '#efcd86'
+blue    = '#8ca1b4'
+magenta = '#bd88ac'
+cyan    = '#8db7b5'
+white   = '#eff1f5'
+
+# Bright colors
+[colors.bright]
+black   = '#14161b'
+red     = '#cf6773'
+green   = '#a2c599'
+yellow  = '#f0d396'
+blue    = '#a0afbd'
+magenta = '#c29db6'
+cyan    = '#a0bbba'
+white   = '#f3f4f7'

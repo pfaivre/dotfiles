@@ -58,13 +58,28 @@
         // END APPS LABEL
         "on-click": "pkill wofi; wofi --style ~/.config/mydesktop/current-theme/wofi/style.css",
         // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-        "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+        "tooltip-format": "Left: Open the application launcher"
     },
 
     "custom/notificationcenter": {
-        "format": "",
         "tooltip": false,
-        "on-click": "swaync-client -t"
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
 
     "custom/powermenu": {
@@ -108,23 +123,25 @@
     },
 
     "clock": {
-        "format": " {:%H:%M}",
+        // "format": " {:%H:%M}",
+        "format": "{:%H:%M}",
         "tooltip": false
     },
 
     "clock#date": {
-        "format": " {:%A %d %B %Y}",
-        "tooltip-format": "<span color='#d3c6aa'><tt><small>{calendar}</small></tt></span>",
+        // "format": " {:%A %d %B %Y}",
+        "format": "{:%A %d %B %Y}",
+        "tooltip-format": "<span color='#eff1f5'><tt><small>{calendar}</small></tt></span>",
         "calendar": {
             "mode-mon-col"      : 4,
             "weeks-pos"         : "left",
             "on-scroll"         : 1,
             "on-click-left"    : "mode",
             "format": {
-                "months":   "<span color='#56635F'><b>{}</b></span>",
-                "weeks":    "<span color='#56635F'><b>{}</b></span>",
-                "weekdays": "<span color='#56635F'><b>{}</b></span>",
-                "today":    "<span color='#232A2E' background='#E69875'><b>{}</b></span>"
+                "months":   "<span color='#62737f'>{}</span>",
+                "weeks":    "<span color='#62737f'>{}</span>",
+                "weekdays": "<span color='#62737f'>{}</span>",
+                "today":    "<span color='#2b303b' background='#8db7b5'><b>{}</b></span>"
             }
         },
         "actions": {
@@ -245,10 +262,10 @@
 
     // Pulseaudio
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon}  {volume}%",
-        "format-bluetooth-muted": " muet",
-        "format-muted": " muet",
+        "format": "{icon}",
+        "format-bluetooth": "{icon} ",
+        "format-bluetooth-muted": "",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -260,7 +277,7 @@
         },
         "scroll-step": 5,
         "on-click-right": "pavucontrol",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click": "swaync-client -t -sw"
     },
 
     // Bluetooth

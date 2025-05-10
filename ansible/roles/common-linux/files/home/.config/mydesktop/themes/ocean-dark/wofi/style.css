@@ -1,53 +1,45 @@
-/* Everforest Light style for Wofi */
+/* Base16-ocean inspired style for Wofi */
 
 @import ".config/mydesktop/current-theme/wofi/colors.css";
 
 * {
     font-family: Liberation Sans, FontAwesome;
     font-size: 17px;
-    border-radius: 10px;
+    border-radius: 0;
     border: none;
+    color: @bg0;
 }
 
 window {
     margin: 0px;
-    background-color: @fg;
-    color: @bg0;
+    background-color: @bg0;
+    color: @fg;
 
-	border-radius: 15px;
-
-    border-bottom-width: 5px;
-    border-bottom-color: #2e3538;
-    border-bottom-style: solid;
-}
-
-#input > image.left {
-    /* -gtk-icon-transform:scaleX(0); */
+	border-radius: 0;
+    border: 4px solid @grey2;
 }
 
 #outer-box {
     margin: 0px;
     border-radius: 0px;
     padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 #input {
-    background-color: @green;
-    color: @bg0;
+    background-color: @bg2;
+    color: @grey2;
 
     margin: 15px;
-    padding: 10px;
-    border: none;
-
-    border-bottom-width: 5px;
-    border-bottom-color: #465000;
-    border-bottom-style: solid;
+    padding: 1px 12px;
+    border-radius: 2px;
+    outline: none;
     box-shadow: none;
 }
 
 #input image {
+    color: @grey2;
     margin-right: 10px;
-    color: @bg0;
 }
 
 #inner-box {
@@ -66,22 +58,22 @@ window {
 #text {
     margin-left: 15px;
     margin-right: 15px;
+    color: @fg;
 }
 
 #entry {
     border: none;
-    padding: 4px;
+    padding: 2px;
     margin: 0px;
 }
 
 #entry:selected {
-    background-color: @bg0;
+    background-color: @bg2;
     color: @fg;
+    border: 1px solid @grey0;
     outline: none;
-
-    border-bottom-width: 5px;
-    border-bottom-color: @bg5;
-    border-bottom-style: solid;
+    padding-left: 1px;
+    border-radius: 2px;
 }
 
 #entry:selected #text {
