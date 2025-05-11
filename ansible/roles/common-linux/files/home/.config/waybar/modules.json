@@ -124,14 +124,18 @@
 
     "clock": {
         // "format": " {:%H:%M}",
-        "format": "{:%H:%M}",
+        "format": "{:L%H:%M}",
+        "timezone": "Europe/Paris",
+        "locale": "fr_FR.UTF-8",
         "tooltip": false
     },
 
     "clock#date": {
         // "format": " {:%A %d %B %Y}",
-        "format": "{:%A %d %B %Y}",
+        "format": "{:L%A %d %B %Y}",
         "tooltip-format": "<span color='#eff1f5'><tt><small>{calendar}</small></tt></span>",
+        "timezone": "Europe/Paris",
+        "locale": "fr_FR.UTF-8",
         "calendar": {
             "mode-mon-col"      : 4,
             "weeks-pos"         : "left",

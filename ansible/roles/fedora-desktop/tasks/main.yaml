@@ -1,12 +1,11 @@
 # This role defines tasks specific to Fedora (desktop environment)
 
-# Disabled for now because it requires to install ansible package, which is quite big
-# - name: Enabling community repository solopasha/hyprland
-#   become: true
-#   community.general.copr:
-#     host: copr.fedorainfracloud.org
-#     state: enabled
-#     name: solopasha/hyprland
+- name: Enabling community repository solopasha/hyprland
+  become: true
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: solopasha/hyprland
 
 - name: Installing packages
   become: true

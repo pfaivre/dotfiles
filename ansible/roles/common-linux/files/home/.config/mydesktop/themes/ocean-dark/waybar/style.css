@@ -42,7 +42,6 @@ window#waybar {
 
 #custom-launcher,
 #clock,
-#clock-date,
 #workspaces,
 #pulseaudio,
 #network,
@@ -59,6 +58,15 @@ window#waybar {
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 0;
+}
+
+#clock {
+  padding-left: 16px;
+}
+
+#clock.date {
+  padding-left: 8px;
+  padding-right: 16px;
 }
 
 #pulseaudio:hover,
@@ -96,6 +104,7 @@ window#waybar {
 #workspaces button:hover {
   background-color: @bg3;
   text-shadow: none;
+  border: none;
 }
 
 #workspaces button.active {

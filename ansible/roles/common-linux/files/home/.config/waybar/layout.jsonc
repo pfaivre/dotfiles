@@ -23,10 +23,10 @@
         // "cpu",
         // "memory",
         // "temperature",
-        "backlight",
+        // "backlight",
         "keyboard-state",
         // "hyprland/language",
-        // "battery",
+        "battery",
         // "battery#bat2",
         "group/trayicons",
         "custom/powermenu"

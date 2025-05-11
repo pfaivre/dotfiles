@@ -23,7 +23,7 @@ function install_ansible() {
             ;;
 
         fedora)
-            sudo dnf install -qy ansible-core
+            sudo dnf install -qy ansible
             ;;
 
         *)

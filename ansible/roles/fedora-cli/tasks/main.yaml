@@ -21,13 +21,13 @@
     name:
       - btop
       - cmatrix
+      - fastfetch
       - git
       - htop
       - lm_sensors
       - lolcat
       - most
       - ncdu
-      # - neofetch  # Abandonned
       # - p7zip  # Dangerously outdated, do not install
       - pv
       - pwgen
