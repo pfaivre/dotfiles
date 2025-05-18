@@ -23,13 +23,59 @@ window#waybar {
   border-radius: 0;
 }
 
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#cpu,
+#memory,
+#custom-notificationcenter,
+#custom-powermenu,
+#idle_inhibitor,
+#trayicons,
+#tray,
+#power-profiles-daemon,
+#custom-hyprshade {
+  min-width: 28px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  background-color: @bg0;
+  color: @fg;
+  border-radius: 0;
+}
+
+#custom-launcher:hover,
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-notificationcenter:hover,
+#custom-powermenu:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#custom-hyprshade:hover {
+  background-color: @bg3;
+}
+
+
+#clock {
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
+#clock.date {
+  padding-left: 10px;
+  padding-right: 12px;
+}
+
 #tray {
   color: @fg;
 }
 
 #power-profiles-daemon {
-  padding-left: 4px;
-  min-width: 24px;
 }
 
 #power-profiles-daemon.power-saver {
@@ -40,48 +86,12 @@ window#waybar {
   color: @yellow;
 }
 
-#custom-launcher,
-#clock,
-#workspaces,
-#pulseaudio,
-#network,
-#battery,
-#cpu,
-#memory,
-#custom-notificationcenter,
-#custom-powermenu,
-#idle_inhibitor,
-#trayicons {
-  background-color: @bg0;
-  color: @fg;
-
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 0;
-}
-
-#clock {
-  padding-left: 16px;
-}
-
-#clock.date {
-  padding-left: 8px;
-  padding-right: 16px;
-}
-
-#pulseaudio:hover,
-#custom-notificationcenter:hover,
-#trayicons:hover {
-  background-color: @bg3;
-}
-
 #custom-notificationcenter {
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 #pulseaudio {
-  /* min-width: 54px; */
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #pulseaudio.muted {
@@ -90,6 +100,7 @@ window#waybar {
 
 #workspaces {
   padding: 0px;
+  background-color: @bg0;
 }
 
 #workspaces button {
@@ -112,12 +123,6 @@ window#waybar {
   color: @bg0;
 
   border-radius: 0;
-}
-
-#workspaces button:first-child {
-}
-
-#workspaces button:last-child {
 }
 
 #custom-launcher {

@@ -56,6 +56,8 @@ window#waybar {
 #custom-notificationcenter,
 #custom-powermenu,
 #idle_inhibitor,
+#power-profiles-daemon,
+#tray,
 #trayicons {
   background-color: @bg0;
   color: @fg;
@@ -69,6 +71,23 @@ window#waybar {
   border-bottom-width: 5px;
   border-bottom-color: #161a1d;
   border-bottom-style: solid;
+}
+
+#custom-launcher:hover,
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-notificationcenter:hover,
+#custom-powermenu:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#tray:hover,
+#trayicons:hover {
+  margin-top: 5px;
+  border-bottom-width: 7px;
 }
 
 #pulseaudio {

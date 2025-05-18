@@ -31,6 +31,7 @@ window {
     padding-bottom: 5px;
 }
 
+/* entry containing the search bar */
 #input {
     background-color: @green;
     color: @bg0;
@@ -45,11 +46,21 @@ window {
     box-shadow: none;
 }
 
+/* image showing a magnifying glass (as a text, not an actual image) */
 #input image {
     margin-right: 10px;
     color: @bg0;
 }
 
+/* scrolledwindow containing the #inner-box */
+#scroll {
+    width: 128px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+/* flowbox containing the list of entries */
 #inner-box {
     margin: 20px;
     padding: 0px;
@@ -57,11 +68,6 @@ window {
     background-color: #00000000;
 }
 
-#scroll {
-    margin: 0px;
-    padding: 0px;
-    border: none;
-}
 
 #text {
     margin-left: 15px;

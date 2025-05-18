@@ -46,140 +46,140 @@
 # authorization of the copyright holder.
 
 
-emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi --show dmenu $2 -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi -M fuzzy --show dmenu $2 -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###
-😀 content dents grand heureux joyeux rieur rire souriant sourire super visage
-😃 bouche content dents formidable grand grands heureux ouverte souriant sourire super visage yeux
-😄 bouche content grand heureux joyeux lol mdr mignon ouverte rieurs rire souriant souriants sourire visage yeux
-😁 content dents grand heureux rieurs ses souriant souriants sourire super toutes visage yeux
-😆 ahah bouche content fermés lol mdr ouverte plissés rire souriant sourire visage yeux
-😅 excité froid froides goutte nerveux souriant sourire stressé sueur sueurs visage
-🤣 content drôle hilare joyeux larmes lol mdr pleurer rire rit rouler terre tordre visage
-😂 content heureux joie larmes lol mdr pleurer riant rire sourire visage
-🙂 content heureux léger souriant sourire visage
-🙃 incroyable envers renversée tête visage
-🫠 disparaître dissoudre fond fondre gêne liquide liquéfié sarcasme visage
-😉 blague clin œil faisant flirter plaisanter sexy visage
-😊 content heureux rieurs rougir rougit satisfait souriant souriants sourire visage yeux œil
-😇 ange angélique auréole bible béni heureux innocent paix souriant sourire spirituel visage
-🥰 3 adorer aimer amour amoureuse amoureux béguin coeur coeurs cœurs j'adore romance smiley souriant sourire aime visage
-😍 amour amoureux cœur coeur forme romantique souriant sourire visage yeux œil
-🤩 grand heureux place pressé sourire surexcité tête visage wow yeux étoile étoiles
-😘 amour baiser bise bisou bonjour bonne cœur coeur embrasser envoyant fait nuit aime visage
-😗 amour baiser bise bisou embrasser faisant fait petit aime visage
-☺️ content décontracté détendu fermés heureux souriant sourire visage yeux
-😚 baiser bise bisou embrasser faisant fait fermés rougir rougissant visage yeux
-😙 amour baiser bise bisou embrasser faisant fait fermés gros rieurs souriants sourire aime visage yeux
-🥲 fier heureux larme reconnaissant smiley soulagé souriant touché visage ému
-😋 bon content délicieux faim heureux langue manger miam savourer souriant sourire tire visage
-😛 cool génial langue super tire visage
-😜 amusant blague clin œil fait fou langue loufoque marrant rigolo tire visage œil
+😀 content dents grand heureux joyeux rieur rire souriant sourire super
+😃 bouche content dents formidable grand grands heureux ouverte souriant sourire super yeux
+😄 bouche content grand heureux joyeux lol mdr mignon ouverte rieurs rire souriant souriants sourire yeux
+😁 content dents grand heureux rieurs ses souriant souriants sourire super toutes yeux
+😆 ahah bouche content fermés lol mdr ouverte plissés rire souriant sourire yeux
+😅 excité froid froides goutte nerveux souriant sourire stressé sueur sueurs
+🤣 content drôle hilare joyeux larmes lol mdr pleurer rire rit rouler terre tordre
+😂 content heureux joie larmes lol mdr pleurer riant rire sourire
+🙂 content heureux léger souriant sourire
+🙃 incroyable envers renversée tête
+🫠 disparaître dissoudre fond fondre gêne liquide liquéfié sarcasme
+😉 blague clin œil faisant flirter plaisanter sexy
+😊 content heureux rieurs rougir rougit satisfait souriant souriants sourire yeux œil
+😇 ange angélique auréole bible béni heureux innocent paix souriant sourire spirituel
+🥰 3 adorer aimer amour amoureuse amoureux béguin coeur coeurs cœurs j'adore romance smiley souriant sourire aime
+😍 amour amoureux cœur coeur forme romantique souriant sourire yeux œil
+🤩 grand heureux place pressé sourire surexcité tête wow yeux étoile étoiles
+😘 amour baiser bise bisou bonjour bonne cœur coeur embrasser envoyant fait nuit aime
+😗 amour baiser bise bisou embrasser faisant fait petit aime
+☺️ content décontracté détendu fermés heureux souriant sourire yeux
+😚 baiser bise bisou embrasser faisant fait fermés rougir rougissant yeux
+😙 amour baiser bise bisou embrasser faisant fait fermés gros rieurs souriants sourire aime yeux
+🥲 fier heureux larme reconnaissant smiley soulagé souriant touché ému
+😋 bon content délicieux faim heureux langue manger miam savourer souriant sourire tire
+😛 cool génial langue super tire
+😜 amusant blague clin œil fait fou langue loufoque marrant rigolo tire œil
 🤪 folle fou fous grand large oeil petit tête yeux œil
-😝 dégoûtant ferme fermés fois goût horrible importe langue omd peu plissés tire visage vit yeux œil
+😝 dégoûtant ferme fermés fois goût horrible importe langue omd peu plissés tire vit yeux œil
 🤑 argent bouche dollars yeux
-🤗 câlin fait gentil mains visage
-🤭 bouche devant main malin oops oups rigole secret surprise visage
-🫢 bouche choqué embarrassé gêné impressionné main ouverts stupéfait surpris visage yeux étonné
-🫣 cacher captivé coup œil doigts effrayé entre fasciné fixement jeter regarde regarder ses timide visage
-🤫 bouche bruit chut dit doigt pas silence tête visage
-🤔 hum méditer penser pleine réflexion réfléchir visage
-🫡 armée bonne chance compris fait militaire ok oui respect salut visage
-🤐 bouche cousue fermeture motus secret taire visage éclair
-🤨 euh hein incrédule levé méfiant pas quoi relevés sceptique sourcil sourcils surprise tête visage vrai
-😐 chaud commentaires drôle expression froid gêné importe marbre neutre ni pas peu rester rire visage
-😑 expression importe inexpressif mécontent neutre peu visage
-😶 bouche commentaires dire expression muet neutre rien secret silence sourdine taire visage voix
-🫥 cacher disparaître déprimé introverti invisible pointillés visage
-😶‍🌫️ brouillard distrait nuages visage
-😏 arrogant charmeur malin ricaner rusé sourire suffisant suspicieux séducteur visage
-😒 bizarre blasé content fâché importe jaloux pas peu ennuie visage énervé
-🙄 agacé ciel excédé incrédulité lève roulant roule roulement visage yeux
-😬 dents grimace grimaçant gêné rien sourire visage
-😮‍💨 chuchoter découragé déçu ennuyé expirant expiration exténué fatigué siffler souffler soulagement soupir sursaut visage
-🤥 dont mensonge menteur nez pinocchio allonge visage
-🫨 choc fou omg ouah panique secoué surprenant terre tremblement vibration visage étourdi
+🤗 câlin fait gentil mains
+🤭 bouche devant main malin oops oups rigole secret surprise
+🫢 bouche choqué embarrassé gêné impressionné main ouverts stupéfait surpris yeux étonné
+🫣 cacher captivé coup œil doigts effrayé entre fasciné fixement jeter regarde regarder ses timide
+🤫 bouche bruit chut dit doigt pas silence tête
+🤔 hum méditer penser pleine réflexion réfléchir
+🫡 armée bonne chance compris fait militaire ok oui respect salut
+🤐 bouche cousue fermeture motus secret taire éclair
+🤨 euh hein incrédule levé méfiant pas quoi relevés sceptique sourcil sourcils surprise tête vrai
+😐 chaud commentaires drôle expression froid gêné importe marbre neutre ni pas peu rester rire
+😑 expression importe inexpressif mécontent neutre peu
+😶 bouche commentaires dire expression muet neutre rien secret silence sourdine taire voix
+🫥 cacher disparaître déprimé introverti invisible pointillés
+😶‍🌫️ brouillard distrait nuages
+😏 arrogant charmeur malin ricaner rusé sourire suffisant suspicieux séducteur
+😒 bizarre blasé content fâché importe jaloux pas peu ennuie énervé
+🙄 agacé ciel excédé incrédulité lève roulant roule roulement yeux
+😬 dents grimace grimaçant gêné rien sourire
+😮‍💨 chuchoter découragé déçu ennuyé expirant expiration exténué fatigué siffler souffler soulagement soupir sursaut
+🤥 mensonge menteur nez pinocchio allonge
+🫨 choc fou omg ouah panique secoué surprenant terre tremblement vibration étourdi
 🙂‍↔ horizontalement secouer secouée tête
 🙂‍↕ hochement oui secouée tête verticalement
-😌 calme soulagement soulagé sérénité visage zen
-😔 abattu déçu horrible mort pensif perdu triste visage
-😪 endormi fatigué larme pleurer sommeil triste visage
-🤤 bave baver délicieux mmh visage
-😴 bonne coucher dormir endormi fatigué nuit sieste sommeil somnolent visage zzz
-🫩 ensommeilé fatigué sommeil sous valises visage yeux épuisé
-😷 bactéries chirurgical dentiste docteur germes malade masque médecin rhume visage
-🤒 indisposé malade thermomètre visage
-🤕 autour aïe bandage blessure bobo pansement tête visage
-🤢 dégoûtant malade nausée nauséeux vert visage vomir écœuré
-🤮 gerbe gerber malade tête visage vomi vomissure vomit
-🤧 atchoum fièvre grippe malade moucher mouchoir rhume souhaits tes visage éternue éternuement éternuer
-🥵 chaleur chaud coup fièvre rouge sue suer tout toute transpiration trop visage
-🥶 bleu caille froid gel gelure gelé glacial glacé glaçon visage
-🥴 bouche bourré bourrée clair hébété ondulée pas pompette rond saoul souler tourne tête vapes visage éméché
-😵 fatigué malade mort tournis visage étourdi
-😵‍💫 confusion hagard malade nausée ouh spirales tourne tête visage yeux étourdi
+😌 calme soulagement soulagé sérénité zen
+😔 abattu déçu horrible mort pensif perdu triste
+😪 endormi fatigué larme pleurer sommeil triste
+🤤 bave baver délicieux mmh
+😴 bonne coucher dormir endormi fatigué nuit sieste sommeil somnolent zzz
+🫩 ensommeilé fatigué sommeil sous valises yeux épuisé
+😷 bactéries chirurgical dentiste docteur germes malade masque médecin rhume
+🤒 indisposé malade thermomètre
+🤕 autour aïe bandage blessure bobo pansement tête
+🤢 dégoûtant malade nausée nauséeux vert vomir écœuré
+🤮 gerbe gerber malade tête vomi vomissure vomit
+🤧 atchoum fièvre grippe malade moucher mouchoir rhume souhaits tes éternue éternuement éternuer
+🥵 chaleur chaud coup fièvre rouge sue suer tout toute transpiration trop
+🥶 bleu caille froid gel gelure gelé glacial glacé glaçon
+🥴 bouche bourré bourrée clair hébété ondulée pas pompette rond saoul souler tourne tête vapes éméché
+😵 fatigué malade mort tournis étourdi
+😵‍💫 confusion hagard malade nausée ouh spirales tourne tête yeux étourdi
 🤯 choc choqué choquée explose surpris surprise tête
-🤠 chapeau cowboy visage
-🥳 anniversaire chapeau célébration festif fête heureux hourra joyeux pointu sifflet visage youpi
-🥸 déguisement déguisé espion faux grimer incognito lunettes moustache nez postiche smiley sourcils visage ébouriffés
-😎 cool lunettes posé soleil tranquille visage
-🤓 classe doué futé geek idiot intelligent lunettes personne premier ringard surdoué tronche visage
-🧐 classe collet fortune jeu monocle monté riche tête vieux visage
-😕 confus désolé ennuyé pas sais triste visage
-🫤 bof bouche confus diagonale déçu euh frustration incertain sceptique visage
-😟 anxieux inquiet préoccupé stressé surpris triste visage
-🙁 légèrement mécontent triste visage
-☹️ malheureux mécontent triste visage
-😮 bouche bée choqué incroyable omd oubli ouverte surpris visage épaté étonné
-😯 bouche incroyable omd ouverte stupeur stupéfait surpris visage voix ébahi
-😲 choc choqué impossible incroyable omd stupéfait visage étonné
-😳 chaud comment gêné hébété impressionné incroyable incrédule quoi rouge rougissant rougit stupéfait visage ébahi étonné
-🥺 battus chiens embarrassé excuse gros implorant pardon pitié plaît il supplication supplie visage yeux
-🥹 admiration fierté gratitude joie larmes pleurs retenant retenir ses triste visage ému
-😦 bouche dépourvu déçu effrayé mécontent ouverte peur pris surpris visage
-😧 angoisse angoissé comment hein mécontent oubli peur quoi stressé surpris terrifié visage
-😨 anxieux apeuré blême effrayé inquiet peur terrifié visage
-😰 aah anxieux bleu bleue bouche bée effrayé froid froides goutte mince nerveux ouverte peur sueur sueurs terrifié visage
-😥 déçu mais ouf pfiou soulagé sueur triste visage
-😢 horrible larme larmes malheureux pleure pleurer triste visage
-😭 chaudes larme larmes malheureux pleure pleurer pleurs sangloter triste visage
-😱 choqué cri effrayé hurle munch omd peur surpris terreur visage
-😖 confus déconcerté fermés frustré fâché irrité triste visage yeux
-😣 concentré mal migraine persévérant tête visage
-😞 abattu affreux découragé déçu malheureux tort triste visage
-😓 démoralisé froide froides goutte mal migraine mince ouf peur sueur sueurs triste tête visage
-😩 faim fatigué las mécontent pleurer sommeil triste visage échec épuisé
-😫 contrarié fatigue fatigué mécontent triste visage
-🥱 bâillant bâille bâiller dormir ennui fatigant fatigue sieste visage
-😤 colère fumée fâché mécontent narines sortant triomphe victoire visage énervé
-😡 boudeur colère exaspéré froncés furieux fâché mécontent rageur rouge sourcils visage énervé
-😠 colère exaspéré froncés frustré fâché mécontent rageur sourcils visage
-🤬 bouche censuré colère gros insulter insultes jurer juron mots symboles tête visage
-😈 cornes fantastique fâché souriant sourire visage
-👿 colère cornes diable diablotin démon fantastique malicieux mauvais visage
-💀 corps crâne dead fantastique mort squelette tête visage
+🤠 chapeau cowboy
+🥳 anniversaire chapeau célébration festif fête heureux hourra joyeux pointu sifflet youpi
+🥸 déguisement déguisé espion faux grimer incognito lunettes moustache nez postiche smiley sourcils ébouriffés
+😎 cool lunettes posé soleil tranquille
+🤓 classe doué futé geek idiot intelligent lunettes personne premier ringard surdoué tronche
+🧐 classe collet fortune jeu monocle monté riche tête vieux
+😕 confus désolé ennuyé pas sais triste
+🫤 bof bouche confus diagonale déçu euh frustration incertain sceptique
+😟 anxieux inquiet préoccupé stressé surpris triste
+🙁 légèrement mécontent triste
+☹️ malheureux mécontent triste
+😮 bouche bée choqué incroyable omd oubli ouverte surpris épaté étonné
+😯 bouche incroyable omd ouverte stupeur stupéfait surpris voix ébahi
+😲 choc choqué impossible incroyable omd stupéfait étonné
+😳 chaud comment gêné hébété impressionné incroyable incrédule quoi rouge rougissant rougit stupéfait ébahi étonné
+🥺 battus chiens embarrassé excuse gros implorant pardon pitié plaît il supplication supplie yeux
+🥹 admiration fierté gratitude joie larmes pleurs retenant retenir ses triste ému
+😦 bouche dépourvu déçu effrayé mécontent ouverte peur pris surpris
+😧 angoisse angoissé comment hein mécontent oubli peur quoi stressé surpris terrifié
+😨 anxieux apeuré blême effrayé inquiet peur terrifié
+😰 aah anxieux bleu bleue bouche bée effrayé froid froides goutte mince nerveux ouverte peur sueur sueurs terrifié
+😥 déçu mais ouf pfiou soulagé sueur triste
+😢 horrible larme larmes malheureux pleure pleurer triste
+😭 chaudes larme larmes malheureux pleure pleurer pleurs sangloter triste
+😱 choqué cri effrayé hurle munch omd peur surpris terreur
+😖 confus déconcerté fermés frustré fâché irrité triste yeux
+😣 concentré mal migraine persévérant tête
+😞 abattu affreux découragé déçu malheureux tort triste
+😓 démoralisé froide froides goutte mal migraine mince ouf peur sueur sueurs triste tête
+😩 faim fatigué las mécontent pleurer sommeil triste échec épuisé
+😫 contrarié fatigue fatigué mécontent triste
+🥱 bâillant bâille bâiller dormir ennui fatigant fatigue sieste
+😤 colère fumée fâché mécontent narines sortant triomphe victoire énervé
+😡 boudeur colère exaspéré froncés furieux fâché mécontent rageur rouge sourcils énervé
+😠 colère exaspéré froncés frustré fâché mécontent rageur sourcils
+🤬 bouche censuré colère gros insulter insultes jurer juron mots symboles tête
+😈 cornes fantastique fâché souriant sourire
+👿 colère cornes diable diablotin démon fantastique malicieux mauvais
+💀 corps crâne dead fantastique mort squelette tête
 ☠️ crâne mort os tête
-💩 bande bd caca crotte dessin dessinée excrément mauvais odeur popo puer sentir tas visage
-🤡 clown maquillage visage
+💩 bande bd caca crotte dessin dessinée excrément mauvais odeur popo puer sentir tas
+🤡 clown maquillage
 👹 créature effrayant fantastique japonais masque monstre ogre
 👺 colère créature fantastique farfadet japonais masque monstre méchant
-👻 blague bouh créature effrayant fantastique fantôme halloween hanter monstre peur visage
-👽 alien créature espace extraterrestre monstre ovni science-fiction visage
+👻 blague bouh créature effrayant fantastique fantôme halloween hanter monstre peur
+👽 alien créature espace extraterrestre monstre ovni science-fiction
 👾 alien créature envahisseur espace extraterrestre fantastique jeu espace monstre ovni pixels vidéo
-🤖 androïde automate machine monstre robot visage
-😺 animal bouche chat ouverte sourire sourit visage
-😸 animal chat grand rieurs souriants sourire sourit visage yeux
+🤖 androïde automate machine monstre robot
+😺 animal bouche chat ouverte sourire sourit
+😸 animal chat grand rieurs souriants sourire sourit yeux
 😹 animal chat joie larmes lol mdr pleure pleurer rire rit
 😻 amour amoureux chat coeurs cœur coeur souriant sourire yeux
-😼 animal chat coin ironique narquois sourire tête visage
+😼 animal chat coin ironique narquois sourire tête
 😽 animal baiser bise bisou chat embrasse embrasser fait fermés tête yeux
-🙀 animal bouche chat fatigue fatigué inquiet oh ouverte surpris tête visage
-😿 animal chat larme pleure pleurer triste tête visage
-😾 animal boude bouder chat colère désaccord ennui tête visage
-🙈 animal caché effrayé embarras entendu geste gêne interdit omd oubli pas peur rien secret singe visage voir vu yeux
-🙉 animal entendre entendu geste interdit oreilles pas rien secret singe sourd visage vu écouter
-🙊 animal bouche chut cousue dire geste interdit motus muet parler rien secret silence singe taire visage
+🙀 animal bouche chat fatigue fatigué inquiet oh ouverte surpris tête
+😿 animal chat larme pleure pleurer triste tête
+😾 animal boude bouder chat colère désaccord ennui tête
+🙈 animal caché effrayé embarras entendu geste gêne interdit omd oubli pas peur rien secret singe voir vu yeux
+🙉 animal entendre entendu geste interdit oreilles pas rien secret singe sourd vu écouter
+🙊 animal bouche chut cousue dire geste interdit motus muet parler rien secret silence singe taire
 💌 amour cœur coeur amour lettre saint-valentin
 💘 amour coeur cupidon cœur flèche sentiment transpercé
 💝 amour anniversaire cœur coeur ruban saint-valentin sentiment
@@ -236,7 +236,7 @@ exit
 ✌ amour and ciseaux doigts love main paix peace v victoire
 🤞 bonne chance croisés doigts main
 🫰 amour argent cher claquer croisés cœur coeur doigts index main pouce
-🤟 amour doigts geste ily main pour signe aime trois
+🤟 amour doigts geste ily main signe aime trois
 🤘 cornes diable doigts main rock rock'n roll yeah
 🤙 appel doigts main signe téléphone téléphonique
 👈 doigt gauche index main pointant pointé vers
@@ -262,7 +262,7 @@ exit
 ✍ main écrire écrit
 💅 cosmétiques manucure maquillage ongles ennuyer vernis
 🤳 appareil photo selfie téléphone
-💪 bande bd biceps bodybuilding contracté corps culturisme dessinée entraînement exercice force haltérophilie muscle muscles soulever
+💪 biceps bodybuilding contracté corps culturisme entraînement exercice force haltérophilie muscles soulever
 🦾 accessibilité bras handicap mécanique prothèse robot
 🦿 accessibilité artificielle handicap jambe mécanique prothèse robot
 🦵 coup cuisse fléchi genou genoux jambe membre pied
@@ -275,7 +275,7 @@ exit
 🫁 anatomie expiration inspiration organe poumons respiration respirer souffle
 🦷 carie dent dentiste diamant émail
 🦴 chien halloween os squelette
-👀 chercher corps coup œil regarder visage voir yeux œil
+👀 chercher corps coup œil regarder voir yeux œil
 👁️ corps œil
 👅 corps langue lécher
 👄 baiser beauté bise bisou bouche corps embrasser lèvres rouge
@@ -283,9 +283,9 @@ exit
 👶 bébé enceinte enfant nouveau-né petit
 🧒 enfant genre jeune neutre non-genré
 👦 enfant garçon jeune personne
-👧 couettes enfant fille grands jeune nattes personne petite tresses vierge visage yeux zodiaque
+👧 couettes enfant fille grands jeune nattes personne petite tresses vierge yeux zodiaque
 🧑 adulte genre neutre non-genré
-👱 blond blonde cheveux garçon homme humain personne tête visage
+👱 blond blonde cheveux garçon homme humain personne tête
 👨 ami garçon homme personne petit pote
 🧔 barbe barbu barbue personne
 🧔‍♂ barbe barbu homme
@@ -320,9 +320,9 @@ exit
 🙇 compris confus désolé excuses geste gronder incliné inclinée ok pardon personne incline
 🙇‍♂ désolé geste homme incliné incline
 🙇‍♀ désolée excuses femme geste inclinée méditation méditer prosterne incline
-🤦 drame exaspération femme geste incroyable incrédulité main pas paume personne peux possible visage
-🤦‍♂ encore exaspération homme incroyable incrédulité main oh oubli paume personne visage
-🤦‍♀ crois encore exaspération femme incroyable incrédulité main oh oubli pas paume personne visage
+🤦 drame exaspération femme geste incroyable incrédulité main pas paume personne peux possible
+🤦‍♂ encore exaspération homme incroyable incrédulité main oh oubli paume personne
+🤦‍♀ crois encore exaspération femme incroyable incrédulité main oh oubli pas paume personne
 🤷 aucune comme épaules doute faire femme hausse haussement idée ignorance indifférence pas personne peut-être que sais sait épaules
 🤷‍♂ aucune épaules doute hausse haussement homme idée ignorance indifférence moi pas personne rien sais vu épaules
 🤷‍♀ aucune épaules doute femme hausse haussement idée ignorance indifférence moi pas personne rien sais vu épaules
@@ -390,7 +390,7 @@ exit
 🫅 couronne monarque noble personne royal royauté
 🤴 couronne prince royal royauté
 👸 conte couronne fantastique fées personne princesse reine
-👳 homme oriental personne turban visage
+👳 homme oriental personne turban
 👳‍♂ homme turban
 👳‍♀ femme turban
 👲 casquette chapeau chinoise homme mao
@@ -408,7 +408,7 @@ exit
 👩‍🍼 allaitant allaitement biberon bébé femme maman mère nounou nouveau-né personne
 👨‍🍼 allaitant allaitement biberon bébé homme nouveau-né papa personne père
 🧑‍🍼 allaitant allaitement biberon bébé homme maman mère nounou nouveau-né papa personne père
-👼 ailes ange auréole bébé fantastique visage église
+👼 ailes ange auréole bébé fantastique église
 🎅 bonnet claus fêtes magie noël père santa tradition
 🤶 bonnet fêtes mère noël santa
 🧑‍🎄 joyeux noël papa personne père saint-nicolas santa
@@ -440,9 +440,9 @@ exit
 🧟‍♂ homme mort-vivant zombie
 🧟‍♀ femme morte-vivante zombie
 🧌 conte fées légende monstre mythe troll troller
-💆 détente fait femme fermer massage masser personne relaxation repos salon thérapie tête visage yeux zen
-💆‍♂ apaiser fait homme mal massage masser migraine relaxation salon tension tête visage
-💆‍♀ fait femme massage masser visage
+💆 détente fait femme fermer massage masser personne relaxation repos salon thérapie tête yeux zen
+💆‍♂ apaiser fait homme mal massage masser migraine relaxation salon tension tête
+💆‍♀ fait femme massage masser
 💇 barbier beauté cheveux ciseaux coiffure coupe couper fait femme personne salon style
 💇‍♂ cheveux chez coiffeur coiffure coupe couper fait homme salon
 💇‍♀ cheveux coiffure couper fait femme
@@ -549,23 +549,23 @@ exit
 🦱 afro boucles bouclés cheveux
 🦳 blancs cheveux gris vieux
 🦲 chauve cheveux chimiothérapie imberbe rasé
-🐵 animal curieux georges petit singe sourire tête visage
+🐵 animal curieux georges petit singe sourire tête
 🐒 animal primate singe
 🦍 animal gorille primate
 🦧 animal orang-outan primate singe
-🐶 animal chien chiot domestique tête visage
+🐶 animal chien chiot domestique tête
 🐕 aboyer animal chien domestique
 🦮 accessibilité animal aveugle chien guide malvoyant non-voyant
 🐕‍🦺 accessibilité aide animal assistance chien chien-guide assistance handicap
 🐩 animal caniche chien
 🐺 animal loup louve tête
-🦊 animal nature renard tête visage
+🦊 animal nature renard tête
 🦝 animal curieux laveur raton sournois
 🐱 animal chat chaton miaou minou tête
 🐈 animal chat chaton domestique miaou miauler
 🐈‍⬛ animal chat chaton félin halloween malchanceux matou miaou noir superstition
-🦁 animal astrologie crinière fort horoscope lion roi rugissement safari savane tête visage zodiaque
-🐯 animal félin prédateur tigre tête visage
+🦁 animal astrologie crinière fort horoscope lion roi rugissement safari savane tête zodiaque
+🐯 animal félin prédateur tigre tête
 🐅 animal félin prédateur tigre tigresse zoo
 🐆 animal félin léopard prédateur zoo
 🐴 animal cheval dressage ferme jument tête équitation
@@ -576,11 +576,11 @@ exit
 🦓 animal blanc noir rayure rayures zèbre zébrure
 🦌 animal bois cerf
 🦬 animal bison buffle cornes herbivore nature troupeau
-🐮 animal lait meuh tête vache visage
+🐮 animal lait meuh tête vache
 🐂 animal astrologie bœuf ferme horoscope taureau zodiaque
 🐃 animal buffle corne zoo
 🐄 animal ferme lait meuh vache
-🐷 animal cochon ferme porc tête visage
+🐷 animal cochon ferme porc tête
 🐖 animal cochon ferme gros jambon porc truie
 🐗 animal game of sanglier thrones
 🐽 animal cochon ferme flair groin museau porc sentir tête
@@ -595,20 +595,20 @@ exit
 🦣 animal défenses extinction grand géant laineux mammouth
 🦏 animal corne rhinocéros
 🦛 animal hippo hippopotame
-🐭 animal souris tête visage
+🐭 animal souris tête
 🐁 animal souris
 🐀 animal rat
-🐹 animal domestique hamster tête visage
+🐹 animal domestique hamster tête
 🐰 animal dents domestique lapin tête
 🐇 animal domestique lapin
 🐿️ animal noisettes écureuil
 🦫 animal barrage castor dents rongeur
 🦔 animal hérisson piquant porc-épic épines épineux
 🦇 animal chauve-souris vampire
-🐻 animal brun miel nounours ours teddy tête visage
+🐻 animal brun miel nounours ours teddy tête
 🐻‍❄️ arctique blanc ours polaire
 🐨 animal australie koala
-🐼 animal panda tête visage
+🐼 animal panda tête
 🦥 animal aï endormi lent paresseux
 🦦 animal joueur loutre mignon pêcheur
 🦨 animal mouffette odeur puer putois
@@ -770,7 +770,7 @@ exit
 🫔 mexicain nourriture pamonha papillote tamal
 🥙 falafel kebab nourriture pain pita
 🧆 boulette boulettes chiches falafel falafels pois seitan soja viande
-🥚 nourriture œuf
+🥚 nourriture œuf oeuf
 🍳 cuire cuisine faire frire friture nourriture petit-déjeuner plat poêle œuf
 🥘 casserole espagne mitonné paella plat poêle riz
 🍲 marmite nourriture ragoût
@@ -1019,13 +1019,13 @@ exit
 🌗 dernier espace lune quartier
 🌘 croissant descendante décroissante espace lune nuit
 🌙 croissant espace lune nuit ramadan
-🌚 espace lune nouvelle nuit visage
-🌛 croissant espace lune nuit premier quartier visage
-🌜 croissant dernier lune nuit quartier visage
+🌚 espace lune nouvelle nuit
+🌛 croissant espace lune nuit premier quartier
+🌜 croissant dernier lune nuit quartier
 🌡️ météo thermomètre
 ☀️ beau brillant espace grand météo rayons soleil temps
-🌝 lune nuit pleine sourire visage
-🌞 chaleur chaud ensoleillé jour lumière météo plage rayon soleil visage éclat éclatant
+🌝 lune nuit pleine sourire
+🌞 chaleur chaud ensoleillé jour lumière météo plage rayon soleil éclat éclatant
 🪐 anneaux planète saturne saturnien saturnienne
 ⭐ astronomie nuit étoile
 🌟 brillante nuit succès éclat étincelant étincelle étoile étoilée
@@ -1042,7 +1042,7 @@ exit
 🌩️ nuage orage orageux temps éclair
 🌪️ cyclone météo nuage tornade tourbillon
 🌫️ brouillard brume fog météo nuage
-🌬️ météo nuage souffle vent visage
+🌬️ météo nuage souffle vent
 🌀 cyclone spirale tourbillon typhon vertige
 🌈 arc-en-ciel bisexuel bisexuelle gay homosexuel homosexuelle lesbienne lgbtqia météo nature pluie pride transgenre
 🌂 fermé météo parapluie pluie
@@ -1145,7 +1145,7 @@ exit
 👓 accessoire lunettes vue vêtements yeux œil
 🕶️ lunettes noires soleil
 🥽 chimiste labo lunettes masque natation piscine protection soudage soudure yeux
-🥼 blanc blanche blouse docteur expérience expérimentation labo laboratoire manteau médecin scientifique vêtements
+🥼 blanche blouse docteur expérience expérimentation laboratoire manteau médecin scientifique vêtements
 🦺 chantier fluo gilet jaune orange sécurité sûreté visibilité
 👔 chemise cravate travail vêtements
 👕 bleu chemise courses décontracté polo shopping t-shirt tee-shirt vêtements week-end
@@ -1169,14 +1169,14 @@ exit
 🛍 achats courses sac sacs shopping
 🎒 cartable dos sac école
 🩴 claquettes mer plage sandales tatanes tong tongs été
-👞 accessoire chaussure coup courses homme homme marron pied shopping vêtements
-👟 accessoire athlétisme basket chaussure coup courir courses pied shopping sport tennis vite vêtements
-🥾 camping chantier chaussure chaussures marche marron montagne rando randonnée sécurité timberland vêtements
+👞 accessoire chaussures coup courses homme homme marron pied shopping vêtements
+👟 accessoire athlétisme basket chaussures coup courir courses pied shopping sport tennis vite vêtements
+🥾 camping chantier chaussures marche marron montagne rando randonnée sécurité vêtements
 🥿 ballerine chaussure chaussures lacets mule plate plates vêtements
-👠 accessoire aiguille chaussure courses femme haut mode shopping stilletto talon vêtements
-👡 chaussure femme haut sandale talon vêtements
+👠 accessoire aiguille chaussures courses femme haut mode shopping stilletto talon vêtements
+👡 chaussures femme haut sandale talon vêtements
 🩰 ballerines ballet chaussons chaussures classique danse
-👢 accessoire botte chaussure courses femme shopping vêtements
+👢 accessoire botte chaussures courses femme shopping vêtements
 🪮 afro cheveux démêler démêloir peigne peigner
 👑 accessoire couronne famille monarchie monarque reine roi royale royauté succès vêtements
 👒 chapeau femme vêtements
@@ -1384,7 +1384,7 @@ exit
 🛁 baignoire bain mousse
 🪤 appât apât fromage leurre piège rat souris tapette
 🪒 coupant lame raser rasoir tranchant
-🧴 après-shampoing bouteille corps crème flacon hydratant hydratante lotion pour shampoing shampooing solaire
+🧴 bouteille corps crème flacon hydratant hydratante lotion shampooing solaire
 🧷 couche imperdable lange nourrice punk rock sûreté épingle
 🧹 balai balais balayage ménage nettoie nettoyage nettoyer nettoyé sorcière
 🧺 agriculture cueillette lessive linge panier pique-nique
@@ -1585,11 +1585,11 @@ exit
 🈲 bouton idéogramme interdit japonais
 🉑 acceptable accepter bouton idéogramme japonais
 🈸 application appliquer bouton idéogramme japonais
-🈴 bouton idéogramme japonais note passage pour réussir
+🈴 bouton idéogramme japonais note passage réussir
 🈳 bouton chambres disponibles idéogramme japonais vide
 ㊗ bouton félicitations idéogramme japonais
 ㊙ bouton idéogramme japonais secret
-🈺 affaires bouton idéogramme japonais ouvert pour
+🈺 affaires bouton idéogramme japonais ouvert
 🈵 bouton complet idéogramme japonais plénitude
 🔴 cercle disque forme géométrie géométrique rond rouge
 🟠 cercle disque forme géométrie géométrique orange rond

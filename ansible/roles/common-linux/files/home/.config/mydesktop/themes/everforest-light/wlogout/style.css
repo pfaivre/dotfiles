@@ -30,7 +30,7 @@
 }
 
 window {
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 button {
@@ -45,7 +45,7 @@ button {
 	background-position: center;
 	background-size: 15%;
 
-	border-color: @bg_dim;
+	border-color: @bg5;
 	border-style: solid;
 	border-width: 0 0 8px 0;
 }
@@ -66,7 +66,7 @@ button:hover {
 }
 
 button:focus, button:active {
-	outline: 3px solid @statusline1;
+	outline: 3px solid @fg;
 }
 
 #logout {
@@ -76,7 +76,7 @@ button:focus, button:active {
 #logout:hover {
 	background-color: @green;
 	/* box-shadow: 0 0 8px @green; */
-	border-color: @bg_green;
+	border-color: @grey2;
 }
 
 #suspend {
@@ -86,7 +86,7 @@ button:focus, button:active {
 #suspend:hover {
 	background-color: @blue;
 	/* box-shadow: 0 0 8px @blue; */
-	border-color: @bg_blue;
+	border-color: @grey2;
 }
 
 #shutdown {
@@ -96,7 +96,7 @@ button:focus, button:active {
 #shutdown:hover {
 	background-color: @red;
 	/* box-shadow: 0 0 8px @red; */
-	border-color: @bg_red;
+	border-color: @grey2;
 }
 
 #reboot {
@@ -106,5 +106,5 @@ button:focus, button:active {
 #reboot:hover {
 	background-color: @yellow;
 	/* box-shadow: 0 0 8px @yellow; */
-	border-color: @bg_yellow;
+	border-color: @grey2;
 }

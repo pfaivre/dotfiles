@@ -5,7 +5,7 @@
 # Source: summer-day-and-night theme by MathisP75
 # https://github.com/MathisP75/summer-day-and-night
 
-emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi --show dmenu $2 -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi -M fuzzy --show dmenu $2 -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###
