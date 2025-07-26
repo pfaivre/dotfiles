@@ -91,3 +91,5 @@ alias u="sudo dnf update; flatpak update -y"
 alias fastfetch="fastfetch --config ~/.config/fastfetch/config.jsonc"
 
 alias cls="clear"
+
+fastfetch

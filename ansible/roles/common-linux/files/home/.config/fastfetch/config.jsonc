@@ -1,31 +1,32 @@
+// Small version
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "modules": [
-    "os",
-    "host",
+    // "os",
+    // "host",
     "kernel",
-    "uptime",
-    "packages",
+    // "uptime",
+    // "packages",
     "shell",
-    "display",
+    // "display",
     "de",
     "wm",
-    "cursor",
+    // "cursor",
     "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "disk",
+    // "terminalfont",
+    // "cpu",
+    // "gpu",
+    // "memory",
+    // "disk",
     "break",
     "colors"
   ],
   "logo": {
     "source": "~/.config/fastfetch/logo",
     "padding": {
-      "top": 2,
-      "right": 4,
-      "left": 3
+      "top": 0,
+      "right": 1,
+      "left": 0
     },
     "color": {
       "1": "white",
@@ -35,3 +36,42 @@
     }
   }
 }
+
+// Big version
+// {
+//   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+//   "modules": [
+//     "os",
+//     "host",
+//     "kernel",
+//     "uptime",
+//     "packages",
+//     "shell",
+//     "display",
+//     "de",
+//     "wm",
+//     "cursor",
+//     "terminal",
+//     "terminalfont",
+//     "cpu",
+//     "gpu",
+//     "memory",
+//     "disk",
+//     "break",
+//     "colors"
+//   ],
+//   "logo": {
+//     "source": "~/.config/fastfetch/logo-big",
+//     "padding": {
+//       "top": 2,
+//       "right": 4,
+//       "left": 3
+//     },
+//     "color": {
+//       "1": "white",
+//       "2": "black"
+//       // "1": "#e5918b", // Real color
+//       // "2": "#f0f0f0"
+//     }
+//   }
+// }
