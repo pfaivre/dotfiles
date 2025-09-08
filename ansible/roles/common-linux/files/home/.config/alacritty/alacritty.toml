@@ -17,3 +17,7 @@ italic.family = "Liberation Mono"
 bold_italic.family = "Liberation Mono"
 size = 10.0
 
+[cursor]
+style.shape = "Beam"
+style.blinking = "On"
+# unfocused_hollow = false

@@ -38,6 +38,7 @@
       - qt6-qtwayland
       - qt5ct
       - qt6ct
+      - thunar
       - waybar
       - wlogout
       - xdg-desktop-portal-hyprland

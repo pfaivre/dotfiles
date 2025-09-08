@@ -47,6 +47,7 @@
       # Various stuff I don't use
       - NetworkManager-config-connectivity-fedora
       - xwaylandvideobridge
+      - usbmuxd
 
       # Fonts I can't read anyway
       - aajohan*
