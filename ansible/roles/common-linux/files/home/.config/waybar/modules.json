@@ -53,11 +53,16 @@
 
     // Wofi Application Launcher
     "custom/launcher": {
-        // START APPS LABEL
         "format": "Apps",
-        // END APPS LABEL
         "on-click": "pkill wofi; wofi --style ~/.config/mydesktop/current-theme/wofi/style.css",
         // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "tooltip-format": "Left: Open the application launcher"
+    },
+
+    // Wofi Application Launcher (Bliss-XP)
+    "custom/launcher-bliss-xp": {
+        "format": "démarrer",
+        "on-click": "pkill wofi; wofi --style ~/.config/mydesktop/current-theme/wofi/style.css",
         "tooltip-format": "Left: Open the application launcher"
     },
 
@@ -124,7 +129,7 @@
 
     "clock#date": {
         // "format": " {:%A %d %B %Y}",
-        "format": "{:L%a %d %B %Y}",
+        "format": "{:L%a %d %B}",
         "tooltip-format": "<span color='#eff1f5'><tt><small>{calendar}</small></tt></span>",
         "timezone": "Europe/Paris",
         "locale": "fr_FR.UTF-8",

@@ -2,7 +2,7 @@
 {
     "include": [
         "~/.config/waybar/modules.json",
-        "~/.config/waybar/layout.jsonc",
+        "~/.config/mydesktop/current-theme/waybar/layout.jsonc",
         "~/.config/mydesktop/current-theme/waybar/shape.json"
     ]
 }

@@ -1,0 +1,28 @@
+# Colors (Bliss-XP)
+
+# Default colors
+[colors.primary]
+background = '#ece9d8'
+foreground = '#000000'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#de482b'
+green   = '#81c046'
+yellow  = '#fccf03'
+blue    = '#3b77bc'
+magenta = '#df69ba'
+cyan    = '#4D9FE1'
+white   = '#E6EAD8'
+
+# Bright Colors
+[colors.bright]
+black   = '#000000'
+red     = '#de482b'
+green   = '#81c046'
+yellow  = '#fccf03'
+blue    = '#3b77bc'
+magenta = '#df69ba'
+cyan    = '#4D9FE1'
+white   = '#E6EAD8'

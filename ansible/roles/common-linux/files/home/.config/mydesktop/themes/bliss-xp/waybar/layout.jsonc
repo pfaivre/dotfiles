@@ -1,15 +1,22 @@
 // -*- mode: jsonc -*-
 {
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-bottom":0,
+    "margin-right": 0,
+    "height": 32,
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 0,
+
     "modules-left": [
-        "custom/launcher",
-        "clock",
-        "clock#date"
+        "custom/launcher-bliss-xp",
+        "hyprland/workspaces"
         // "wlr/taskbar",
         // "hyprland/window"
     ],
 
     "modules-center": [
-        "hyprland/workspaces"
     ],
 
     "modules-right": [
@@ -30,6 +37,8 @@
         "battery",
         // "battery#bat2",
         // "group/trayicons",
-        "custom/powermenu"
+        "clock#date",
+        "clock"
+        // "custom/powermenu"
     ]
 }

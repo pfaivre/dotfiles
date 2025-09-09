@@ -1,0 +1,44 @@
+// -*- mode: jsonc -*-
+{
+    "margin-top": 0,
+    "margin-left": 8,
+    "margin-bottom":8,
+    "margin-right": 8,
+    "height": 40,
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 0,
+
+    "modules-left": [
+        "custom/launcher",
+        "clock",
+        "clock#date"
+        // "wlr/taskbar",
+        // "hyprland/window"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "mpd",
+        "tray",
+        "power-profiles-daemon",
+        // "idle_inhibitor",
+        "custom/notificationcenter",
+        "pulseaudio",
+        // "custom/nightshift",
+        // "network",
+        // "cpu",
+        // "memory",
+        // "temperature",
+        "backlight",
+        // "keyboard-state",
+        // "hyprland/language",
+        "battery",
+        // "battery#bat2",
+        // "group/trayicons",
+        "custom/powermenu"
+    ]
+}

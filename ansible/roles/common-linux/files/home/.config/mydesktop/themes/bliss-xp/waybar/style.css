@@ -1,0 +1,238 @@
+/* Bliss-XP style for Waybar */
+
+* {
+  font-family: Tahoma, Verdana, "Liberation Sans", sans;
+  font-weight: normal;
+}
+
+
+/* ~~~~~~~~~~~~~ */
+/* Task bar body */
+/* ~~~~~~~~~~~~~ */
+
+window#waybar {
+  color: white;
+  background: linear-gradient(
+    #3165c4 0,
+    #3682e5 6%,
+    #4490e6 10%,
+    #3883e5 12%,
+    #2b71e0 15%,
+    #2663da 18%,
+    #235bd6 20%,
+    #2258d5 23%,
+    #2157d6 38%,
+    #245ddb 54%,
+    #2562df 86%,
+    #245fdc 89%,
+    #2158d4 92%,
+    #1d4ec0 95%,
+    #1941a5 98%);
+  border-radius: 0;
+}
+
+
+/* ~~~~~~~~ */
+/* Tooltips */
+/* ~~~~~~~~ */
+
+tooltip {
+  padding: 2px;
+  border-radius: 0;
+  border: 1px solid black;
+  background-color: #ffffe2;
+  color: black;
+  font-size: 12px;
+}
+
+
+/* ~~~~~~~~~~~~ */
+/* Start button */
+/* ~~~~~~~~~~~~ */
+
+#custom-launcher-bliss-xp {
+  padding-left: 32px;
+  padding-right: 22px;
+
+  color: white;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  border-radius: 0 24px 24px 0;
+  border-radius: 0% 5% 5% 0% / 0% 40% 60% 0%;
+
+  background: no-repeat 8px / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
+              linear-gradient(90deg, #4abc4a 85%, #206d25 100%);
+  box-shadow: 0 -2px 3px 2px rgba(17, 16, 16, 0.3) inset,
+              3px 3px 4px 2px rgba(255, 255, 255, 0.5) inset,
+              1px 2px 1px rgba(255, 255, 255, 0.12),
+              1px -2px 1px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #27892e;
+  border-bottom: 1px solid #30863b;
+  border-left: 1px solid #1d6f45;
+}
+
+#custom-launcher-bliss-xp:hover {
+  background: no-repeat 8px / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
+              linear-gradient(90deg, #5ecc5e 70%, #3da043 100%);
+}
+
+
+/* ~~~~~~~~~~~~~~ */
+/* Shortcuts zone */
+/* ~~~~~~~~~~~~~~ */
+
+#workspaces {
+  padding: 0px;
+  background-color: transparent;
+  margin: 4px;
+  margin-left: 8px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+#workspaces button {
+  padding: 0 6px;
+  color: white;
+  border-radius: 3px;
+  transition: none;
+
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+#workspaces button:hover {
+  background-color: #53a3ff;
+
+  border-top: 1px solid #2c5fb2;
+  border-left: 1px solid #306fd9;
+  border-bottom: 1px solid #1d4196;
+  border-right: 1px solid #1f408c;
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+#workspaces button.active {
+  background-color: #1e52b7;
+
+  border-top: 1px solid #1c62d2;
+  border-left: 1px solid #115be9;
+  border-bottom: 1px solid #0c3cae;
+  border-right: 1px solid #0d3a9c;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset;
+}
+
+#workspaces button.active:hover {
+  background-color: #53a3ff;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~ */
+/* Notification area */
+/* ~~~~~~~~~~~~~~~~~ */
+
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#cpu,
+#memory,
+#custom-notificationcenter,
+#custom-powermenu,
+#idle_inhibitor,
+#trayicons,
+#tray,
+#power-profiles-daemon,
+#custom-hyprshade {
+  min-width: 24px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 4px;
+
+  background: rgba(0, 0, 0, 0) linear-gradient(
+    rgb(12, 89, 185) 1%,
+    rgb(19, 158, 233) 6%,
+    rgb(24, 181, 242) 10%,
+    rgb(19, 155, 235) 14%,
+    rgb(18, 144, 232) 19%,
+    rgb(13, 141, 234) 63%,
+    rgb(13, 159, 241) 81%,
+    rgb(15, 158, 237) 88%,
+    rgb(17, 155, 233) 91%,
+    rgb(19, 146, 226) 94%,
+    rgb(19, 126, 215) 97%,
+    rgb(9, 91, 201) 100%);
+  color: white;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+#custom-launcher-bliss-xp:hover,
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-notificationcenter:hover,
+#custom-powermenu:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#custom-hyprshade:hover {
+  background-color: #5DB3FF;
+}
+
+#clock {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0;
+}
+
+#clock.date {
+  padding-left: 6px;
+  padding-right: 8px;
+  padding-top: 0;
+}
+
+#tray {
+  color: white;
+  padding-left: 8px;
+  border-left: 1px solid #0b3051;
+  box-shadow: rgba(24, 187, 255, 0.8) 1px 0px 1px inset;
+}
+
+#power-profiles-daemon {
+}
+
+#power-profiles-daemon.power-saver {
+  color: #9bea9c;
+}
+
+#power-profiles-daemon.performance {
+  color: #ffcc00;
+}
+
+#custom-notificationcenter {
+}
+
+#pulseaudio {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#pulseaudio.muted {
+}
+
+#custom-powermenu {
+  background-color: #de5c2f;
+  color: white;
+  font-size: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#custom-powermenu:hover {
+  background-color: #df9982;
+}

@@ -30,6 +30,7 @@ This allows to easily change theme and apply it immediately.
 ~/.config/mydesktop
 ├── current-theme ---------------.
 └── themes                       |
+    ├── bliss-xp                 |
     ├── everforest               | symlink
     ├── everforest-light         |
     ├── ocean-dark <-------------'

@@ -1,0 +1,117 @@
+/* Bliss-XP colors for Wlogout */
+
+@define-color bg_dim #2b303b;
+@define-color bg0 #E6EAD8;
+@define-color bg1 #E6EAD8;
+@define-color bg2 #E6EAD8;
+@define-color bg3 #E6EAD8;
+@define-color bg4 #808080;
+@define-color bg5 #808080;
+@define-color bg_visual #543a48;
+@define-color bg_red #514045;
+@define-color bg_green #425047;
+@define-color bg_blue #3a515d;
+@define-color bg_yellow #4d4c43;
+@define-color fg #ffffff;
+@define-color red #de482b;
+@define-color orange #FF9933;
+@define-color yellow #fccf03;
+@define-color green #81c046;
+@define-color aqua #5DB3FF;
+@define-color blue #3b77bc;
+@define-color purple #bd88ac;
+@define-color orange2 #FF9933;
+@define-color grey0 #808080;
+@define-color grey1 #B8B4A3;
+@define-color grey2 #E6EAD8;
+
+@define-color taskbar_blue #0062EA;
+@define-color taskbar_blue_active #5DB3FF;
+@define-color taskbar_status_blue #14A5F4;
+@define-color startmenu_green #008D00;
+@define-color startmenu_green_hover #31A431;
+
+
+
+* {
+	background-image: none;
+	box-shadow: none;
+	font-family: Tahoma, Verdana, "Liberation Sans", sans;
+}
+
+window {
+	background-color: rgba(0,0,0,0.3);
+}
+
+button {
+	margin: 64px 0;
+	border-radius: 0;
+    border: none;
+	text-decoration-color: magenta;
+
+	color: black;
+	background-color: #ece9d8;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 15%;
+
+	border-color: #808080;
+	border-style: solid;
+	border-width: 0 0 8px 0;
+}
+
+button:first-child {
+	border-radius: 64px 0 0 64px;
+}
+
+button:last-child {
+	border-radius: 0 64px 64px 0;
+}
+
+button:hover {
+	margin: 0;
+	border-radius: 64px;
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+	color: white;
+	/* background-size: 20%; */ /* Too laggy with a SVG */
+}
+
+button:focus, button:active {
+	outline: 3px solid #808080;
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/assets/logout.svg"), url("/usr/local/share/wlogout/assets/logout.svg"));
+}
+
+#logout:hover {
+	background-color: @blue;
+	border-color: @bg_blue;
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/assets/suspend.svg"), url("/usr/local/share/wlogout/assets/suspend.svg"));
+}
+
+#suspend:hover {
+	background-color: @green;
+	border-color: @bg_green;
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/assets/shutdown.svg"), url("/usr/local/share/wlogout/assets/shutdown.svg"));
+}
+
+#shutdown:hover {
+	background-color: @red;
+	border-color: @bg_red;
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/assets/reboot.svg"), url("/usr/local/share/wlogout/assets/reboot.svg"));
+}
+
+#reboot:hover {
+	background-color: @yellow;
+	border-color: @bg_yellow;
+}
