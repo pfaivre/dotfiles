@@ -15,7 +15,7 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     # Reload components
     pkill waybar; hyprctl dispatch exec "waybar -s ~/.config/mydesktop/current-theme/waybar/style.css"
     hyprctl reload
-    ~/.local/bin/set-wallpaper.sh
+    ~/.local/bin/set-wallpaper.sh first
     swaync-client --reload-css
     touch ~/.config/alacritty/alacritty.toml
 
@@ -27,11 +27,12 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     if [[ -f "$HOME/.config/mydesktop/themes/$1/light.mode" ]]; then
         echo "Setting light mode"
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+        gsettings set org.gnome.desktop.interface gtk-theme Everforest-Light-Medium
     else
         echo "Setting dark mode"
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+        gsettings set org.gnome.desktop.interface gtk-theme Everforest-Dark-Medium
     fi
-    # gsettings set org.gnome.desktop.interface gtk-theme Everforest-Dark-Medium
 else
     echo "Theme not found ~/.config/mydesktop/themes/$1"
 fi

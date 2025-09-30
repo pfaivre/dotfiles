@@ -46,7 +46,7 @@
 # authorization of the copyright holder.
 
 
-emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi -M fuzzy --show dmenu -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi -M multi-contains --show dmenu -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###

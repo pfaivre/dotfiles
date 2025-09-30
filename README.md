@@ -32,12 +32,12 @@ This allows to easily change theme and apply it immediately.
 └── themes                       |
     ├── bliss-xp                 |
     ├── everforest               | symlink
-    ├── everforest-light         |
-    ├── ocean-dark <-------------'
+    ├── everforest-light <-------'
+    ├── ocean-dark
     └── ...
 ```
 
-The script [theme-switcher.sh](ansible/roles/common-linux/files/home/.config/wofi/scripts/theme-switcher.sh) Opens a
+The script [command-palette.sh](ansible/roles/common-linux/files/home/.local/bin/command-palette.sh) Opens a
 Wofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current-theme accordingly.
 
 #### Credits

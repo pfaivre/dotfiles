@@ -5,12 +5,18 @@
 
 WALLPAPER_DIR="$HOME/.config/mydesktop/current-theme/wallpaper/"
 CURRENT_WALL=$(hyprctl hyprpaper listloaded)
+CURRENT_WALL=$(basename $CURRENT_WALL)
 
-# Get a random wallpaper that is not the current one
-# WALLPAPER=$(find "$WALLPAPER_DIR" -type f,l -name "wallpaper*" ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
+AVAILABLE_WALL_COUNT=$(ls -1q $WALLPAPER_DIR/wallpaper* | wc -l)
+echo Available: $AVAILABLE_WALL_COUNT
 
-# Get a random wallpaper
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f,l -name "wallpaper*" | shuf -n 1)
+if [ $AVAILABLE_WALL_COUNT -eq 1 ] || [[ $1 = "first" ]]; then
+    # Get the first wallpaper
+    WALLPAPER=$(find "$WALLPAPER_DIR" -type f,l -name "wallpaper*" | head -n 1)
+else
+    #Get a random wallpaper that is not the current one
+    WALLPAPER=$(find "$WALLPAPER_DIR" -type f,l -name "wallpaper*" ! -name "$CURRENT_WALL" | shuf -n 1)
+fi
 
 # Apply the selected wallpaper, if found
 if [[ ! -z "$WALLPAPER" ]]; then
