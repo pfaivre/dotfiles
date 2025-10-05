@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Emoji selector using wofi
+# Emoji selector using Rofi
 # French version
 # Originally extracted from the Unicode CLDR Project (with modifications)
 # https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-annotations-full/annotations/fr/annotations.json
@@ -46,7 +46,7 @@
 # authorization of the copyright holder.
 
 
-emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi -M multi-contains --show dmenu -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' $0 | rofi -dmenu | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###

@@ -23,29 +23,32 @@
       - vlc
 
       # Hyprland desktop
+      - alacritty
+      - blueman
       - fontawesome-fonts-all
+      - gnome-themes-extra
+      - gtk-murrine-engine
       - hypridle
       - hyprland
+      - hyprland-plugin-hyprexpo
       - hyprlock
       - hyprpaper
       - hyprpicker
       - hyprpolkitagent
-      - alacritty
+      - hyprshot
+      - hyprsunset
       - libnotify
       - network-manager-applet
       - pavucontrol
       - qt5-qtwayland
-      - qt6-qtwayland
       - qt5ct
+      - qt6-qtwayland
       - qt6ct
+      - rofi
+      - sassc
+      - SwayNotificationCenter
       - thunar
       - waybar
+      - wiremix
       - wlogout
       - xdg-desktop-portal-hyprland
-      - hyprsunset
-      - sassc
-      - gtk-murrine-engine
-      - gnome-themes-extra
-      - hyprshot
-      - SwayNotificationCenter
-      - hyprland-plugin-hyprexpo

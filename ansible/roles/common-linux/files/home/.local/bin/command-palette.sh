@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# This script provides a sort of command palette using Wofi.
-# It provides a list of commands that can perform various kinds of actions
+# This script opens a command palette using Rofi.
+# Allows to perform various kinds of actions on the system.
 
-selected=$(pkill wofi; \
+selected=$(pkill rofi; \
            sed '1,/^### DATA ###$/d' $0 | \
-           wofi -M multi-contains --show dmenu --style ~/.config/mydesktop/current-theme/wofi/style.css --hide-scroll --cache-file /dev/null)
+           rofi -dmenu -p "Command palette :")
 
 case $selected in
   # Theme
@@ -37,24 +37,63 @@ case $selected in
     ;;
 
   # Display
-  "Display: Temperature 6000")
-    hyprctl hyprsunset temperature 6000
-    ;;
-  "Display: Temperature 4500")
-    hyprctl hyprsunset temperature 4500
+  "Display: Color temperature")
+    ~/.local/bin/set-screen-temperature.sh
     ;;
 
+  # Utils
   "Utils: Color picker")
-    sleep 0.1 # Give Wofi time to close
+    sleep 0.1 # Give Rofi time to close
     hyprpicker -a
     ;;
+  "Utils: Screenshot (full screen)")
+    hyprshot -m output
+    ;;
+  "Utils: Screenshot (region)")
+    hyprshot -m region
+    ;;
+  "Utils: Screenshot (window)")
+    hyprshot -m window
+    ;;
 
-  "Personalization: Change wallpaper")
-    ~/.local/bin/set-wallpaper.sh
+  # Personalization
+  "Personalization: Next wallpaper")
+    ~/.local/bin/set-wallpaper.sh next
+    ;;
+
+  # Setup
+  "Setup: Audio")
+    alacritty --class Popup --command wiremix
+    ;;
+
+  "Setup: Input")
+    alacritty --class Popup --command nvim ~/.config/hypr/input.conf
+    ;;
+
+  "Setup: Keybindings")
+    alacritty --class Popup --command nvim ~/.config/hypr/keybindings.conf
+    ;;
+
+  "Setup: Monitors")
+    alacritty --class Popup --command nvim ~/.config/hypr/monitors.conf
+    ;;
+
+  "Setup: Hypridle")
+    alacritty --class Popup --command nvim ~/.config/hypr/hypridle.conf
+    ;;
+
+  "Setup: Hyprsunset")
+    alacritty --class Popup --command nvim ~/.config/hypr/hyprsunset.conf
+    ;;
+
+  "System: Kill process")
+    ps -u $USER -o pid,comm | rofi -dmenu | awk "{print $1}" | xargs -r kill
     ;;
 
   # Suggestions for more: toggle idle inhibitor, toggle wifi/bluetooth, etc.
 esac
+
+exit 0
 
 ### DATA ###
 Theme: Everforest
@@ -65,7 +104,16 @@ Power: Log-off
 Power: Sleep
 Power: Restart
 Power: Shutdown
-Display: Temperature 6000
-Display: Temperature 4500
+Display: Color temperature
 Utils: Color picker
-Personalization: Change wallpaper
+Utils: Screenshot (full screen)
+Utils: Screenshot (region)
+Utils: Screenshot (window)
+Personalization: Next wallpaper
+Setup: Audio
+Setup: Input
+Setup: Keybindings
+Setup: Monitors
+Setup: Hypridle
+Setup: Hyprsunset
+System: Kill process

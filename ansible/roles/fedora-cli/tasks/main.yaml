@@ -28,6 +28,7 @@
       - lolcat
       - most
       - ncdu
+      - neovim  # TODO: prevent the installation of nodejs (it is a weak dependency for some reason)
       # - p7zip  # Dangerously outdated, do not install
       - pv
       - pwgen

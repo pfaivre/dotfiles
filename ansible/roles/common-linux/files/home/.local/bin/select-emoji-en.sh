@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Emoji selector using wofi
+# Emoji selector using Rofi
 # English version
 # Source: summer-day-and-night theme by MathisP75
 # https://github.com/MathisP75/summer-day-and-night
 
-emoji="$(sed '1,/^### DATA ###$/d' $0 | wofi -M multi-contains --show dmenu -s .config/mydesktop/current-theme/wofi/style.css -i | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' $0 | rofi -dmenu | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###

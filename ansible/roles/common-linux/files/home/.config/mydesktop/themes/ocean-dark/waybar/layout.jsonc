@@ -24,6 +24,7 @@
     "modules-right": [
         "mpd",
         "tray",
+        "bluetooth",
         "power-profiles-daemon",
         // "idle_inhibitor",
         "custom/notificationcenter",
@@ -33,12 +34,11 @@
         // "cpu",
         // "memory",
         // "temperature",
-        "backlight",
+        // "backlight",
         // "keyboard-state",
         // "hyprland/language",
-        "battery",
-        // "battery#bat2",
-        // "group/trayicons",
+        // "battery",
+        "upower",
         "custom/powermenu"
     ]
 }

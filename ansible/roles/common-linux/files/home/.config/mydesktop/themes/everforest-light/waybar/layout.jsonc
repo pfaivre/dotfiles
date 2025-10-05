@@ -33,7 +33,7 @@
         // "cpu",
         // "memory",
         // "temperature",
-        "backlight",
+        // "backlight",
         // "keyboard-state",
         // "hyprland/language",
         "battery",

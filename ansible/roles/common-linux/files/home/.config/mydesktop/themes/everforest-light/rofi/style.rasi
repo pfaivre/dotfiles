@@ -1,0 +1,125 @@
+/**
+ * Everforest-light theme for Rofi
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    spacing: 0;
+    vertical-align: 0.5;
+
+    font: "Liberation Sans 11";
+    border-radius: 0;
+    border: 0;
+    text-color: #fdf6e3;
+    background-color: transparent;
+}
+
+configuration {
+    // display-drun: " Applications : ";
+    // display-run: " Commands: ";
+    // display-window: " Windows : ";
+}
+
+window {
+    width: 25%;
+    height: 50%;
+    location: center;
+
+    border: 0 0 5px 0;
+    border-radius: 10px;
+    border-color: #2e3538;
+    background-color: #5c6a72;
+}
+
+mainbox {
+    padding: 6px;
+    margin: 8px;
+    border: 0;
+    children: [inputbar, message, listview];
+}
+
+inputbar {
+    margin: 2px;
+    border: 0;
+    children: [entry];
+}
+
+prompt {
+    padding: 5px;
+    margin: 2px;
+    border: 0;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+entry {
+    margin: 0 0 8px 0;
+    padding: 10px;
+    border: 0 0 5px 0;
+    border-radius: 8px;
+    border-color: #465000;
+    cursor-color: #fdf6e3;
+    cursor-width: 2px;
+
+    background-color: #8da101;
+    text-color: inherit;
+}
+
+listview {
+    lines: 8;
+    padding: 4px;
+    margin: 4px;
+    background-color: inherit;
+    children: [element];
+}
+
+element {
+    padding: 1px 1px 6px 1px;
+    background-color: transparent;
+}
+
+element-text {
+    size: 1em;
+    padding: 4px 6px;
+    margin: 0px;
+    text-color: inherit;
+}
+
+element-icon {
+    padding: 2px 2px 2px 8px;
+    margin: 0;
+    size: 2em;
+}
+
+element selected {
+    border: 0 0 5px 0;
+    border-radius: 8px;
+    border-color: #bdc3af;
+
+    background-color: #fdf6e3;
+    text-color: #5c6a72;
+}
+
+element selected active {
+}
+
+message {
+    expand: true;
+    children: [textbox];
+}
+
+textbox {
+    expand: true;
+    margin: 6px;
+    padding: 3px;
+    text-color: black;
+}
+
+error-message {
+    expand: true;
+    border: 1px;
+    background-color: pink;
+    text-color: black;
+}

@@ -27,6 +27,7 @@ window#waybar {
 #pulseaudio,
 #network,
 #battery,
+#bluetooth,
 #cpu,
 #memory,
 #custom-notificationcenter,
@@ -35,6 +36,7 @@ window#waybar {
 #trayicons,
 #tray,
 #power-profiles-daemon,
+#upower,
 #custom-hyprshade {
   min-width: 28px;
   padding-left: 4px;
@@ -50,16 +52,17 @@ window#waybar {
 #pulseaudio:hover,
 #network:hover,
 #battery:hover,
+#bluetooth:hover,
 #cpu:hover,
 #memory:hover,
 #custom-notificationcenter:hover,
 #custom-powermenu:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
+#upower:hover,
 #custom-hyprshade:hover {
   background-color: @bg3;
 }
-
 
 #clock {
   padding-left: 12px;

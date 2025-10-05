@@ -16,7 +16,7 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 
 - Window manager: [Hyprland](https://github.com/hyprwm/Hyprland)
 - Top bar: [Waybar](https://github.com/Alexays/Waybar)
-- App launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
+- App launcher: [Rofi](https://davatorium.github.io/rofi/)
 - Terminal: [Alacritty](https://github.com/alacritty/alacritty)
 - Notification deamon: [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - Logout menu: [wlogout](https://github.com/ArtsyMacaw/wlogout/)
@@ -28,17 +28,17 @@ This allows to easily change theme and apply it immediately.
 
 ```
 ~/.config/mydesktop
-├── current-theme ---------------.
-└── themes                       |
-    ├── bliss-xp                 |
-    ├── everforest               | symlink
-    ├── everforest-light <-------'
+├── current-theme ------------.
+└── themes                    |
+    ├── bliss-xp              | symlink
+    ├── everforest            |
+    ├── everforest-light <----'
     ├── ocean-dark
     └── ...
 ```
 
 The script [command-palette.sh](ansible/roles/common-linux/files/home/.local/bin/command-palette.sh) Opens a
-Wofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current-theme accordingly.
+Rofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current-theme accordingly.
 
 #### Credits
 

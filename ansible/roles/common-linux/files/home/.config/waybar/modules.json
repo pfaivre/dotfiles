@@ -51,18 +51,18 @@
         "format": ""
     },
 
-    // Wofi Application Launcher
+    // Rofi Application Launcher
     "custom/launcher": {
         "format": "Apps",
-        "on-click": "pkill wofi; wofi --style ~/.config/mydesktop/current-theme/wofi/style.css",
+        "on-click": "pkill rofi; rofi -show drun -show-icons",
         // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip-format": "Left: Open the application launcher"
     },
 
-    // Wofi Application Launcher (Bliss-XP)
+    // Rofi Application Launcher (Bliss-XP)
     "custom/launcher-bliss-xp": {
         "format": "démarrer",
-        "on-click": "pkill wofi; wofi --style ~/.config/mydesktop/current-theme/wofi/style.css",
+        "on-click": "pkill rofi; rofi -show drun -show-icons -location 7",
         "tooltip-format": "Left: Open the application launcher"
     },
 
@@ -244,6 +244,11 @@
         ]
     },
 
+    "upower": {
+        "hide-if-empty": true,
+        "format": ""
+    },
+
     "battery#bat2": {
         "bat": "BAT2"
     },
@@ -283,7 +288,7 @@
 
     // Bluetooth
     "bluetooth": {
-        "format": " {status}",
+        "format": "",
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
