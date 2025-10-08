@@ -5,7 +5,7 @@
 # Source: summer-day-and-night theme by MathisP75
 # https://github.com/MathisP75/summer-day-and-night
 
-emoji="$(sed '1,/^### DATA ###$/d' $0 | rofi -dmenu | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' $0 | rofi -dmenu | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###

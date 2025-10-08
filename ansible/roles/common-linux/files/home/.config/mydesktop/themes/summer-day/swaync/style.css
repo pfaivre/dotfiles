@@ -1,21 +1,19 @@
-/* Everforest Light theme for Swaync */
+/* Summer day theme for Swaync */
 
-@define-color cc-bg #2d353b;
-@define-color noti-border-color #2d353b;
-@define-color noti-bg #d3c6aa;
-@define-color noti-bg-opaque #d3c6aa;
-@define-color noti-bg-darker lime;
+@define-color cc-bg #5c6a72;
+@define-color noti-border-color #5c6a72;
+@define-color noti-bg #fdf6e3;
+@define-color noti-bg-opaque #fdf6e3;
+@define-color noti-bg-darker #bdc3af;
 @define-color noti-bg-hover #e6e2cc;
 @define-color noti-bg-hover-opaque #e6e2cc;
 @define-color noti-bg-focus #e6e2cc;
 @define-color noti-close-bg #e6e2cc;
 @define-color noti-close-bg-hover #bdc3af;
-@define-color text-color #2d353b;
-@define-color cc-text-color #d3c6aa;
+@define-color text-color #5c6a72;
+@define-color cc-text-color #fdf6e3;
 @define-color text-color-disabled #bdc3af;
-@define-color bg-selected #a7c080;
-
-@define-color green #a7c080;
+@define-color bg-selected #8da101;
 
 .notification-row {
   outline: none;
@@ -273,10 +271,11 @@
   margin: 16px;
   background: @cc-bg;
   color: @cc-text-color;
-  border-color: #161a1d;
   border-radius: 15px;
-  border-width: 0 0 5px 0;
-  box-shadow: 0 8px 14px #161a1d;
+  border-bottom: 5px solid #2e3538;
+  border-left: 0 solid #2e3538;
+  border-right: 0 solid #2e3538;
+  /* box-shadow: 0 8px 14px #2e3538; */
 }
 
 .control-center .control-center-list-placeholder {
@@ -292,8 +291,10 @@
 .control-center .control-center-list .notification {
   box-shadow: none; /* Shadows here slow down the animations significantly */
 
-  border-color: #7d6a40;
-  border-width: 0 0 5px 0;
+  border-bottom: 5px solid #bdc3af;
+  border-top: 0 solid #bdc3af;
+  border-left: 0 solid #bdc3af;
+  border-right: 0 solid #bdc3af;
 }
 
 .control-center .control-center-list .notification .notification-default-action,
@@ -323,7 +324,7 @@
 /* Title widget */
 .widget-title {
   color: @cc-text-color;
-  margin: 16px 16px 4px 16px;
+  margin: 8px;
   font-size: 1.5rem;
 }
 
@@ -333,8 +334,9 @@
   text-shadow: none;
   background: @noti-bg;
   /* border: 3px solid @noti-border-color; */
-  border-color: #7d6a40;
-  border-width: 0 0 5px 0;
+  border-bottom: 5px solid #bdc3af;
+  border-left: 0 solid #bdc3af;
+  border-right: 0 solid #bdc3af;
   box-shadow: none;
   border-radius: 10px;
 }
@@ -346,7 +348,7 @@
 /* DND widget */
 .widget-dnd {
   color: @cc-text-color;
-  margin: 16px 16px 4px 16px;
+  margin: 8px;
   font-size: 1.1rem;
 }
 
@@ -377,20 +379,19 @@
 }
 
 /* Mpris widget */
+@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
+@define-color mpris-button-hover rgba(0, 0, 0, 0.50);
 .widget-mpris {
   /* The parent to all players */
-  box-shadow: none;
-  border-radius: 0;
-  background: none;
 }
 
 .widget-mpris .widget-mpris-player {
   padding: 8px;
   padding: 16px;
   margin: 16px 20px;
+  background-color: @mpris-album-art-overlay;
   border-radius: 12px;
-  box-shadow: none;
-  background: none;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75); */
 }
 
 .widget-mpris .widget-mpris-player button:hover {
@@ -400,18 +401,16 @@
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
   border-radius: 12px;
-  box-shadow: none;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75); */
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-title {
   font-weight: bold;
-  font-size: 1rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-size: 1.25rem;
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-subtitle {
-  font-size: 1rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-size: 1.1rem;
 }
 
 .widget-mpris .widget-mpris-player > box > button {
@@ -419,7 +418,7 @@
 }
 
 .widget-mpris .widget-mpris-player > box > button:hover {
-  background-color: rgba(0, 0, 0, 0.50);
+  background-color: @mpris-button-hover;
 }
 
 .widget-mpris > box > button {
@@ -476,35 +475,15 @@
 
 /* Volume widget */
 .widget-volume {
-  background-color: transparent;
+  background-color: @noti-bg;
   padding: 8px;
-  margin: 8px 16px;
+  margin: 8px;
   border-radius: 12px;
 }
 
 .widget-volume > box > button {
+  background: transparent;
   border: none;
-  box-shadow: none;
-}
-
-.widget-volume > box > button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* right side of the bar */
-.widget-volume scale trough {
-}
-
-.widget-volume scale trough slider {
-  /* border-color: @blue; */
-  outline-color: @green;
-  text-decoration-color: @green;
-  box-shadow: inset 0 0 0 2px @green;
-}
-
-/* Left side of the bar */
-.widget-volume scale trough highlight {
-  border: 1px solid @green;
 }
 
 .per-app-volume {

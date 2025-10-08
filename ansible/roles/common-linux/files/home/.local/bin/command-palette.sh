@@ -9,16 +9,16 @@ selected=$(pkill rofi; \
 
 case $selected in
   # Theme
-  "Theme: Everforest")
-    ~/.local/bin/set-theme.sh everforest
+  "Theme: Summer Night")
+    ~/.local/bin/set-theme.sh summer-night
     ;;
-  "Theme: Everforest-Light")
-    ~/.local/bin/set-theme.sh everforest-light
+  "Theme: Summer Day")
+    ~/.local/bin/set-theme.sh summer-day
     ;;
-  "Theme: Ocean-Dark")
+  "Theme: Ocean Dark")
     ~/.local/bin/set-theme.sh ocean-dark
     ;;
-  "Theme: Bliss-XP")
+  "Theme: Bliss XP")
     ~/.local/bin/set-theme.sh bliss-xp
     ;;
 
@@ -96,10 +96,10 @@ esac
 exit 0
 
 ### DATA ###
-Theme: Everforest
-Theme: Everforest-Light
-Theme: Ocean-Dark
-Theme: Bliss-XP
+Theme: Summer Night
+Theme: Summer Day
+Theme: Ocean Dark
+Theme: Bliss XP
 Power: Log-off
 Power: Sleep
 Power: Restart

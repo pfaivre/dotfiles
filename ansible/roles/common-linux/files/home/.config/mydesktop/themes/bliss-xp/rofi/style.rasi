@@ -25,7 +25,7 @@ configuration {
 window {
     width: 25%;
     height: 50%;
-    location: center;
+    // location: center;
 
     border: 4px;
     border-radius: 0;
@@ -62,6 +62,7 @@ entry {
     background-color: white;
     text-color: inherit;
     cursor-width: 1px;
+    cursor: text;
 }
 
 listview {

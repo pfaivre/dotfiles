@@ -1,5 +1,5 @@
 /**
- * Everforest-light theme for Rofi
+ * Summer day theme for Rofi
 */
 
 * {
@@ -62,6 +62,7 @@ entry {
     border-color: #556a35;
     cursor-color: #2d353b;
     cursor-width: 2px;
+    cursor: text;
 
     background-color: #a7c080;
     text-color: inherit;

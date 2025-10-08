@@ -11,7 +11,7 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 ### Hyprland desktop configuration with a selection of themes
 
 <p align="center">
-  <img src="docs/desktop-screenshot.jpg" alt="Hyprland desktop with Everforest dark theme" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
+  <img src="docs/desktop-screenshot.jpg" alt="Hyprland desktop with Summer Night theme" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
 </p>
 
 - Window manager: [Hyprland](https://github.com/hyprwm/Hyprland)
@@ -31,14 +31,17 @@ This allows to easily change theme and apply it immediately.
 ├── current-theme ------------.
 └── themes                    |
     ├── bliss-xp              | symlink
-    ├── everforest            |
-    ├── everforest-light <----'
-    ├── ocean-dark
+    ├── ocean-dark            |
+    ├── summer-day <----------'
+    ├── summer-night
     └── ...
 ```
 
 The script [command-palette.sh](ansible/roles/common-linux/files/home/.local/bin/command-palette.sh) Opens a
 Rofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current-theme accordingly.
+<p align="center">
+  <img src="docs/theme-selector.gif" alt="Selecting a theme with the command palette" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
+</p>
 
 #### Credits
 

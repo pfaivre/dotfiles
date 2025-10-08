@@ -1,4 +1,4 @@
-/* Everforest Light style for Waybar */
+/* Summer night style for Waybar */
 
 @import "./colors.css";
 
@@ -23,7 +23,7 @@ window#waybar {
   border-radius: 0px 0px 15px 15px;
 
   border-bottom-width: 5px;
-  border-bottom-color: #2e3538;
+  border-bottom-color: #7d6a40;
   border-bottom-style: solid;
 }
 
@@ -58,6 +58,7 @@ window#waybar {
 #custom-powermenu,
 #idle_inhibitor,
 #power-profiles-daemon,
+#tray,
 #trayicons {
   background-color: @bg0;
   color: @fg;
@@ -69,7 +70,7 @@ window#waybar {
 	border-radius: 10px;
 
   border-bottom-width: 5px;
-  border-bottom-color: @bg5;
+  border-bottom-color: #161a1d;
   border-bottom-style: solid;
 }
 
@@ -85,9 +86,13 @@ window#waybar {
 #custom-powermenu:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
+#tray:hover,
 #trayicons:hover {
   margin-top: 5px;
   border-bottom-width: 7px;
+}
+
+#pulseaudio {
 }
 
 #pulseaudio.muted {
@@ -121,7 +126,7 @@ window#waybar {
   margin-bottom: -5px;
 
   border-bottom-width: 5px;
-  border-bottom-color: #1c4a62;
+  border-bottom-color: #366660;
   border-bottom-style: solid;
   border-left-width: 0px;
   border-left-color: #366660;
@@ -144,7 +149,7 @@ window#waybar {
 #custom-launcher {
   background-color: @green;
   color: @bg0;
-  border-bottom-color: #465000;
+  border-bottom-color: #556a35;
 
   margin-left: 15px;
   padding-left: 20px;
