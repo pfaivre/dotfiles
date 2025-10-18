@@ -9,10 +9,11 @@
 }
 
 tooltip {
-  padding: 8px;
+  padding: 16px;
   border-radius: 15px;
   background-color: @bg0;
   border: 3px solid @fg;
+  color: @fg;
 }
 
 window#waybar {
@@ -58,6 +59,7 @@ window#waybar {
 #custom-powermenu,
 #idle_inhibitor,
 #power-profiles-daemon,
+#tray,
 #trayicons {
   background-color: @bg0;
   color: @fg;
@@ -85,6 +87,7 @@ window#waybar {
 #custom-powermenu:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
+/* #tray:hover, */
 #trayicons:hover {
   margin-top: 5px;
   border-bottom-width: 7px;

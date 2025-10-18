@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Don't show if the terminal is too small
 if [ $1 -lt 65 ];then

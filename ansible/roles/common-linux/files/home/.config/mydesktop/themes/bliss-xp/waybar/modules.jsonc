@@ -1,0 +1,8 @@
+{
+    // Rofi Application Launcher (Bliss-XP)
+    "custom/launcher-bliss-xp": {
+        "format": "démarrer",
+        "on-click": "pkill rofi; rofi -show drun -show-icons -theme-str 'window {location: southwest; y-offset: -34px;}'",
+        "tooltip-format": "Left: Open the application launcher"
+    }
+}

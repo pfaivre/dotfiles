@@ -1,22 +1,24 @@
 // -*- mode: jsonc -*-
 {
-    "margin-top": 0,
-    "margin-left": 0,
-    "margin-bottom":0,
-    "margin-right": 0,
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-bottom": 0,
+    "margin-right": 8,
     "height": 32,
+    "width": 48,
     "layer": "top",
-    "position": "bottom",
+    "position": "right",
     "spacing": 0,
 
     "modules-left": [
-        "custom/launcher-bliss-xp",
-        "hyprland/workspaces",
-        "wlr/taskbar"
+        "custom/launcher-club"
+        // "clock#date"
+        // "wlr/taskbar",
         // "hyprland/window"
     ],
 
     "modules-center": [
+        "hyprland/workspaces"
     ],
 
     "modules-right": [
@@ -31,17 +33,13 @@
         // "network",
         // "cpu",
         // "memory",
-        // "disk#root",
-        // "disk#home",
         // "temperature",
         // "backlight",
         // "keyboard-state",
         // "hyprland/language",
-        "battery",
-        // "battery#bat2",
-        // "group/trayicons",
-        // "clock#date",
-        "clock"
-        // "custom/powermenu"
+        // "battery",
+        // "upower",
+        // "custom/powermenu",
+        "clock#vertical"
     ]
 }

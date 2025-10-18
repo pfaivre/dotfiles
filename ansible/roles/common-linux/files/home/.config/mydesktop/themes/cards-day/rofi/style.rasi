@@ -1,0 +1,120 @@
+/**
+ * Cards Day theme for Rofi
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    spacing: 0;
+    vertical-align: 0.5;
+
+    font: "Liberation Sans 11";
+    border-radius: 0;
+    border: 0;
+    text-color: #242320;
+    background-color: transparent;
+}
+
+configuration {
+    display-drun: "Applications : ";
+    display-run: "Commands: ";
+    display-window: "Windows : ";
+}
+
+window {
+    width: 25%;
+    // height: 50%;
+    location: center;
+
+    border: 2px;
+    border-color: #5c5952;
+    border-radius: 4px;
+    background-color: #F7F1E3;
+}
+
+mainbox {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    children: [inputbar, message, listview];
+}
+
+inputbar {
+    margin: 0 0 8px 0;
+    border: 0 0 2px 0;
+    border-color: #5c5952;
+    background-color: #FFF9EC;
+    // children: [prompt, entry];
+    children: [entry];
+}
+
+prompt {
+    padding: 0 0 0 10px;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+entry {
+    padding: 12px 12px 12px 12px;
+    margin: 0;
+    border: 0;
+    cursor-width: 2px;
+    cursor: text;
+}
+
+listview {
+    lines: 12;
+    padding: 0;
+    margin: 0;
+    children: [element];
+}
+
+element {
+    padding: 4px 8px;
+    margin: 0 7px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 0 0 2px 0;
+    border-color: transparent;
+    text-color: #242320;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+element-icon {
+    padding: 0 4px;
+    margin: 0;
+    size: 2em;
+}
+
+element selected {
+    border-color: #999993;
+    background-color: #A0D4CF;
+}
+
+element selected active {
+}
+
+message {
+    expand: true;
+    children: [textbox];
+}
+
+textbox {
+    expand: true;
+    margin: 6px;
+    padding: 3px;
+    text-color: inherit;
+}
+
+error-message {
+    expand: true;
+    border: 1px;
+    background-color: rgb(58, 38, 41);
+    text-color: inherit;
+}

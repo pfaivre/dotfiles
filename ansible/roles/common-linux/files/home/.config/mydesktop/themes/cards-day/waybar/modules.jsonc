@@ -1,0 +1,38 @@
+{
+    // Rofi Application Launcher (card icon)
+    "custom/launcher-club": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.local/bin/card-color-of-the-day.sh",
+        "on-click": "pkill rofi; rofi -show drun -show-icons",
+        // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "tooltip-format": "Left: Open the application launcher"
+    },
+
+    "clock#vertical": {
+        // "format": " {:%H:%M}",
+        "format": "{:L%H\n%M}",
+        "timezone": "Europe/Paris",
+        "locale": "fr_FR.UTF-8",
+        "tooltip": true,
+        "tooltip-format": "<span><tt><small>{calendar}</small></tt></span>",
+        "calendar": {
+            "mode-mon-col"      : 4,
+            "weeks-pos"         : "left",
+            "on-scroll"         : 1,
+            "on-click-left"    : "mode",
+            "format": {
+                "months":   "<span color='#242320'>{}</span>",
+                "weeks":    "<span color='#242320'>{}</span>",
+                "weekdays": "<span color='#242320'>{}</span>",
+                "today":    "<span color='#F7F1E3' background='#9D73A4'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click"    : "mode",
+            "on-scroll-up"      : "shift_up",
+            "on-scroll-down"    : "shift_down"
+        },
+        "justify": "center"
+    }
+}

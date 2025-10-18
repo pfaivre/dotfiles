@@ -15,6 +15,9 @@ case $selected in
   "Theme: Summer Day")
     ~/.local/bin/set-theme.sh summer-day
     ;;
+  "Theme: Cards Day")
+    ~/.local/bin/set-theme.sh cards-day
+    ;;
   "Theme: Ocean Dark")
     ~/.local/bin/set-theme.sh ocean-dark
     ;;
@@ -98,6 +101,7 @@ exit 0
 ### DATA ###
 Theme: Summer Night
 Theme: Summer Day
+Theme: Cards Day
 Theme: Ocean Dark
 Theme: Bliss XP
 Power: Log-off

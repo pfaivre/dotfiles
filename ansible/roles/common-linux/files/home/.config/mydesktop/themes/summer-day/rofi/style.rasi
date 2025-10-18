@@ -83,13 +83,13 @@ element {
 
 element-text {
     size: 1em;
-    padding: 4px 6px;
+    padding: 2px 6px;
     margin: 0px;
     text-color: inherit;
 }
 
 element-icon {
-    padding: 2px 2px 2px 8px;
+    padding: 1px 2px 1px 8px;
     margin: 0;
     size: 2em;
 }

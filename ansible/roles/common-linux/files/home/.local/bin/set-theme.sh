@@ -28,10 +28,12 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
         echo "Setting light mode"
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
         gsettings set org.gnome.desktop.interface gtk-theme Everforest-Light-Medium
+        gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
     else
         echo "Setting dark mode"
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
         gsettings set org.gnome.desktop.interface gtk-theme Everforest-Dark-Medium
+        gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-dark"
     fi
 else
     echo "Theme not found ~/.config/mydesktop/themes/$1"

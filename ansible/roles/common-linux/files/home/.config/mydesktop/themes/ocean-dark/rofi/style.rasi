@@ -2,118 +2,6 @@
  * Ocean dark theme for Rofi
 */
 
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    spacing: 0;
-    vertical-align: 0.5;
-
-    font: "Liberation Sans 11";
-    border-radius: 0;
-    border: 0;
-    text-color: #eff1f5;
-    background-color: transparent;
-}
-
-configuration {
-    display-drun: "Applications : ";
-    display-run: "Commands: ";
-    display-window: "Windows : ";
-}
-
-window {
-    width: 25%;
-    // height: 50%;
-    location: center;
-
-    border: 0;
-    border-radius: 0;
-    background-color: #2B303B;
-}
-
-mainbox {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    children: [inputbar, message, listview];
-}
-
-inputbar {
-    margin: 0 0 8px 0;
-    border: 0;
-    background-color: #3b4558;
-    // children: [prompt, entry];
-    children: [entry];
-}
-
-prompt {
-    padding: 0 0 0 10px;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
-    text-color: inherit;
-}
-
-entry {
-    padding: 12px 12px 12px 12px;
-    margin: 0;
-    border: 0;
-    cursor-width: 1px;
-    cursor: text;
-}
-
-listview {
-    lines: 12;
-    padding: 0;
-    margin: 0;
-    children: [element];
-}
-
-element {
-    padding: 6px 12px;
-    background-color: transparent;
-    text-color: #717886;
-}
-
-element-text {
-    text-color: inherit;
-}
-
-element-icon {
-    padding: 0 4px;
-    margin: 0;
-    size: 2em;
-}
-
-element selected {
-    text-color: #eff1f5;
-}
-
-element selected active {
-}
-
-message {
-    expand: true;
-    children: [textbox];
-}
-
-textbox {
-    expand: true;
-    margin: 6px;
-    padding: 3px;
-    text-color: inherit;
-}
-
-error-message {
-    expand: true;
-    border: 1px;
-    background-color: rgb(58, 38, 41);
-    text-color: inherit;
-}
-
-// Alternate style:
-
 // * {
 //     padding: 0;
 //     margin: 0;
@@ -129,82 +17,77 @@ error-message {
 // }
 
 // configuration {
-//     // display-drun: " Applications : ";
-//     // display-run: " Commands: ";
-//     // display-window: " Windows : ";
+//     display-drun: "Applications : ";
+//     display-run: "Commands: ";
+//     display-window: "Windows : ";
 // }
 
 // window {
 //     width: 25%;
-//     height: 50%;
+//     // height: 50%;
 //     location: center;
 
-//     border: 4px;
+//     border: 0;
 //     border-radius: 0;
-//     border-color: #62737f;
-//     background-color: #2b303b;
+//     background-color: #2B303B;
 // }
 
 // mainbox {
-//     padding: 6px;
-//     margin: 8px;
+//     padding: 0;
+//     margin: 0;
 //     border: 0;
 //     children: [inputbar, message, listview];
 // }
 
 // inputbar {
-//     margin: 2px 2px 12px 2px;
+//     margin: 0 0 8px 0;
 //     border: 0;
+//     background-color: #3b4558;
+//     // children: [prompt, entry];
 //     children: [entry];
 // }
 
 // prompt {
-//     padding: 5px;
-//     margin: 2px;
+//     padding: 0 0 0 10px;
+//     margin: 0;
 //     border: 0;
 //     background-color: transparent;
-//     text-color: black;
+//     text-color: inherit;
 // }
 
 // entry {
-//     padding: 5px;
-//     margin: 2px;
-//     border: 1px;
-//     border-color: #4d5462;
+//     padding: 12px 12px 12px 12px;
+//     margin: 0;
+//     border: 0;
 //     cursor-width: 1px;
-//     background-color: #393f4a;
+//     cursor: text;
 // }
 
 // listview {
-//     lines: 8;
-//     padding: 4px;
+//     lines: 12;
+//     padding: 0;
 //     margin: 0;
 //     children: [element];
 // }
 
 // element {
-//     padding: 2px;
+//     padding: 6px 12px;
 //     background-color: transparent;
+//     text-color: #717886;
 // }
 
 // element-text {
-//     size: 1em;
-//     padding: 0 4px;
-//     margin: 0px;
 //     text-color: inherit;
 // }
 
 // element-icon {
-//     padding: 2px 6px;
+//     padding: 0 4px;
 //     margin: 0;
 //     size: 2em;
 // }
 
 // element selected {
-//     border: 1px;
-//     border-color: #4d5462;
-//     background-color: #393f4a;
-//     text-color: inherit;
+//     text-color: #eff1f5;
 // }
 
 // element selected active {
@@ -228,3 +111,121 @@ error-message {
 //     background-color: rgb(58, 38, 41);
 //     text-color: inherit;
 // }
+
+// Alternate style:
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    spacing: 0;
+    vertical-align: 0.5;
+
+    font: "Liberation Sans 11";
+    border-radius: 0;
+    border: 0;
+    text-color: #eff1f5;
+    background-color: transparent;
+}
+
+configuration {
+    // display-drun: " Applications : ";
+    // display-run: " Commands: ";
+    // display-window: " Windows : ";
+}
+
+window {
+    width: 25%;
+    height: 50%;
+    location: center;
+
+    border: 4px;
+    border-radius: 0;
+    border-color: #7A8A95;
+    background-color: #2b303b;
+}
+
+mainbox {
+    padding: 6px;
+    margin: 8px;
+    border: 0;
+    children: [inputbar, message, listview];
+}
+
+inputbar {
+    margin: 2px 2px 12px 2px;
+    border: 0;
+    children: [entry];
+}
+
+prompt {
+    padding: 5px;
+    margin: 2px;
+    border: 0;
+    background-color: transparent;
+    text-color: black;
+}
+
+entry {
+    padding: 5px;
+    margin: 2px;
+    border: 1px;
+    border-color: #4d5462;
+    cursor-width: 1px;
+    background-color: #393f4a;
+    cursor: text;
+}
+
+listview {
+    lines: 8;
+    padding: 4px;
+    margin: 0;
+    children: [element];
+}
+
+element {
+    padding: 2px;
+    background-color: transparent;
+}
+
+element-text {
+    size: 1em;
+    padding: 0 4px;
+    margin: 0px;
+    text-color: inherit;
+}
+
+element-icon {
+    padding: 2px 6px;
+    margin: 0;
+    size: 2em;
+}
+
+element selected {
+    border: 1px;
+    border-color: #4d5462;
+    background-color: #393f4a;
+    text-color: inherit;
+}
+
+element selected active {
+}
+
+message {
+    expand: true;
+    children: [textbox];
+}
+
+textbox {
+    expand: true;
+    margin: 6px;
+    padding: 3px;
+    text-color: inherit;
+}
+
+error-message {
+    expand: true;
+    border: 1px;
+    background-color: rgb(58, 38, 41);
+    text-color: inherit;
+}

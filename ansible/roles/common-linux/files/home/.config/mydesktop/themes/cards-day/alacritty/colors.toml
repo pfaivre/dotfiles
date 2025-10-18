@@ -1,0 +1,28 @@
+# Colors (Cards Day)
+
+# Default colors
+[colors.primary]
+background = '#F7F1E3'
+foreground = '#242320'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#b97a72'
+green   = '#a0cc9b'
+yellow  = '#caac73'
+blue    = '#91b0c7'
+magenta = '#a579ad'
+cyan    = '#82b4af'
+white   = '#FFF9EC'
+
+# Bright Colors
+[colors.bright]
+black   = '#2b2b2b'
+red     = '#F6A89E'
+green   = '#CDFDC8'
+yellow  = '#F4D394'
+blue    = '#C9E8FF'
+magenta = '#CBA0D4'
+cyan    = '#A0D4CF'
+white   = '#fffcf5'

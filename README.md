@@ -11,7 +11,7 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 ### Hyprland desktop configuration with a selection of themes
 
 <p align="center">
-  <img src="docs/desktop-screenshot.jpg" alt="Hyprland desktop with Summer Night theme" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
+  <img src="docs/theme-cards-day.jpg" alt="Hyprland desktop with Summer Night theme"  width="480" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
 </p>
 
 - Window manager: [Hyprland](https://github.com/hyprwm/Hyprland)
@@ -42,6 +42,14 @@ Rofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current
 <p align="center">
   <img src="docs/theme-selector.gif" alt="Selecting a theme with the command palette" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
 </p>
+
+### Themes
+|||
+|-|-|
+|<img alt="Theme: Cards Day" width="480" src="docs/theme-cards-day.jpg">|<img alt="Theme: Ocean Dark" width="480" src="docs/theme-ocean-dark.jpg">|
+|<img alt="Theme: Summer Day" width="480" src="docs/theme-summer-day.jpg">|<img alt="Theme: Summer Night" width="480" src="docs/theme-summer-night.jpg">|
+|<img alt="Theme: Bliss XP" width="480" src="docs/theme-bliss-xp.jpg">||
+
 
 #### Credits
 
