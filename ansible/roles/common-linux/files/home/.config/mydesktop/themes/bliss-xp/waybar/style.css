@@ -225,6 +225,9 @@ tooltip {
   box-shadow: rgba(24, 187, 255, 0.8) 1px 0px 1px inset;
 }
 
+#tray menu {
+}
+
 #power-profiles-daemon {
 }
 

@@ -11,7 +11,7 @@ Automated dotfiles installer with Ansible (featuring my personal set of dotfiles
 ### Hyprland desktop configuration with a selection of themes
 
 <p align="center">
-  <img src="docs/theme-cards-day.jpg" alt="Hyprland desktop with Summer Night theme"  width="480" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
+  <img src="docs/theme-ocean-dark.jpg" alt="Hyprland desktop"  width="480" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
 </p>
 
 - Window manager: [Hyprland](https://github.com/hyprwm/Hyprland)

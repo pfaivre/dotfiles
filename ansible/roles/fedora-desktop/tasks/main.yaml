@@ -14,7 +14,7 @@
     name:
       # - audacious
       # - eog
-      - ffmpeg
+      # - ffmpeg # In fedora, this may conflict with another package
       - gimp
       - heif-pixbuf-loader
       - inkscape
@@ -29,7 +29,7 @@
       - gnome-themes-extra
       - gtk-murrine-engine
       - hypridle
-      - hyprland
+      - hyprland # In fedora 43, this may conflict with another package
       - hyprland-plugin-hyprexpo
       - hyprlock
       - hyprpaper
@@ -40,10 +40,10 @@
       - libnotify
       - network-manager-applet
       - pavucontrol
-      - qt5-qtwayland
-      - qt5ct
-      - qt6-qtwayland
-      - qt6ct
+      # - qt5-qtwayland
+      # - qt5ct
+      # - qt6-qtwayland
+      # - qt6ct
       - rofi
       - sassc
       - SwayNotificationCenter
