@@ -11,11 +11,11 @@
       - lolcat
       - most
       - ncdu
-      - p7zip-full
+      # - p7zip-full # Dangerously outdated, do not install
       - pv
       - pwgen
       - ranger
-      - screenfetch
+      # - screenfetch
       - sloccount
       - tmux
       - toilet

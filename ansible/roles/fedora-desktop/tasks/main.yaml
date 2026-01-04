@@ -45,7 +45,6 @@
       # - qt6-qtwayland
       # - qt6ct
       - rofi
-      - sassc
       - SwayNotificationCenter
       - thunar
       - waybar
