@@ -6,6 +6,7 @@
     name:
       - btop
       - cmatrix
+      - fastfetch
       - git
       - htop
       - lolcat

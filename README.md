@@ -78,3 +78,15 @@ Then it will run the main playbook to:
 - recursively loop into the "ansible/roles/common-linux/files/home" folder. For each file found, a link will be created in the `$HOME` directory, keeping its subdirectory structure.
 
 Putting a link for configuration files instead of copying them, allows to re-run the dotfiles installer without erasing the locally modified configurations.
+
+# Bonus
+
+## Fix-WindowsPrivacy.ps1
+
+If you really have to use Windows, this disables some privacy invasive features of Windows 11.
+
+```powershell
+PS (Admin)> .\Fix-WindowsPrivacy.ps1 -Apply
+```
+
+Please make sure to check what this script performs before running it on a sensitive machine. I decline any responsibility for a broken Windows system after running this script.
