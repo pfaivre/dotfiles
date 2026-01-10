@@ -27,13 +27,16 @@
     Apply privacy fixes:
     PS> .\Fix-WindowsPrivacy.ps1 -Apply
     
-    Apply privacy fixes and quality-of-life improvements:
-    PS> .\Fix-WindowsPrivacy.ps1 -Apply -QualityOfLife
+    Apply all optional changes:
+    PS> .\Fix-WindowsPrivacy.ps1 -Apply -AiSettings -QualityOfLife
 #>
 
 param (
     [Parameter(Mandatory=$false)]
     [switch]$Apply,
+
+    [Parameter(Mandatory=$false)]
+    [switch]$AiSettings,
     
     [Parameter(Mandatory=$false)]
     [switch]$QualityOfLife
@@ -53,9 +56,9 @@ function Disable-Service {
 
     $serviceStatus = Get-Service -Name $Name -ErrorAction SilentlyContinue
     if ($serviceStatus -eq $null) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $Name service is removed."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name service is removed."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $Name service is not removed."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name service is not removed."
     }
 }
 
@@ -75,9 +78,9 @@ function Disable-Task {
     # TODO: handle edge cases 1. not tasks found, 2. multiple tasks found
     $t = Get-ScheduledTask -TaskName "$TaskName"
     if ($t.State -eq "Disabled") {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $TaskName task is disabled."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $TaskName task is disabled."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $TaskName task is not disabled."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $TaskName task is not disabled."
     }
 }
 
@@ -99,9 +102,9 @@ function Set-RegistrySettingDword {
 
     $value = (Get-ItemProperty -Path "$Path" -Name "$Name" -ErrorAction SilentlyContinue)."$Name"
     if ($value -eq $NewValue) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $Name registry setting is set to $NewValue."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name registry setting is set to $NewValue."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $Name registry setting is not set to $NewValue."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name registry setting is not set to $NewValue."
     }
 }
 
@@ -123,9 +126,9 @@ function Set-RegistrySettingString {
 
     $value = (Get-ItemProperty -Path "$Path" -Name "$Name" -ErrorAction SilentlyContinue)."$Name"
     if ($value -eq "$NewValue") {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $Name registry setting is set to `"$NewValue`"."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name registry setting is set to `"$NewValue`"."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $Name registry setting is not set to `"$NewValue`"."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name registry setting is not set to `"$NewValue`"."
     }
 }
 
@@ -144,9 +147,9 @@ function Remove-RegistrySetting {
 
     $value = (Get-ItemProperty -Path "$Path" -Name "$Name" -ErrorAction SilentlyContinue)."$Name"
     if ($value -eq $null) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $Name registry setting is removed."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name registry setting is removed."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $Name registry setting is not removed."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name registry setting is not removed."
     }
 }
 
@@ -163,9 +166,9 @@ function Disable-Feature {
 
     $feature = dism.exe /Online /Get-Features | Select-String "$FeatureName"
     if ($feature -eq $null) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $FeatureName feature is removed."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $FeatureName feature is removed."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $FeatureName feature is not removed."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $FeatureName feature is not removed."
     }
 }
 
@@ -189,9 +192,9 @@ function Remove-InboxApp {
 
     $installers = Get-ChildItem -Path $inboxapps -Filter "$Name*"
     if ($installers -eq $null) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] $Name in-box app is removed."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name in-box app is removed."
     } else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] $Name in-box app is not removed."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name in-box app is not removed."
     }
 }
 
@@ -205,13 +208,13 @@ function Disable-TelemetryLogger {
         }
 
         if ([String]::IsNullOrWhiteSpace((Get-content $etlPath))) {
-            Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] Telemetry logger file is cleared."
+            Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Telemetry logger file is cleared."
         }
         else {
-            Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] Telemetry logger file is cleared."
+            Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] Telemetry logger file is cleared."
         }
     } else {
-        Write-Output -ForegroundColor DarkGray "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] Telemetry logger file not found."
+        Write-Output -ForegroundColor DarkGray "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Telemetry logger file not found."
     }
 }
 
@@ -263,10 +266,10 @@ function Remove-AICBSPackages {
         }
     }
     if ($packagesCount -eq 0) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] No AI related packages installed in 'Component Based Servicing'."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] No AI related packages installed in 'Component Based Servicing'."
     }
     else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] Found $packagesCount AI related packages in 'Component Based Servicing'."
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] Found $packagesCount AI related packages in 'Component Based Servicing'."
     }
 }
 
@@ -278,59 +281,67 @@ function Disable-Hibernation {
 
     $status = Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Power -name HibernateEnabled
     if (-not $status.HibernateEnabled) {
-        Write-Output "[ $($PSStyle.Foreground.Green)OK$($PSStyle.Reset) ] Hibernation disabled"
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Hibernation is disabled."
     }
     else {
-        Write-Output "[$($PSStyle.Foreground.Red)FAIL$($PSStyle.Reset)] Hibernation not disabled"
+        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] Hibernation is not disabled"
     }
 }
 
 # Main execution
-Write-Output "Setting Windows 11 Privacy and Configuration Fixes..."
+Write-Output "Base Privacy and Configuration settings..."
 Write-Output ""
 
 Disable-Service -Name DiagTrack
 Disable-Service -Name Dmwappushservice
-
 Disable-Task -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program" -TaskName "Consolidator"
 Disable-Task -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program" -TaskName "UsbCeip"
 Disable-Task -TaskPath "\Microsoft\Windows\Application Experience" -TaskName "Microsoft Compatibility Appraiser"
 Disable-Task -TaskPath "\Microsoft\Windows\Application Experience" -TaskName "PcaPatchDbTask"
 Disable-Task -TaskPath "\Microsoft\Windows\Application Experience" -TaskName "StartupAppTask"
-
 Set-RegistrySettingDword -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -NewValue 0
 Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR" -Name "AppCaptureEnabled" -NewValue 0
 Set-RegistrySettingDword -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_Enabled" -NewValue 0
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "TurnOffWindowsCopilot" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableAIDataAnalysis" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "AllowRecallEnablement" -NewValue 0
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableClickToDo" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "TurnOffSavingSnapshots" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableSettingsAgent" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableAgentConnectors" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableAgentWorkspaces" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableRemoteAgentConnectors" -NewValue 1
-Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\WindowsNotepad" -Name "DisableAIFeatures" -NewValue 1
-Remove-RegistrySetting -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages\Components" -Name "CopilotNudges"
-Remove-RegistrySetting -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages\Components" -Name "AIContext"
-Remove-RegistrySetting -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages\Components" -Name "AIX"
-
-Disable-Feature -FeatureName "Recall"
-
-Remove-AICBSPackages
-
-Remove-InboxApp -Name "Microsoft.Copilot"
 Remove-InboxApp -Name "Microsoft.BingSearch"
-Remove-InboxApp -Name "Microsoft.StartExperiencesApp"
-
 Disable-TelemetryLogger
+
+if ($AiSettings) {
+    Write-Output ""
+    Write-Output "AI settings..."
+    Write-Output ""
+    Disable-Feature -FeatureName "Recall"
+    Remove-InboxApp -Name "Microsoft.Copilot"
+    Remove-AICBSPackages
+    # Windows appear reluctant to let us set these values:
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "TurnOffWindowsCopilot" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableAIDataAnalysis" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "AllowRecallEnablement" -NewValue 0
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableClickToDo" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "TurnOffSavingSnapshots" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableSettingsAgent" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableAgentConnectors" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableAgentWorkspaces" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" -Name "DisableRemoteAgentConnectors" -NewValue 1
+    # Set-RegistrySettingDword -Path "HKCU:\SOFTWARE\Policies\WindowsNotepad" -Name "DisableAIFeatures" -NewValue 1
+    Remove-RegistrySetting -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages\Components" -Name "CopilotNudges"
+    Remove-RegistrySetting -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages\Components" -Name "AIContext"
+    Remove-RegistrySetting -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages\Components" -Name "AIX"
+}
+else {
+    Write-Output ""
+    Write-Output "$($PSStyle.Foreground.BrightBlack)Skipping AI settings. use -AiSettings to set them.$($PSStyle.Reset)"
+}
 
 if ($QualityOfLife) {
     Write-Output ""
-    Write-Output "Updating quality of life settings..."
+    Write-Output "Quality of life settings..."
     Write-Output ""
     Disable-Hibernation
     Set-RegistrySettingString -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -NewValue "0"
+}
+else {
+    Write-Output ""
+    Write-Output "$($PSStyle.Foreground.BrightBlack)Skipping quality of life settings. use -QualityOfLife to set them.$($PSStyle.Reset)"
 }
 
 Write-Output ""
@@ -338,5 +349,5 @@ if ($Apply) {
     Write-Output "Done."
 }
 else {
-    Write-Output "Re-run this script with -Apply to change the settings."
+    Write-Output "No changes have been made, re-run this script with -Apply to change the settings."
 }

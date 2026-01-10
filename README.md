@@ -86,7 +86,13 @@ Putting a link for configuration files instead of copying them, allows to re-run
 If you really have to use Windows, this disables some privacy invasive features of Windows 11.
 
 ```powershell
-PS (Admin)> .\Fix-WindowsPrivacy.ps1 -Apply
+PS (Admin)> .\Fix-WindowsPrivacy.ps1
 ```
 
-Please make sure to check what this script performs before running it on a sensitive machine. I decline any responsibility for a broken Windows system after running this script.
+Please make sure to check what this script performs before running it on a sensitive machine. I decline any responsibility for a broken system after running this.
+
+**Notice**: This may have strange side effects like disabling font smoothing and randomly displayng a solid color wallpaper.
+
+<p align="center">
+  <img src="docs/Fix-WindowsPrivacy.png" alt="Windows console running Fix-WindowsPrivacy.ps1" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)">
+</p>
