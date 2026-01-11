@@ -12,7 +12,7 @@
     - Disabling hibernation
     - Reducing menu show delay for faster navigation
 .NOTES
-    Last Update: 2026-01-10
+    Last Update: 2026-01-11
     For more settings to disable, see https://github.com/zoicware/RemoveWindowsAI/blob/main/RemoveWindowsAi.ps1
     
     REQUIREMENTS:
@@ -50,15 +50,18 @@ function Disable-Service {
     )
 
     if ($Apply) {
-        Stop-Service -Name $Name -Force -ErrorAction SilentlyContinue
-        Remove-Service -Name $Name -ErrorAction SilentlyContinue
+        Stop-Service -Name "$Name" -Force -ErrorAction SilentlyContinue
+        # Remove-Service -Name $Name -ErrorAction SilentlyContinue  # Remove-Service is not available in PowerShell 5
+        sc.exe delete "$Name" | Out-Null
     }
 
-    $serviceStatus = Get-Service -Name $Name -ErrorAction SilentlyContinue
+    $serviceStatus = Get-Service -Name "$Name" -ErrorAction SilentlyContinue
     if ($serviceStatus -eq $null) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name service is removed."
+        Write-Verbose "$Name is not found is services list.`n"
     } else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name service is not removed."
+        Write-Verbose "Service found: $($serviceStatus.Name) - $($serviceStatus.Status) ($($serviceStatus.StartupType)) - $($serviceStatus.DisplayName) - $($serviceStatus.Description)`n"
     }
 }
 
@@ -75,12 +78,20 @@ function Disable-Task {
         Disable-ScheduledTask -TaskPath "$TaskPath" -TaskName "$TaskName" | Out-Null
     }
 
-    # TODO: handle edge cases 1. not tasks found, 2. multiple tasks found
-    $t = Get-ScheduledTask -TaskName "$TaskName"
-    if ($t.State -eq "Disabled") {
-        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $TaskName task is disabled."
-    } else {
-        Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $TaskName task is not disabled."
+    # TODO: handle edge case: multiple tasks found
+    $t = Get-ScheduledTask -TaskName "$TaskName" -ErrorAction SilentlyContinue
+
+    if ($t -eq $null) {
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $TaskName is not present."
+        Write-Verbose "Task `"$TaskName`" not found in `"$TaskPath`" `n"
+    }
+    else {
+        if ($t.State -eq "Disabled") {
+            Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $TaskName task is disabled."
+        } else {
+            Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $TaskName task is not disabled."
+        }
+        Write-Verbose "Task found: `"$($t.TaskPath)$($t.TaskName)`" - $($t.State)`n"
     }
 }
 
@@ -106,6 +117,7 @@ function Set-RegistrySettingDword {
     } else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name registry setting is not set to $NewValue."
     }
+    Write-Verbose "$Path$Name = $value`n"
 }
 
 # Function to set a registry key and check afterwards
@@ -130,6 +142,7 @@ function Set-RegistrySettingString {
     } else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name registry setting is not set to `"$NewValue`"."
     }
+    Write-Verbose "$Path$Name = `"$value`"`n"
 }
 
 # Function to remove a registry key and check afterwards
@@ -151,9 +164,10 @@ function Remove-RegistrySetting {
     } else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name registry setting is not removed."
     }
+    Write-Verbose "$Path$Name = $value`n"
 }
 
-# Function to disable Recall feature
+# Function to disable and remove a Windows feature and check afterwards
 function Disable-Feature {
     param (
         [Parameter(Mandatory)]
@@ -167,8 +181,10 @@ function Disable-Feature {
     $feature = dism.exe /Online /Get-Features | Select-String "$FeatureName"
     if ($feature -eq $null) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $FeatureName feature is removed."
+        Write-Verbose "No features containing the name `"$FeatureName`" has been found on the system.`n"
     } else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $FeatureName feature is not removed."
+        Write-Verbose "Found $feature`n"
     }
 }
 
@@ -193,11 +209,12 @@ function Remove-InboxApp {
     $installers = Get-ChildItem -Path $inboxapps -Filter "$Name*"
     if ($installers -eq $null) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $Name in-box app is removed."
+        Write-Verbose "Nothing found in `"$inboxapps\$Name*"".`n"
     } else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] $Name in-box app is not removed."
+        Write-Verbose "Found $installers`n"
     }
 }
-
 
 # Function to disable telemetry logger (AutoLogger-Diagtrack-Listener.etl)
 function Disable-TelemetryLogger {
@@ -213,8 +230,11 @@ function Disable-TelemetryLogger {
         else {
             Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] Telemetry logger file is cleared."
         }
+        $i = Get-ChildItem -Path $etlPath
+        Write-Verbose "File size $($i.Length) : `"$etlPath`".`n"
     } else {
         Write-Output -ForegroundColor DarkGray "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Telemetry logger file not found."
+        Write-Verbose "File not found: `"$etlPath`".`n"
     }
 }
 
@@ -249,7 +269,7 @@ function Remove-AICBSPackages {
                             if ($path) {
                                 Remove-Item $path.FullName -Force -ErrorAction SilentlyContinue
                             }
-                        }                    
+                        }
                     }
                 }
             }
@@ -257,19 +277,23 @@ function Remove-AICBSPackages {
     }
 
     $packagesCount = 0
+    $verboseOutput = ""
     Get-ChildItem $regPath | ForEach-Object {
         $value = try { Get-ItemPropertyValue "registry::$($_.Name)" -Name Visibility -ErrorAction Stop } catch { $null }
         if ($value -ne $null) {
             if ($value -eq 2 -and $_.PSChildName -like '*AIX*' -or $_.PSChildName -like '*Recall*' -or $_.PSChildName -like '*Copilot*' -or $_.PSChildName -like '*CoreAI*') {
                 $packagesCount += 1
+                $verboseOutput += " - $($_.PSChildName)`n"
             }
         }
     }
     if ($packagesCount -eq 0) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] No AI related packages installed in 'Component Based Servicing'."
+        Write-Verbose "No corresponding packages found in `"$regPath`".`n"
     }
     else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] Found $packagesCount AI related packages in 'Component Based Servicing'."
+        Write-Verbose "$regPath`:`n$verboseOutput"
     }
 }
 
@@ -279,16 +303,21 @@ function Disable-Hibernation {
         powercfg /h off
     }
 
-    $status = Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Power -name HibernateEnabled
+    $Path = "HKLM:\SYSTEM\CurrentControlSet\Control\Power"
+    $Name = "HibernateEnabled"
+
+    $status = Get-ItemProperty -Path "$Path" -Name "$Name"
     if (-not $status.HibernateEnabled) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Hibernation is disabled."
     }
     else {
         Write-Output "[$($PSStyle.Foreground.Red)UNSET$($PSStyle.Reset)] Hibernation is not disabled"
     }
+    Write-Verbose "$Path\$Name = $($status.HibernateEnabled)`n"
 }
 
 # Main execution
+Write-Output ""
 Write-Output "Base Privacy and Configuration settings..."
 Write-Output ""
 
@@ -329,7 +358,7 @@ if ($AiSettings) {
 }
 else {
     Write-Output ""
-    Write-Output "$($PSStyle.Foreground.BrightBlack)Skipping AI settings. use -AiSettings to set them.$($PSStyle.Reset)"
+    Write-Output "$($PSStyle.Background.Black)$($PSStyle.Foreground.BrightBlack)Skipping AI settings. use -AiSettings to set them.$($PSStyle.Reset)"
 }
 
 if ($QualityOfLife) {
@@ -341,7 +370,7 @@ if ($QualityOfLife) {
 }
 else {
     Write-Output ""
-    Write-Output "$($PSStyle.Foreground.BrightBlack)Skipping quality of life settings. use -QualityOfLife to set them.$($PSStyle.Reset)"
+    Write-Output "$($PSStyle.Background.Black)$($PSStyle.Foreground.BrightBlack)Skipping quality of life settings. use -QualityOfLife to set them.$($PSStyle.Reset)"
 }
 
 Write-Output ""
@@ -350,4 +379,8 @@ if ($Apply) {
 }
 else {
     Write-Output "No changes have been made, re-run this script with -Apply to change the settings."
+}
+
+if (-not $PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
+    Write-Output "Use -Verbose for more details."
 }
