@@ -78,8 +78,7 @@ function Disable-Task {
         Disable-ScheduledTask -TaskPath "$TaskPath" -TaskName "$TaskName" | Out-Null
     }
 
-    # TODO: handle edge case: multiple tasks found
-    $t = Get-ScheduledTask -TaskName "$TaskName" -ErrorAction SilentlyContinue
+    $t = Get-ScheduledTask -TaskName "$TaskName" | Where-Object { $_.TaskPath -eq "$TaskPath" } -ErrorAction SilentlyContinue
 
     if ($t -eq $null) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $TaskName is not present."

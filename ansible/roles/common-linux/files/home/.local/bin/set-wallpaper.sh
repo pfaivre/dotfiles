@@ -14,6 +14,9 @@ WALLPAPER_DIR="$HOME/.config/mydesktop/current-theme/wallpaper/"
 CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 CURRENT_WALL_NAME=$(basename $CURRENT_WALL)
 
+# FIXME: listloaded is not a supported command anymore, making the "next" argument non-functional
+# can we find a workaround?
+
 if [[ DEBUG -eq 1 ]]; then
     echo "DEBUG: CURRENT_WALL=$CURRENT_WALL"
     echo "DEBUG: CURRENT_WALL_NAME=$CURRENT_WALL_NAME"
@@ -71,5 +74,5 @@ fi
 
 # Apply the selected wallpaper, if found
 if [[ ! -z "$WALLPAPER" ]]; then
-    hyprctl hyprpaper reload ,"$WALLPAPER"
+    hyprctl hyprpaper wallpaper ",$WALLPAPER, cover"
 fi
