@@ -26,6 +26,10 @@ function install_ansible() {
             sudo dnf install -qy ansible
             ;;
 
+        opensuse-tumbleweed)
+            sudo zypper -q install -y ansible
+            ;;
+
         *)
             echo "OS not supported, abort."
             exit 1
