@@ -1,35 +1,26 @@
-# This role defines tasks specific to Fedora (desktop environment)
-
-- name: Enabling community repository solopasha/hyprland
-  become: true
-  community.general.copr:
-    host: copr.fedorainfracloud.org
-    state: enabled
-    name: solopasha/hyprland
+# This role defines tasks specific to openSUSE (desktop environment)
 
 - name: Installing packages
   become: true
-  ansible.builtin.dnf:
+  package:
     state: latest
     name:
       # - audacious
       # - eog
       # - ffmpeg # In fedora, this may conflict with another package
       - gimp
-      - heif-pixbuf-loader
       - inkscape
-      - libheif-freeworld
-      - libreoffice-langpack-fr
       - vlc
 
       # Hyprland desktop
       - alacritty
       - blueman
-      - fontawesome-fonts-all
-      - gnome-themes-extra
-      - gtk-murrine-engine
+      - fontawesome-fonts
+      - gnome-themes-extras
+      - gtk2-engine-murrine
       - hypridle
-      - hyprland # In fedora 43, this may conflict with another package
+      - hyprland
+      - hyprland-guiutils
       - hyprlock
       - hyprpaper
       - hyprpicker
@@ -37,7 +28,7 @@
       - hyprshot
       - hyprsunset
       - libnotify
-      - network-manager-applet
+      - NetworkManager-applet
       - pavucontrol
       # - qt5-qtwayland
       # - qt5ct
@@ -47,6 +38,6 @@
       - SwayNotificationCenter
       - thunar
       - waybar
-      - wiremix
+      # - wiremix
       - wlogout
       - xdg-desktop-portal-hyprland

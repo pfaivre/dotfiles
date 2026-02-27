@@ -1,0 +1,28 @@
+# This role defines tasks specific to openSUSE (CLI environment)
+
+- name: Installing packages
+  become: true
+  package:
+    state: latest
+    name:
+      - btop
+      - cmatrix
+      - fastfetch
+      - git
+      - htop
+      - most
+      - ncdu
+      - pv
+      - pwgen
+      - ranger
+      - tmux
+      - toilet
+      - vim
+      - wireguard-tools
+      - zsh
+
+- name: Changing shell to zsh
+  become: true
+  user:
+    name: pierre
+    shell: /bin/zsh

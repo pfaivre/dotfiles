@@ -10,7 +10,8 @@
       debug:
         msg:
           - "is desktop: {{ is_desktop }}"
-          - "user: {{ ansible_user_id }}"
+          - "distribution: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
+          - "user: {{ ansible_facts['user_id'] }}"
 
     - name: Fedora CLI
       include_role:
@@ -31,3 +32,13 @@
       include_role:
         name: ubuntu-desktop
       when: ansible_facts['distribution'] == "Ubuntu" and is_desktop
+
+    - name: openSUSE CLI
+      include_role:
+        name: opensuse-cli
+      when: ansible_facts['distribution'] == "openSUSE Tumbleweed" and not is_desktop
+
+    - name: openSUSE desktop
+      include_role:
+        name: opensuse-desktop
+      when: ansible_facts['distribution'] == "openSUSE Tumbleweed" and is_desktop

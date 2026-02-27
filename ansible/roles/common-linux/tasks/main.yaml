@@ -2,7 +2,7 @@
   debug:
     msg:
       - "distribution: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
-      - "user: {{ ansible_user_id }}"
+      - "user: {{ ansible_facts['user_id'] }}"
 
 
 ################
