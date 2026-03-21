@@ -12,6 +12,7 @@
       - htop
       - most
       - ncdu
+      - neovim
       - pv
       - pwgen
       - ranger
@@ -19,6 +20,7 @@
       - toilet
       - vim
       - wireguard-tools
+      - xz
       - zsh
 
 - name: Changing shell to zsh

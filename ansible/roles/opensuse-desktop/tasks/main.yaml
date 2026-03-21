@@ -7,7 +7,7 @@
     name:
       # - audacious
       # - eog
-      # - ffmpeg # In fedora, this may conflict with another package
+      # - ffmpeg
       - gimp
       - inkscape
       - vlc
@@ -15,6 +15,8 @@
       # Hyprland desktop
       - alacritty
       - blueman
+      - brightnessctl
+      - file-roller
       - fontawesome-fonts
       - gnome-themes-extras
       - gtk2-engine-murrine
@@ -37,7 +39,17 @@
       - rofi
       - SwayNotificationCenter
       - thunar
+      - thunar-archive-plugin
+      - thunar-volman
       - waybar
       # - wiremix
       - wlogout
       - xdg-desktop-portal-hyprland
+
+- name: Removing packages
+  become: true
+  package:
+    state: absent
+    name:
+      - 7zip
+      - unar
