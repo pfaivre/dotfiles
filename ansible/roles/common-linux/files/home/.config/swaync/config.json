@@ -28,7 +28,7 @@
   "timeout-critical": 0,
   "timeout-low": 5,
   "timeout": 10,
-  "transition-time": 200,
+  "transition-time": 0,
   "scripts": {
     "example-script": {
       "exec": "echo 'Do something...'",

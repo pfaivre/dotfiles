@@ -56,6 +56,9 @@ plugins=(git command-not-found sudo colored-man-pages)
 export DISABLE_UPDATE_PROMPT=true
 source $ZSH/oh-my-zsh.sh
 
+# Load vcs_info function to show git branch name in the prompt (if displayed in the theme)
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
 # You may need to manually set your language environment
 #export LANG=fr_FR.UTF-8

@@ -39,11 +39,13 @@
 }
 
 .notification-row {
+  /* individual notification shown on the desktop */
   outline: none;
+  transition: none;
 }
 
 .notification-row:focus, .notification-row:hover {
-  background: #ece9d8;
+  background: transparent;
 }
 
 .notification-row .notification-background {
@@ -68,9 +70,10 @@
 }
 
 .notification-row .notification-background .close-button:hover {
+  /* Unknown */
   box-shadow: none;
-  background: white;
-  color: #c5bcaf;
+  background: rgb(255, 0, 234);
+  color: #00ffd0;
   transition: none;
 }
 
@@ -266,6 +269,8 @@
 
 .notification-group {
   /* Styling only for Grouped Notifications */
+  border: none;
+  background-color: transparent;
 }
 
 .notification-group.low {
@@ -281,8 +286,10 @@
 }
 
 .notification-group .notification-group-buttons, .notification-group .notification-group-headers {
+  /* Title and controls on top of the notifictions group */
   margin: 0 16px;
   color: black;
+  border: none;
 }
 
 .notification-group .notification-group-headers {
@@ -297,6 +304,7 @@
 .notification-group .notification-group-headers .notification-group-header {
   /* Title of the notifications group in the center */
   color: black;
+  font-size: medium;
 }
 
 .notification-group .notification-group-buttons {
@@ -321,7 +329,7 @@
 
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
-  margin: 16px;
+  margin: 0;
   background: #ece9d8;
   color: black;
   border: 4px solid #166aee;
@@ -454,6 +462,7 @@
 
 .widget-label > label {
   font-size: 1.1rem;
+  color: black;
 }
 
 /* Mpris widget */

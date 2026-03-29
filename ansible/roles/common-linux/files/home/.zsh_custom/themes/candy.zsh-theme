@@ -12,11 +12,13 @@ else
     local ret_status="%(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%})>%{$reset_color%}"
 fi
 
+zstyle ':vcs_info:git:*' formats '%F{cyan}(%b)%f'
+
 display_prompt() {
     if [ "`pwd`" = "$HOME" ]; then
         echo "${ret_status}%f"
     else
-        echo "\n%F{blue}%~%f $(git_prompt_status)$(git_prompt_info)\n${ret_status}%f"
+        echo "\n%F{blue}%~%f ${vcs_info_msg_0_}\n${ret_status}%f"
     fi
 }
 

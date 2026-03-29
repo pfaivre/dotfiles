@@ -7,6 +7,15 @@ selected=$(pkill rofi; \
            sed '1,/^### DATA ###$/d' $0 | \
            rofi -dmenu -p "Command palette :")
 
+# Open the given file in a neovim popup window (with Alacritty), or in default text editor if neovim is not installed
+open_text_file() {
+  if [ -x "$(command -v nvim)" ]; then
+    alacritty --class Popup --command nvim $1
+  else
+    xdg-open $1
+  fi
+}
+
 case $selected in
   # Theme
   "Theme → Summer Night")
@@ -60,6 +69,11 @@ case $selected in
     hyprshot -m window
     ;;
 
+  "Utils → Select an emoji")
+    ~/.local/bin/select-emoji-fr.sh
+    notify-send -e -u low "Emoji" "The selected emoji has been copied to the clipboard"
+    ;;
+
   # Personalization
   "Personalization → Next wallpaper")
     ~/.local/bin/set-wallpaper.sh next
@@ -71,23 +85,23 @@ case $selected in
     ;;
 
   "Setup → Input")
-    alacritty --class Popup --command nvim ~/.config/hypr/input.conf
+    open_text_file ~/.config/hypr/input.conf
     ;;
 
   "Setup → Keybindings")
-    alacritty --class Popup --command nvim ~/.config/hypr/keybindings.conf
+    open_text_file ~/.config/hypr/keybindings.conf
     ;;
 
   "Setup → Monitors")
-    alacritty --class Popup --command nvim ~/.config/hypr/monitors.conf
+    open_text_file ~/.config/hypr/monitors.conf
     ;;
 
   "Setup → Hypridle")
-    alacritty --class Popup --command nvim ~/.config/hypr/hypridle.conf
+    open_text_file ~/.config/hypr/hypridle.conf
     ;;
 
   "Setup → Hyprsunset")
-    alacritty --class Popup --command nvim ~/.config/hypr/hyprsunset.conf
+    open_text_file ~/.config/hypr/hyprsunset.conf
     ;;
 
   "System → Kill process")
@@ -114,6 +128,7 @@ Utils → Color picker
 Utils → Screenshot (full screen)
 Utils → Screenshot (region)
 Utils → Screenshot (window)
+Utils → Select an emoji
 Personalization → Next wallpaper
 Setup → Audio
 Setup → Input
