@@ -20,7 +20,6 @@
       - sloccount
       - tmux
       - toilet
-      - vim
       - zsh
     state: present
 

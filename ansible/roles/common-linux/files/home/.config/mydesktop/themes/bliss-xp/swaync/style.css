@@ -59,6 +59,8 @@
   padding: 0;
   margin-top: 4px;
   margin-right: 4px;
+  margin-bottom: 2px;
+  transition: none;
 
   border: 1px solid #c1b79d;
   border-radius: 2px;
@@ -70,11 +72,17 @@
 }
 
 .notification-row .notification-background .close-button:hover {
-  /* Unknown */
-  box-shadow: none;
-  background: rgb(255, 0, 234);
-  color: #00ffd0;
-  transition: none;
+  /* Notification close button */
+  border-color: white;
+  box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 2px rgba(0, 0, 0, 0.3);
+  /* background: #ffbf61; */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 225, 175, 1) 0%, 
+    rgba(255, 190, 93, 1) 30%, 
+    rgba(255, 190, 93, 1) 65%, 
+    rgba(255, 240, 40, 1) 100%);
+  color: white;
 }
 
 .notification-row .notification-background .notification {

@@ -18,7 +18,6 @@
       - ranger
       - tmux
       - toilet
-      - vim
       - wireguard-tools
       - xz
       - zsh

@@ -36,7 +36,6 @@
       - sloccount
       - tmux
       - toilet
-      - vim
       - wireguard-tools
       - zsh
 

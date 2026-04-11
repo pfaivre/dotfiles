@@ -89,7 +89,7 @@ alias gitlog="git log --pretty='%h %s' --graph"
 
 alias pwgen="pwgen -c -n -y -s 16"
 
-alias u="sudo dnf update; flatpak update -y"
+alias u="~/.local/bin/update-system.sh"
 
 alias fastfetch="fastfetch --config ~/.config/fastfetch/config.jsonc"
 
