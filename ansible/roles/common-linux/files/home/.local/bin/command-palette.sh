@@ -76,7 +76,7 @@ case $selected in
 
   # Personalization
   "Personalization → Next wallpaper")
-    ~/.local/bin/set-wallpaper.sh next
+    python ~/.local/bin/set-wallpaper.py next
     ;;
 
   # Setup
