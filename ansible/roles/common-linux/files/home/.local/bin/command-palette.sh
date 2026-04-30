@@ -57,7 +57,8 @@ case $selected in
   "Utils → Color picker")
     sleep 0.1 # Give Rofi time to close
     color=$(hyprpicker -a)
-    notify-send -e -u low "Color picker" "Color copied to the clipboard: $color"
+    python3 ~/.local/bin/color-menu.py "$color"
+    # notify-send -e -u low "Color picker" "Color copied to the clipboard: $color"
     ;;
   "Utils → Screenshot (full screen)")
     hyprshot -m output
@@ -76,7 +77,7 @@ case $selected in
 
   # Personalization
   "Personalization → Next wallpaper")
-    python ~/.local/bin/set-wallpaper.py next
+    python3 ~/.local/bin/set-wallpaper.py next
     ;;
 
   # Setup

@@ -3,7 +3,7 @@
 - name: Installing packages
   become: true
   package:
-    state: latest
+    state: present
     name:
       - btop
       - cmatrix

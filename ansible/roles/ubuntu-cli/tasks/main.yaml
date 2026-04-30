@@ -1,8 +1,18 @@
 # This role defines tasks specific to Ubuntu (CLI environment)
 
+# Used to know if sudo-rs is installed (to use in become_exe below)
+# This is to mitigate an incompatibility between Ansible and sudo-rs
+# https://github.com/ansible/ansible/issues/85837
+# TODO: remove this mitigation once this bug has been solved
+- name: Gather the package facts
+  ansible.builtin.package_facts:
+    manager: auto
+
 - name: Installing packages
   become: true
+  become_exe: "{{ 'sudo.ws' if ansible_facts.packages['sudo-rs'] is defined else 'sudo' }}"
   ansible.builtin.apt:
+    state: present
     name:
       - btop
       - cmatrix
@@ -12,20 +22,19 @@
       - lolcat
       - most
       - ncdu
-      # - p7zip-full # Dangerously outdated, do not install
       - pv
       - pwgen
       - ranger
-      # - screenfetch
       - sloccount
       - tmux
       - toilet
       - zsh
-    state: present
 
 - name: Removing packages
   become: true
+  become_exe: "{{ 'sudo.ws' if ansible_facts.packages['sudo-rs'] is defined else 'sudo' }}"
   ansible.builtin.apt:
+    state: absent
     name:
       - fonts-beng
       - fonts-beng-extra
@@ -68,10 +77,10 @@
       - fonts-tibetan-machine
       - fonts-tlwg*
       - fonts-yrsa-rasa
-    state: absent
 
 - name: Changing shell to zsh
   become: true
+  become_exe: "{{ 'sudo.ws' if ansible_facts.packages['sudo-rs'] is defined else 'sudo' }}"
   user:
     name: "{{ ansible_facts['user_id'] }}"
     shell: /bin/zsh

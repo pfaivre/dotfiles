@@ -2,7 +2,9 @@
 
 - name: Installing packages
   become: true
+  become_exe: "{{ 'sudo.ws' if ansible_facts.packages['sudo-rs'] is defined else 'sudo' }}"
   ansible.builtin.apt:
+    state: present
     name:
       - audacious
       - fonts-cantarell
@@ -11,4 +13,31 @@
       - inkscape
       - ttf-mscorefonts-installer
       - vlc
-    state: present
+      
+      # Disabled because it is not well supported on Ubuntu
+      # # Hyprland desktop
+      # - alacritty
+      # - blueman
+      # # - fontawesome-fonts-all
+      # - gnome-themes-extra
+      # - gtk2-engines-murrine
+      # - hypridle
+      # - hyprland
+      # - hyprland-qtutils
+      # - hyprlock
+      # - hyprpaper
+      # - hyprpicker
+      # - hyprpolkitagent
+      # # - hyprshot
+      # # - hyprsunset
+      # - libnotify4
+      # - network-manager-applet
+      # - pavucontrol
+      # - rofi
+      # - sway-notification-center
+      # - thunar
+      # - thunar-archive-plugin
+      # - waybar
+      # # - wiremix
+      # - wlogout
+      # - xdg-desktop-portal-hyprland

@@ -4,7 +4,6 @@
 
 * {
   font-family: Liberation Mono, FontAwesome;
-  font-size: 16px;
   font-weight: bold;
 }
 
@@ -14,6 +13,7 @@ tooltip {
   background-color: @bg0;
   border: 3px solid @fg;
   color: @fg;
+  font-size: 12px;
 }
 
 window#waybar {
@@ -22,6 +22,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: .5s;
   border-radius: 0px 0px 15px 15px;
+  font-size: 16px;
 
   border-bottom-width: 5px;
   border-bottom-color: #2e3538;

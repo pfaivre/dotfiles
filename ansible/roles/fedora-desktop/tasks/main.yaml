@@ -1,16 +1,16 @@
 # This role defines tasks specific to Fedora (desktop environment)
 
-- name: Enabling community repository solopasha/hyprland
+- name: Enabling community repository sdegler/hyprland
   become: true
   community.general.copr:
     host: copr.fedorainfracloud.org
     state: enabled
-    name: solopasha/hyprland
+    name: sdegler/hyprland
 
 - name: Installing packages
   become: true
   ansible.builtin.dnf:
-    state: latest
+    state: present
     name:
       # - audacious
       # - eog
@@ -29,7 +29,7 @@
       - gnome-themes-extra
       - gtk-murrine-engine
       - hypridle
-      - hyprland # In fedora 43, this may conflict with another package
+      - hyprland
       - hyprlock
       - hyprpaper
       - hyprpicker

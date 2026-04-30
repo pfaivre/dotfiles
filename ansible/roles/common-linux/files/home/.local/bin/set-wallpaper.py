@@ -3,6 +3,7 @@ from time import sleep
 import os
 import random
 import sys
+import subprocess
 
 HOME = Path.home()
 WALLPAPER_DIR = Path(HOME / ".config" / "mydesktop" / "current-theme" / "wallpaper")
@@ -37,14 +38,71 @@ def get_wallpaper_files() -> list[Path]:
 
 
 def refresh_hyprpaper():
-    """Calls the Hyprpaper IPC to show the image behind the current wallpaper.jpg link"""
+    """Tell Hyprpaper to show the image behind the current wallpaper.jpg link"""
+    # Hard version: kill then restart hyprpaper
     try:
-        ret_code = os.system(f"hyprctl hyprpaper wallpaper ', {WALLPAPER_LINK}, cover'")
-        if ret_code != 0:
-            raise Exception(f"Return code: {ret_code}")
-    except Exception as e:
-        print(f"Error: Failed to notify the hyprpaper IPC: {e}", file=sys.stderr)
+        # Get the PID of any old hyprpaper instances
+        result = subprocess.run(
+            ["pidof", "hyprpaper"],
+            timeout=1,
+            capture_output=True,
+            text=True
+        )
+        if result.returncode == 0:
+            old_hyprpaper_pid = result.stdout.strip()  # Can contain multiple PIDs "8965 4325 3245"
+        else:
+            old_hyprpaper_pid = ""
+
+        # Run a new hyprpaper
+        result = subprocess.run(
+            ["hyprctl", "dispatch", "exec", "'hyprpaper'"],
+            timeout=1,
+            capture_output=True,
+            text=True
+        )
+        if result.returncode != 0:
+            raise Exception(f"Return code: {result.returncode}, Error: {result.stderr}")
+        
+        if old_hyprpaper_pid:
+            # Relax a bit
+            sleep(0.5)
+
+            # Kill the old hyprpaper
+            result = subprocess.run(
+                ["kill", *old_hyprpaper_pid.split(" ")],
+                timeout=1,
+                capture_output=True,
+                text=True
+            )
+            if result.returncode != 0:
+                raise Exception(f"Return code: {result.returncode}, Error: {result.stderr}")
+
+    except subprocess.TimeoutExpired:
+        print("Error: The hyprctl hyprpaper command timed out after 3 seconds.", file=sys.stderr)
         sys.exit(1)
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    
+    # Soft version: use the IPC (seems to not work anymore)
+    # try:
+    #     command = ["hyprctl", "hyprpaper", "wallpaper", f"', {str(WALLPAPER_LINK)}, cover'"]
+    #     print(f"Calling: {' '.join(command)}")
+    #     # Run the command with a 3-second timeout
+    #     result = subprocess.run(
+    #         ["hyprctl", "hyprpaper", "wallpaper", f"', {str(WALLPAPER_LINK)}, cover'"],
+    #         timeout=3,
+    #         capture_output=True,
+    #         text=True
+    #     )
+    #     if result.returncode != 0:
+    #         raise Exception(f"Return code: {result.returncode}, Error: {result.stderr}")
+    # except subprocess.TimeoutExpired:
+    #     print("Error: The hyprctl hyprpaper command timed out after 3 seconds.", file=sys.stderr)
+    #     sys.exit(1)
+    # except Exception as e:
+    #     print(f"Error: Failed to notify the hyprpaper IPC: {e}", file=sys.stderr)
+    #     sys.exit(1)
 
 
 def set_wallpaper(target):
