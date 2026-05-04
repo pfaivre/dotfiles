@@ -6,6 +6,12 @@
 
 # Apply the selected theme, if found
 if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
+    if [ -z "$1" ]; then
+        echo "Please specify a theme name. Available themes:"
+        ls "$HOME/.config/mydesktop/themes/"
+        exit 1
+    fi
+
     echo "Found theme ~/.config/mydesktop/themes/$1"
 
     # Replace the base theme folder (with a link)
@@ -13,9 +19,9 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     ln -s ~/.config/mydesktop/themes/$1 ~/.config/mydesktop/current-theme
 
     # Reload components
-    pkill waybar; hyprctl dispatch exec "waybar -s ~/.config/mydesktop/current-theme/waybar/style.css"
+    python3 ~/.local/bin/set-wallpaper.py &
+    killall -INT waybar; hyprctl dispatch exec "waybar -s ~/.config/mydesktop/current-theme/waybar/style.css"
     hyprctl reload
-    python3 ~/.local/bin/set-wallpaper.py
     swaync-client --reload-css
     touch ~/.config/alacritty/alacritty.toml
 

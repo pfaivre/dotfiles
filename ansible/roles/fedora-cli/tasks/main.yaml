@@ -45,6 +45,7 @@
     state: absent
     name:
       # Various stuff I don't use
+      - 7zip
       - NetworkManager-config-connectivity-fedora
       - xwaylandvideobridge
       - usbmuxd

@@ -106,7 +106,7 @@ case $selected in
     ;;
 
   "System → Kill process")
-    ps -u $USER -o pid,comm | rofi -dmenu | awk "{print $1}" | xargs -r kill
+    ps -u $USER -o pid,command | rofi -dmenu | awk "{print $1}" | xargs -r kill
     ;;
 
   # Suggestions for more: toggle idle inhibitor, toggle wifi/bluetooth, etc.

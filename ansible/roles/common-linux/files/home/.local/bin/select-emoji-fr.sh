@@ -46,7 +46,7 @@
 # authorization of the copyright holder.
 
 
-emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' $0 | rofi -dmenu | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' $0 | rofi -dmenu -normalize-match | cut -d ' ' -f 1 | tr -d '\n')"
 wl-copy "${emoji}"
 exit
 ### DATA ###
@@ -61,11 +61,11 @@ exit
 🙂 content heureux léger souriant sourire
 🙃 incroyable envers renversée tête
 🫠 disparaître dissoudre fond fondre gêne liquide liquéfié sarcasme
-😉 blague clin œil faisant flirter plaisanter sexy
-😊 content heureux rieurs rougir rougit satisfait souriant souriants sourire yeux œil
+😉 blague clin œil oeil faisant flirter plaisanter sexy
+😊 content heureux rieurs rougir rougit satisfait souriant souriants sourire yeux œil oeil
 😇 ange angélique auréole bible béni heureux innocent paix souriant sourire spirituel
-🥰 3 adorer aimer amour amoureuse amoureux béguin coeur coeurs cœurs j'adore romance smiley souriant sourire aime
-😍 amour amoureux cœur coeur forme romantique souriant sourire yeux œil
+🥰 3 adorer aimer amour amoureuse amoureux béguin coeur cœur j'adore romance smiley souriant sourire aime
+😍 amour amoureux cœur coeur forme romantique souriant sourire yeux œil oeil
 🤩 grand heureux place pressé sourire surexcité tête wow yeux étoile étoiles
 😘 amour baiser bise bisou bonjour bonne cœur coeur embrasser envoyant fait nuit aime
 😗 amour baiser bise bisou embrasser faisant fait petit aime
@@ -75,7 +75,7 @@ exit
 🥲 fier heureux larme reconnaissant smiley soulagé souriant touché ému
 😋 bon content délicieux faim heureux langue manger miam savourer souriant sourire tire
 😛 cool génial langue super tire
-😜 amusant blague clin œil fait fou langue loufoque marrant rigolo tire œil
+😜 amusant blague clin œil fait fou langue loufoque marrant rigolo tire
 🤪 folle fou fous grand large oeil petit tête yeux œil
 😝 dégoûtant ferme fermés fois goût horrible importe langue omd peu plissés tire vit yeux œil
 🤑 argent bouche dollars yeux
@@ -166,12 +166,12 @@ exit
 👺 colère créature fantastique farfadet japonais masque monstre méchant
 👻 blague bouh créature effrayant fantastique fantôme halloween hanter monstre peur
 👽 alien créature espace extraterrestre monstre ovni science-fiction
-👾 alien créature envahisseur espace extraterrestre fantastique jeu espace monstre ovni pixels vidéo
+👾 alien créature envahisseur espace extraterrestre fantastique jeu monstre ovni pixels vidéo
 🤖 androïde automate machine monstre robot
 😺 animal bouche chat ouverte sourire sourit
 😸 animal chat grand rieurs souriants sourire sourit yeux
 😹 animal chat joie larmes lol mdr pleure pleurer rire rit
-😻 amour amoureux chat coeurs cœur coeur souriant sourire yeux
+😻 amour amoureux chat cœur coeur souriant sourire yeux
 😼 animal chat coin ironique narquois sourire tête
 😽 animal baiser bise bisou chat embrasse embrasser fait fermés tête yeux
 🙀 animal bouche chat fatigue fatigué inquiet oh ouverte surpris tête
@@ -180,7 +180,7 @@ exit
 🙈 animal caché effrayé embarras entendu geste gêne interdit omd oubli pas peur rien secret singe voir vu yeux
 🙉 animal entendre entendu geste interdit oreilles pas rien secret singe sourd vu écouter
 🙊 animal bouche chut cousue dire geste interdit motus muet parler rien secret silence singe taire
-💌 amour cœur coeur amour lettre saint-valentin
+💌 amour cœur coeur lettre saint-valentin
 💘 amour coeur cupidon cœur flèche sentiment transpercé
 💝 amour anniversaire cœur coeur ruban saint-valentin sentiment
 💖 amour cœur coeur sentiment étincelant étincelles
@@ -189,7 +189,7 @@ exit
 💞 amour anniversaire cœurs coeurs deux sentiment tourbillon tournent
 💕 amour anniversaire cœurs coeurs deux petits rendez-vous roses sentiment
 💟 amour blanc cœur coeur décoration décoré sentiment violet
-❣️ amour cœur coeur exclamation exclamation point ponctuation
+❣️ amour cœur coeur exclamation point ponctuation
 💔 amour brisé cœur coeur malheureux sentiment séparé triste
 ❤‍🔥 amour cœur coeur désir enflammé feu passion
 ❤‍🩹 bandages cœur coeur réconforter réparer soigner
@@ -214,7 +214,7 @@ exit
 💨 bande bd courant dessinée décamper déguerpir détaler filer fumée nuage partir pet vent vite
 🕳️ trou
 💬 bande bd bulle dessinée dialogue message parole sms écrire
-👁‍🗨 bande bd bulle dessinée témoin voir œil
+👁‍🗨 bande bd bulle dessinée témoin voir œil oeil
 🗨️ bulle dialogue gauche parole
 🗯️ bande bd bulle colère crier dessinée droite hurler
 💭 bande bd bulle dessinée idée imaginer inventer invention penser pensée rêve rêver
@@ -245,7 +245,7 @@ exit
 🖕 honneur doigt main majeur
 👇 bas doigt index main montrer pointant vers
 ☝️ doigt haut index main moi pointant pointé vers
-🫵 index utilisateur pointant pointer toi vers
+🫵 index utilisateur pointant pointer toi vers main
 👍 aussi bien compris accord génial haut levé main moi ok oui pouce super top vers
 👎 baissé bas main mauvais nul pouce vers
 ✊ levé main pierre poing serré solidarité
@@ -253,16 +253,16 @@ exit
 🤛 fistbump gauche main poing
 🤜 droite main poing
 👏 applaudissements applaudissent bien bon bravo formidable félicitations geste joué mains super travail
-🙌 air geste hourra air levées mains youpi
+🙌 air geste hourra levées mains youpi
 🫶 amour cœur coeur forment mains
-👐 main mains ouvert ouvertes écartées
+👐 main ouvert ouvertes écartées
 🤲 contre doigts ensemble espérer haut mains paume paumes prier prière vers
-🤝 conclu accord main mains marché poignée présentation rencontre serrer
+🤝 conclu accord mains marché poignée présentation rencontre serrer
 🙏 contre demander félicitations main mains merci plaît prier prière salut taper tope
 ✍ main écrire écrit
 💅 cosmétiques manucure maquillage ongles ennuyer vernis
 🤳 appareil photo selfie téléphone
-💪 biceps bodybuilding contracté corps culturisme entraînement exercice force haltérophilie muscles soulever
+💪 biceps bodybuilding contracté corps culturisme entraînement exercice force haltérophilie muscles soulever bras
 🦾 accessibilité bras handicap mécanique prothèse robot
 🦿 accessibilité artificielle handicap jambe mécanique prothèse robot
 🦵 coup cuisse fléchi genou genoux jambe membre pied
@@ -275,8 +275,8 @@ exit
 🫁 anatomie expiration inspiration organe poumons respiration respirer souffle
 🦷 carie dent dentiste diamant émail
 🦴 chien halloween os squelette
-👀 chercher corps coup œil regarder voir yeux œil
-👁️ corps œil
+👀 chercher corps coup œil oeil regarder voir yeux
+👁️ corps œil oeil
 👅 corps langue lécher
 👄 baiser beauté bise bisou bouche corps embrasser lèvres rouge
 🫦 anxieux flirt inquiet aise lèvre lèvres mal mordent mordue nerveux
@@ -323,9 +323,9 @@ exit
 🤦 drame exaspération femme geste incroyable incrédulité main pas paume personne peux possible
 🤦‍♂ encore exaspération homme incroyable incrédulité main oh oubli paume personne
 🤦‍♀ crois encore exaspération femme incroyable incrédulité main oh oubli pas paume personne
-🤷 aucune comme épaules doute faire femme hausse haussement idée ignorance indifférence pas personne peut-être que sais sait épaules
-🤷‍♂ aucune épaules doute hausse haussement homme idée ignorance indifférence moi pas personne rien sais vu épaules
-🤷‍♀ aucune épaules doute femme hausse haussement idée ignorance indifférence moi pas personne rien sais vu épaules
+🤷 aucune comme épaules doute faire femme hausse haussement idée ignorance indifférence pas personne peut-être que sais sait
+🤷‍♂ aucune épaules doute hausse haussement homme idée ignorance indifférence moi pas personne rien sais vu
+🤷‍♀ aucune épaules doute femme hausse haussement idée ignorance indifférence moi pas personne rien sais vu
 🧑‍⚕ docteur genres infirmier médecin professionnel santé thérapeute tous
 👨‍⚕ docteur homme infirmier médecin médicale métier profession professionnel santé
 👩‍⚕ docteur docteure femme infirmière médecin médicale métier profession professionnelle santé
@@ -412,10 +412,10 @@ exit
 🎅 bonnet claus fêtes magie noël père santa tradition
 🤶 bonnet fêtes mère noël santa
 🧑‍🎄 joyeux noël papa personne père saint-nicolas santa
-🦸 bien cape force heroïne héros héroïne monde personnage pouvoir sauver super pouvoir superman vengeur voler
+🦸 bien cape force heroïne héros héroïne monde personnage pouvoir sauver super superman vengeur voler
 🦸‍♂ bien homme héros super-héros super-pouvoir
 🦸‍♀ bien femme héros héroïne super-héroïne super-pouvoir
-🦹 cape criminel diabolique déguisement mal mauvais méchant personnage pouvoir super pouvoir vilain
+🦹 cape criminel diabolique déguisement mal mauvais méchant personnage pouvoir super vilain
 🦹‍♂ criminel homme mal méchant super-pouvoir super-vilain
 🦹‍♀ criminelle femme mal méchante super-pouvoir super-vilain
 🧙 chapeau enchantement ensorceleur envoûtement jeu mage magicien personnage rôle sorcier sorcière sortilège
@@ -469,7 +469,7 @@ exit
 🏃‍♀ course court dépêcher femme joggeuse jogging marathon pied running vite vitesse
 💃 danse danser danseuse femme flamenco fête rythme salsa sortir tango
 🕺 danse danseur femme flamenco fête homme rythme salsa
-🕴 affaires costume affaires homme lévitation
+🕴 affaires costume homme lévitation
 👯 amies bunny danseuse double déguisement femme femmes fille filles fête jumelles lapin oreilles personnes synchro
 👯‍♂ amis danseur faire fête homme hommes lapin oreilles
 👯‍♀ danseuse femme femmes fête lapin oreilles
@@ -551,12 +551,12 @@ exit
 🦲 chauve cheveux chimiothérapie imberbe rasé
 🐵 animal curieux georges petit singe sourire tête
 🐒 animal primate singe
-🦍 animal gorille primate
+🦍 animal gorille primate singe
 🦧 animal orang-outan primate singe
 🐶 animal chien chiot domestique tête
-🐕 aboyer animal chien domestique
-🦮 accessibilité animal aveugle chien guide malvoyant non-voyant
-🐕‍🦺 accessibilité aide animal assistance chien chien-guide assistance handicap
+🐕 animal aboyer chien domestique
+🦮 animal accessibilité aveugle chien guide malvoyant non-voyant
+🐕‍🦺 animal accessibilité aide assistance chien chien-guide handicap
 🐩 animal caniche chien
 🐺 animal loup louve tête
 🦊 animal nature renard tête
@@ -590,7 +590,7 @@ exit
 🐪 animal bosse dromadaire désert
 🐫 animal bosse bosses chameau deux désert
 🦙 animal alpaca alpaga guanaco laine lama llama pérou vicuña vigogne
-🦒 animal cou girafe taches
+🦒 animal cou girafe tâches
 🐘 animal pachyderme trompe éléphant
 🦣 animal défenses extinction grand géant laineux mammouth
 🦏 animal corne rhinocéros
@@ -606,7 +606,7 @@ exit
 🦔 animal hérisson piquant porc-épic épines épineux
 🦇 animal chauve-souris vampire
 🐻 animal brun miel nounours ours teddy tête
-🐻‍❄️ arctique blanc ours polaire
+🐻‍❄️ animal arctique blanc ours polaire
 🐨 animal australie koala
 🐼 animal panda tête
 🦥 animal aï endormi lent paresseux
@@ -615,7 +615,7 @@ exit
 🦘 austalie joey kangoo kangourou marsupial marsupiaux saut
 🦡 animal blaireau ratel
 🐾 animaux empreintes pattes
-🦃 action animal dinde dindon grâces oiseau thanksgiving volaille
+🦃 animal action dinde dindon grâces oiseau thanksgiving volaille
 🐔 animal coq ferme oiseau poule poulet volaille
 🐓 animal coq oiseau volaille
 🐣 animal bébé naissance naître nouveau-né oiseau poussin éclosion éclôt œuf
@@ -624,7 +624,7 @@ exit
 🐦 animal oiseau ornithologie
 🐧 animal antarctique banquise manchot oiseau pingouin
 🕊️ animal colombe oiseau paix rameau voler
-🦅 aigle animal oiseau rapace
+🦅 animal aigle oiseau rapace
 🦆 animal canard coin-coin oiseau
 🦢 animal canard cygne jeune oiseau petit vilain
 🦉 animal chouette hibou oiseau sage
@@ -650,7 +650,7 @@ exit
 🐋 animal baleine mer océan plage
 🐬 animal dauphin flipper mer océan plage
 🦭 animal lion mer océan otarie phoque
-🐟 alimentation animal astrologie horoscope manger nourriture poisson poissons repas zodiaque
+🐟 animal alimentation astrologie horoscope manger nourriture poisson poissons repas zodiaque
 🐠 animal poisson tropical
 🐡 animal poisson poisson-lune
 🦈 animal dents mer poisson requin
@@ -673,7 +673,7 @@ exit
 🦗 animal criquet insecte sauterelle
 🪳 animal blatte cafard coquerelle insecte nuisible
 🕷 animal araignée insecte
-🕸 araignée araignée toile
+🕸 araignée toile
 🦂 animal astrologie désert horoscope scorpion zodiaque
 🦟 fièvre infection insecte maladie malaria moustique piqûre virus
 🪰 animal asticot insecte maladie mouche nuisible pourrissement puanteur putréfaction tsé-tsé
@@ -691,17 +691,17 @@ exit
 🌼 bourgeon bouton or dent-de-lion fleur pissenlit plante printemps
 🌷 bourgeon fleur plante printemps tulipe
 🪻 fleur fleurir indigo jacinthe lavande lilas lupin mauve muflier plante printemps violet
-🌱 germe jeune plant plante plantule pousse pousser printemps semis
+🌱 germe jeune plante plantule pousse pousser printemps semis
 🪴 décoration ennuyeux faire intérieur nature plante pot pousser prendre soin
 🌲 arbre conifère feuilles forêt noël persistantes pin plante sapin
 🌳 arbre caduques feuilles feuillu forêt nature plante
 🌴 arbre cocotier palmier plage plante tropical tropiques
 🌵 cactus désert nature piquant plante sécheresse épines
-🌾 grain plant plante riz
+🌾 grain plante riz
 🌿 arbre feuille feuilles plante
 ☘️ irlande plante trèfle
 🍀 4 chance feuilles irlande plante porte-bonheur quatre trèfle
-🍁 automne érable feuille morte tomber érable
+🍁 automne érable feuille morte tomber
 🍂 automne feuille feuilles morte mortes tomber
 🍃 bourrasque feuille feuilles souffle tourbillon vent virevoltante virevolter
 🪹 branches faire maison nid son vide
@@ -709,8 +709,8 @@ exit
 🍄 champignon mario plante vénéneux
 🪾 arbre aride feuille hiver sécheresse
 🍇 fruit nourriture raisin
-🍈 fruit melon
-🍉 fruit pastèque
+🍈 fruit melon nourriture
+🍉 fruit pastèque nourriture
 🍊 agrume c clémentine fruit mandarine nourriture orange vitamine
 🍋 acide agrume citron fruit nourriture zeste
 🍋‍🟩 acide agrume citron fruit lime mojito tropical vert zeste
@@ -734,17 +734,17 @@ exit
 🥕 carotte légume nourriture
 🌽 ferme maïs nourriture épi
 🌶️ nourriture piment piquant rouge
-🫑 légume piment poivron rouge vert
+🫑 légume piment poivron rouge vert nourriture
 🥒 concombre cornichon légume nourriture
-🥬 bok chinois chou choy feuilles frisé kale laitue légume pommé salade vertes
-🥦 broccoli brocoli chou légume sauvage
-🧄 ail aromate assaisonnement condiment légume vampire
-🧅 assaisonnement condiment légume ognon oignon
+🥬 bok chinois chou choy feuilles frisé kale laitue légume pommé salade vertes nourriture
+🥦 broccoli brocoli chou légume sauvage nourriture
+🧄 ail aromate assaisonnement condiment légume vampire nourriture
+🧅 assaisonnement condiment légume ognon oignon nourriture
 🥜 arachide cacahuète cacahuètes noisette nourriture
 🫘 haricot haricots légume légumineuse nourriture petit rognon rouge
 🌰 châtaigne marron nourriture plante
-🫚 bière gingembre naturel racine santé épice
-🫛 cosse edamame fève haricot légume légumineuse petits pois soja
+🫚 bière gingembre naturel racine santé épice nourriture
+🫛 cosse edamame fève haricot légume légumineuse petits pois soja nourriture
 🍄‍🟫 automne brun champignon cèpe fongus marron nature nourriture
 🫜 betterave jardin légume légume-racine navet racine
 🍞 miche mie nourriture pain
@@ -803,7 +803,7 @@ exit
 🍨 coupe crème dessert glace glacée nourriture restaurant sucré
 🍩 dessert donut doughnut goûter nourriture sucrerie sucré
 🍪 biscuit chocolat cookie dessert goûter gâteau nourriture pépites sucré
-🎂 anniversaire bougies anniversaire dessert fête goûter gâteau joyeux nourriture pâtisserie
+🎂 anniversaire bougies dessert fête goûter gâteau joyeux nourriture pâtisserie
 🍰 dessert goûter gâteau nourriture pâtisserie sablé sucré
 🧁 cupcake dessert muffin pâtisserie sucre sucrerie
 🥧 décoration fruits garniture gâteau nourriture pâte pâtisserie tarte tourte
@@ -839,9 +839,9 @@ exit
 🔪 arme chef couteau cuisine outil
 🫙 bocal condiments conserver pot rien récipient sauce vide
 🏺 amphore astrologie cuisine grec grèce horoscope vase verseau zodiaque
-🌍 afrique espace europe globe afrique europe monde planète présentant terre tourné
-🌎 amérique amériques espace globe amérique monde planète présentant terre tourné
-🌏 asie australie espace globe asie australie monde planète présentant terre tourné
+🌍 afrique espace europe globe monde planète présentant terre tourné
+🌎 amérique amériques espace globe monde planète présentant terre tourné
+🌏 asie australie espace globe monde planète présentant terre tourné
 🌐 globe internet monde méridiens net terrestre toile
 🗺️ carte monde planisphère voyage
 🗾 carte japon voyage
@@ -901,8 +901,8 @@ exit
 ♨️ chaud chaudes source sources vapeur
 🎠 cheval manège
 🛝 aire glissade jeu jouer toboggan
-🎡 attractions attractions grande parc roue
-🎢 attractions attractions montagnes parc russes
+🎡 attractions grande parc roue
+🎢 attractions montagnes parc russes
 💈 barbier coiffeur coiffure enseigne salon
 🎪 chapiteau cirque
 🚂 chemin fer locomotive machine moyen rail tchou train transport vapeur voyage
@@ -967,7 +967,7 @@ exit
 ✈️ avion jet moyen transport vol voyage véhicule
 🛩 avion moyen petit transport voyage
 🛫 avion décollage départ moyen transport voyage
-🛬 arrivée atterrissage avion atterrissage moyen transport voyage
+🛬 arrivée atterrissage avion moyen transport voyage
 🪂 ascensionnel chute fortes libre parachute parapente sensations
 💺 chaise fauteuil place siège
 🚁 hélico hélicoptère moyen transport véhicule
@@ -1010,18 +1010,18 @@ exit
 🕥 10 22 30 demie dix h heure heures horloge trente vingt-deux
 🕚 11 23 h heure heures horloge onze vingt-trois
 🕦 11 23 30 demie h heure heures horloge onze trente vingt-trois
-🌑 espace lune nouvelle sombre
-🌒 croissante espace lune nuit
-🌓 espace lune nuit premier quartier
-🌔 croissant croissante espace gibbeuse gibbeux lune nuit
-🌕 espace lune nuit pleine
-🌖 décroissant décroissante espace gibbeuse gibbeux lune nuit
-🌗 dernier espace lune quartier
-🌘 croissant descendante décroissante espace lune nuit
-🌙 croissant espace lune nuit ramadan
-🌚 espace lune nouvelle nuit
-🌛 croissant espace lune nuit premier quartier
-🌜 croissant dernier lune nuit quartier
+🌑 lune nouvelle sombre nuit espace
+🌒 lune croissante nuit espace
+🌓 lune nuit premier quartier espace
+🌔 lune croissant croissante gibbeuse gibbeux nuit espace
+🌕 lune nuit pleine espace
+🌖 lune décroissant décroissante gibbeuse gibbeux nuit espace
+🌗 lune dernier quartier nuit espace
+🌘 lune croissant descendante décroissante nuit espace
+🌙 lune croissant nuit ramadan espace
+🌚 lune nouvelle nuit espace
+🌛 lune croissant nuit premier quartier espace
+🌜 lune croissant nuit dernier quartier espace
 🌡️ météo thermomètre
 ☀️ beau brillant espace grand météo rayons soleil temps
 🌝 lune nuit pleine sourire
@@ -1031,22 +1031,22 @@ exit
 🌟 brillante nuit succès éclat étincelant étincelle étoile étoilée
 🌠 espace filante nuit étoile
 🌌 espace lactée voie
-☁️ gris météo nuage
-⛅ caché derrière météo nuage nuages nuageux soleil
-⛈️ météo nuage orage pluie éclair
-🌤️ caché derrière météo nuage petit soleil
-🌥️ caché derrière gros météo nuage soleil
-🌦️ caché derrière gouttes météo nuage pluie soleil
-🌧️ averse gouttes mauvais météo nuage pluie temps
+☁️ nuage gris météo
+⛅ nuage caché derrière météo nuageux soleil
+⛈️ nuage météo orage pluie éclair
+🌤️ nuage caché derrière météo petit soleil
+🌥️ nuage caché derrière gros météo soleil
+🌦️ nuage caché derrière gouttes météo pluie soleil
+🌧️ nuage averse gouttes mauvais météo pluie temps
 🌨️ flocons froid hiver météo neige nuage
-🌩️ nuage orage orageux temps éclair
+🌩️ nuage orage orageux temps éclair météo
 🌪️ cyclone météo nuage tornade tourbillon
 🌫️ brouillard brume fog météo nuage
 🌬️ météo nuage souffle vent
-🌀 cyclone spirale tourbillon typhon vertige
+🌀 cyclone spirale tourbillon typhon vertige météo
 🌈 arc-en-ciel bisexuel bisexuelle gay homosexuel homosexuelle lesbienne lgbtqia météo nature pluie pride transgenre
 🌂 fermé météo parapluie pluie
-☂️ ouvert parapluie pluie
+☂️ ouvert parapluie pluie météo
 ☔ gouttes météo parapluie pluie
 🏖️ météo parapluie parasol plage pluie sol soleil voyage
 ⚡ courant danger haute nature orage symbole tension vitesse éclair électricité
@@ -1055,12 +1055,12 @@ exit
 ⛄ bonhomme flocons froid neige
 ☄️ comète espace météore
 🔥 allumer brûler chaud feu flamme fournaise incendie
-💧 bande bd eau dessinée eau froid froides goutte larme météo nature pluie sueur sueurs tristesse
+💧 bande bd eau dessinée froid froides goutte larme météo nature pluie sueur sueurs tristesse
 🌊 eau kanagawa lame large marée mer nature océan remous rouleau surf vague
 🎃 citrouille halloween lanterne
 🎄 arbre fête fêtes guirlandes noël sapin
-🎆 14 artifice artifice feu fête juillet
-🎇 14 artifice cierge artifice feu fête juillet magique étincelle étincelles
+🎆 14 artifice feu fête juillet
+🎇 14 artifice cierge feu fête juillet magique étincelle étincelles
 🧨 artifice dynamite explosif explosive feu pétard tnt étincelle
 ✨ * magie nuit scintiller étincelles étoile étoiles étoilée
 🎈 anniversaire ballon baudruche fête gonflable
@@ -1081,12 +1081,12 @@ exit
 🎖️ militaire médaille
 🏆 champion championne coupe gagner prix trophée victoire
 🏅 champion championne or médaille sport sportive vainqueur victoire
-🥇 1er or médaille or premier
-🥈 2e argent argent deuxième médaille
-🥉 3e bronze médaille troisième
+🥇 1er or médaille premier sport
+🥈 2e argent deuxième médaille sport
+🥉 3e bronze médaille troisième sport
 ⚽ balle ballon football sport
 ⚾ balle baseball sport
-🥎 balle gant softball sports
+🥎 balle gant softball sport
 🏀 ballon basket basket-ball panier sport
 🏐 ballon jeu match sport volley volley-ball
 🏈 américain ballon bowl football sport super
@@ -1101,7 +1101,7 @@ exit
 🏓 balle jeu partie ping-pong raquette sport table tennis
 🏸 badminton jeu match raquette sport volant
 🥊 boxe gant sport
-🥋 arts arts judo karaté kimono martiaux sport taekwondo tenue
+🥋 arts judo karaté kimono martiaux sport taekwondo tenue
 🥅 but cage filet sport
 ⛳ drapeau golf sport trou
 ⛸ glace patin patiner patinoire sport
@@ -1131,7 +1131,7 @@ exit
 ♥️ cartes couleur cœur coeur jeu jouer rouge
 ♦️ carreau carreaux carte couleur jeu
 ♣️ cartes couleur jeu jouer noir trèfle
-♟️ échec duper pion sacrifiable échec
+♟️ échec duper pion sacrifiable
 🃏 carte cartes jeu joker jouer
 🀄 dragon jeu mah-jong mahjong rouge
 🎴 carte fleur fleurs japonais jeu jouer
@@ -1169,7 +1169,7 @@ exit
 🛍 achats courses sac sacs shopping
 🎒 cartable dos sac école
 🩴 claquettes mer plage sandales tatanes tong tongs été
-👞 accessoire chaussures coup courses homme homme marron pied shopping vêtements
+👞 accessoire chaussures coup courses homme marron pied shopping vêtements
 👟 accessoire athlétisme basket chaussures coup courir courses pied shopping sport tennis vite vêtements
 🥾 camping chantier chaussures marche marron montagne rando randonnée sécurité vêtements
 🥿 ballerine chaussure chaussures lacets mule plate plates vêtements
@@ -1189,10 +1189,10 @@ exit
 💄 cosmétiques lèvres maquillage rendez-vous rouge
 💍 alliance amour bague brillant diamant fiançailles mariage solitaire étincelant
 💎 argent bijou diamant fiançailles joyau mariage pierre précieuse romantique
-🔇 barré chut enceinte enceinte haut-parleur muet silence son sourdine
-🔈 bas enceinte enceinte enceintes faible haut-parleur son volume
-🔉 enceinte enceinte enceintes haut-parleur moyen son volume
-🔊 enceinte enceinte enceintes fort haut-parleur musique son volume élevé
+🔇 barré chut enceinte haut-parleur muet silence son sourdine
+🔈 bas enceinte enceintes faible haut-parleur son volume
+🔉 enceinte enceintes haut-parleur moyen son volume
+🔊 enceinte enceintes fort haut-parleur musique son volume élevé
 📢 communication fort haut-parleur message mégaphone son
 📣 encourager hourra manifestation mégaphone porte-voix
 📯 cor facteur postal poste
@@ -1272,7 +1272,7 @@ exit
 📑 marque marqueur onglets signet signets
 🔖 marque-page marqueur signet
 🏷️ étiquette
-💰 argent avare banque argent dollar parier payer plein sac
+💰 argent avare banque dollar parier payer plein sac
 🪙 argent euro fortune monnaie métal or pièce riche sou trésor
 💴 argent banque billet payer yens
 💵 argent banque billet dollar dollars payer
@@ -1283,7 +1283,7 @@ exit
 🧾 caisse compta comptabilité comptable comptes facture faire justificatif preuve reçu ticket
 💹 banque courbe croissance devise graphique hausse marché monnaie tendance yen
 ✉️ courrier e-mail enveloppe lettre message électronique
-📧 courriel courrier e-mail lettre message électronique
+📧 courriel courrier e-mail lettre message électronique enveloppe
 📨 courriel courrier e-mail enveloppe envoyer lettre message recevoir reçu électronique
 📩 communication courriel courrier e-mail enveloppe envoi envoyer envoyé flèche message électronique
 📤 boîte courriel courrier envoi e-mail envoyer flèche lettre message électronique
@@ -1340,7 +1340,7 @@ exit
 ⚔ arme armes croisées épées
 💣 bande bd bombe boum danger dessin dessinée explosion
 🪃 aborigène australie boomerang jeu outil retour répercussion
-🏹 arc archer astrologie flèche horoscope arc sagittaire sport tir zodiaque
+🏹 arc archer astrologie flèche horoscope sagittaire sport tir zodiaque
 🛡 arme bouclier
 🪚 bois outil scie scier égoïne
 🔧 clé molette outil travaux
@@ -1391,7 +1391,7 @@ exit
 🧻 essuie-tout hygiénique papier pq rouleau toilette
 🪣 conteneur plage seau
 🧼 bain bulles lavage lave laver me mousse pain porte-savon savon
-🫧 bulle bulles eau propre savon sous
+🫧 bulles eau propre savon
 🪥 bain brosse brosser dentaire dents hygiène laver salle
 🧽 absorbante absorbe laver nettoyage nettoyer poreuse savonner éponge
 🧯 chaud extincteur feu fire incendie éteindre
@@ -1400,7 +1400,7 @@ exit
 ⚰ cercueil enterrement mort obsèques vampire
 🪦 cimetière enterrement funérailles mort mémorial pierre rip stèle sépulture tombale tombe
 ⚱ cendres funéraire mort obsèques urne
-🧿 amulette bleu boncuk oeil mauvais nazar nazarboncuk oeil perle superstition talisman turc œil
+🧿 amulette bleu boncuk oeil mauvais nazar nazarboncuk perle superstition talisman turc œil
 🪬 amulette chance fatma hamsa khamsa main myriam protection
 🗿 moai moaï monolithe pâques statue voyage île
 🪧 affiche grève manifestation pancarte panneau protestation signe écriteau
@@ -1418,10 +1418,10 @@ exit
 🛃 douane douanes
 🛄 arrivée avion aéroport bagages retrait valise voyage
 🛅 bagages casier clé consigne valise
-⚠️ attention avertissement avertissement symbole
-🚸 circulation enfants enfants piétons traversée école
+⚠️ attention avertissement symbole
+🚸 circulation enfants piétons traversée école
 ⛔ circulation entrée interdiction interdit interdite panneau sens
-🚫 interdiction entrée interdiction interdit interdite symbole
+🚫 interdiction entrée interdit interdite symbole
 🚳 bicyclette interdiction interdit interdits vélo vélos
 🚭 barrée cigarette fumer interdiction interdit
 🚯 ordures déchets dépôt interdiction interdit jeter pas
@@ -1453,7 +1453,7 @@ exit
 🔜 bientôt flèche
 🔝 flèche haut vers
 🛐 culte lieu prier religion
-⚛️ athée atome atome symbole
+⚛️ athée atome symbole
 🕉 hindou om religion
 ✡️ david judaïsme juif juive religion étoile
 ☸️ bouddhisme bouddhiste dharma religion roue
@@ -1504,7 +1504,7 @@ exit
 📳 communication mode portable téléphone vibreur
 📴 portable téléphone éteindre éteint
 ♀️ femme symbole féminin
-♂️ homme homme symbole masculin
+♂️ homme symbole masculin
 ⚧️ communauté symbole transgenre
 ✖️ * annuler croix multiplication multiplier noire signe x ×
 ➕ + addition ajouter arithmétique mathématiques signe somme
@@ -1512,12 +1512,12 @@ exit
 ➗ algèbre diviser division math mathématique mathématiques signe ÷
 🟰 gras mathématiques réponse signe égal égalité
 ♾️ illimité infini universel éternité
-‼️ ! !! exclamation double exclamation point ponctuation surprise
-⁉️ ! !? ? exclamation interrogation exclamation interrogation point points ponctuation question surprise
-❓ ? interrogation interrogation point ponctuation question rouge
-❔ ? blanc interrogation interrogation point ponctuation question
-❕ ! blanc exclamation exclamation point ponctuation surprise
-❗ ! exclamation exclamation point ponctuation rouge
+‼️ ! !! exclamation double point ponctuation surprise
+⁉️ ! !? ? exclamation interrogation point points ponctuation question surprise
+❓ ? interrogation point ponctuation question rouge
+❔ ? blanc interrogation point ponctuation question
+❕ ! blanc exclamation point ponctuation surprise
+❗ ! exclamation point ponctuation rouge
 〰️ union ligne ondulé ondulée ponctuation tiret trait vague
 💱 argent banque change conversion devise
 💲 argent devise dollar espèces payer symbole
@@ -1539,7 +1539,7 @@ exit
 ©️ c copyright auteur droits intellectuelle propriété symbole ©
 ®️ commerciale déposée marque r ®
 ™️ commerciale déposée marque tm
-🫟 holi peinture tache éclaboussure
+🫟 holi peinture tâche éclaboussure
 🔠 abcd alphabet latin latines lettres majuscules saisie
 🔡 abcd alphabet latin latines lettre lettres minuscules saisie
 🔢 1234 chiffres saisie
@@ -1564,7 +1564,7 @@ exit
 🆑 bouton cl effacer icône
 🆒 bouton cool icône
 🆓 bouton gratuit icône
-ℹ️ informations guichet i informations source
+ℹ️ informations guichet i source
 🆔 bouton icône id identifiant
 Ⓜ️ cercle encerclé m
 🆕 bouton icône nouveau nouveauté
@@ -1617,278 +1617,278 @@ exit
 🔷 bleu forme grand géométrie géométrique losange orange
 🔸 forme géométrie géométrique losange orange petit
 🔹 bleu forme géométrie géométrique losange petit
-🔺 flèche forme géométrie géométrique haut pointant pointé rouge triangle vers
+🔺 haut flèche forme géométrie géométrique pointant pointé rouge triangle vers
 🔻 bas flèche forme géométrie pointant pointé rouge triangle vers
 💠 bande bd dessin dessinée diamant géométrie géométrique intérieur point
 🔘 bouton forme géométrie géométrique radio rond
 🔳 blanc bouton carré forme géométrie
 🔲 bouton carré forme géométrie noir
-🏁 1 automobile course arrivée damier drapeau formule ligne sport vainqueur
+🏁 drapeau automobile course arrivée damier formule 1 ligne sport vainqueur
 🚩 drapeau fanion golf rouge triangulaire
-🎌 croisés drapeaux japonais
+🎌 drapeaux croisés japonais
 🏴 drapeau flotte noir vent
-🏳️ blanc drapeau flotte vent
-🏳️‍🌈 arc-en-ciel drapeau lgbt
-🏳️‍⚧️ blanc bleu clair drapeau rose transgenre
+🏳️ drapeau blanc flotte vent
+🏳️‍🌈 drapeau arc-en-ciel lgbt
+🏳️‍⚧️ drapeau blanc bleu clair rose transgenre
 🏴‍☠️ drapeau pillage piller pirate trésor
 🇦🇨 drapeau ascension island
-🇦🇩 drapeau andorra ad drapeau nation pays andorra
-🇦🇪 drapeau united arab emirates united arab emirates drapeau nation pays united arab emirates
-🇦🇫 drapeau afghanistan af drapeau nation pays afghanistan
-🇦🇬 drapeau antigua barbuda antigua barbuda drapeau nation pays antigua barbuda
-🇦🇮 drapeau anguilla ai drapeau nation pays anguilla
-🇦🇱 drapeau albania al drapeau nation pays albania
-🇦🇲 drapeau armenia am drapeau nation pays armenia
-🇦🇴 drapeau angola ao drapeau nation pays angola
-🇦🇶 drapeau antarctica aq drapeau nation pays antarctica
-🇦🇷 drapeau argentina ar drapeau nation pays argentina
-🇦🇸 drapeau american samoa american ws drapeau nation pays american samoa
-🇦🇹 drapeau austria at drapeau nation pays austria
-🇦🇺 drapeau australia au drapeau nation pays australia
-🇦🇼 drapeau aruba aw drapeau nation pays aruba
-🇦🇽 drapeau aland islands Åland islands drapeau nation pays aland islands
-🇦🇿 drapeau azerbaijan az drapeau nation pays azerbaijan
-🇧🇦 drapeau bosnia herzegovina bosnia herzegovina drapeau nation pays bosnia herzegovina
-🇧🇧 drapeau barbados bb drapeau nation pays barbados
-🇧🇩 drapeau bangladesh bd drapeau nation pays bangladesh
-🇧🇪 drapeau belgium be drapeau nation pays belgium
-🇧🇫 drapeau burkina faso burkina faso drapeau nation pays burkina faso
-🇧🇬 drapeau bulgaria bg drapeau nation pays bulgaria
-🇧🇭 drapeau bahrain bh drapeau nation pays bahrain
-🇧🇮 drapeau burundi bi drapeau nation pays burundi
-🇧🇯 drapeau benin bj drapeau nation pays benin
-🇧🇱 drapeau st barthelemy saint barthélemy drapeau nation pays st barthelemy
-🇧🇲 drapeau bermuda bm drapeau nation pays bermuda
-🇧🇳 drapeau brunei bn darussalam drapeau nation pays brunei
-🇧🇴 drapeau bolivia bo drapeau nation pays bolivia
-🇧🇶 drapeau caribbean netherlands bonaire drapeau nation pays caribbean netherlands
-🇧🇷 drapeau brazil br drapeau nation pays brazil
-🇧🇸 drapeau bahamas bs drapeau nation pays bahamas
-🇧🇹 drapeau bhutan bt drapeau nation pays bhutan
+🇦🇩 drapeau andorra ad nation pays
+🇦🇪 drapeau united arab emirates nation pays
+🇦🇫 drapeau afghanistan af nation pays
+🇦🇬 drapeau antigua barbuda nation pays
+🇦🇮 drapeau anguilla ai nation pays
+🇦🇱 drapeau albania al nation pays
+🇦🇲 drapeau armenia am nation pays
+🇦🇴 drapeau angola ao nation pays
+🇦🇶 drapeau antarctica aq nation pays
+🇦🇷 drapeau argentina ar nation pays
+🇦🇸 drapeau american samoa ws nation pays
+🇦🇹 drapeau austria at nation pays
+🇦🇺 drapeau australia au nation pays
+🇦🇼 drapeau aruba aw nation pays
+🇦🇽 drapeau aland islands Åland nation pays
+🇦🇿 drapeau azerbaijan az nation pays
+🇧🇦 drapeau bosnia herzegovina nation pays
+🇧🇧 drapeau barbados bb nation pays
+🇧🇩 drapeau bangladesh bd nation pays
+🇧🇪 drapeau belgium be nation pays
+🇧🇫 drapeau burkina faso nation pays
+🇧🇬 drapeau bulgaria bg nation pays
+🇧🇭 drapeau bahrain bh nation pays
+🇧🇮 drapeau burundi bi nation pays
+🇧🇯 drapeau benin bj nation pays
+🇧🇱 drapeau st barthelemy saint barthélemy nation pays
+🇧🇲 drapeau bermuda bm nation pays
+🇧🇳 drapeau brunei bn darussalam nation pays
+🇧🇴 drapeau bolivia bo nation pays
+🇧🇶 drapeau caribbean netherlands bonaire nation pays
+🇧🇷 drapeau brazil br nation pays
+🇧🇸 drapeau bahamas bs nation pays
+🇧🇹 drapeau bhutan bt nation pays
 🇧🇻 drapeau bouvet island norway
-🇧🇼 drapeau botswana bw drapeau nation pays botswana
-🇧🇾 drapeau belarus by drapeau nation pays belarus
-🇧🇿 drapeau belize bz drapeau nation pays belize
-🇨🇦 drapeau canada ca drapeau nation pays canada
-🇨🇨 drapeau cocos islands cocos keeling islands drapeau nation pays cocos islands
-🇨🇩 drapeau congo kinshasa congo democratic republic drapeau nation pays congo kinshasa
-🇨🇫 drapeau central african republic central african republic drapeau nation pays central african republic
-🇨🇬 drapeau congo brazzaville congo drapeau nation pays congo brazzaville
-🇨🇭 drapeau switzerland ch drapeau nation pays switzerland
-🇨🇮 drapeau cote d ivoire ivory coast drapeau nation pays cote d ivoire
-🇨🇰 drapeau cook islands cook islands drapeau nation pays cook islands
-🇨🇱 drapeau chile drapeau nation pays chile
-🇨🇲 drapeau cameroon cm drapeau nation pays cameroon
-🇨🇳 drapeau china china chinese prc drapeau pays nation china
-🇨🇴 drapeau colombia co drapeau nation pays colombia
+🇧🇼 drapeau botswana bw nation pays
+🇧🇾 drapeau belarus by nation pays
+🇧🇿 drapeau belize bz nation pays
+🇨🇦 drapeau canada ca nation pays
+🇨🇨 drapeau cocos islands keeling nation pays
+🇨🇩 drapeau congo kinshasa democratic republic nation pays
+🇨🇫 drapeau central african republic nation pays
+🇨🇬 drapeau congo brazzaville nation pays
+🇨🇭 drapeau switzerland ch nation pays
+🇨🇮 drapeau cote d ivoire ivory coast nation pays
+🇨🇰 drapeau cook islands nation pays
+🇨🇱 drapeau chile nation pays
+🇨🇲 drapeau cameroon cm nation pays
+🇨🇳 drapeau china chinese prc pays nation
+🇨🇴 drapeau colombia co nation pays
 🇨🇵 drapeau clipperton island
-🇨🇷 drapeau costa rica costa rica drapeau nation pays costa rica
-🇨🇺 drapeau cuba cu drapeau nation pays cuba
-🇨🇻 drapeau cape verde cabo verde drapeau nation pays cape verde
-🇨🇼 drapeau curacao curaçao drapeau nation pays curacao
-🇨🇽 drapeau christmas island christmas island drapeau nation pays christmas island
-🇨🇾 drapeau cyprus cy drapeau nation pays cyprus
-🇨🇿 drapeau czechia cz drapeau nation pays czechia
-🇩🇪 drapeau germany german nation drapeau pays germany
+🇨🇷 drapeau costa rica nation pays
+🇨🇺 drapeau cuba cu nation pays
+🇨🇻 drapeau cape verde cabo nation pays
+🇨🇼 drapeau curacao curaçao nation pays
+🇨🇽 drapeau christmas island nation pays
+🇨🇾 drapeau cyprus cy nation pays
+🇨🇿 drapeau czechia cz nation pays
+🇩🇪 drapeau germany german nation pays
 🇩🇬 drapeau diego garcia
-🇩🇯 drapeau djibouti dj drapeau nation pays djibouti
-🇩🇰 drapeau denmark dk drapeau nation pays denmark
-🇩🇲 drapeau dominica dm drapeau nation pays dominica
-🇩🇴 drapeau dominican republic dominican republic drapeau nation pays dominican republic
-🇩🇿 drapeau algeria dz drapeau nation pays algeria
+🇩🇯 drapeau djibouti dj nation pays
+🇩🇰 drapeau denmark dk nation pays
+🇩🇲 drapeau dominica dm nation pays
+🇩🇴 drapeau dominican republic nation pays
+🇩🇿 drapeau algeria dz nation pays
 🇪🇦 drapeau ceuta melilla
-🇪🇨 drapeau ecuador ec drapeau nation pays ecuador
-🇪🇪 drapeau estonia ee drapeau nation pays estonia
-🇪🇬 drapeau egypt eg drapeau nation pays egypt
-🇪🇭 drapeau western sahara western sahara drapeau nation pays western sahara
-🇪🇷 drapeau eritrea er drapeau nation pays eritrea
-🇪🇸 drapeau spain spain drapeau nation pays spain
-🇪🇹 drapeau ethiopia et drapeau nation pays ethiopia
-🇪🇺 drapeau european union european union drapeau
-🇫🇮 drapeau finland fi drapeau nation pays finland
-🇫🇯 drapeau fiji fj drapeau nation pays fiji
-🇫🇰 drapeau falkland islands falkland islands malvinas drapeau nation pays falkland islands
-🇫🇲 drapeau micronesia micronesia federated states drapeau nation pays micronesia
-🇫🇴 drapeau faroe islands faroe islands drapeau nation pays faroe islands
-🇫🇷 drapeau france drapeau nation france french pays france
-🇬🇦 drapeau gabon ga drapeau nation pays gabon
-🇬🇧 drapeau united kingdom united great britain northern ireland drapeau nation pays british UK english england union jack united
-🇬🇩 drapeau grenada gd drapeau nation pays grenada
-🇬🇪 drapeau georgia ge drapeau nation pays georgia
-🇬🇫 drapeau french guiana french guiana drapeau nation pays french guiana
-🇬🇬 drapeau guernsey gg drapeau nation pays guernsey
-🇬🇭 drapeau ghana gh drapeau nation pays ghana
-🇬🇮 drapeau gibraltar gi drapeau nation pays gibraltar
-🇬🇱 drapeau greenland gl drapeau nation pays greenland
-🇬🇲 drapeau gambia gm drapeau nation pays gambia
-🇬🇳 drapeau guinea gn drapeau nation pays guinea
-🇬🇵 drapeau guadeloupe gp drapeau nation pays guadeloupe
-🇬🇶 drapeau equatorial guinea equatorial gn drapeau nation pays equatorial guinea
-🇬🇷 drapeau greece gr drapeau nation pays greece
-🇬🇸 drapeau south georgia south islands south georgia islands drapeau nation pays south georgia south sandwich islands
-🇬🇹 drapeau guatemala gt drapeau nation pays guatemala
-🇬🇺 drapeau guam gu drapeau nation pays guam
-🇬🇼 drapeau guinea bissau gw bissau drapeau nation pays guinea bissau
-🇬🇾 drapeau guyana gy drapeau nation pays guyana
-🇭🇰 drapeau hong kong sar china hong kong drapeau nation pays hong kong sar china
+🇪🇨 drapeau ecuador ec nation pays
+🇪🇪 drapeau estonia ee nation pays
+🇪🇬 drapeau egypt eg nation pays
+🇪🇭 drapeau western sahara nation pays
+🇪🇷 drapeau eritrea er nation pays
+🇪🇸 drapeau spain nation pays
+🇪🇹 drapeau ethiopia et nation pays
+🇪🇺 drapeau european union
+🇫🇮 drapeau finland fi nation pays
+🇫🇯 drapeau fiji fj nation pays
+🇫🇰 drapeau falkland islands malvinas nation pays
+🇫🇲 drapeau micronesia federated states nation pays
+🇫🇴 drapeau faroe islands nation pays
+🇫🇷 drapeau france nation french pays
+🇬🇦 drapeau gabon ga nation pays
+🇬🇧 drapeau united kingdom great britain northern ireland nation pays british UK english england union jack
+🇬🇩 drapeau grenada gd nation pays
+🇬🇪 drapeau georgia ge nation pays
+🇬🇫 drapeau french guiana nation pays
+🇬🇬 drapeau guernsey gg nation pays
+🇬🇭 drapeau ghana gh nation pays
+🇬🇮 drapeau gibraltar gi nation pays
+🇬🇱 drapeau greenland gl nation pays
+🇬🇲 drapeau gambia gm nation pays
+🇬🇳 drapeau guinea gn nation pays
+🇬🇵 drapeau guadeloupe gp nation pays
+🇬🇶 drapeau equatorial guinea gn nation pays
+🇬🇷 drapeau greece gr nation pays
+🇬🇸 drapeau south georgia islands nation pays sandwich
+🇬🇹 drapeau guatemala gt nation pays
+🇬🇺 drapeau guam gu nation pays
+🇬🇼 drapeau guinea bissau gw nation pays
+🇬🇾 drapeau guyana gy nation pays
+🇭🇰 drapeau hong kong sar china nation pays
 🇭🇲 drapeau heard mcdonald islands
-🇭🇳 drapeau honduras hn drapeau nation pays honduras
-🇭🇷 drapeau croatia hr drapeau nation pays croatia
-🇭🇹 drapeau haiti ht drapeau nation pays haiti
-🇭🇺 drapeau hungary hu drapeau nation pays hungary
-🇮🇨 drapeau canary islands canary islands drapeau nation pays canary islands
-🇮🇩 drapeau indonesia drapeau nation pays indonesia
-🇮🇪 drapeau ireland ie drapeau nation pays ireland
-🇮🇱 drapeau israel il drapeau nation pays israel
-🇮🇲 drapeau isle of man isle man drapeau nation pays isle of man
-🇮🇳 drapeau india in drapeau nation pays india
-🇮🇴 drapeau british british drapeau nation pays british indian ocean territory
-🇮🇶 drapeau iraq iq drapeau nation pays iraq
-🇮🇷 drapeau iran iran islamic republic drapeau nation pays iran
-🇮🇸 drapeau iceland is drapeau nation pays iceland
-🇮🇹 drapeau italy italy drapeau nation pays italy
-🇯🇪 drapeau jersey je drapeau nation pays jersey
-🇯🇲 drapeau jamaica jm drapeau nation pays jamaica
-🇯🇴 drapeau jordan jo drapeau nation pays jordan
-🇯🇵 drapeau japan japanese nation drapeau pays japan
-🇰🇪 drapeau kenya ke drapeau nation pays kenya
-🇰🇬 drapeau kyrgyzstan kg drapeau nation pays kyrgyzstan
-🇰🇭 drapeau cambodia kh drapeau nation pays cambodia
-🇰🇮 drapeau kiribati ki drapeau nation pays kiribati
-🇰🇲 drapeau comoros km drapeau nation pays comoros
-🇰🇳 drapeau st kitts nevis saint kitts nevis drapeau nation pays st kitts nevis
-🇰🇵 drapeau north korea north korea nation drapeau pays north korea
-🇰🇷 drapeau south korea south korea nation drapeau pays south korea
-🇰🇼 drapeau kuwait kw drapeau nation pays kuwait
-🇰🇾 drapeau cayman islands cayman islands drapeau nation pays cayman islands
-🇰🇿 drapeau kazakhstan kz drapeau nation pays kazakhstan
-🇱🇦 drapeau laos lao democratic republic drapeau nation pays laos
-🇱🇧 drapeau lebanon lb drapeau nation pays lebanon
-🇱🇨 drapeau st lucia saint lucia drapeau nation pays st lucia
-🇱🇮 drapeau liechtenstein li drapeau nation pays liechtenstein
-🇱🇰 drapeau sri lanka sri lanka drapeau nation pays sri lanka
-🇱🇷 drapeau liberia lr drapeau nation pays liberia
-🇱🇸 drapeau lesotho ls drapeau nation pays lesotho
-🇱🇹 drapeau lithuania lt drapeau nation pays lithuania
-🇱🇺 drapeau luxembourg lu drapeau nation pays luxembourg
-🇱🇻 drapeau latvia lv drapeau nation pays latvia
-🇱🇾 drapeau libya ly drapeau nation pays libya
-🇲🇦 drapeau morocco ma drapeau nation pays morocco
-🇲🇨 drapeau monaco mc drapeau nation pays monaco
-🇲🇩 drapeau moldova moldova republic drapeau nation pays moldova
-🇲🇪 drapeau montenegro me drapeau nation pays montenegro
+🇭🇳 drapeau honduras hn nation pays
+🇭🇷 drapeau croatia hr nation pays
+🇭🇹 drapeau haiti ht nation pays
+🇭🇺 drapeau hungary hu nation pays
+🇮🇨 drapeau canary islands nation pays
+🇮🇩 drapeau indonesia nation pays
+🇮🇪 drapeau ireland ie nation pays
+🇮🇱 drapeau israel il nation pays
+🇮🇲 drapeau isle of man nation pays
+🇮🇳 drapeau india in nation pays
+🇮🇴 drapeau british nation pays indian ocean territory
+🇮🇶 drapeau iraq iq nation pays
+🇮🇷 drapeau iran islamic republic nation pays
+🇮🇸 drapeau iceland is nation pays
+🇮🇹 drapeau italy nation pays
+🇯🇪 drapeau jersey je nation pays
+🇯🇲 drapeau jamaica jm nation pays
+🇯🇴 drapeau jordan jo nation pays
+🇯🇵 drapeau japan japanese nation pays
+🇰🇪 drapeau kenya ke nation pays
+🇰🇬 drapeau kyrgyzstan kg nation pays
+🇰🇭 drapeau cambodia kh nation pays
+🇰🇮 drapeau kiribati ki nation pays
+🇰🇲 drapeau comoros km nation pays
+🇰🇳 drapeau st kitts nevis saint nation pays
+🇰🇵 drapeau north korea nation pays
+🇰🇷 drapeau south korea nation pays
+🇰🇼 drapeau kuwait kw nation pays
+🇰🇾 drapeau cayman islands nation pays
+🇰🇿 drapeau kazakhstan kz nation pays
+🇱🇦 drapeau laos lao democratic republic nation pays
+🇱🇧 drapeau lebanon lb nation pays
+🇱🇨 drapeau st lucia saint nation pays
+🇱🇮 drapeau liechtenstein li nation pays
+🇱🇰 drapeau sri lanka nation pays
+🇱🇷 drapeau liberia lr nation pays
+🇱🇸 drapeau lesotho ls nation pays
+🇱🇹 drapeau lithuania lt nation pays
+🇱🇺 drapeau luxembourg lu nation pays
+🇱🇻 drapeau latvia lv nation pays
+🇱🇾 drapeau libya ly nation pays
+🇲🇦 drapeau morocco ma nation pays
+🇲🇨 drapeau monaco mc nation pays
+🇲🇩 drapeau moldova republic nation pays
+🇲🇪 drapeau montenegro me nation pays
 🇲🇫 drapeau saint martin
-🇲🇬 drapeau madagascar mg drapeau nation pays madagascar
-🇲🇭 drapeau marshall islands marshall islands drapeau nation pays marshall islands
-🇲🇰 drapeau north macedonia macedonia drapeau nation pays north macedonia
-🇲🇱 drapeau mali ml drapeau nation pays mali
-🇲🇲 drapeau myanmar mm drapeau nation pays myanmar
-🇲🇳 drapeau mongolia mn drapeau nation pays mongolia
-🇲🇴 drapeau macao sar china macao drapeau nation pays macao sar china
-🇲🇵 drapeau northern mariana islands northern mariana islands drapeau nation pays northern mariana islands
-🇲🇶 drapeau martinique mq drapeau nation pays martinique
-🇲🇷 drapeau mauritania mr drapeau nation pays mauritania
-🇲🇸 drapeau montserrat ms drapeau nation pays montserrat
-🇲🇹 drapeau malta mt drapeau nation pays malta
-🇲🇺 drapeau mauritius mu drapeau nation pays mauritius
-🇲🇻 drapeau maldives mv drapeau nation pays maldives
-🇲🇼 drapeau malawi mw drapeau nation pays malawi
-🇲🇽 drapeau mexico mx drapeau nation pays mexico
-🇲🇾 drapeau malaysia my drapeau nation pays malaysia
-🇲🇿 drapeau mozambique mz drapeau nation pays mozambique
-🇳🇦 drapeau namibia na drapeau nation pays namibia
-🇳🇨 drapeau new caledonia new caledonia drapeau nation pays new caledonia
-🇳🇪 drapeau niger ne drapeau nation pays niger
-🇳🇫 drapeau norfolk island norfolk island drapeau nation pays norfolk island
-🇳🇬 drapeau nigeria drapeau nation pays nigeria
-🇳🇮 drapeau nicaragua ni drapeau nation pays nicaragua
-🇳🇱 drapeau netherlands nl drapeau nation pays netherlands
-🇳🇴 drapeau norway no drapeau nation pays norway
-🇳🇵 drapeau nepal np drapeau nation pays nepal
-🇳🇷 drapeau nauru nr drapeau nation pays nauru
-🇳🇺 drapeau niue nu drapeau nation pays niue
-🇳🇿 drapeau new zealand new zealand drapeau nation pays new zealand
-🇴🇲 drapeau oman om symbol drapeau nation pays oman
-🇵🇦 drapeau panama pa drapeau nation pays panama
-🇵🇪 drapeau peru pe drapeau nation pays peru
-🇵🇫 drapeau french polynesia french polynesia drapeau nation pays french polynesia
-🇵🇬 drapeau papua new guinea papua new guinea drapeau nation pays papua new guinea
-🇵🇭 drapeau philippines ph drapeau nation pays philippines
-🇵🇰 drapeau pakistan pk drapeau nation pays pakistan
-🇵🇱 drapeau poland pl drapeau nation pays poland
-🇵🇲 drapeau st pierre miquelon saint pierre miquelon drapeau nation pays st pierre miquelon
-🇵🇳 drapeau pitcairn islands pitcairn drapeau nation pays pitcairn islands
-🇵🇷 drapeau puerto rico puerto rico drapeau nation pays puerto rico
-🇵🇸 drapeau palestinian territories palestine palestinian territories drapeau nation pays palestinian territories
-🇵🇹 drapeau portugal pt drapeau nation pays portugal
-🇵🇼 drapeau palau pw drapeau nation pays palau
-🇵🇾 drapeau paraguay py drapeau nation pays paraguay
-🇶🇦 drapeau qatar qa drapeau nation pays qatar
-🇷🇪 drapeau reunion réunion drapeau nation pays reunion
-🇷🇴 drapeau romania ro drapeau nation pays romania
-🇷🇸 drapeau serbia rs drapeau nation pays serbia
-🇷🇺 drapeau russia russian federation drapeau nation pays russia
-🇷🇼 drapeau rwanda rw drapeau nation pays rwanda
-🇸🇦 drapeau saudi arabia drapeau nation pays saudi arabia
-🇸🇧 drapeau solomon islands solomon islands drapeau nation pays solomon islands
-🇸🇨 drapeau seychelles sc drapeau nation pays seychelles
-🇸🇩 drapeau sudan sd drapeau nation pays sudan
-🇸🇪 drapeau sweden se drapeau nation pays sweden
-🇸🇬 drapeau singapore sg drapeau nation pays singapore
-🇸🇭 drapeau st helena saint helena ascension tristan cunha drapeau nation pays st helena
-🇸🇮 drapeau slovenia si drapeau nation pays slovenia
+🇲🇬 drapeau madagascar mg nation pays
+🇲🇭 drapeau marshall islands nation pays
+🇲🇰 drapeau north macedonia nation pays
+🇲🇱 drapeau mali ml nation pays
+🇲🇲 drapeau myanmar mm nation pays
+🇲🇳 drapeau mongolia mn nation pays
+🇲🇴 drapeau macao sar china nation pays
+🇲🇵 drapeau northern mariana islands nation pays
+🇲🇶 drapeau martinique mq nation pays
+🇲🇷 drapeau mauritania mr nation pays
+🇲🇸 drapeau montserrat ms nation pays
+🇲🇹 drapeau malta mt nation pays
+🇲🇺 drapeau mauritius mu nation pays
+🇲🇻 drapeau maldives mv nation pays
+🇲🇼 drapeau malawi mw nation pays
+🇲🇽 drapeau mexico mx nation pays
+🇲🇾 drapeau malaysia my nation pays
+🇲🇿 drapeau mozambique mz nation pays
+🇳🇦 drapeau namibia na nation pays
+🇳🇨 drapeau new caledonia nation pays
+🇳🇪 drapeau niger ne nation pays
+🇳🇫 drapeau norfolk island nation pays
+🇳🇬 drapeau nigeria nation pays
+🇳🇮 drapeau nicaragua ni nation pays
+🇳🇱 drapeau netherlands nl nation pays
+🇳🇴 drapeau norway no nation pays
+🇳🇵 drapeau nepal np nation pays
+🇳🇷 drapeau nauru nr nation pays
+🇳🇺 drapeau niue nu nation pays
+🇳🇿 drapeau new zealand nation pays
+🇴🇲 drapeau oman om symbol nation pays
+🇵🇦 drapeau panama pa nation pays
+🇵🇪 drapeau peru pe nation pays
+🇵🇫 drapeau french polynesia nation pays
+🇵🇬 drapeau papua new guinea nation pays
+🇵🇭 drapeau philippines ph nation pays
+🇵🇰 drapeau pakistan pk nation pays
+🇵🇱 drapeau poland pl nation pays
+🇵🇲 drapeau st pierre miquelon saint nation pays
+🇵🇳 drapeau pitcairn islands nation pays
+🇵🇷 drapeau puerto rico nation pays
+🇵🇸 drapeau palestinian territories palestine nation pays
+🇵🇹 drapeau portugal pt nation pays
+🇵🇼 drapeau palau pw nation pays
+🇵🇾 drapeau paraguay py nation pays
+🇶🇦 drapeau qatar qa nation pays
+🇷🇪 drapeau reunion réunion nation pays
+🇷🇴 drapeau romania ro nation pays
+🇷🇸 drapeau serbia rs nation pays
+🇷🇺 drapeau russia russian federation nation pays
+🇷🇼 drapeau rwanda rw nation pays
+🇸🇦 drapeau saudi arabia nation pays
+🇸🇧 drapeau solomon islands nation pays
+🇸🇨 drapeau seychelles sc nation pays
+🇸🇩 drapeau sudan sd nation pays
+🇸🇪 drapeau sweden se nation pays
+🇸🇬 drapeau singapore sg nation pays
+🇸🇭 drapeau st helena saint ascension tristan cunha nation pays
+🇸🇮 drapeau slovenia si nation pays
 🇸🇯 drapeau svalbard jan mayen
-🇸🇰 drapeau slovakia sk drapeau nation pays slovakia
-🇸🇱 drapeau sierra leone sierra leone drapeau nation pays sierra leone
-🇸🇲 drapeau san marino san marino drapeau nation pays san marino
-🇸🇳 drapeau senegal sn drapeau nation pays senegal
-🇸🇴 drapeau somalia so drapeau nation pays somalia
-🇸🇷 drapeau suriname sr drapeau nation pays suriname
-🇸🇸 drapeau south sudan south sd drapeau nation pays south sudan
-🇸🇹 drapeau sao tome principe sao tome principe drapeau nation pays sao tome principe
-🇸🇻 drapeau el salvador el salvador drapeau nation pays el salvador
-🇸🇽 drapeau sint maarten sint maarten dutch drapeau nation pays sint maarten
-🇸🇾 drapeau syria syrian arab republic drapeau nation pays syria
-🇸🇿 drapeau eswatini sz drapeau nation pays eswatini
+🇸🇰 drapeau slovakia sk nation pays
+🇸🇱 drapeau sierra leone nation pays
+🇸🇲 drapeau san marino nation pays
+🇸🇳 drapeau senegal sn nation pays
+🇸🇴 drapeau somalia so nation pays
+🇸🇷 drapeau suriname sr nation pays
+🇸🇸 drapeau south sudan sd nation pays
+🇸🇹 drapeau sao tome principe nation pays
+🇸🇻 drapeau el salvador nation pays
+🇸🇽 drapeau sint maarten dutch nation pays
+🇸🇾 drapeau syria syrian arab republic nation pays
+🇸🇿 drapeau eswatini sz nation pays
 🇹🇦 drapeau tristan da cunha
-🇹🇨 drapeau turks caicos islands turks caicos islands drapeau nation pays turks caicos islands
-🇹🇩 drapeau chad td drapeau nation pays chad
-🇹🇫 drapeau french southern territories french southern territories drapeau nation pays french southern territories
-🇹🇬 drapeau togo tg drapeau nation pays togo
-🇹🇭 drapeau thailand th drapeau nation pays thailand
-🇹🇯 drapeau tajikistan tj drapeau nation pays tajikistan
-🇹🇰 drapeau tokelau tk drapeau nation pays tokelau
-🇹🇱 drapeau timor leste timor leste drapeau nation pays timor leste
-🇹🇲 drapeau turkmenistan drapeau nation pays turkmenistan
-🇹🇳 drapeau tunisia tn drapeau nation pays tunisia
-🇹🇴 drapeau tonga to drapeau nation pays tonga
-🇹🇷 drapeau turkey turkey drapeau nation pays turkey
-🇹🇹 drapeau trinidad tobago trinidad tobago drapeau nation pays trinidad tobago
-🇹🇻 drapeau tuvalu drapeau nation pays tuvalu
-🇹🇼 drapeau taiwan tw drapeau nation pays taiwan
-🇹🇿 drapeau tanzania tanzania united republic drapeau nation pays tanzania
-🇺🇦 drapeau ukraine ua drapeau nation pays ukraine
-🇺🇬 drapeau uganda ug drapeau nation pays uganda
+🇹🇨 drapeau turks caicos islands nation pays
+🇹🇩 drapeau chad td nation pays
+🇹🇫 drapeau french southern territories nation pays
+🇹🇬 drapeau togo tg nation pays
+🇹🇭 drapeau thailand th nation pays
+🇹🇯 drapeau tajikistan tj nation pays
+🇹🇰 drapeau tokelau tk nation pays
+🇹🇱 drapeau timor leste nation pays
+🇹🇲 drapeau turkmenistan nation pays
+🇹🇳 drapeau tunisia tn nation pays
+🇹🇴 drapeau tonga to nation pays
+🇹🇷 drapeau turkey nation pays
+🇹🇹 drapeau trinidad tobago nation pays
+🇹🇻 drapeau tuvalu nation pays
+🇹🇼 drapeau taiwan tw nation pays
+🇹🇿 drapeau tanzania united republic nation pays
+🇺🇦 drapeau ukraine ua nation pays
+🇺🇬 drapeau uganda ug nation pays
 🇺🇲 drapeau u s outlying islands
-🇺🇳 drapeau united nations un drapeau
-🇺🇸 drapeau united states united states america drapeau nation pays united states
-🇺🇾 drapeau uruguay uy drapeau nation pays uruguay
-🇺🇿 drapeau uzbekistan uz drapeau nation pays uzbekistan
-🇻🇦 drapeau vatican city vatican city drapeau nation pays vatican city
-🇻🇨 drapeau st vincent grenadines saint vincent grenadines drapeau nation pays st vincent grenadines
-🇻🇪 drapeau venezuela ve bolivarian republic drapeau nation pays venezuela
-🇻🇬 drapeau british virgin islands british virgin islands bvi drapeau nation pays british virgin islands
-🇻🇮 drapeau u s virgin islands virgin islands us drapeau nation pays u s virgin islands
-🇻🇳 drapeau vietnam viet nam drapeau nation pays vietnam
-🇻🇺 drapeau vanuatu vu drapeau nation pays vanuatu
-🇼🇫 drapeau wallis futuna wallis futuna drapeau nation pays wallis futuna
-🇼🇸 drapeau samoa ws drapeau nation pays samoa
-🇽🇰 drapeau kosovo xk drapeau nation pays kosovo
-🇾🇪 drapeau yemen ye drapeau nation pays yemen
-🇾🇹 drapeau mayotte yt drapeau nation pays mayotte
-🇿🇦 drapeau south africa south africa drapeau nation pays south africa
-🇿🇲 drapeau zambia zm drapeau nation pays zambia
-🇿🇼 drapeau zimbabwe zw drapeau nation pays zimbabwe
-🏴󠁧󠁢󠁥󠁮󠁧󠁿 drapeau england drapeau english
-🏴󠁧󠁢󠁳󠁣󠁴󠁿 drapeau scotland drapeau scottish
-🏴󠁧󠁢󠁷󠁬󠁳󠁿 drapeau wales drapeau welsh
+🇺🇳 drapeau united nations un onu
+🇺🇸 drapeau united states america nation pays
+🇺🇾 drapeau uruguay uy nation pays
+🇺🇿 drapeau uzbekistan uz nation pays
+🇻🇦 drapeau vatican city nation pays
+🇻🇨 drapeau st vincent grenadines saint nation pays
+🇻🇪 drapeau venezuela ve bolivarian republic nation pays
+🇻🇬 drapeau british virgin islands bvi nation pays
+🇻🇮 drapeau u s virgin islands us nation pays
+🇻🇳 drapeau vietnam viet nam nation pays
+🇻🇺 drapeau vanuatu vu nation pays
+🇼🇫 drapeau wallis futuna nation pays
+🇼🇸 drapeau samoa ws nation pays
+🇽🇰 drapeau kosovo xk nation pays
+🇾🇪 drapeau yemen ye nation pays
+🇾🇹 drapeau mayotte yt nation pays
+🇿🇦 drapeau south africa nation pays
+🇿🇲 drapeau zambia zm nation pays
+🇿🇼 drapeau zimbabwe zw nation pays
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 drapeau england english
+🏴󠁧󠁢󠁳󠁣󠁴󠁿 drapeau scotland scottish
+🏴󠁧󠁢󠁷󠁬󠁳󠁿 drapeau wales welsh

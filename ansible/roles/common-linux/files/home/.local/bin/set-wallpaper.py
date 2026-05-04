@@ -32,7 +32,9 @@ def get_wallpaper_files() -> list[Path]:
         print(f"Error: No valid wallpaper files found in {WALLPAPER_DIR}", file=sys.stderr)
         sys.exit(1)
     
-    print(valid_wallpapers)
+    print(f"\nAvailable wallpapers in {WALLPAPER_DIR}:")
+    for w in valid_wallpapers:
+        print(w.name)
 
     return valid_wallpapers
 
@@ -65,7 +67,7 @@ def refresh_hyprpaper():
         
         if old_hyprpaper_pid:
             # Relax a bit
-            sleep(0.5)
+            sleep(0.8)
 
             # Kill the old hyprpaper
             result = subprocess.run(
@@ -121,14 +123,15 @@ def set_wallpaper(target):
         
         # Create the symbolic link
         WALLPAPER_LINK.symlink_to(target)
+
+        print("\nReplaced link:")
+        print(f"{WALLPAPER_LINK} -> {target}")
         
     except Exception as e:
         print(f"Error: Failed to create wallpaper link: {e}", file=sys.stderr)
         sys.exit(1)
 
     refresh_hyprpaper()
-    
-    print(f"Changed wallpaper to: {target}")
 
 
 def get_current_wallpaper_index(wallpapers):
