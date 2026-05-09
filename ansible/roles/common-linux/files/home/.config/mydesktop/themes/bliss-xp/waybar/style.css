@@ -95,6 +95,10 @@ tooltip {
   transition: none;
 }
 
+#workspaces button {
+  background-color: transparent;
+}
+
 #taskbar button {
   min-width: 158px;
   padding: 0 6px;

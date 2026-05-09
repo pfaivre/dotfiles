@@ -2,7 +2,7 @@
 
 # Prints a Pango compatible string displaying a coloured card symbol changing every day
 
-today=$( date +%d )
+today=$( date +%_d )
 
 case $(($today % 4)) in
     0)

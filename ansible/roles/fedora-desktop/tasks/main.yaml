@@ -1,11 +1,11 @@
 # This role defines tasks specific to Fedora (desktop environment)
 
-- name: Enabling community repository sdegler/hyprland
+- name: Enabling community repository lionheartp/Hyprland
   become: true
   community.general.copr:
     host: copr.fedorainfracloud.org
     state: enabled
-    name: sdegler/hyprland
+    name: lionheartp/Hyprland
 
 - name: Installing packages
   become: true
@@ -26,7 +26,6 @@
       - alacritty
       - blueman
       - fontawesome-fonts-all
-      - gnome-themes-extra
       - gtk-murrine-engine
       - hypridle
       - hyprland

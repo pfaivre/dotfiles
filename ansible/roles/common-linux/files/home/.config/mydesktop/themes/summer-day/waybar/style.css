@@ -1,7 +1,5 @@
 /* Summer day style for Waybar */
 
-@import "./colors.css";
-
 * {
   font-family: Liberation Mono, FontAwesome;
   font-weight: bold;
@@ -10,15 +8,15 @@
 tooltip {
   padding: 16px;
   border-radius: 15px;
-  background-color: @bg0;
-  border: 3px solid @fg;
-  color: @fg;
+  background-color: #fdf6e3;
+  border: 3px solid #5c6a72;
+  color: #5c6a72;
   font-size: 12px;
 }
 
 window#waybar {
-  background-color: @fg;
-  color: @bg0;
+  background-color: #5c6a72;
+  color: #fdf6e3;
   transition-property: background-color;
   transition-duration: .5s;
   border-radius: 0px 0px 15px 15px;
@@ -30,7 +28,7 @@ window#waybar {
 }
 
 #tray {
-  color: @fg;
+  color: #5c6a72;
   margin-top: 2px;
   margin-right: 4px;
 }
@@ -40,11 +38,11 @@ window#waybar {
 }
 
 #power-profiles-daemon.power-saver {
-  color: @green;
+  color: #8da101;
 }
 
 #power-profiles-daemon.performance {
-  color: @yellow;
+  color: #dfa000;
 }
 
 #custom-launcher,
@@ -60,10 +58,11 @@ window#waybar {
 #custom-powermenu,
 #idle_inhibitor,
 #power-profiles-daemon,
+#temperature,
 #tray,
 #trayicons {
-  background-color: @bg0;
-  color: @fg;
+  background-color: #fdf6e3;
+  color: #5c6a72;
 
   padding-left: 10px;
   padding-right: 10px;
@@ -72,7 +71,7 @@ window#waybar {
 	border-radius: 10px;
 
   border-bottom-width: 5px;
-  border-bottom-color: @bg5;
+  border-bottom-color: #bdc3af;
   border-bottom-style: solid;
 }
 
@@ -88,6 +87,7 @@ window#waybar {
 #custom-powermenu:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
+#temperature:hover,
 /* #tray:hover, */
 #trayicons:hover {
   margin-top: 5px;
@@ -95,44 +95,39 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  color: @red;
+  color: #f85552;
 }
 
 #workspaces {
-  padding: 0px;
+  padding: 0;
+  background: none;
+  border: none;
 }
 
 #workspaces button {
-  background: none;
-  color: @fg;
+  background-color: #fdf6e3;
+  color: #5c6a72;
   border-radius: 0;
-  margin-bottom: 0px;
   border-width: 0 0 5px 0;
+  border-style: solid;
+  border-color: #bdc3af;
   transition: none;
 }
 
 #workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #FDF6E3;
   text-shadow: none;
+  margin-top: -2px;
+  border-bottom-width: 7px;
+  border-bottom-color: #BDC3AF;
 }
 
 #workspaces button.active {
-  background-color: @blue;
-  color: @bg0;
+  background-color: #3a94c5;
+  color: #fdf6e3;
 
 	border-radius: 0;
-
-  margin-bottom: -5px;
-
-  border-bottom-width: 5px;
-  border-bottom-color: #1c4a62;
-  border-bottom-style: solid;
-  border-left-width: 0px;
-  border-left-color: #366660;
-  border-left-style: solid;
-  border-right-width: 0px;
-  border-right-color: #366660;
-  border-right-style: solid;
+  border-color: #1c4a62;
 }
 
 #workspaces button:first-child {
@@ -146,8 +141,8 @@ window#waybar {
 }
 
 #custom-launcher {
-  background-color: @green;
-  color: @bg0;
+  background-color: #8da101;
+  color: #fdf6e3;
   border-bottom-color: #465000;
 
   margin-left: 15px;
@@ -156,20 +151,19 @@ window#waybar {
 }
 
 #custom-launcher:hover {
-  /* background-color: @green; */
   margin-top: 5px;
   border-bottom-width: 7px;
 }
 
 #custom-launcher:active {
-  background-color: @red;
+  background-color: #f85552;
   margin-top:12px;
   border-bottom-width: 0;
 }
 
 #custom-powermenu {
-  background-color: @red;
-  color: @bg0;
+  background-color: #f85552;
+  color: #fdf6e3;
   border-bottom-color: #951c1f;
   font-size: 28px;
 

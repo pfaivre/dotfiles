@@ -2,7 +2,7 @@
     // Rofi Application Launcher (Bliss-XP)
     "custom/launcher-bliss-xp": {
         "format": "démarrer",
-        "on-click": "pkill rofi; rofi -show drun -show-icons -theme-str 'window {location: southwest; y-offset: -34px;}'",
+        "on-click": "pkill rofi; rofi -show drun -show-icons -theme-str 'window {location: southwest; y-offset: 0px;}'",
         "tooltip-format": "Cliquez ici pour commencer"
     }
 }

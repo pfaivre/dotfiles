@@ -38,7 +38,7 @@ Rofi menu to select a theme and replaces the symlink ~/.config/mydesktop/current
 
 ### Command palette
 
-The key combination SUPER + Esc brings the command palette.
+Type <kbd>SUPER</kbd> + <kbd>Esc</kbd> to bring the command palette.
 
 It provides an easy access to some configurations and actions (change wallpaper, select theme, take a screenshot, etc.)
 
@@ -49,6 +49,8 @@ It provides an easy access to some configurations and actions (change wallpaper,
 ### Emoji selector
 
 Available in French and English. A custom made Emoji selector made with Rofi.
+
+Type <kbd>SUPER</kbd> + <kbd>;</kbd> to show it.
 
 <p align="center">
   <img src="emoji_selector.png" alt="Command palette" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2)" width="320">

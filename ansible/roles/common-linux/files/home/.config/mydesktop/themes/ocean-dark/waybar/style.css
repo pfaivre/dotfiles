@@ -1,23 +1,22 @@
 /* Base16-ocean inspired style for Waybar */
 
-@import "./colors.css";
-
 * {
   font-family: Liberation Mono, FontAwesome;
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: normal;
 }
 
 tooltip {
   padding: 8px;
-  background-color: @bg0;
-  border: 1px solid @fg;
+  background-color: #2b303b;
+  border: 1px solid #eff1f5;
   border-radius: 0;
+  font-size: 12px;
 }
 
 window#waybar {
   background-color: transparent;
-  color: @bg0;
+  color: #2b303b;
   transition-property: background-color;
   transition-duration: .5s;
   border-radius: 0;
@@ -42,9 +41,10 @@ window#waybar {
   padding-left: 4px;
   padding-right: 4px;
 
-  background-color: @bg0;
-  color: @fg;
+  background-color: #2b303b;
+  color: #eff1f5;
   border-radius: 0;
+  border: none;
 }
 
 #custom-launcher:hover,
@@ -61,7 +61,7 @@ window#waybar {
 #power-profiles-daemon:hover,
 #upower:hover,
 #custom-hyprshade:hover {
-  background-color: @bg3;
+  background-color: #62737f;
 }
 
 #clock {
@@ -75,18 +75,18 @@ window#waybar {
 }
 
 #tray {
-  color: @fg;
+  color: #eff1f5;
 }
 
 #power-profiles-daemon {
 }
 
 #power-profiles-daemon.power-saver {
-  color: @green;
+  color: #98c38c;
 }
 
 #power-profiles-daemon.performance {
-  color: @yellow;
+  color: #efcd86;
 }
 
 #custom-notificationcenter {
@@ -96,39 +96,41 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  color: @red;
+  color: #ce5564;
 }
 
 #workspaces {
   padding: 0px;
-  background-color: @bg0;
+  background-color: #2b303b;
+  border: none;
 }
 
 #workspaces button {
   padding: 0 14px;
   background: none;
-  color: @fg;
+  color: #eff1f5;
   border-radius: 0;
-  border-width: 0;
+  border: none;
   transition: none;
 }
 
 #workspaces button:hover {
-  background-color: @bg3;
+  background-color: #62737f;
   text-shadow: none;
   border: none;
 }
 
 #workspaces button.active {
-  background-color: @blue;
-  color: @bg0;
+  background-color: #8ca1b4;
+  color: #2b303b;
 
   border-radius: 0;
+  border: none;
 }
 
 #custom-launcher {
-  background-color: @green;
-  color: @bg0;
+  background-color: #98c38c;
+  color: #2b303b;
 
   padding-left: 20px;
   padding-right: 20px;
@@ -139,12 +141,12 @@ window#waybar {
 }
 
 #custom-launcher:active {
-  background-color: @red;
+  background-color: #ce5564;
 }
 
 #custom-powermenu {
-  background-color: @red;
-  color: @bg0;
+  background-color: #ce5564;
+  color: #2b303b;
   font-size: 28px;
   padding-left: 20px;
   padding-right: 20px;
