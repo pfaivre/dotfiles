@@ -1,41 +1,55 @@
 /* Bliss-XP style for Swaync */
 
-@define-color noti-bg-focus #637582;
-@define-color noti-close-bg #2b303b;
-@define-color noti-close-bg-hover #ce5564;
-@define-color text-color #eff1f5;
-@define-color cc-text-color #eff1f5;
-@define-color text-color-disabled #90a0ab;
-@define-color bg-selected #ce5564;
-
-@define-color bg_dim #2b303b;
-@define-color bg0 #2b303b;
-@define-color bg1 #42535f;
-@define-color bg2 #62737f;
-@define-color bg3 #62737f;
-@define-color bg4 #90a0ab;
-@define-color bg5 #90a0ab;
-@define-color bg_visual #543a48;
-@define-color bg_red #514045;
-@define-color bg_green #425047;
-@define-color bg_blue #3a515d;
-@define-color bg_yellow #4d4c43;
-@define-color fg #eff1f5;
-@define-color red #ce5564;
-@define-color orange #dc8269;
-@define-color yellow #efcd86;
-@define-color green #98c38c;
-@define-color aqua #8db7b5;
-@define-color blue #8ca1b4;
-@define-color purple #bd88ac;
-@define-color orange2 #b47662;
-@define-color grey0 #42535f;
-@define-color grey1 #62737f;
-@define-color grey2 #90a0ab;
-
-
 * {
   font-family: Tahoma, Verdana, "Liberation Sans", sans;
+}
+
+button {
+  font-size: 11px;
+  font-weight: normal;
+  padding: 0 12px;
+  color: black;
+  text-shadow: none;
+  background-image: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(236, 235, 229, 1) 86%,
+    rgba(216, 208, 196, 1) 100%
+  );
+  border: 1px solid #003c74;
+  box-shadow: 1px 1px 0 0 #f8f7f0, -1px -1px 0 0 #e0dcc9;
+  border-radius: 3px;
+  transition: none;
+}
+
+button:hover {
+  box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
+}
+
+button:active {
+  box-shadow: none;
+  background: linear-gradient(
+    180deg,
+    rgba(205, 202, 195, 1) 0%,
+    rgba(227, 227, 219, 1) 8%,
+    rgba(229, 229, 222, 1) 94%,
+    rgba(242, 242, 241, 1) 100%
+  );
+}
+
+.blank-window {
+  /* Window behind control center and on all other monitors */
+  background: transparent;
+}
+
+.floating-notifications {
+  /* Background behind notifications outside of the center */
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
 }
 
 .notification-row {
@@ -332,22 +346,27 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-  /*  */
 }
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Control center ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
-  margin: 0;
+  margin: -8px 0;
+  padding-bottom: 8px;
   background: #ece9d8;
   color: black;
   border: 4px solid #166aee;
   border-radius: 0;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .control-center .control-center-list-placeholder {
   /* The placeholder when there are no notifications */
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .control-center .control-center-list {
@@ -371,22 +390,11 @@
   /* background-color: #8CAAE6; */
 }
 
-.blank-window {
-  /* Window behind control center and on all other monitors */
-  background: transparent;
-}
 
-.floating-notifications {
-  /* Background behind notifications outside of the center */
-  background: transparent;
-}
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Title widget ―――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-.floating-notifications .notification {
-  box-shadow: none;
-}
-
-/*** Widgets ***/
-/* Title widget */
 .widget-title {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 16px 16px 8px 16px;
@@ -394,45 +402,19 @@
   font-size: 1.5rem;
 }
 
-.widget-title > button {
-  font-size: 11px;
-  padding: 0 12px;
-  color: black;
-  text-shadow: none;
-  background-image: none;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(236, 235, 229, 1) 86%,
-    rgba(216, 208, 196, 1) 100%
-  );
-  border: 1px solid #003c74;
-  box-shadow: 1px 1px 0 0 #f8f7f0, -1px -1px 0 0 #e0dcc9;
-  border-radius: 3px;
-  transition: none;
-}
 
-.widget-title > button:hover {
-  box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
-}
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― DND widget ―――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-.widget-title > button:active {
-  box-shadow: none;
-  background-image: none;
-  background: linear-gradient(
-    180deg,
-    rgba(205, 202, 195, 1) 0%,
-    rgba(227, 227, 219, 1) 8%,
-    rgba(229, 229, 222, 1) 94%,
-    rgba(242, 242, 241, 1) 100%
-  );
-}
-
-/* DND widget */
 .widget-dnd {
   color: black;
   margin: 8px 16px 8px 16px;
   font-size: 1.1rem;
+}
+
+.widget-dnd > label {
+  color: black;
 }
 
 .widget-dnd > switch {
@@ -463,9 +445,23 @@
   background: #DE5C2F;
 }
 
-/* Label widget */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Notifications widget ―――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.widget-notifications {
+  margin: 0;
+  padding: 8px 16px;
+}
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Label widget ―――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 .widget-label {
-  margin: 8px;
+  margin: 0;
+  padding: 8px 16px;
 }
 
 .widget-label > label {
@@ -473,7 +469,11 @@
   color: black;
 }
 
-/* Mpris widget */
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Mpris widget ―――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 .widget-mpris {
   /* The parent to all players */
   box-shadow: none;
@@ -482,18 +482,24 @@
 }
 
 .widget-mpris .widget-mpris-player {
-  padding: 8px;
-  padding: 16px;
-  margin: 16px 20px;
+  margin: 0;
+  padding: 8px 16px;
   border-radius: 3px;
   box-shadow: none;
   background: none;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.mpris-background {
+  opacity: 0;
+}
+
+.mpris-overlay {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .widget-mpris .widget-mpris-player button:hover {
   /* The media player buttons (play, pause, next, etc...) */
-  background: @grey2;
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
@@ -515,7 +521,6 @@
 }
 
 .widget-mpris .widget-mpris-player > box > button:hover {
-  background-color: rgba(0, 0, 0, 0.50);
 }
 
 .widget-mpris > box > button {
@@ -526,65 +531,43 @@
   /* Change player side buttons insensitive */
 }
 
-/* Buttons widget */
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Buttons widget ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 .widget-buttons-grid {
   padding: 8px;
   margin: 8px;
   border-radius: 0;
-  background-color: @grey1;
+  background-color: #62737f;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  background: @grey1;
-  border-radius: 0;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */
 }
 
-/* Menubar widget */
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Menubar widget ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 .widget-menubar > box > .menu-button-bar > button {
-  border: none;
-  background: transparent;
 }
 
-/* .AnyName { Name defined in config after #
-  background-color: @grey1;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 12px;
-}
 
-.AnyName>button {
-  background: transparent;
-  border: none;
-}
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Volume widget ――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-.AnyName>button:hover {
-  background-color: @grey2;
-} */
-.topbar-buttons > button {
-  /* Name defined in config after # */
-  border: none;
-  background: transparent;
-}
-
-/* Volume widget */
 .widget-volume {
   background-color: transparent;
   padding: 8px;
   margin: 8px 16px;
   border-radius: 0;
-}
-
-.widget-volume > box > button {
-  border: none;
-  box-shadow: none;
-}
-
-.widget-volume > box > button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* right side of the bar */
@@ -622,36 +605,33 @@
 }
 
 .per-app-volume {
-  background-color: @grey0;
+  background-color: transparent;
   padding: 4px 8px 8px 8px;
   margin: 8px 8px 8px 8px;
   border-radius: 0;
 }
 
-/* Backlight widget */
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Backlight widget ―――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 .widget-backlight {
-  background-color: @grey1;
-  padding: 8px;
-  margin: 8px;
+  margin: 0;
+  padding: 8px 16px;
+
   border-radius: 0;
+  background-color: #62737f;
 }
 
-/* Inhibitors widget */
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Inhibitors widget ――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 .widget-inhibitors {
-  margin: 8px;
+  margin: 0;
+  padding: 8px 16px;
+
   font-size: 1.5rem;
-}
-
-.widget-inhibitors > button {
-  font-size: initial;
-  color: red;
-  text-shadow: none;
-  background: @grey1;
-  border: 1px solid @fg;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.widget-inhibitors > button:hover {
-  background: @grey2;
 }

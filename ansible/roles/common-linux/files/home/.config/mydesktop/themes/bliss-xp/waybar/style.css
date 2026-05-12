@@ -38,12 +38,19 @@ window#waybar {
 /* ~~~~~~~~ */
 
 tooltip {
-  padding: 2px;
+  padding: 0;
   border-radius: 0;
   border: 1px solid black;
   background-color: #ffffe2;
+  text-shadow: none;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+tooltip * {
+  margin: 0;
+  padding: 0;
   color: black;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 
@@ -96,7 +103,8 @@ tooltip {
 }
 
 #workspaces button {
-  background-color: transparent;
+  background: transparent;
+  box-shadow: none;
 }
 
 #taskbar button {
@@ -106,7 +114,7 @@ tooltip {
   border-radius: 3px;
   transition: none;
 
-  background-color: #3980f4;
+  background: #3980f4;
   background-image: none;
 
   border-top: 1px solid #2c5fb2;
@@ -121,15 +129,10 @@ tooltip {
   color: white;
   border-radius: 3px;
   transition: none;
-
-  border-top: 1px solid transparent;
-  border-left: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 1px solid transparent;
 }
 
 #workspaces button:hover, #taskbar button:hover {
-  background-color: #53a3ff;
+  background: #53a3ff;
 
   border-top: 1px solid #2c5fb2;
   border-left: 1px solid #306fd9;
@@ -139,7 +142,7 @@ tooltip {
 }
 
 #workspaces button.active, #taskbar button.active {
-  background-color: #1e52b7;
+  background: #1e52b7;
 
   border-top: 1px solid #1c62d2;
   border-left: 1px solid #115be9;
@@ -149,7 +152,7 @@ tooltip {
 }
 
 #workspaces button.active:hover, #taskbar button.active:hover {
-  background-color: #53a3ff;
+  background: #53a3ff;
 }
 
 

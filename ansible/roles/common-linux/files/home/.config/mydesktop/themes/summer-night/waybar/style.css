@@ -8,9 +8,15 @@
 tooltip {
   padding: 16px;
   border-radius: 15px;
-  background-color: #2d353b;
-  border: 3px solid #d3c6aa;
-  color: #d3c6aa;
+  background-color:#2D353B;
+  border-width: 0 0 5px 0;
+  border-color: #161A1D;
+  border-style: solid;
+  text-shadow: none;
+}
+
+tooltip * {
+  color: #D3C6AA;
   font-size: 12px;
 }
 
@@ -105,21 +111,22 @@ window#waybar {
 }
 
 #workspaces button {
-  background-color: #2d353b;
+  background: #2d353b;
   color: #d3c6aa;
   border-radius: 0;
   border-width: 0 0 5px 0;
   border-style: solid;
   border-color: #161a1d;
   transition: none;
+  box-shadow: none;
 }
 
 #workspaces button:hover {
-  background-color: #2D353B;
+  background: #3d474e;
   text-shadow: none;
   margin-top: -2px;
   border-bottom-width: 7px;
-  border-bottom-color: #161A1D;
+  border-bottom-color: #252b2f;
 }
 
 #workspaces button.active {

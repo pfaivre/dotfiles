@@ -22,24 +22,24 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     python3 ~/.local/bin/set-wallpaper.py &
     killall -INT waybar; hyprctl dispatch exec "waybar -s ~/.config/mydesktop/current-theme/waybar/style.css"
     hyprctl reload
-    swaync-client --reload-css
+    swaync-client --reload-css --reload-config
     touch ~/.config/alacritty/alacritty.toml
 
-    rm -f ~/.config/gtk-4.0/gtk.css
-    rm -f ~/.config/gtk-4.0/gtk-dark.css
-    ln -s ~/.config/mydesktop/themes/$1/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
-    ln -s ~/.config/mydesktop/themes/$1/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
+    rm -f ~/.config/gtk-3.0/settings.ini
+    rm -f ~/.config/gtk-4.0/settings.ini
+    ln -s ~/.config/mydesktop/themes/$1/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
+    ln -s ~/.config/mydesktop/themes/$1/gtk-4.0/settings.ini ~/.config/gtk-4.0/settings.ini
 
     if [[ -f "$HOME/.config/mydesktop/themes/$1/light.mode" ]]; then
         echo "Setting light mode"
-        gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-        gsettings set org.gnome.desktop.interface gtk-theme Everforest-Light-Medium
-        gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
+        gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+        gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+        gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
     else
         echo "Setting dark mode"
-        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-        gsettings set org.gnome.desktop.interface gtk-theme Everforest-Dark-Medium
-        gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-dark"
+        gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+        gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+        gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
     fi
 else
     echo "Theme not found ~/.config/mydesktop/themes/$1"

@@ -101,7 +101,7 @@ window#waybar {
 
 #workspaces {
   padding: 0px;
-  background-color: #2b303b;
+  background: #2b303b;
   border: none;
 }
 
@@ -112,16 +112,17 @@ window#waybar {
   border-radius: 0;
   border: none;
   transition: none;
+  box-shadow: none;
 }
 
 #workspaces button:hover {
-  background-color: #62737f;
+  background: #62737f;
   text-shadow: none;
   border: none;
 }
 
 #workspaces button.active {
-  background-color: #8ca1b4;
+  background: #8ca1b4;
   color: #2b303b;
 
   border-radius: 0;
