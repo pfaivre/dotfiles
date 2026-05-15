@@ -515,18 +515,17 @@ button:active {
 
 /* right side of the bar */
 .widget-volume scale trough {
+  background-color: #47515D;
 }
 
 .widget-volume scale trough slider {
-  /* border-color: #8ca1b4; */
-  outline-color: #8ca1b4;
-  text-decoration-color: #8ca1b4;
-  box-shadow: inset 0 0 0 2px #8ca1b4;
+  background-color: #8F9FA9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Left side of the bar */
 .widget-volume scale trough highlight {
-  border: 1px solid #8ca1b4;
+  background-color: #8F9FA9;
 }
 
 .per-app-volume {

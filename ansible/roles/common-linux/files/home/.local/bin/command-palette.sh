@@ -86,15 +86,15 @@ case $selected in
     ;;
 
   "Setup → Input")
-    open_text_file ~/.config/hypr/input.conf
+    open_text_file ~/.config/hypr/input.lua
     ;;
 
   "Setup → Keybindings")
-    open_text_file ~/.config/hypr/keybindings.conf
+    open_text_file ~/.config/hypr/keybindings.lua
     ;;
 
   "Setup → Monitors")
-    open_text_file ~/.config/hypr/monitors.conf
+    open_text_file ~/.config/hypr/monitors.lua
     ;;
 
   "Setup → Hypridle")

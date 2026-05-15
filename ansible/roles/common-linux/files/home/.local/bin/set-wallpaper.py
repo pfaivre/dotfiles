@@ -57,7 +57,7 @@ def refresh_hyprpaper():
 
         # Run a new hyprpaper
         result = subprocess.run(
-            ["hyprctl", "dispatch", "exec", "'hyprpaper'"],
+            ["hyprctl", "eval", 'hl.exec_cmd("hyprpaper")'],
             timeout=1,
             capture_output=True,
             text=True

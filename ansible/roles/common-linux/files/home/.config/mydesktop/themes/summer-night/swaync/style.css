@@ -367,7 +367,6 @@ button:active {
   font-size: initial;
   border-radius: 12px;
   background: #d3c6aa;
-  border: 1px solid #2d353b;
   box-shadow: none;
 }
 
@@ -378,6 +377,7 @@ button:active {
 .widget-dnd > switch slider {
   background: #2d353b;
   border-radius: 12px;
+  box-shadow: none;
 }
 
 
@@ -520,16 +520,17 @@ button:active {
 
 /* right side of the bar */
 .widget-volume scale trough {
+  background-color: #464B4B;
 }
 
 .widget-volume scale trough slider {
-  outline-color: #a7c080;
-  text-decoration-color: #a7c080;
-  box-shadow: inset 0 0 0 2px #a7c080;
+  background-color: #d3c6aa;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Left side of the bar */
 .widget-volume scale trough highlight {
+  background-color: #a7c080;
   border: 1px solid #a7c080;
 }
 
