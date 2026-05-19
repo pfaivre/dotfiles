@@ -414,6 +414,19 @@ button:active {
   background: none;
 }
 
+.widget-mpris > box > button {
+  /* The buttons to select a player */
+  background: none;
+}
+
+.widget-mpris > box > button:hover {
+  background: #90a0ab;
+}
+
+.widget-mpris > box > button:active {
+  background: #4b5b67;
+}
+
 .widget-mpris .widget-mpris-player {
   padding: 16px;
   margin: 0;
@@ -529,10 +542,19 @@ button:active {
 }
 
 .per-app-volume {
-  background: transparent;
-  padding: 4px 8px 8px 8px;
-  margin: 8px 8px 8px 8px;
+  padding: 8px;
+  margin: 8px;
   border-radius: 0;
+
+  background: transparent;
+}
+
+.per-app-volume label {
+  opacity: 0.5;
+}
+
+.per-app-volume row:hover {
+  background: transparent;
 }
 
 

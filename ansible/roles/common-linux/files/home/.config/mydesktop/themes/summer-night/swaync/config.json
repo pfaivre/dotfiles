@@ -26,6 +26,7 @@
   "positionY": "top",
   "relative-timestamps": true,
   "script-fail-notify": true,
+  "text-empty": "Pas de notification",
   "timeout-critical": 0,
   "timeout-low": 5,
   "timeout": 10,
@@ -56,6 +57,9 @@
     "mpris"
   ],
   "widget-config": {
+    "notifications": {
+      "vexpand": false
+    },
     "inhibitors": {
       "text": "Inhibiteurs",
       "button-text": "Tout effacer",
@@ -75,7 +79,10 @@
     },
     "mpris": {
       "image-size": 48,
-      "image-radius": 0
+      "blacklist": [],
+      "autohide": true,
+      "show-album-art": "always",
+      "loop-carousel": true
     },
     "buttons-grid": {
       "actions": [
@@ -94,7 +101,8 @@
       "collapse-button-label": "",
       "show-per-app": true,
       "show-per-app-icon": true,
-      "show-per-app-label": false
+      "show-per-app-label": false,
+      "empty-list-label": "Pas d'audio actif"
     }
   }
 }

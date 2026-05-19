@@ -1,0 +1,24 @@
+// -*- mode: jsonc -*-
+{
+    // "hyprland/workspaces": {
+    //     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r-1\" })'",
+    //     "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r+1\" })'",
+    //     "on-click": "activate",
+    //     "active-only": false,
+    //     "all-outputs": true,
+    //     "format": "{icon} {windows}",
+    //     "persistent-workspaces": {
+    //         "*": 3
+    //     },
+    //     "workspace-taskbar": {
+    //         "enable": true,
+    //         "update-active-window": true,
+    //         "format": "{icon} {title:.0}",
+    //         "icon-size": 16,
+    //         "icon-theme": "Adwaita",
+    //         "orientation": "horizontal",
+    //         "ignore-list": ["Incrustation vidéo", "Éditeur de liste de lecture d’Audacious"],
+    //         "on-click-window": "hyprctl dispatch 'hl.dsp.focus({window=\"address:{address}\"})'"
+    //     }
+    // }
+}

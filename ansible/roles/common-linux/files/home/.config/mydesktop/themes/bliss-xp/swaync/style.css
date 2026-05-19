@@ -369,6 +369,11 @@ button:active {
   opacity: 0.3;
 }
 
+.control-center .control-center-list-placeholder image {
+  pixel-size: 32px;
+  -gtk-dpi: 32px;
+}
+
 .control-center .control-center-list {
   /* List of notifications */
   background: transparent;
@@ -605,12 +610,20 @@ button:active {
 }
 
 .per-app-volume {
-  background-color: transparent;
-  padding: 4px 8px 8px 8px;
-  margin: 8px 8px 8px 8px;
+  padding: 8px;
+  margin: 8px;
   border-radius: 0;
+
+  background: transparent;
 }
 
+.per-app-volume label {
+  opacity: 0.3;
+}
+
+.per-app-volume row:hover {
+  background: transparent;
+}
 
 /* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 /* ―――― Backlight widget ―――――――――――――――――――――――――――――――――――――――――― */

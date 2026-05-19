@@ -3,10 +3,10 @@
   "ignore-gtk-theme ": true,
   "control-center-height": 500,
   "control-center-layer": "overlay",
-  "control-center-margin-bottom": 18,
+  "control-center-margin-bottom": 0,
   "control-center-margin-left": 0,
-  "control-center-margin-right": 4,
-  "control-center-margin-top": 0,
+  "control-center-margin-right": 16,
+  "control-center-margin-top": 8,
   "control-center-width": 500,
   "cssPriority": "application",
   "fit-to-screen": false,
@@ -17,15 +17,16 @@
   "layer-shell": true,
   "layer": "overlay",
   "notification-2fa-action": true,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
+  "notification-body-image-height": 64,
+  "notification-body-image-width": 64,
   "notification-icon-size": 64,
   "notification-inline-replies": false,
   "notification-window-width": 500,
   "positionX": "right",
-  "positionY": "center",
+  "positionY": "top",
   "relative-timestamps": true,
   "script-fail-notify": true,
+  "text-empty": "Pas de notification",
   "timeout-critical": 0,
   "timeout-low": 5,
   "timeout": 10,
@@ -49,14 +50,15 @@
     }
   },
   "widgets": [
-    "inhibitors",
-    "title",
-    "dnd",
-    "notifications",
+    "volume",
     "mpris",
-    "volume"
+    "inhibitors",
+    "notifications"
   ],
   "widget-config": {
+    "notifications": {
+      "vexpand": false
+    },
     "inhibitors": {
       "text": "Inhibiteurs",
       "button-text": "Tout effacer",
@@ -76,7 +78,10 @@
     },
     "mpris": {
       "image-size": 48,
-      "image-radius": 0
+      "blacklist": [],
+      "autohide": true,
+      "show-album-art": "always",
+      "loop-carousel": true
     },
     "buttons-grid": {
       "actions": [
@@ -95,7 +100,8 @@
       "collapse-button-label": "",
       "show-per-app": true,
       "show-per-app-icon": true,
-      "show-per-app-label": false
+      "show-per-app-label": false,
+      "empty-list-label": "Pas d'audio actif"
     }
   }
 }

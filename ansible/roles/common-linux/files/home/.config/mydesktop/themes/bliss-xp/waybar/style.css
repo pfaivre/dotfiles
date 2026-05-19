@@ -161,6 +161,7 @@ tooltip * {
 /* ~~~~~~~~~~~~~~~~~ */
 
 #clock,
+#bluetooth,
 #pulseaudio,
 #network,
 #backlight,
@@ -198,6 +199,7 @@ tooltip * {
 }
 
 #custom-launcher-bliss-xp:hover,
+#bluetooth:hover,
 #clock:hover,
 #pulseaudio:hover,
 #network:hover,

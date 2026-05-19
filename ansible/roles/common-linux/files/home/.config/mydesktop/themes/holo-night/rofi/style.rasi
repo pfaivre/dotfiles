@@ -1,5 +1,5 @@
 /**
- * Cards Day theme for Rofi
+ * Holo Night theme for Rofi
 */
 
 * {
@@ -12,89 +12,90 @@
     font: "Liberation Sans 11";
     border-radius: 0;
     border: 0;
-    text-color: #242320;
+    text-color: #eff1f5;
     background-color: transparent;
 }
 
 configuration {
-    display-drun: "Applications : ";
-    display-run: "Commands: ";
-    display-window: "Windows : ";
+    /* display-drun: " Applications : ";
+    display-run: " Commands: ";
+    display-window: " Windows : "; */
 }
 
 window {
     width: 25%;
-    // height: 50%;
+    height: 50%;
     location: center;
 
-    border: 2px;
-    border-color: #5c5952;
-    border-radius: 4px;
-    background-color: #F7F1E3;
+    border: 1px;
+    border-radius: 8px;
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(43, 48, 59, 0.7);
 }
 
 mainbox {
-    padding: 0;
-    margin: 0;
+    padding: 6px;
+    margin: 8px;
     border: 0;
     children: [inputbar, message, listview];
 }
 
 inputbar {
-    margin: 0 0 8px 0;
-    border: 0 0 2px 0;
-    border-color: #5c5952;
-    background-color: #FFF9EC;
-    // children: [prompt, entry];
+    margin: 2px 2px 12px 2px;
+    border: 0;
     children: [entry];
 }
 
 prompt {
-    padding: 0 0 0 10px;
-    margin: 0;
+    padding: 5px;
+    margin: 2px;
     border: 0;
     background-color: transparent;
-    text-color: inherit;
+    text-color: black;
 }
 
 entry {
-    padding: 12px 12px 12px 12px;
-    margin: 0;
-    border: 0;
-    cursor-width: 2px;
+    padding: 5px;
+    margin: 2px;
+    border: 1px;
+    border-radius: 6px;
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor-width: 1px;
     cursor: text;
 }
 
 listview {
-    lines: 12;
-    padding: 0;
+    lines: 8;
+    padding: 4px;
     margin: 0;
     children: [element];
 }
 
 element {
-    padding: 4px 8px;
-    margin: 0 7px;
-    border-radius: 4px;
+    padding: 2px;
     background-color: transparent;
-    border: 0 0 2px 0;
-    border-color: transparent;
-    text-color: #242320;
 }
 
 element-text {
+    size: 1em;
+    padding: 0 4px;
+    margin: 0px;
     text-color: inherit;
 }
 
 element-icon {
-    padding: 0 4px;
+    padding: 2px 6px;
     margin: 0;
     size: 2em;
 }
 
 element selected {
-    border-color: #999993;
-    background-color: #A0D4CF;
+    background-color: rgba(255, 128, 236, 0.4);
+    border-radius: 6px;
+    border: 1px;
+    border-color: rgba(255, 255, 255, 0.612);
+    text-color: inherit;
 }
 
 element selected active {

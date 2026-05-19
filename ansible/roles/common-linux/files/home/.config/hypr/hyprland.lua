@@ -175,7 +175,7 @@ hl.window_rule({ match = { class = "script-fu" }, float = true })
 
 -- Some Gnome utilities are floating
 hl.window_rule({ match = { class = "org.gnome.FileRoller" }, float = true })
-hl.window_rule({ match = { class = "org.gnome.Loupe" }, float = true })
+hl.window_rule({ match = { class = "org.gnome.Loupe" }, float = true, content = "photo" })
 hl.window_rule({ match = { class = "org.gnome.Calculator" }, float = true })
 hl.window_rule({ match = { class = "xdg-desktop-portal-gtk" }, float = true })
 hl.window_rule({ match = { class = "nvidia-settings" }, float = true })
