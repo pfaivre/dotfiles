@@ -1,8 +1,8 @@
 {
     // Workspaces buttons
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r+1\" })'",
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
@@ -147,6 +147,7 @@
         "locale": "fr_FR.UTF-8",
         "tooltip-format": "<span><tt><big>{calendar}</big></tt></span>",
         "calendar": {
+            "mode": "year",
             "mode-mon-col"  : 4,
             "weeks-pos"     : "left",
             "on-scroll"     : 1,
@@ -168,7 +169,7 @@
 
     // CPU usage label
     "cpu": {
-        "format": " {usage:2d}% ", // The format, how information should be displayed.
+        "format": " {usage:2d}%", // The format, how information should be displayed.
         "interval": 10, // The polling interval (in seconds) for CPU info.
         "states": {  // A number of cpu usage states which get activated on certain usage levels.
             "warning": 80,
@@ -334,16 +335,55 @@
         "on-click": "swaync-client -t -sw"
     },
 
+    "mpris": {
+        "format": "{player_icon}",
+        "format-paused": "{status_icon}",
+        "tooltip": true,
+        "tooltip-format" : "{artist} - {title}",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "max-length": 32,
+
+	    "ignored-players": ["firefox"]
+    },
+
     // Bluetooth
     "bluetooth": {
-        "format": "",
+	    "format": "",
+	    "format-connected": "", // Alternate symbol: 
+	    // "format-connected": " {device_alias}",
+        // "format-connected-battery": " {device_alias} {device_battery_percentage}%",
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
         "on-click": "blueman-manager",
         "format-no-controller": "",
         "tooltip": true,
-        "tooltip-format": "{device_enumerate}"
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+
+    "network": {
+        "interval": 5,
+        "format": "{ifname}",
+        "format-wifi": "wifi",
+        "format-ethernet": "eth",
+        "format-disconnected": "discon",
+        "tooltip-format": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
+        "tooltip-format-ethernet": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "alacritty --class Popup --command nmtui"
     },
 
     // Other
@@ -373,6 +413,7 @@
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "warning-threshold": 70,
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC}°C",

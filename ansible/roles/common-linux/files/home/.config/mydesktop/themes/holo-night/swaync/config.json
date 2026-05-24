@@ -3,10 +3,10 @@
   "ignore-gtk-theme ": true,
   "control-center-height": 500,
   "control-center-layer": "overlay",
-  "control-center-margin-bottom": 24,
+  "control-center-margin-bottom": 0,
   "control-center-margin-left": 0,
-  "control-center-margin-right": 8,
-  "control-center-margin-top": 0,
+  "control-center-margin-right": 16,
+  "control-center-margin-top": 8,
   "control-center-width": 500,
   "cssPriority": "application",
   "fit-to-screen": false,
@@ -23,7 +23,7 @@
   "notification-inline-replies": false,
   "notification-window-width": 500,
   "positionX": "right",
-  "positionY": "bottom",
+  "positionY": "top",
   "relative-timestamps": true,
   "script-fail-notify": true,
   "text-empty": "Pas de notification",
@@ -50,12 +50,10 @@
     }
   },
   "widgets": [
-    "inhibitors",
-    "title",
-    "dnd",
-    "notifications",
+    "volume",
     "mpris",
-    "volume"
+    "inhibitors",
+    "notifications"
   ],
   "widget-config": {
     "notifications": {

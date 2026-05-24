@@ -414,6 +414,19 @@ button:active {
   background: none;
 }
 
+.widget-mpris > box > button {
+  /* The buttons to select a player */
+  background: none;
+}
+
+.widget-mpris > box > button:hover {
+  background: #90a0ab;
+}
+
+.widget-mpris > box > button:active {
+  background: #4b5b67;
+}
+
 .widget-mpris .widget-mpris-player {
   padding: 16px;
   margin: 0;
@@ -515,25 +528,33 @@ button:active {
 
 /* right side of the bar */
 .widget-volume scale trough {
+  background-color: #47515D;
 }
 
 .widget-volume scale trough slider {
-  /* border-color: #8ca1b4; */
-  outline-color: #8ca1b4;
-  text-decoration-color: #8ca1b4;
-  box-shadow: inset 0 0 0 2px #8ca1b4;
+  background-color: #8F9FA9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Left side of the bar */
 .widget-volume scale trough highlight {
-  border: 1px solid #8ca1b4;
+  background-color: #8F9FA9;
 }
 
 .per-app-volume {
-  background: transparent;
-  padding: 4px 8px 8px 8px;
-  margin: 8px 8px 8px 8px;
+  padding: 8px;
+  margin: 8px;
   border-radius: 0;
+
+  background: transparent;
+}
+
+.per-app-volume label {
+  opacity: 0.5;
+}
+
+.per-app-volume row:hover {
+  background: transparent;
 }
 
 

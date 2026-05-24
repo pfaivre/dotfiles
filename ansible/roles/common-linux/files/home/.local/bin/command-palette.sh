@@ -24,8 +24,8 @@ case $selected in
   "Theme → Summer Day")
     ~/.local/bin/set-theme.sh summer-day
     ;;
-  "Theme → Cards Day")
-    ~/.local/bin/set-theme.sh cards-day
+  "Theme → Holo Night")
+    ~/.local/bin/set-theme.sh holo-night
     ;;
   "Theme → Ocean Dark")
     ~/.local/bin/set-theme.sh ocean-dark
@@ -86,15 +86,15 @@ case $selected in
     ;;
 
   "Setup → Input")
-    open_text_file ~/.config/hypr/input.conf
+    open_text_file ~/.config/hypr/input.lua
     ;;
 
   "Setup → Keybindings")
-    open_text_file ~/.config/hypr/keybindings.conf
+    open_text_file ~/.config/hypr/keybindings.lua
     ;;
 
   "Setup → Monitors")
-    open_text_file ~/.config/hypr/monitors.conf
+    open_text_file ~/.config/hypr/monitors.lua
     ;;
 
   "Setup → Hypridle")
@@ -117,7 +117,7 @@ exit 0
 ### DATA ###
 Theme → Summer Night
 Theme → Summer Day
-Theme → Cards Day
+Theme → Holo Night
 Theme → Ocean Dark
 Theme → Bliss XP
 Power → Log-off

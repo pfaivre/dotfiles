@@ -62,9 +62,9 @@ The desktop comes bundled with a selection of themes that can be selected throug
 
 |||
 |-|-|
-|<img alt="Theme: Ocean Dark" width="480" src="theme-ocean-dark.jpg">|<img alt="Theme: Bliss XP" width="480" src="theme-bliss-xp.jpg">|
+|<img alt="Theme: Ocean Dark" width="480" src="theme-ocean-dark.jpg">|<img alt="Theme: Holo Night" width="480" src="theme-holo-night.jpg">|
 |<img alt="Theme: Summer Day" width="480" src="theme-summer-day.jpg">|<img alt="Theme: Summer Night" width="480" src="theme-summer-night.jpg">|
-|<img alt="Theme: Cards Day" width="480" src="theme-cards-day.jpg">||
+|<img alt="Theme: Bliss XP" width="480" src="theme-bliss-xp.jpg">||
 
 ## How to use it
 

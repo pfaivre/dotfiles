@@ -1,0 +1,92 @@
+/* Holo Night style for Wlogout */
+
+* {
+  background-image: none;
+  box-shadow: none;
+}
+
+window {
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+button {
+  margin: 128px 0;
+  border-radius: 0;
+  text-decoration-color: #eff1f5;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15%;
+
+  color: #eff1f5;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.612);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.612);
+  transition: box-shadow 200ms ease-in-out, background-color 70ms ease-in-out, border 70ms ease-in-out;
+}
+
+button:first-child {
+  border-radius: 16px 0 0 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.612);
+}
+
+button:last-child {
+  border-radius: 0 16px 16px 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.612);
+}
+
+button:hover {
+  /* margin: 0; */
+  /* background-size: 20%; */ /* Too laggy with a SVG */
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-left-style: solid;
+  border-right-style: solid;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.2), inset 0 0 64px rgba(255, 255, 255, 0.15);
+}
+
+button:focus, button:active {
+  outline: none;
+}
+
+#logout {
+  background-image: image(url("/usr/share/wlogout/assets/logout.svg"));
+}
+
+#logout:hover {
+  background-color: rgba(200, 229, 255, 0.3);
+  border-color: rgba(200, 229, 255, 0.8);
+  box-shadow: 0 0 32px rgba(200, 229, 255, 0.3), inset 0 0 72px rgba(200, 229, 255, 0.2);
+}
+
+#suspend {
+  background-image: image(url("/usr/share/wlogout/assets/suspend.svg"));
+}
+
+#suspend:hover {
+  background-color: rgba(200, 255, 184, 0.3);
+  border-color: rgba(200, 255, 184, 0.8);
+  box-shadow: 0 0 32px rgba(200, 255, 184, 0.3), inset 0 0 72px rgba(200, 255, 184, 0.2);
+}
+
+#shutdown {
+  background-image: image(url("/usr/share/wlogout/assets/shutdown.svg"));
+}
+
+#shutdown:hover {
+  background-color: rgba(255, 106, 124, 0.3);
+  border-color: rgba(255, 106, 124, 0.8);
+  box-shadow: 0 0 32px rgba(255, 106, 124, 0.3), inset 0 0 72px rgba(255, 106, 124, 0.2);
+}
+
+#reboot {
+  background-image: image(url("/usr/share/wlogout/assets/reboot.svg"));
+}
+
+#reboot:hover {
+  background-color: rgba(255, 218, 139, 0.3);
+  border-color: rgba(255, 218, 139, 0.8);
+  box-shadow: 0 0 32px rgba(255, 218, 139, 0.3), inset 0 0 72px rgba(255, 218, 139, 0.2);
+}

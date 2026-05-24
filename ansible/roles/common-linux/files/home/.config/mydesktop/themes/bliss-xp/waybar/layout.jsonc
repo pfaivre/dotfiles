@@ -22,7 +22,7 @@
     "modules-right": [
         // "mpd",
         "tray",
-        // "bluetooth",
+        "bluetooth",
         "power-profiles-daemon",
         // "idle_inhibitor",
         "custom/notificationcenter",

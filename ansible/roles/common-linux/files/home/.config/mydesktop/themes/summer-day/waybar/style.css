@@ -52,6 +52,7 @@ window#waybar {
 }
 
 #custom-launcher,
+#bluetooth,
 #clock,
 #workspaces,
 #pulseaudio,
@@ -82,6 +83,7 @@ window#waybar {
 }
 
 #custom-launcher:hover,
+#bluetooth:hover,
 #clock:hover,
 #pulseaudio:hover,
 #network:hover,

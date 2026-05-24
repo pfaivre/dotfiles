@@ -20,7 +20,7 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
 
     # Reload components
     python3 ~/.local/bin/set-wallpaper.py &
-    killall -INT waybar; hyprctl dispatch exec "waybar -s ~/.config/mydesktop/current-theme/waybar/style.css"
+    killall -INT waybar; hyprctl eval 'hl.exec_cmd("waybar -s ~/.config/mydesktop/current-theme/waybar/style.css")'
     hyprctl reload
     swaync-client --reload-css --reload-config
     touch ~/.config/alacritty/alacritty.toml

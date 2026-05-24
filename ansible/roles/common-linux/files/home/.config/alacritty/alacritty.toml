@@ -4,7 +4,6 @@ import = [
 ]
 
 [window]
-opacity = 1
 padding.x = 4
 padding.y = 4
 decorations = "Full"
