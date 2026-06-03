@@ -23,6 +23,8 @@ window#waybar {
 }
 
 #clock,
+#custom-arrowleft,
+#disk,
 #pulseaudio,
 #network,
 #battery,
@@ -32,6 +34,7 @@ window#waybar {
 #custom-notificationcenter,
 #custom-powermenu,
 #idle_inhibitor,
+#temperature,
 #trayicons,
 #tray,
 #power-profiles-daemon,
@@ -48,7 +51,9 @@ window#waybar {
 }
 
 #custom-launcher:hover,
+#custom-arrowleft:hover,
 #clock:hover,
+#disk:hover,
 #pulseaudio:hover,
 #network:hover,
 #battery:hover,
@@ -59,6 +64,7 @@ window#waybar {
 #custom-powermenu:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
+#temperature:hover,
 #upower:hover,
 #custom-hyprshade:hover {
   background-color: #62737f;
@@ -72,6 +78,26 @@ window#waybar {
 #clock.date {
   padding-left: 10px;
   padding-right: 12px;
+}
+
+#custom-arrowleft {
+  color: white;
+}
+
+#extra {
+}
+
+#extra * {
+}
+
+#cpu.warning, #memory.warning, #disk.warning, #temperature.warning {
+  color: rgb(255, 211, 154);
+  text-shadow: 0 0 2px rgba(255, 211, 154, 0.5), 0 0 4px rgba(255, 211, 154, 0.5);
+}
+
+#cpu.critical, #memory.critical, #disk.critical, #temperature.critical {
+  color: #ff9191;
+  text-shadow: 0 0 2px rgba(255, 69, 69, 0.5), 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
 #tray {

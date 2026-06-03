@@ -22,6 +22,7 @@
       - btop
       - cmatrix
       - fastfetch
+      - fzf
       - git
       - htop
       - lm_sensors

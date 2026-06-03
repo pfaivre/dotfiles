@@ -9,22 +9,6 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="candy"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
@@ -34,16 +18,6 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.zsh_custom
 
@@ -51,7 +25,7 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found sudo colored-man-pages)
+plugins=(git command-not-found sudo colored-man-pages fzf)
 
 export DISABLE_UPDATE_PROMPT=true
 source $ZSH/oh-my-zsh.sh
@@ -64,28 +38,12 @@ precmd() { vcs_info }
 #export LANG=fr_FR.UTF-8
 #export LC_ALL=fr_FR.UTF-8
 
-# use 256 color terminal
-# export TERM=xterm-256color
-
-# # https://github.com/chriskempson/base16-shell
-# BASE16_SHELL=$HOME/.config/base16-shell/
-# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
-# Base16 Shell Theme
-# source $HOME/.config/base16-shell/scripts/base16-dracula.sh
-
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Make LINES and COLUMS usable in scripts
-export LINES
-export COLUMNS
 
 
 # ------------------------------
 #  Aliases
 # ------------------------------
-
-alias gitlog="git log --pretty='%h %s' --graph"
 
 alias pwgen="pwgen -c -n -y -s 16"
 
@@ -94,5 +52,36 @@ alias u="~/.local/bin/update-system.sh"
 alias fastfetch="fastfetch --config ~/.config/fastfetch/config.jsonc"
 
 alias cls="clear"
+
+
+# ------------------------------
+#  Git controls
+# ------------------------------
+
+# Searchable log graph
+unalias glog
+glog() {
+    git log --graph --color \
+        --format='%C(white)%h - %C(green)%cs - %C(blue)%s - %C(white)%an%C(red)%d' | fzf \
+            --ansi \
+            --reverse \
+            --no-sort \
+            -0
+}
+
+# Interactive git diff -- The selected files are added to the index
+unalias gd
+gd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview | xargs -r git add
+}
+
+# Interactive git diff --cached -- The selected files are removed from the index
+unalias gdca
+gdca() {
+  preview="git diff $@ --color=always --cached -- {-1}"
+  git diff $@ --name-only --cached | fzf -m --ansi --preview $preview | xargs -r git reset
+}
+
 
 fastfetch

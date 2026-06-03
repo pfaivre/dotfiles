@@ -58,7 +58,7 @@
   ],
   "widget-config": {
     "notifications": {
-      "vexpand": false
+      "vexpand": true
     },
     "inhibitors": {
       "text": "Inhibiteurs",
@@ -79,9 +79,9 @@
     },
     "mpris": {
       "image-size": 48,
-      "blacklist": [],
+      "blacklist": ["playerctld"],
       "autohide": true,
-      "show-album-art": "always",
+      // "show-album-art": "always",
       "loop-carousel": true
     },
     "buttons-grid": {

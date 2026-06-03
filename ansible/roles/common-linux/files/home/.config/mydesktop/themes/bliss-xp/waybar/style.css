@@ -139,6 +139,8 @@ tooltip * {
   border-bottom: 1px solid #1d4196;
   border-right: 1px solid #1f408c;
   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.25);
+
+  text-shadow: none;
 }
 
 #workspaces button.active, #taskbar button.active {
@@ -161,20 +163,20 @@ tooltip * {
 /* ~~~~~~~~~~~~~~~~~ */
 
 #clock,
-#bluetooth,
+#mpris,
 #pulseaudio,
 #network,
-#backlight,
 #battery,
-#cpu,
-#memory,
+#bluetooth,
+#extra,
 #custom-notificationcenter,
 #custom-powermenu,
+#custom-battery,
 #idle_inhibitor,
 #trayicons,
 #tray,
 #power-profiles-daemon,
-#custom-hyprshade {
+#upower {
   min-width: 24px;
   padding-left: 0;
   padding-right: 0;
@@ -198,23 +200,6 @@ tooltip * {
   font-size: 14px;
 }
 
-#custom-launcher-bliss-xp:hover,
-#bluetooth:hover,
-#clock:hover,
-#pulseaudio:hover,
-#network:hover,
-#backlight:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#custom-notificationcenter:hover,
-#custom-powermenu:hover,
-#idle_inhibitor:hover,
-#power-profiles-daemon:hover,
-#custom-hyprshade:hover {
-  background-color: #5DB3FF;
-}
-
 #clock {
   padding-left: 8px;
   padding-right: 8px;
@@ -227,11 +212,37 @@ tooltip * {
   padding-top: 0;
 }
 
-#tray {
-  color: white;
-  padding-left: 8px;
+#custom-arrowleft {
+  min-width: 19px;
+  padding-top: 0;
+  border: none;
+  background: no-repeat 50% / 19px url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left.png");
+  color: transparent;
+  /* image-rendering: pixelated; */
+}
+
+#custom-arrowleft:hover {
+  background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left-hover.png");
+}
+
+#extra {
   border-left: 1px solid #0b3051;
   box-shadow: rgba(24, 187, 255, 0.8) 1px 0px 1px inset;
+}
+
+#extra * {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cpu.warning, #memory.warning, #disk.warning, #temperature.warning {
+  color: rgb(255, 211, 154);
+  text-shadow: 0 0 2px rgba(255, 211, 154, 0.5), 0 0 4px rgba(255, 211, 154, 0.5);
+}
+
+#cpu.critical, #memory.critical, #disk.critical, #temperature.critical {
+  color: #ff9191;
+  text-shadow: 0 0 2px rgba(255, 69, 69, 0.5), 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
 #tray menu {

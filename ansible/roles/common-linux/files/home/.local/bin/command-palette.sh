@@ -54,6 +54,9 @@ case $selected in
     ;;
 
   # Utils
+  "Utils → Find a file")
+    alacritty --class Popup --command ~/.local/bin/locate-file.sh
+    ;;
   "Utils → Color picker")
     sleep 0.1 # Give Rofi time to close
     color=$(hyprpicker -a)
@@ -125,6 +128,7 @@ Power → Sleep
 Power → Restart (reboot)
 Power → Shutdown (poweroff)
 Display → Color temperature
+Utils → Find a file
 Utils → Color picker
 Utils → Screenshot (full screen)
 Utils → Screenshot (region)

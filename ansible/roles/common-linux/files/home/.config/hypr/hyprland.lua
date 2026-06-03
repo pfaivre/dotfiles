@@ -4,7 +4,7 @@
 -- | | | | |_| | |_) | |  | | (_| | | | | (_| |
 -- |_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_|
 --        |___/|_|
--- 
+--
 
 
 TERMINAL     = "alacritty"
@@ -172,6 +172,7 @@ hl.window_rule({ match = { class = "file-png" }, float = true })
 hl.window_rule({ match = { class = "file-jpeg" }, float = true })
 hl.window_rule({ match = { class = "file-gif-export" }, float = true })
 hl.window_rule({ match = { class = "script-fu" }, float = true })
+hl.window_rule({ match = { class = "print" }, float = true })
 
 -- Some Gnome utilities are floating
 hl.window_rule({ match = { class = "org.gnome.FileRoller" }, float = true })
@@ -179,6 +180,8 @@ hl.window_rule({ match = { class = "org.gnome.Loupe" }, float = true, content = 
 hl.window_rule({ match = { class = "org.gnome.Calculator" }, float = true })
 hl.window_rule({ match = { class = "xdg-desktop-portal-gtk" }, float = true })
 hl.window_rule({ match = { class = "nvidia-settings" }, float = true })
+
+hl.window_rule({ match = { title = "Opération sur des fichiers en cours" }, float = true })
 
 -- Firefox picture in picture in the bottom right on all workspaces
 hl.window_rule({

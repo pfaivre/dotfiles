@@ -1,119 +1,67 @@
 {
-    // Workspaces buttons
-    "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r-1\" })'",
-        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r+1\" })'",
-        "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{}",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
+    // backlight icon
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    // Battery icon
+    "battery": {
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
         },
-        "persistent-workspaces": {
-            "*": 3
-        }
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
 
-    // Taskbar
-    "wlr/taskbar": {
-        "format": "{icon} {name}",
-        "icon-size": 20,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": [
-            // "Alacritty",
-            // "kitty",
-            "Incrustation vidéo", // Firefox picture-in-picture window (in french)
-            "Éditeur de liste de lecture d’Audacious" // Audacious playlist (in french)
-        ],
-        "app_ids-mapping": {
-            // "firefoxdeveloperedition": "firefox-developer-edition"
-        },
-        "rewrite": {
-            "Firefox Web Browser": "Firefox",
-            "Foot Server": "Terminal"
-        }
+    "battery#bat2": {
+        "bat": "BAT2"
     },
 
-    // Current window name in Hyprland
-    "hyprland/window": {
-        "max-length": 60,
-        "rewrite": {
-            "(.*) - Chromium": "$1"
-        },
-        "separate-outputs": true
+    // Bluetooth icon
+    "bluetooth": {
+	    "format": "",
+	    "format-connected": "",
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": "",
+        "tooltip": true,
+        // "tooltip-format": "{controller_alias}\t{controller_address}\n{num_connections} connected",
+        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{num_connections} connected\n{device_enumerate}",
+        // "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        // "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+        "tooltip-format": "\n{num_connections} connected",
+        "tooltip-format-connected": "{num_connections} connected\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%"
     },
 
-    // Empty
-    "custom/empty": {
-        "format": ""
-    },
-
-    // Rofi Application Launcher
-    "custom/launcher": {
-        "format": "Apps",
-        "on-click": "pkill rofi; rofi -show drun -show-icons",
-        // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-        "tooltip-format": "Left: Open the application launcher"
-    },
-
-    "custom/notificationcenter": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "",
-            "none": "",
-            "dnd-notification": "",
-            "dnd-none": "",
-            "inhibited-notification": "",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "",
-            "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-
-    "custom/powermenu": {
-        "format": "⏻",
-        "tooltip": false,
-        "on-click": "wlogout --css ~/.config/mydesktop/current-theme/wlogout/style.css -b 4"
-    },
-
-    // Keyboard State
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-
-    // Idle inhibitor
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-
-    // System tray
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
-    },
-
+    // Current time
     "clock": {
         // "format": " {:%H:%M}",
         "format": "{:L%H:%M}",
@@ -140,6 +88,7 @@
         "tooltip": true
     },
 
+    // Current date
     "clock#date": {
         // "format": " {:%A %d %B %Y}",
         "format": "{:L%a %d %B}",
@@ -170,26 +119,64 @@
     // CPU usage label
     "cpu": {
         "format": " {usage:2d}%", // The format, how information should be displayed.
-        "interval": 10, // The polling interval (in seconds) for CPU info.
+        "interval": 5, // The polling interval (in seconds) for CPU info.
         "states": {  // A number of cpu usage states which get activated on certain usage levels.
             "warning": 80,
             "critical": 90
         },
-        "on-click": "", // Command to execute when clicking on the module.
+        "on-click": "alacritty --class Popup --command btop", // Command to execute when clicking on the module.
         "tooltip": true // Option to enable tooltip on hover.
     },
 
-    // RAM usage label
-    "memory": {
-        "format": " {percentage:2d}%", // The format, how information should be displayed.
-        "interval": 30, // The interval in which the information gets polled.
-        "states": {  // A number of cpu usage states which get activated on certain usage levels.
-            "warning": 80,
-            "critical": 90
+    "custom/arrowleft": {
+        "format": "",
+        "tooltip": false
+    },
+
+    // Zelda style battery indicator with hearts
+    "custom/battery": {
+        "exec": "~/.local/bin/waybar_status_battery.sh",
+        "format": "{}",
+        "interval": 60,
+        "return-type": "json"
+        // "on-click": ""
+    },
+
+    // Rofi Application Launcher
+    "custom/launcher": {
+        "format": "Apps",
+        "on-click": "pkill rofi; rofi -show drun -show-icons",
+        // "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "tooltip-format": "Click gauche : lancer une application"
+    },
+
+    // Bell shaped button to open Sway Notification Center
+    "custom/notificationcenter": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": ""
         },
-        "on-click": "", // Command to execute when clicked on the module.
-        "tooltip": true, // Option to enable tooltip on hover.
-        "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB" // Format of the text to display in the tooltip.
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    // Button to open Wlogout
+    "custom/powermenu": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout --css ~/.config/mydesktop/current-theme/wlogout/style.css -b 4"
     },
 
     // Hard disk space used (root)
@@ -201,7 +188,7 @@
             "warning": 80,
             "critical": 90
         },
-        "on-click": "", // Command to execute when clicked on the module.
+        "on-click": "alacritty --class Popup --command btop", // Command to execute when clicked on the module.
         "tooltip": true, // Option to enable tooltip on hover.
         "tooltip-format": "{used} / {total} '{path}' ({percentage_used}%)" // Format of the text to display in the tooltip.
     },
@@ -215,90 +202,132 @@
             "warning": 80,
             "critical": 90
         },
-        "on-click": "", // Command to execute when clicked on the module.
+        "on-click": "alacritty --class Popup --command btop", // Command to execute when clicked on the module.
         "tooltip": true, // Option to enable tooltip on hover.
         "tooltip-format": "{used} / {total} '{path}' ({percentage_used}%)" // Format of the text to display in the tooltip.
     },
 
-    "hyprland/language": {
-        "format": "/ K {short}"
-    },
-
-    // Group Hardware
-    "group/hardware": {
+    "group/extra": {
         "orientation": "inherit",
         "drawer": {
+            "click-to-reveal": true,
             "transition-duration": 300,
-            "children-class": "not-memory",
+            "children-class": "extra-icons",
             "transition-left-to-right": false
         },
         "modules": [
-            "disk",
+            "custom/arrowleft",
+            "disk#root",
+            "disk#home",
             "cpu",
             "memory",
-            "hyprland/language"
+            "temperature",
+            "battery"
         ]
     },
 
-    // Group Tools
-    "group/tools": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
+    "hyprland/language": {
+        "format": "{short}",
+        "on-click": "xdg-open ~/.config/hypr/input.lua"
+    },
+
+    // Workspaces buttons
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r+1\" })'",
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
-        "modules": [
-            "custom/tools",
-            "custom/cliphist",
-            "custom/hypridle",
-            "custom/hyprshade"
-        ]
+        "persistent-workspaces": {
+            "*": 3
+        }
     },
 
-    // Group Settings
-    "group/settings": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": true
+    // Current window name in Hyprland
+    "hyprland/window": {
+        "max-length": 60,
+        "rewrite": {
+            "(.*) - Chromium": "$1"
         },
-        "modules": [
-            "custom/settings",
-            "custom/waybarthemes",
-            "custom/wallpaper"
-        ]
+        "separate-outputs": true
     },
 
-    // Battery
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
+    // Idle inhibitor
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    // RAM usage label
+    "memory": {
+        "format": " {percentage:2d}%", // The format, how information should be displayed.
+        "interval": 5, // The interval in which the information gets polled.
+        "states": {  // A number of cpu usage states which get activated on certain usage levels.
+            "warning": 80,
+            "critical": 90
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "on-click": "alacritty --class Popup --command btop", // Command to execute when clicked on the module.
+        "tooltip": true, // Option to enable tooltip on hover.
+        "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB" // Format of the text to display in the tooltip.
     },
 
-    "upower": {
-        "hide-if-empty": true,
-        "format": ""
+    // Multimedia controls (one button version)
+    "mpris#small": {
+        "format": "{status_icon}",
+        "format-paused": "{status_icon}",
+        "tooltip": true,
+        "tooltip-format" : "{artist} - {title}",
+        "status-icons": {
+            "paused": "⏸",
+            "playing": "▶"
+        },
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "max-length": 32,
+
+	    "ignored-players": []
     },
 
-    "battery#bat2": {
-        "bat": "BAT2"
+    // Multimedia controls (label version)
+    "mpris": {
+        "format": "{status_icon} {artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
+        "tooltip": true,
+        "tooltip-format" : "{artist} - {title}",
+        "status-icons": {
+            "paused": "⏸",
+            "playing": "▶"
+        },
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "max-length": 32,
+
+	    "ignored-players": []
+    },
+
+    // Network label
+    "network": {
+        "interval": 5,
+        "format": "{ifname}",
+        "format-wifi": "wifi",
+        "format-ethernet": "eth",
+        "format-disconnected": "discon",
+        "tooltip-format": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
+        "tooltip-format-ethernet": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "alacritty --class Popup --command nmtui"
     },
 
     // Power Profiles Daemon
@@ -314,7 +343,7 @@
         }
     },
 
-    // Pulseaudio
+    // Audio control
     "pulseaudio": {
         "format": "{icon}",
         "format-bluetooth": "{icon}",
@@ -335,107 +364,69 @@
         "on-click": "swaync-client -t -sw"
     },
 
-    "mpris": {
-        "format": "{player_icon}",
-        "format-paused": "{status_icon}",
-        "tooltip": true,
-        "tooltip-format" : "{artist} - {title}",
-        "player-icons": {
-            "default": "▶",
-            "mpv": "🎵"
-        },
-        "status-icons": {
-            "paused": "⏸"
-        },
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl previous",
-        "on-scroll-down": "playerctl next",
-        "max-length": 32,
-
-	    "ignored-players": ["firefox"]
-    },
-
-    // Bluetooth
-    "bluetooth": {
-	    "format": "",
-	    "format-connected": "", // Alternate symbol: 
-	    // "format-connected": " {device_alias}",
-        // "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "format-disabled": "",
-        "format-off": "",
-        "interval": 30,
-        "on-click": "blueman-manager",
-        "format-no-controller": "",
-        "tooltip": true,
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-    },
-
-    "network": {
-        "interval": 5,
-        "format": "{ifname}",
-        "format-wifi": "wifi",
-        "format-ethernet": "eth",
-        "format-disconnected": "discon",
-        "tooltip-format": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
-        "tooltip-format-ethernet": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "alacritty --class Popup --command nmtui"
-    },
-
-    // Other
-    "user": {
-        "format": "{user}",
-        "interval": 60,
-        "icon": false
-    },
-
-    // backlight:
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-
+    // System temperature label
     "temperature": {
-        // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "thermal-zone": 1,
         "warning-threshold": 70,
         "critical-threshold": 80,
+        "interval": 5,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
             "",
             "",
             ""
-        ]
+        ],
+        "on-click": "alacritty --class Popup --command btop"
     },
 
-    "group/trayicons": {
-        "orientation": "inherit",
-        // "drawer": {
-        //     "transition-duration": 300,
-        //     "children-class": "not-memory",
-        //     "transition-left-to-right": true
-        // },
-        "modules": [
-            // "pulseaudio",
-            "tray",
-            "power-profiles-daemon",
-            "battery"
-        ]
+    // System tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    // Advanced battery indicator
+    "upower": {
+        // "native-path": "/org/bluez/hci0/dev_D4_AE_41_38_D0_EF",
+        "hide-if-empty": true,
+        "format": "",
+        "show-icon": true,
+        "tooltip": true,
+        // "tooltip-format": ""
+        "tooltip-spacing": 0,
+        "tooltip-padding": 0
+    },
+
+    // Current user label
+    "user": {
+        "format": "{user}",
+        "interval": 60,
+        "icon": true,
+        "height": 16,
+        "width": 16
+    },
+
+    // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon} {name}",
+        "icon-size": 20,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            // "Alacritty",
+            // "kitty",
+            "Incrustation vidéo", // Firefox picture-in-picture window (in french)
+            "Éditeur de liste de lecture d’Audacious" // Audacious playlist (in french)
+        ],
+        "app_ids-mapping": {
+            // "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
     }
 }

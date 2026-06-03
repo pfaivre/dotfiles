@@ -12,7 +12,7 @@
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces"
-        // "wlr/taskbar",
+        // "wlr/taskbar"
         // "hyprland/window"
     ],
 
@@ -22,12 +22,15 @@
     ],
 
     "modules-right": [
-        "mpris",
+        "group/extra",
+        "mpris#small",
         "tray",
         "bluetooth",
         // "network",
+        "custom/battery",
         "power-profiles-daemon",
         // "idle_inhibitor",
+        "backlight",
         "custom/notificationcenter",
         "pulseaudio",
         "pulseaudio/slider"
@@ -35,7 +38,6 @@
         // "cpu",
         // "memory",
         // "temperature"
-        // "backlight"
         // "keyboard-state",
         // "hyprland/language",
         // "battery"

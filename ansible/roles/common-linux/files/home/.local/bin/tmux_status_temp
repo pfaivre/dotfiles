@@ -17,8 +17,8 @@ if [[ $t && ${t-x} ]]; then
     fi
 
     ret="$style $t°C "
-    
+
     ret+=" #[fg=colour240,bg=default,none]─"
-    
+
     echo $ret
 fi

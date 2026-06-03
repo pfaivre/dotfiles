@@ -22,7 +22,7 @@
     ],
 
     "modules-right": [
-        "mpd",
+        "group/extra",
         "tray",
         "bluetooth",
         "power-profiles-daemon",
@@ -38,7 +38,7 @@
         // "keyboard-state",
         // "hyprland/language",
         // "battery",
-        "upower",
+        // "upower",
         "custom/powermenu"
     ]
 }

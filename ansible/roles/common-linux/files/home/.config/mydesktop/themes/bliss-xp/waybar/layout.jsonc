@@ -20,7 +20,7 @@
     ],
 
     "modules-right": [
-        // "mpd",
+        "group/extra",
         "tray",
         "bluetooth",
         "power-profiles-daemon",
