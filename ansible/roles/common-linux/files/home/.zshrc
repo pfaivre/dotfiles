@@ -39,7 +39,7 @@ precmd() { vcs_info }
 #export LC_ALL=fr_FR.UTF-8
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ------------------------------
 #  Aliases
