@@ -17,6 +17,7 @@
       - btop
       - cmatrix
       - fastfetch
+      - fzf
       - git
       - htop
       - lolcat

@@ -34,6 +34,12 @@ source $ZSH/oh-my-zsh.sh
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
+# Ctrl+Backspace to delete last word
+bindkey '^H' backward-kill-word
+
+# Ctrl+Del to delete next word
+bindkey '^[[3;5~' kill-word
+
 # You may need to manually set your language environment
 #export LANG=fr_FR.UTF-8
 #export LC_ALL=fr_FR.UTF-8
