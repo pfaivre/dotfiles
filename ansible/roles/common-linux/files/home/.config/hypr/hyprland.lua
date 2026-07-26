@@ -127,7 +127,7 @@ hl.animation({ leaf = "fadeShadow",          enabled = 0, speed =  1,   bezier =
 hl.animation({ leaf = "fadeDim",             enabled = 1, speed =  1,   bezier =  "almostLinear" })
 hl.animation({ leaf = "fadeLayers",          enabled = 0, speed =  1,   bezier =  "almostLinear" })
 hl.animation({ leaf = "fadeLayersIn",        enabled = 0, speed =  1,   bezier =  "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut",       enabled = 1, speed = 20,   bezier =  "almostLinear" })
+hl.animation({ leaf = "fadeLayersOut",       enabled = 0, speed = 20,   bezier =  "almostLinear" })
 hl.animation({ leaf = "fadePopups",          enabled = 0, speed =  1,   bezier =  "easeOutExpo" })
 hl.animation({ leaf = "fadePopupsIn",        enabled = 0, speed =  1,   bezier =  "easeOutExpo" })
 hl.animation({ leaf = "fadePopupsOut",       enabled = 0, speed =  1,   bezier =  "easeOutExpo" })
@@ -144,7 +144,7 @@ hl.animation({ leaf = "zoomFactor",          enabled = 1, speed =  5,   bezier =
 hl.animation({ leaf = "monitorAdded",        enabled = 1, speed =  5,   bezier =  "easeOutQuint" })
 hl.animation({ leaf = "layers",              enabled = 1, speed =  3.8, bezier =  "easeOutQuint",   style = "slide" })
 hl.animation({ leaf = "layersIn",            enabled = 1, speed =  6,   bezier =  "easeOutExpo",    style = "slide left" })
-hl.animation({ leaf = "layersOut",           enabled = 1, speed =  6,   bezier =  "easeOutExpo",    style = "slide right" })
+hl.animation({ leaf = "layersOut",           enabled = 0, speed =  6,   bezier =  "easeOutExpo",    style = "slide right" })
 
 
 -- ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

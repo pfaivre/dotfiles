@@ -135,14 +135,19 @@ exit
 💟 heart decoration purple-square love like
 ❣️ heart exclamation decoration love
 💔 broken heart sad sorry break heartbreak
+❤‍🔥 fire flames heart passion desire
+❤‍🩹 bandages heal heart repair
 ❤️ red heart love like valentines
+🩷 pink heart love like valentines adorable
 🧡 orange heart love like affection valentines
 💛 yellow heart love like affection valentines
 💚 green heart love like affection valentines
 💙 blue heart love like affection valentines
+🩵 cyan heart love like affection valentines
 💜 purple heart love like affection valentines
 🤎 brown heart coffee
 🖤 black heart evil
+🩶 gray heart
 🤍 white heart pure
 💯 hundred points score perfect numbers century exam quiz test pass
 💢 anger symbol angry mad

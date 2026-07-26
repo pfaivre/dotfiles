@@ -50,18 +50,18 @@ emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' $0 | rofi -dmenu -normalize-match
 wl-copy "${emoji}"
 exit
 ### DATA ###
-😀 content dents grand heureux joyeux rieur rire souriant sourire super
-😃 bouche content dents formidable grand grands heureux ouverte souriant sourire super yeux
-😄 bouche content grand heureux joyeux lol mdr mignon ouverte rieurs rire souriant souriants sourire yeux
+😀 content dents grand heureux joyeux rieur rire souriant sourire super :D
+😃 bouche content dents formidable grand grands heureux ouverte souriant sourire super yeux :D
+😄 bouche content grand heureux joyeux lol mdr mignon ouverte rieurs rire souriant souriants sourire yeux :D
 😁 content dents grand heureux rieurs ses souriant souriants sourire super toutes yeux
-😆 ahah bouche content fermés lol mdr ouverte plissés rire souriant sourire yeux
+😆 ahah bouche content fermés lol mdr ouverte plissés rire souriant sourire yeux xd
 😅 excité froid froides goutte nerveux souriant sourire stressé sueur sueurs
 🤣 content drôle hilare joyeux larmes lol mdr pleurer rire rit rouler terre tordre
 😂 content heureux joie larmes lol mdr pleurer riant rire sourire
-🙂 content heureux léger souriant sourire
+🙂 content heureux léger souriant sourire :)
 🙃 incroyable envers renversée tête
 🫠 disparaître dissoudre fond fondre gêne liquide liquéfié sarcasme
-😉 blague clin œil oeil faisant flirter plaisanter sexy
+😉 blague clin œil oeil faisant flirter plaisanter sexy ;)
 😊 content heureux rieurs rougir rougit satisfait souriant souriants sourire yeux œil oeil
 😇 ange angélique auréole bible béni heureux innocent paix souriant sourire spirituel
 🥰 3 adorer aimer amour amoureuse amoureux béguin coeur cœur j'adore romance smiley souriant sourire aime
@@ -88,7 +88,7 @@ exit
 🫡 armée bonne chance compris fait militaire ok oui respect salut
 🤐 bouche cousue fermeture motus secret taire éclair
 🤨 euh hein incrédule levé méfiant pas quoi relevés sceptique sourcil sourcils surprise tête vrai
-😐 chaud commentaires drôle expression froid gêné importe marbre neutre ni pas peu rester rire
+😐 chaud commentaires drôle expression froid gêné importe marbre neutre ni pas peu rester rire :|
 😑 expression importe inexpressif mécontent neutre peu
 😶 bouche commentaires dire expression muet neutre rien secret silence sourdine taire voix
 🫥 cacher disparaître déprimé introverti invisible pointillés
@@ -123,17 +123,17 @@ exit
 🤠 chapeau cowboy
 🥳 anniversaire chapeau célébration festif fête heureux hourra joyeux pointu sifflet youpi
 🥸 déguisement déguisé espion faux grimer incognito lunettes moustache nez postiche smiley sourcils ébouriffés
-😎 cool lunettes posé soleil tranquille
+😎 cool lunettes posé soleil tranquille B-)
 🤓 classe doué futé geek idiot intelligent lunettes personne premier ringard surdoué tronche
 🧐 classe collet fortune jeu monocle monté riche tête vieux
 😕 confus désolé ennuyé pas sais triste
-🫤 bof bouche confus diagonale déçu euh frustration incertain sceptique
-😟 anxieux inquiet préoccupé stressé surpris triste
-🙁 légèrement mécontent triste
-☹️ malheureux mécontent triste
-😮 bouche bée choqué incroyable omd oubli ouverte surpris épaté étonné
-😯 bouche incroyable omd ouverte stupeur stupéfait surpris voix ébahi
-😲 choc choqué impossible incroyable omd stupéfait étonné
+🫤 bof bouche confus diagonale déçu euh frustration incertain sceptique :/
+😟 anxieux inquiet préoccupé stressé surpris triste :(
+🙁 légèrement mécontent triste :(
+☹️ malheureux mécontent triste :(
+😮 bouche bée choqué incroyable omd oubli ouverte surpris épaté étonné :o
+😯 bouche incroyable omd ouverte stupeur stupéfait surpris voix ébahi :o
+😲 choc choqué impossible incroyable omd stupéfait étonné :o
 😳 chaud comment gêné hébété impressionné incroyable incrédule quoi rouge rougissant rougit stupéfait ébahi étonné
 🥺 battus chiens embarrassé excuse gros implorant pardon pitié plaît il supplication supplie yeux
 🥹 admiration fierté gratitude joie larmes pleurs retenant retenir ses triste ému
@@ -141,11 +141,11 @@ exit
 😧 angoisse angoissé comment hein mécontent oubli peur quoi stressé surpris terrifié
 😨 anxieux apeuré blême effrayé inquiet peur terrifié
 😰 aah anxieux bleu bleue bouche bée effrayé froid froides goutte mince nerveux ouverte peur sueur sueurs terrifié
-😥 déçu mais ouf pfiou soulagé sueur triste
-😢 horrible larme larmes malheureux pleure pleurer triste
+😥 déçu mais ouf pfiou soulagé sueur triste :'(
+😢 horrible larme larmes malheureux pleure pleurer triste :'(
 😭 chaudes larme larmes malheureux pleure pleurer pleurs sangloter triste
 😱 choqué cri effrayé hurle munch omd peur surpris terreur
-😖 confus déconcerté fermés frustré fâché irrité triste yeux
+😖 confus déconcerté fermés frustré fâché irrité triste yeux :S
 😣 concentré mal migraine persévérant tête
 😞 abattu affreux découragé déçu malheureux tort triste
 😓 démoralisé froide froides goutte mal migraine mince ouf peur sueur sueurs triste tête
@@ -193,7 +193,7 @@ exit
 💔 amour brisé cœur coeur malheureux sentiment séparé triste
 ❤‍🔥 amour cœur coeur désir enflammé feu passion
 ❤‍🩹 bandages cœur coeur réconforter réparer soigner
-❤ amour cœur coeur rouge sentiment
+❤️ amour cœur coeur rouge sentiment
 🩷 143 adorable aimer amour cœur coeur jtm mignon rose émotion
 🧡 amour coeur cœur orange
 💛 amour cœur coeur jaune sentiment

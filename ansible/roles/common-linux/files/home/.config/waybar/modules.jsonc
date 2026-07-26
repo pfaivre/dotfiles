@@ -287,8 +287,8 @@
         "tooltip": true,
         "tooltip-format" : "{artist} - {title}",
         "status-icons": {
-            "paused": "⏸",
-            "playing": "▶"
+            "paused": "▶",
+            "playing": "⏸"
         },
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl previous",

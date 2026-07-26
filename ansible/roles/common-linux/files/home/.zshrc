@@ -1,38 +1,57 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin/:/usr/local/bin:$PATH
+# Add user's bin folder to the PATH
+export PATH=$HOME/.local/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="candy"
-
-# Uncomment the following line to disable auto-setting terminal title.
+# Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
+# Enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
+# Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.zsh_custom
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Name of the theme to load.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="candy"
+
+# Additional plugins to load (can be found in ~/.oh-my-zsh/plugins/*).
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found sudo colored-man-pages fzf)
 
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Don't ask for permission when oh-my-zsh wants to upgrade.
 export DISABLE_UPDATE_PROMPT=true
+
+# Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Load vcs_info function to show git branch name in the prompt (if displayed in the theme)
 autoload -Uz vcs_info
 precmd() { vcs_info }
+
+# You may need to manually set your language environment
+#export LANG=fr_FR.UTF-8
+#export LC_ALL=fr_FR.UTF-8
+
+
+# ------------------------------
+#  Key bindings
+# ------------------------------
+
+# Cheat sheet:
+#   Ctrl+R         Search in history
+#   Alt+C          Choose a folder to cd in
+#   Ctrl+Backspace delete last word
+#   Ctrl+Del       delete next word
+#   Esc            Clear the current line
 
 # Ctrl+Backspace to delete last word
 bindkey '^H' backward-kill-word
@@ -40,12 +59,12 @@ bindkey '^H' backward-kill-word
 # Ctrl+Del to delete next word
 bindkey '^[[3;5~' kill-word
 
-# You may need to manually set your language environment
-#export LANG=fr_FR.UTF-8
-#export LC_ALL=fr_FR.UTF-8
+# Remove Esc,Esc binding (usually set to sudo-command-line)
+bindkey -r "\e\e"
 
-source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Esc clears the current line
+bindkey "\e" kill-whole-line
+
 
 # ------------------------------
 #  Aliases
@@ -57,7 +76,7 @@ alias u="~/.local/bin/update-system.sh"
 
 alias fastfetch="fastfetch --config ~/.config/fastfetch/config.jsonc"
 
-alias cls="clear"
+alias cls="clear; fastfetch"
 
 
 # ------------------------------
