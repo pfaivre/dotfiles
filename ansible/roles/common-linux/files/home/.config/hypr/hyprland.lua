@@ -79,7 +79,7 @@ hl.config({
   -- See https://wiki.hypr.land/Configuring/Basics/Variables/#cursor
   cursor = {
     -- if true, will not warp the cursor in many cases (focusing, keybinds, etc)
-    no_warps = 1,
+    no_warps = true,
 
     -- the factor to zoom by around the cursor. Like a magnifying glass. Minimum 1.0 (meaning no zoom)
     zoom_factor = 1,
@@ -209,7 +209,8 @@ hl.layer_rule({ match = { namespace = "selection" }, no_anim = true }) -- Hyprsh
 -- Animate notifications with a slide from the right
 hl.layer_rule({ match = { namespace = "swaync-notification-window" }, animation = "slidevert right" })
 
-
+-- Finally, import theme specific style and other configs
+-- The line below allows Lua to import the style.lua script from the current theme folder
 package.path = os.getenv("HOME") .. '/.config/mydesktop/current-theme/hypr/?.lua;' .. package.path
 require("style")
 require("keybindings")

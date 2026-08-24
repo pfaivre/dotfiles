@@ -135,6 +135,7 @@ exit
 😯 bouche incroyable omd ouverte stupeur stupéfait surpris voix ébahi :o
 😲 choc choqué impossible incroyable omd stupéfait étonné :o
 😳 chaud comment gêné hébété impressionné incroyable incrédule quoi rouge rougissant rougit stupéfait ébahi étonné
+🫪 déformé yeux exorbités pression
 🥺 battus chiens embarrassé excuse gros implorant pardon pitié plaît il supplication supplie yeux
 🥹 admiration fierté gratitude joie larmes pleurs retenant retenir ses triste ému
 😦 bouche dépourvu déçu effrayé mécontent ouverte peur pris surpris
@@ -191,8 +192,8 @@ exit
 💟 amour blanc cœur coeur décoration décoré sentiment violet
 ❣️ amour cœur coeur exclamation point ponctuation
 💔 amour brisé cœur coeur malheureux sentiment séparé triste
-❤‍🔥 amour cœur coeur désir enflammé feu passion
-❤‍🩹 bandages cœur coeur réconforter réparer soigner
+❤️‍🔥 amour cœur coeur désir enflammé feu passion
+❤️‍🩹 bandages cœur coeur réconforter réparer soigner
 ❤️ amour cœur coeur rouge sentiment
 🩷 143 adorable aimer amour cœur coeur jtm mignon rose émotion
 🧡 amour coeur cœur orange
@@ -208,13 +209,14 @@ exit
 💋 baiser bise bisou bouche embrasser lèvres rendez-vous rouge sexy trace
 💯 100 cent points score
 💢 bande bd colère dessin dessinée furieux symbole
+🫯 bande dessinée bd combat bagare
 💥 bande bd bombe boum collision dessinée détonation explosion étincelles
 💫 bande bd dessinée filante tournis voir étincelles étoile étoiles étourdissement
 💦 bande bd dessinée eau effort entraînement gouttes sueur éclabousser éclaboussures
 💨 bande bd courant dessinée décamper déguerpir détaler filer fumée nuage partir pet vent vite
 🕳️ trou
 💬 bande bd bulle dessinée dialogue message parole sms écrire
-👁‍🗨 bande bd bulle dessinée témoin voir œil oeil
+👁️‍🗨️ bande bd bulle dessinée témoin voir œil oeil
 🗨️ bulle dialogue gauche parole
 🗯️ bande bd bulle colère crier dessinée droite hurler
 💭 bande bd bulle dessinée idée imaginer inventer invention penser pensée rêve rêver
@@ -289,10 +291,22 @@ exit
 👨 ami garçon homme personne petit pote
 🧔 barbe barbu barbue personne
 🧔‍♂ barbe barbu homme
-👱‍♂ blond cheveux homme
-👩 blonde cheveux coupe femme personne
 🧔‍♀ barbe barbue femme
-👱‍♀ blonde cheveux femme personne
+👨‍🦱 homme cheveux brun
+👨‍🦰 homme cheveux roux
+👨‍🦳 homme cheveux gris poivre sel
+👨‍🦲 homme chauve
+👱‍♂ homme cheveux blond
+👩 blonde cheveux coupe femme personne
+👩‍🦰 femme cheveux rousse
+🧑‍🦰 personne cheveux roux
+👩‍🦱 femme cheveux bouclés bruns brunne
+🧑‍🦱 homme cheveux bouclés bruns
+👩‍🦳 femme cheveux gris
+🧑‍🦳 personne cheveux gris
+👩‍🦲 femme chauve
+🧑‍🦲 personne chauve
+👱‍♀ femme blonde cheveux personne
 🧓 adulte genre neutre non-genré personne âgé âgée
 👴 chauve grand-père homme monsieur papi personne sage vieux âgé âgée
 👵 blonde dame femme grand-mère mamie personne sage âgée
@@ -481,7 +495,7 @@ exit
 🧗‍♀ alpiniste femme grimpe grimpeuse
 🤺 escrime escrimeur escrimeuse personne sport épée
 🏇 cheval chevaux course hippique jockey sport
-⛷ neige ski skieur sport
+⛷️ neige ski skieur sport
 🏂 homme neige ski snowboard snowboardeur sport
 🏌 balle golf golfeur green homme joueur personne pga pitch sport
 🏌‍♂ golf golfeur homme
@@ -495,9 +509,9 @@ exit
 🏊 crawl eau exercice homme nage nageant nageur natation personne piscine sport
 🏊‍♂ homme nage nageur
 🏊‍♀ femme nage nageuse natation sport
-⛹ athlétique ballon basket-ball basketteur dribble joueur match personne rebond sport
-⛹‍♂ ballon homme
-⛹‍♀ ballon basket-ball basketteuse femme sport
+⛹️ athlétique ballon basket-ball basketteur dribble joueur match personne rebond sport
+⛹️‍♂️ ballon homme
+⛹️‍♀️ ballon basket-ball basketteuse femme sport
 🏋 bodybuilding entraînement force haltérophile haltérophilie homme lever muscles personne poids sport
 🏋‍♂ haltérophile homme
 🏋‍♀ entraînement exercice femme haltérophile sport
@@ -533,16 +547,22 @@ exit
 👫 amie amis amoureux couple donnant femme homme main petit petite rendez-vous tenant
 👬 amis amitié amoureux couple deux fils frères gay gémeaux hommes homosexuels jumeaux lgbtqia main meilleurs petit zodiaque
 💏 amour anniversaire baiser bisou couple femme homme
+👩‍❤️‍💋‍👨 amour cœur coeur baiser bisou couple
+👨‍❤️‍💋‍👨 amour cœur coeur baiser bisou couple
+👩‍❤️‍💋‍👩 amour cœur coeur baiser bisou couple
 💑 amour anniversaire couple cœur coeur femme homme rendez-vous
-🗣 parle parler silhouette tête
-👤 buste mystère ombre silhouette
-👥 ami amie amies amis bff bustes gens meilleur meilleure meilleures meilleurs monde personnes silhouettes tout
+👩‍❤️‍👨 amour femme homme couple cœur coeur
+👨‍❤️‍👨 amour couple hommes lgbtqia cœur coeur
+👩‍❤️‍👩 amour couple femmes lgbtqia cœur coeur
+👪 famille enfant femme fils garçon homme mère père
+🧑‍🧑‍🧒 famille adulte enfant
+🧑‍🧑‍🧒‍🧒 famille adulte enfant
+🧑‍🧒 famille adulte enfant monoparentale
+🧑‍🧒‍🧒 famille adulte enfant monoparentale
+🗣️ parle parler silhouette tête
+👤 buste mystère ombre silhouette personne
+👥 amies amis bff bustes gens meilleure monde personnes silhouettes tout
 🫂 accolade amitié bonjour câlin embrassades gratitude merci personne revoir étreinte
-👪 enfant famille femme fils garçon homme mère père
-🧑‍🧑‍🧒 adulte enfant famille
-🧑‍🧑‍🧒‍🧒 adulte enfant famille
-🧑‍🧒 adulte enfant famille monoparentale
-🧑‍🧒‍🧒 adulte enfant famille monoparentale
 👣 empreintes nus pas pied pieds traces
 🫆 biométriques dermatoglyphe digitale données empreinte identité sécurité
 🦰 cheveux rouquin rouquine roux
@@ -612,7 +632,7 @@ exit
 🦥 animal aï endormi lent paresseux
 🦦 animal joueur loutre mignon pêcheur
 🦨 animal mouffette odeur puer putois
-🦘 austalie joey kangoo kangourou marsupial marsupiaux saut
+🦘 animal austalie joey kangoo kangourou marsupial marsupiaux saut
 🦡 animal blaireau ratel
 🐾 animaux empreintes pattes
 🦃 animal action dinde dindon grâces oiseau thanksgiving volaille
@@ -649,6 +669,7 @@ exit
 🐳 animal baleine mer océan plage son soufflant souffle évent
 🐋 animal baleine mer océan plage
 🐬 animal dauphin flipper mer océan plage
+🫍 animal orque mer océan
 🦭 animal lion mer océan otarie phoque
 🐟 animal alimentation astrologie horoscope manger nourriture poisson poissons repas zodiaque
 🐠 animal poisson tropical
@@ -656,26 +677,26 @@ exit
 🦈 animal dents mer poisson requin
 🐙 animal créature mer mollusque océan pieuvre poulpe
 🐚 animal conque coquillage coquille mer plage spirale
-🪸 climatique corail océan réchauffement récif
+🪸 animal climatique corail océan réchauffement récif
 🪼 animal aquarium aïe brûlure gélatineux invertébré marin marine mer mou méduse océan piqûre plancton tentacules vie
 🦀 animal astrologie cancer crabe horoscope mer pinces plage zodiaque
 🦞 animal bisque fruit fruits homard mer pinces
-🦐 aliment crevette crustacé fruits mer nourriture
-🦑 aliment animal calamar encornet mollusque nourriture
-🦪 coquillage coquille huître mollusque perle
+🦐 animal crevette crustacé fruits mer nourriture
+🦑 animal calamar encornet mollusque nourriture
+🦪 animal coquillage coquille huître mollusque perle
 🐌 animal escargot jardin lentement nature
 🦋 animal insecte mignon papillon printemps
 🐛 animal chenille insecte jardin
 🐜 animal fourmi insecte jardin
-🐝 abeille animal bourdon guêpe insecte miel nature printemps
+🐝 animal abeille bourdon guêpe insecte miel nature printemps
 🪲 animal insecte scarabée
 🐞 animal bête coccinelle insecte jardin nature
 🦗 animal criquet insecte sauterelle
 🪳 animal blatte cafard coquerelle insecte nuisible
-🕷 animal araignée insecte
-🕸 araignée toile
+🕷️ animal araignée insecte
+🕸️ araignée toile
 🦂 animal astrologie désert horoscope scorpion zodiaque
-🦟 fièvre infection insecte maladie malaria moustique piqûre virus
+🦟 animal fièvre infection insecte maladie malaria moustique piqûre virus
 🪰 animal asticot insecte maladie mouche nuisible pourrissement puanteur putréfaction tsé-tsé
 🪱 animal annélide insecte lombric parasite terre ver
 🦠 amibe bactérie biologie microbe microorganisme phagocytose pseudopode science virus
@@ -683,7 +704,7 @@ exit
 🌸 bourgeon cerisier fleur plante printemps
 💮 blanche fleur
 🪷 beauté bouddhisme calme fleur hindouisme lotus pureté sérénité
-🏵 plante rosette
+🏵️ plante rosette
 🌹 amour beauté fleur plante rose rouge saint-valentin
 🥀 fanée fleur mort rose
 🌺 fleur hibiscus plante
@@ -711,7 +732,7 @@ exit
 🍇 fruit nourriture raisin
 🍈 fruit melon nourriture
 🍉 fruit pastèque nourriture
-🍊 agrume c clémentine fruit mandarine nourriture orange vitamine
+🍊 agrume clémentine fruit mandarine nourriture orange vitamine
 🍋 acide agrume citron fruit nourriture zeste
 🍋‍🟩 acide agrume citron fruit lime mojito tropical vert zeste
 🍌 banane fruit nourriture potassium
@@ -746,7 +767,7 @@ exit
 🫚 bière gingembre naturel racine santé épice nourriture
 🫛 cosse edamame fève haricot légume légumineuse petits pois soja nourriture
 🍄‍🟫 automne brun champignon cèpe fongus marron nature nourriture
-🫜 betterave jardin légume légume-racine navet racine
+🫜 betterave jardin légume navet racine
 🍞 miche mie nourriture pain
 🥐 croissant nourriture pain petit-déjeuner viennoiserie
 🥖 baguette nourriture pain
@@ -754,7 +775,7 @@ exit
 🥨 bretzel nourriture torsade
 🥯 bagel boulangerie petit-déjeuner sandwich schmear
 🥞 crêpe goûter nourriture pancake pancakes petit-déjeuner
-🧇 brunch déjeuner gaufre gourmandise goûter moule petit petit-déjeuner pâtisserie
+🧇 brunch gaufre gourmandise goûter moule petit-déjeuner pâtisserie
 🧀 fromage nourriture part
 🍖 nourriture os viande
 🍗 cuisse dinde nourriture os poulet volaille
@@ -769,16 +790,16 @@ exit
 🌯 burrito kebab mexicain wrap
 🫔 mexicain nourriture pamonha papillote tamal
 🥙 falafel kebab nourriture pain pita
-🧆 boulette boulettes chiches falafel falafels pois seitan soja viande
+🧆 boulette boulettes chiches falafel falafels pois seitan soja viande nourriture
 🥚 nourriture œuf oeuf
 🍳 cuire cuisine faire frire friture nourriture petit-déjeuner plat poêle œuf
-🥘 casserole espagne mitonné paella plat poêle riz
+🥘 casserole espagne mitonné paella plat poêle riz nourriture
 🍲 marmite nourriture ragoût
-🫕 bourguignonne chocolat fondue fromage plat poêlon savoyarde ski suisse
+🫕 bourguignonne chocolat fondue fromage plat poêlon savoyarde ski suisse nourriture
 🥣 bol congee cuillère céréales déjeuner petit soupe
 🥗 nourriture salade verte
 🍿 cinéma nourriture pop-corn
-🧈 beurre gras laitier produit
+🧈 beurre gras laitier produit nourriture
 🧂 condiment salière salé saveur sel
 🥫 aliments boîte conserve nourriture
 🍱 bento boîte déjeuner nourriture
@@ -791,11 +812,11 @@ exit
 🍠 douce four nourriture patate
 🍢 brochette fruits mer nourriture poisson restaurant
 🍣 japonais nourriture poisson riz sushi
-🍤 beignet crevette
+🍤 beignet crevette nourriture
 🍥 croquette gâteau narutomaki nourriture poisson restaurant surimi
-🥮 automne cake festival gâteau lune moon yuèbǐng
+🥮 automne cake festival gâteau lune moon yuèbǐng nourriture
 🍡 bonbons brochette dango dessert japonais nourriture
-🥟 boulette dumpling empanada gyoza gyōza jiaozi pierogi potsticker pâte ravioli
+🥟 boulette dumpling empanada gyoza gyōza jiaozi pierogi potsticker pâte ravioli nourriture
 🥠 biscuit chinois nourriture prophétie
 🥡 baguettes boîte carton chinois emporter nourriture
 🍦 cornet dessert glace italienne nourriture sucré
@@ -805,7 +826,7 @@ exit
 🍪 biscuit chocolat cookie dessert goûter gâteau nourriture pépites sucré
 🎂 anniversaire bougies dessert fête goûter gâteau joyeux nourriture pâtisserie
 🍰 dessert goûter gâteau nourriture pâtisserie sablé sucré
-🧁 cupcake dessert muffin pâtisserie sucre sucrerie
+🧁 cupcake dessert muffin pâtisserie sucre sucrerie nourriture
 🥧 décoration fruits garniture gâteau nourriture pâte pâtisserie tarte tourte
 🍫 barre chocolat chocolatée dessert goûter nourriture sucré
 🍬 bonbon dessert goûter nourriture sucrerie sucré
@@ -821,11 +842,11 @@ exit
 🍾 alcool boisson bouchon bouteille champagne félicitations fête pop
 🍷 alcool bar boisson club restaurant verre vin
 🍸 alcool bar boisson club cocktail martini pied verre
-🍹 alcool bar boîte cocktail fête sunrise tequila tropical verre
+🍹 alcool bar boisson boîte cocktail fête sunrise tequila tropical verre
 🍺 alcool bar bière boisson chope oktoberfest picoler pinte santé
 🍻 alcool bière boisson chopes santé tchin trinquer
-🥂 alcool champagne célébrer fêter santé tchin trinquer verre verres
-🥃 alcool liqueur tumbler verre whisky
+🥂 alcool champagne boisson célébrer fêter santé tchin trinquer verre verres
+🥃 alcool liqueur boisson tumbler verre whisky
 🫗 accident boisson eau liquide oups renverser verre verser vider
 🥤 boisson eau fruit fruits gobelet jus paille soda verre
 🧋 boba boisson bubble bulle bulles froid lait paille perle perles tea thé zenzou
@@ -847,26 +868,26 @@ exit
 🗾 carte japon voyage
 🧭 boussole compas direction magnétique navigation orientation
 🏔️ enneigée froid montagne neige sommet voyage
-⛰ montagne nature sommet voyage
+⛰️ montagne nature sommet voyage
 🌋 lave nature volcan éruption
 🗻 fuji mont montagne nature sommet voyage
 🏕️ camping nature sapin tente voyage
-⛱️ parasol plage voyage
+🏖️ parasol plage voyage
 🏜️ désert voyage
 🏝️ cocotier déserte palmier voyage île
 🏞️ national nature parc voyage
 🏟️ stade
 🏛️ classique colonnes monument voyage banque
 🏗️ bâtiment chantier construction un grue
-🧱 3/4 9 argile brique briques mortier mur the voie wall
+🧱 argile brique briques mortier mur voie wall
 🪨 caillou dur lourd pierre roc roche rocher solide
 🪵 arbre bois bûche bûcheron rondins tronc
 🛖 abri case hutte maison maisonnette yourte
-🏘️ bâtiment bâtiments maison maisons pavillons
-🏚️ abandonnée maison
+🏘️ bâtiments maisons pavillons
+🏚️ abandonnée maison bâtiment
 🏠 bâtiment foyer maison pavillon résidentiel simple
-🏡 foyer jardin maison pavillon résidentiel
-🏢 bureaux immeuble ville
+🏡 foyer jardin maison pavillon résidentiel bâtiment
+🏢 bureaux immeuble ville bâtiment
 🏣 bureau bâtiment japon japonais japonaise poste voyage
 🏤 bureau bâtiment européen poste
 🏥 bâtiment docteur hôpital médecin urgences
@@ -879,12 +900,12 @@ exit
 🏭 bâtiment usine
 🏯 bâtiment château japonais voyage
 🏰 bâtiment château européen voyage
-💒 amour chapelle cœur coeur mariage église
+💒 amour chapelle cœur coeur mariage église bâtiment
 🗼 japon tokyo tour voyage
 🗽 liberté new statue voyage york
 ⛪ bâtiment chapelle chrétien croix religion voyage église
 🕌 islam mosquée musulman musulmane religion voyage
-🛕 bouddhisme bouddhiste hindou pagode religion stūpa temple
+🛕 bouddhisme bouddhiste hindou pagode religion stūpa temple voyage
 🕍 judaïsme juif juive religion synagogue temple voyage
 ⛩️ religion sanctuaire shinto voyage
 🕋 islam kaaba musulman musulmane religion voyage
@@ -926,20 +947,20 @@ exit
 🚓 flic patrouille police voiture véhicule
 🚔 arrive face police voiture véhicule
 🚕 jaune moyen taxi transport uber véhicule
-🚖 face jaune new taxi uber voiture york
+🚖 face jaune new taxi uber voiture york transport
 🚗 automobile conduire moyen transport voiture voyage véhicule
 🚘 arrive automobile conduire face moyen transport voiture voyage véhicule
 🚙 automobile conduire loisirs moyen sport transport utilitaire voiture voyage véhicule
-🛻 auto benne camion camionnette lourd pick-up pickup plateau poids transports véhicule
+🛻 auto benne camion camionnette lourd pick-up pickup plateau poids transport véhicule
 🚚 camion camionnette livraison moyen transport véhicule
 🚛 camion lourd moyen poids semi semi-remorque transport véhicule
 🚜 moyen tracteur transport véhicule
-🏎 1 automobile course formule voiture
-🏍 course moto
+🏎️ 1 automobile course formule voiture
+🏍️ course moto
 🛵 scooter
 🦽 accessibilité fauteuil handicap manuel roulant
 🦼 accessibilité fauteuil handicap motorisé roulant
-🛺 rickshaw taxi thaï tricycle tuk
+🛺 rickshaw taxi thaï tricycle tukc transport
 🚲 bicyclette cyclisme moyen transport voyage vélo
 🛴 trottinette
 🛹 glisse longboard planche roulettes skate skateboard
@@ -961,11 +982,11 @@ exit
 🛶 bateau canoë rame ramer
 🚤 bateau hors-bord luxe moyen transport vedette voyage été
 🛳️ bateau croisière paquebot voyage
-⛴ bateau ferry moyen transport voyage
+⛴️ bateau ferry moyen transport voyage
 🛥️ bateau moteur
 🚢 bateau croisière moyen navire paquebot titanic transport voyage
 ✈️ avion jet moyen transport vol voyage véhicule
-🛩 avion moyen petit transport voyage
+🛩️ avion moyen petit transport voyage
 🛫 avion décollage départ moyen transport voyage
 🛬 arrivée atterrissage avion moyen transport voyage
 🪂 ascensionnel chute fortes libre parachute parapente sensations
@@ -1048,7 +1069,7 @@ exit
 🌂 fermé météo parapluie pluie
 ☂️ ouvert parapluie pluie météo
 ☔ gouttes météo parapluie pluie
-🏖️ météo parapluie parasol plage pluie sol soleil voyage
+⛱️ météo parapluie parasol plage pluie sol soleil voyage
 ⚡ courant danger haute nature orage symbole tension vitesse éclair électricité
 ❄️ flocon froid météo neige
 ☃️ bonhomme flocons neige
@@ -1104,7 +1125,7 @@ exit
 🥋 arts judo karaté kimono martiaux sport taekwondo tenue
 🥅 but cage filet sport
 ⛳ drapeau golf sport trou
-⛸ glace patin patiner patinoire sport
+⛸️ glace patin patiner patinoire sport
 🎣 canne ligne pêche sport
 🤿 apnée masque plonger plongée snorkeling tuba
 🎽 athlétisme course jogging maillot pied running sport tee-shirt
@@ -1119,7 +1140,7 @@ exit
 🔮 avenir boule cristal magie voyant voyante
 🪄 abracadabra baguette magicien magie magique sorcier sorcière sort tour
 🎮 jeu joystick manette playstation vidéo xbox
-🕹 jeu joystick manette vidéo
+🕹️ jeu joystick manette vidéo
 🎰 casino jeu machine sous
 🎲 dé dés hasard jeu
 🧩 assemblage indice interloqué manquante pièce puzzle énigme
@@ -1127,16 +1148,16 @@ exit
 🪅 5 bonbons cinco confiseries fête mai mayo mexicain piñata
 🪩 boule briller danse disco facettes fête soirée
 🪆 emboîté empiler gigogne jouet matriochka poupée poupées russe russes russie
-♠️ carte couleur jeu pique
-♥️ cartes couleur cœur coeur jeu jouer rouge
-♦️ carreau carreaux carte couleur jeu
-♣️ cartes couleur jeu jouer noir trèfle
+♠️ cartes couleur jeu pique noir
+♥️ cartes couleur jeu cœur coeur rouge
+♦️ cartes couleur jeu carreau carreaux rouge
+♣️ cartes couleur jeu trèfle noir
 ♟️ échec duper pion sacrifiable
 🃏 carte cartes jeu joker jouer
 🀄 dragon jeu mah-jong mahjong rouge
 🎴 carte fleur fleurs japonais jeu jouer
 🎭 acteur actrice art masque spectacle théâtre vivant
-🖼 art cadre encadré image musée peinture tableau
+🖼️ art cadre encadré image musée peinture tableau
 🎨 art artiste couleurs musée palette peindre peintre peinture
 🧵 aiguille bobine coudre couture ficelle fil
 🪡 aiguille broderie coudre couture fil points suture tailleur
@@ -1166,7 +1187,7 @@ exit
 👛 accessoire courses main monnaie porte-monnaie sac shopping vêtements
 👜 accessoire courses main sac shopping vêtements
 👝 accessoire main pochette sac trousse vêtements
-🛍 achats courses sac sacs shopping
+🛍️ achats courses sac sacs shopping
 🎒 cartable dos sac école
 🩴 claquettes mer plage sandales tatanes tong tongs été
 👞 accessoire chaussures coup courses homme marron pied shopping vêtements
@@ -1184,7 +1205,7 @@ exit
 🎓 accessoire chapeau diplôme toque universitaire université vêtements étudiant
 🧢 américaine baseball cap casquette chapeau vêtements
 🪖 armée casque guerre guerrier militaire protection soldat équipement
-⛑ assistance blanche casque croix sauveteur secouriste secours
+⛑️ assistance blanche casque croix sauveteur secouriste secours
 📿 accessoire chapelet collier perles prière religion vêtements
 💄 cosmétiques lèvres maquillage rendez-vous rouge
 💍 alliance amour bague brillant diamant fiançailles mariage solitaire étincelant
@@ -1229,7 +1250,7 @@ exit
 🪫 batterie déchargé faible pile électronique énergie
 🔌 branché câble fiche prise électricité électrique
 💻 bureau ordinateur portable travail
-🖥 bureau moniteur ordinateur
+🖥️ bureau moniteur ordinateur
 🖨️ imprimante imprimer ordinateur
 ⌨️ clavier informatique ordinateur
 🖱️ ordinateur informatique souris
@@ -1257,16 +1278,16 @@ exit
 🪔 beurre diwali diya fête huile inde lampe ārtī
 📔 cahier carnet couverture livre école écrire
 📕 apprendre enseignement fermé lire littérature livre manuel rouge savoir scolaire école
-📖 apprendre bibliothèque enseignement lecture lire littérature livre manuel ouvert roman savoir scolaire école étudier
 📗 apprendre bibliothèque enseignement lecture lire littérature livre manuel savoir scolaire vert école étudier
 📘 apprendre bleu lecture lire littérature livre manuel roman scolaire école éducation
 📙 apprendre lecture lire littérature livre manuel orange roman scolaire école éducation
+📖 apprendre bibliothèque enseignement lecture lire littérature livre manuel ouvert roman savoir scolaire école étudier
 📚 apprendre bibliothèque enseignement lecture lire littérature livres manuels roman savoir scolaires école étudier
 📓 cahier carnet écrire
 📒 cahier carnet classeur compte grand livre
 📃 document enroulée page
 📜 papier parchemin
-📄 document page
+📄 document page feuille
 📰 actualités communication gros journal presse titres
 🗞️ actualités journal presse roulé
 📑 marque marqueur onglets signet signets
@@ -1282,6 +1303,8 @@ exit
 💳 argent bancaire banque carte crédit payer
 🧾 caisse compta comptabilité comptable comptes facture faire justificatif preuve reçu ticket
 💹 banque courbe croissance devise graphique hausse marché monnaie tendance yen
+💱 argent banque change conversion devise
+💲 argent devise dollar espèces payer symbole
 ✉️ courrier e-mail enveloppe lettre message électronique
 📧 courriel courrier e-mail lettre message électronique enveloppe
 📨 courriel courrier e-mail enveloppe envoyer lettre message recevoir reçu électronique
@@ -1305,11 +1328,11 @@ exit
 💼 accessoire bureau cartable porte-documents
 📁 dossier fichier répertoire
 📂 dossier ouvert ouvrir répertoire
-🗂 classement classeur index intercalaire intercalaires
+🗂️ classement classeur index intercalaire intercalaires
 📅 calendrier date
+📆 calendrier date
 🗓️ agenda calendrier date planning éphéméride
 🗒️ bloc-notes cahier notes spirale spirales
-🗓 bloc-notes calendrier spirale spirales
 📇 carnet carte adresses fiche index rolodex vintage
 📈 croissance données graphique hausse haut tendance
 📉 baisse bas chute données graphique négatif tendance
@@ -1318,7 +1341,7 @@ exit
 📌 fournitures punaise
 📍 carte emplacement fournitures punaise ronde épingle
 📎 fournitures trombone
-🖇 fournitures trombones
+🖇️ fournitures trombones
 📏 fournitures mathématiques plate règle
 📐 fournitures mathématiques équerre
 ✂️ ciseaux couper découper fournitures papier
@@ -1334,24 +1357,24 @@ exit
 🔨 marteau outil réparer travaux
 🪓 bois bûcheron fendre hache hachette
 ⛏️ mine outil pioche
-⚒ burin marteau outil outils pioche
-🛠 clé marteau molette outil outils
-🗡 arme couteau dague poignard
-⚔ arme armes croisées épées
+⚒️ burin marteau outil outils pioche
+🛠️ clé marteau molette outil outils
+🗡️ arme couteau dague poignard
+⚔️ arme armes croisées épées
 💣 bande bd bombe boum danger dessin dessinée explosion
 🪃 aborigène australie boomerang jeu outil retour répercussion
 🏹 arc archer astrologie flèche horoscope sagittaire sport tir zodiaque
-🛡 arme bouclier
+🛡️ arme bouclier
 🪚 bois outil scie scier égoïne
 🔧 clé molette outil travaux
 🪛 outil outillage tournevis vis
 🔩 boulon outil travaux vis écrou
 ⚙️ dentée engrenage outil roue
-🗜 compresser comprimer outil serre-joint serre-joints
+🗜️ compresser comprimer outil serre-joint serre-joints
 ⚖️ astrologie balance horoscope justice poids zodiaque
 🦯 accessibilité aveugle blanche canne déficient malvoyant visuel
 🔗 chaîne chaînons maillons mousqueton
-⛓‍💥 brisée cassée chaîne liberté rompue
+⛓️‍💥 brisée cassée chaîne liberté rompue
 ⛓️ chaîne chaînes
 🪝 accrocher appâter attraper capitaine crochet ferrer hameçon hameçonner
 🧰 boîte caisse coffre mécanique mécano outil outils
@@ -1373,7 +1396,6 @@ exit
 🩺 cœur coeur diagnostic docteur médecin médecine poumons stéthoscope
 🩻 cage docteur médical os radiographie rayons squelette thoracique x
 🚪 entrée placard porte
-🛗 accessibilité ascenseur descente monte-charge monte-personnes montée
 🪞 beauté glace image maquillage miroir psyché reflet
 🪟 air cadre carreaux fenêtre frais ouverture transparent vitre vue
 🛋️ canapé lampe sofa
@@ -1390,16 +1412,16 @@ exit
 🧺 agriculture cueillette lessive linge panier pique-nique
 🧻 essuie-tout hygiénique papier pq rouleau toilette
 🪣 conteneur plage seau
-🧼 bain bulles lavage lave laver me mousse pain porte-savon savon
 🫧 bulles eau propre savon
 🪥 bain brosse brosser dentaire dents hygiène laver salle
+🧼 bain bulles lavage lave laver me mousse pain porte-savon savon
 🧽 absorbante absorbe laver nettoyage nettoyer poreuse savonner éponge
 🧯 chaud extincteur feu fire incendie éteindre
 🛒 caddie chariot courses panier shopping supermarché
 🚬 allumée cigarette fumer fumeur signe
-⚰ cercueil enterrement mort obsèques vampire
+⚰️ cercueil enterrement mort obsèques vampire
 🪦 cimetière enterrement funérailles mort mémorial pierre rip stèle sépulture tombale tombe
-⚱ cendres funéraire mort obsèques urne
+⚱️ cendres funéraire mort obsèques urne
 🧿 amulette bleu boncuk oeil mauvais nazar nazarboncuk perle superstition talisman turc œil
 🪬 amulette chance fatma hamsa khamsa main myriam protection
 🗿 moai moaï monolithe pâques statue voyage île
@@ -1418,6 +1440,7 @@ exit
 🛃 douane douanes
 🛄 arrivée avion aéroport bagages retrait valise voyage
 🛅 bagages casier clé consigne valise
+🛗 accessibilité ascenseur descente monte-charge monte-personnes montée
 ⚠️ attention avertissement symbole
 🚸 circulation enfants piétons traversée école
 ⛔ circulation entrée interdiction interdit interdite panneau sens
@@ -1454,7 +1477,7 @@ exit
 🔝 flèche haut vers
 🛐 culte lieu prier religion
 ⚛️ athée atome symbole
-🕉 hindou om religion
+🕉️ hindou om religion
 ✡️ david judaïsme juif juive religion étoile
 ☸️ bouddhisme bouddhiste dharma religion roue
 ☯️ complémentaire religion tao taoïsme yin yang
@@ -1477,35 +1500,36 @@ exit
 ♑ astrologie capricorne chèvre horoscope zodiaque
 ♒ astrologie eau horoscope verseau zodiaque
 ♓ astrologie horoscope poissons zodiaque
-⛎ ophiuchus serpent serpentaire zodiaque
+⛎ astrologie ophiuchus serpent serpentaire zodiaque
 🔀 aléatoire bouton croisées flèche flèches lecture
 🔁 aiguilles bouton cercle une flèche flèches horaire montre répéter répétition sens
 🔂 aiguilles bouton cercle une flèche flèches fois horaire montre n°1 piste répéter répétition sens
 ▶️ bouton droite flèche lecture lire triangle
-⏩ avance bouton double flèche rapide
+⏩ bouton avance double flèche rapide
 ⏭️ bouton double flèche piste scène suivant suivante triangle
 ⏯️ bouton flèche lecture pause triangle
 ◀️ bouton flèche gauche retour triangle
 ⏪ bouton double flèche rapide retour
 ⏮️ bouton flèche piste précédent précédente scène triangle
 🔼 bouton flèche haut petit triangle
-⏫ double flèche haut rapide vers
-🔽 bas bouton flèche petit triangle
-⏬ bas double flèche rapide vers
+⏫ bouton double flèche haut rapide vers
+🔽 bouton bas flèche petit triangle
+⏬ bouton bas double flèche rapide vers
 ⏸️ bouton pause
 ⏹️ bouton carré stop
-⏺️ blanc bouton cercle enregistrement enregistrer point
+⏺️ bouton blanc cercle enregistrement enregistrer point
 ⏏️ bouton éjecter
 🎦 caméra cinéma film
-🔅 brillance faible luminosité lumière soleil
-🔆 brillance luminosité lumière soleil élevée
 📶 barres communication couverture portable réception réseau téléphone
 🛜 connexion débit fil haut hotspot internet ordinateur routeur réseau smartphone wi-fi wifi wlan
-📳 communication mode portable téléphone vibreur
 📴 portable téléphone éteindre éteint
+🔅 brillance faible luminosité lumière soleil
+🔆 brillance luminosité lumière soleil élevée
+📳 communication mode portable téléphone vibreur
 ♀️ femme symbole féminin
 ♂️ homme symbole masculin
 ⚧️ communauté symbole transgenre
+⚕️ caducée docteur esculape médecine personnel
 ✖️ * annuler croix multiplication multiplier noire signe x ×
 ➕ + addition ajouter arithmétique mathématiques signe somme
 ➖ - arithmétique mathématiques moins signe soustraction soustraire −
@@ -1519,9 +1543,6 @@ exit
 ❕ ! blanc exclamation point ponctuation surprise
 ❗ ! exclamation point ponctuation rouge
 〰️ union ligne ondulé ondulée ponctuation tiret trait vague
-💱 argent banque change conversion devise
-💲 argent devise dollar espèces payer symbole
-⚕️ caducée docteur esculape médecine personnel
 ♻️ recyclage symbole
 ⚜️ blason fleur française lis lys reine roi royauté
 🔱 ancre bateau fourche mer poséidon trident
@@ -1535,16 +1556,14 @@ exit
 ❎ bouton croix multiplier vert x ×
 ➰ boucle bouclette
 ➿ boucle double
-〽 alternance symbole
+〽️ alternance symbole
 ©️ c copyright auteur droits intellectuelle propriété symbole ©
+✳️ étoile astérisque
+✴️ étoile astérisque
+❇️ étoile astérisque
 ®️ commerciale déposée marque r ®
 ™️ commerciale déposée marque tm
-🫟 holi peinture tâche éclaboussure
-🔠 abcd alphabet latin latines lettres majuscules saisie
-🔡 abcd alphabet latin latines lettre lettres minuscules saisie
-🔢 1234 chiffres saisie
-🔣 saisie symboles
-🔤 abc alphabet latin lettres saisie
+🫟 peinture tâche éclaboussure
 #️⃣ hashtag dièse diese
 *️⃣ * étoile astérisque
 0️⃣ chiffre 0 zéro
@@ -1557,6 +1576,12 @@ exit
 7️⃣ chiffre 7 sept
 8️⃣ chiffre 8 huit
 9️⃣ chiffre 9 neuf
+🔟 10 dix
+🔠 abcd alphabet latin latines lettres majuscules saisie
+🔡 abcd alphabet latin latines lettre lettres minuscules saisie
+🔢 1234 chiffres saisie
+🔣 saisie symboles
+🔤 abc alphabet latin lettres saisie
 🅰️ groupe sanguin a
 🆎 groupe sanguin ab
 🅱️ groupe sanguin b
@@ -1575,8 +1600,8 @@ exit
 🆙 bouton haut icône nouveau nouveauté up vers
 🆚 bouton contre icône versus vs
 🈁 bouton ici idéogramme japonais katakana
-🈂 bouton frais idéogramme japonais katakana service
-🈷 bouton idéogramme japonais mensuel montant
+🈂️ bouton frais idéogramme japonais katakana service
+🈷️ bouton idéogramme japonais mensuel montant
 🈶 bouton gratuit idéogramme japonais pas payant
 🈯 bouton idéogramme japonais réservé
 🉐 affaire avantage bonne bouton idéogramme japonais
@@ -1587,8 +1612,8 @@ exit
 🈸 application appliquer bouton idéogramme japonais
 🈴 bouton idéogramme japonais note passage réussir
 🈳 bouton chambres disponibles idéogramme japonais vide
-㊗ bouton félicitations idéogramme japonais
-㊙ bouton idéogramme japonais secret
+㊗️ bouton félicitations idéogramme japonais
+㊙️ bouton idéogramme japonais secret
 🈺 affaires bouton idéogramme japonais ouvert
 🈵 bouton complet idéogramme japonais plénitude
 🔴 cercle disque forme géométrie géométrique rond rouge
@@ -1651,7 +1676,7 @@ exit
 🇧🇦 drapeau bosnia herzegovina nation pays
 🇧🇧 drapeau barbados bb nation pays
 🇧🇩 drapeau bangladesh bd nation pays
-🇧🇪 drapeau belgium be nation pays
+🇧🇪 drapeau belgium be nation pays belgique
 🇧🇫 drapeau burkina faso nation pays
 🇧🇬 drapeau bulgaria bg nation pays
 🇧🇭 drapeau bahrain bh nation pays
@@ -1870,8 +1895,8 @@ exit
 🇺🇦 drapeau ukraine ua nation pays
 🇺🇬 drapeau uganda ug nation pays
 🇺🇲 drapeau u s outlying islands
-🇺🇳 drapeau united nations un onu
-🇺🇸 drapeau united states america nation pays
+🇺🇳 drapeau united nations un onu unies
+🇺🇸 drapeau united states america nation pays etats unis
 🇺🇾 drapeau uruguay uy nation pays
 🇺🇿 drapeau uzbekistan uz nation pays
 🇻🇦 drapeau vatican city nation pays
@@ -1889,6 +1914,7 @@ exit
 🇿🇦 drapeau south africa nation pays
 🇿🇲 drapeau zambia zm nation pays
 🇿🇼 drapeau zimbabwe zw nation pays
-🏴󠁧󠁢󠁥󠁮󠁧󠁿 drapeau england english
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 drapeau england english angleterrre
 🏴󠁧󠁢󠁳󠁣󠁴󠁿 drapeau scotland scottish
-🏴󠁧󠁢󠁷󠁬󠁳󠁿 drapeau wales welsh
+🏴󠁧󠁢󠁷󠁬󠁳󠁿 drapeau wales welsh pays Galles
+🇨🇶 drapeau sercq shark

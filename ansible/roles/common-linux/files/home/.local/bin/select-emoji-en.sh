@@ -19,6 +19,7 @@ exit
 😂 face with tears of joy cry weep happy happytears haha
 🙂 slightly smiling face smile
 🙃 upside down face flipped silly smile
+🫠 melting face hot heat
 😉 winking face happy mischievous secret ;) smile eye
 😊 smiling face with eyes smile happy flushed crush embarrassed shy joy
 😇 smiling face with halo angel heaven
@@ -30,6 +31,7 @@ exit
 ☺️ smiling face blush massage happiness
 😚 kissing face with closed eyes love like affection valentines infatuation kiss
 😙 kissing face with smiling eyes affection valentines infatuation kiss
+🥲 smiling face with tear sad cry pretend
 😋 face savoring food happy joy tongue smile silly yummy nom delicious savouring
 😛 face with tongue prank childish playful mischievous smile
 😜 winking face with tongue prank childish playful mischievous smile wink
@@ -38,23 +40,33 @@ exit
 🤑 money mouth face rich dollar
 🤗 hugging face smile hug
 🤭 face with hand over mouth whoops shock surprise
+🫢 face with open eyes and hand over mouth silence secret shock surprise
+🫣 face with peeking eye scared frightening embarrassing
 🤫 shushing face quiet shhh
 🤔 thinking face hmmm think consider
+🫡 saluting face respect salute
 🤐 zipper mouth face sealed secret
 🤨 face with raised eyebrow distrust scepticism disapproval disbelief surprise
 😐 neutral face indifference meh :|
 😑 expressionless face indifferent - meh deadpan
-😶 face without mouth hellokitty
+😶 face without mouth
+🫥 dotted line face invisible lonely isolation depression
+😶‍🌫️ face in clouds shower steam dream
 😏 smirking face smile mean prank smug sarcasm
 😒 unamused face indifference bored straight serious sarcasm unimpressed skeptical dubious side eye
 🙄 face with rolling eyes eyeroll frustrated
 😬 grimacing face grimace teeth
+😮‍💨 face exhaling relieve relief tired sigh
 🤥 lying face lie pinocchio
+🫨 face shaking vibration omg
+🙂‍↔ face no negative deny
+🙂‍↕ face yes affirmative accept
 😌 relieved face relaxed phew massage happiness
 😔 pensive face sad depressed upset
 😪 sleepy face tired rest nap
 🤤 drooling face
 😴 sleeping face tired sleepy night zzz
+🫩 face tired sleepy
 😷 face with medical mask sick ill disease
 🤒 face with thermometer sick temperature cold fever
 🤕 face with head bandage injured clumsy hurt
@@ -65,13 +77,16 @@ exit
 🥶 cold face blue freezing frozen frostbite icicles
 🥴 woozy face dizzy intoxicated tipsy wavy
 😵 dizzy face spent unconscious xox
+😵‍💫 face with spiral eyes sick ill confused nauseous nausea
 🤯 exploding head face shocked mind blown
 🤠 cowboy hat face cowgirl
 🥳 partying face celebration woohoo
+🥸 disguised face pretent brows glasses moustache
 😎 smiling face with sunglasses cool smile summer beach sunglass
 🤓 nerd face nerdy geek dork
 🧐 face with monocle stuffy wealthy
 😕 confused face indifference huh weird hmmm :/
+🫤 face with diagonal mouth skeptic confuse frustrated indifferent
 😟 worried face concern nervous :(
 🙁 slightly frowning face disappointed sad upset
 ☹️ frowning face sad upset frown
@@ -80,6 +95,7 @@ exit
 😲 astonished face xox surprised poisoned
 😳 flushed face blush shy flattered
 🥺 pleading face begging mercy
+🥹 face holding back tears touched gratitude
 😦 frowning face with open mouth aw what
 😧 anguished face stunned nervous
 😨 fearful face scared terrified nervous oops huh
@@ -96,8 +112,8 @@ exit
 😫 tired face sick whine upset frustrated
 🥱 yawning face tired sleepy
 😤 face with steam from nose gas phew proud pride
-😡 pouting face angry mad hate despise
 😠 angry face mad annoyed frustrated
+😡 pouting face angry mad hate despise
 🤬 face with symbols on mouth swearing cursing cussing profanity expletive
 😈 smiling face with horns devil
 👿 angry face with horns devil
@@ -123,7 +139,6 @@ exit
 🙈 see no evil monkey animal nature haha
 🙉 hear no evil monkey animal nature
 🙊 speak no evil monkey animal nature omg
-💋 kiss mark face lips love like affection valentines
 💌 love letter email like affection envelope valentines
 💘 heart with arrow love like affection valentines
 💝 heart with ribbon love valentines
@@ -149,6 +164,7 @@ exit
 🖤 black heart evil
 🩶 gray heart
 🤍 white heart pure
+💋 kiss mark face lips love like affection valentines
 💯 hundred points score perfect numbers century exam quiz test pass
 💢 anger symbol angry mad
 💥 collision bomb explode explosion blown
@@ -156,22 +172,29 @@ exit
 💦 sweat droplets water drip oops
 💨 dashing away wind air fast shoo fart smoke puff
 🕳️ hole embarrassing
-💣 bomb boom explode explosion terrorism
 💬 speech balloon bubble words message talk chatting
-👁️‍🗨️ eye in speech bubble info
+👁‍🗨 eye in speech bubble info
 🗨️ left speech bubble words message talk chatting
 🗯️ right anger bubble caption speech thinking mad
 💭 thought balloon bubble cloud speech thinking dream
 💤 zzz sleepy tired dream
 👋 waving hand hands gesture goodbye solong farewell hello hi palm
 🤚 raised back of hand fingers backhand
-🖐️ hand with fingers splayed palm
+🖐 hand with fingers splayed palm
 ✋ raised hand fingers stop highfive palm ban
 🖖 vulcan salute hand fingers spock star trek
+🫱 rightwards hand palm offer
+🫲 leftwards hand palm offer
+🫳 palm down hand drop
+🫴 palm up hand lift offer demand
+🫷 stop left high five halt push wait
+🫸 stop right high five halt push wait
 👌 ok hand fingers limbs perfect okay
+🤌 pinched fingers size tiny small
 🤏 pinching hand tiny small size
-✌️ victory hand fingers ohyeah peace two
+✌ victory hand fingers ohyeah peace two
 🤞 crossed fingers good lucky
+🫰 hand with index finger and thumb crossed heart love money expensive
 🤟 love you gesture hand fingers
 🤘 sign of the horns hand fingers evil eye rock on
 🤙 call me hand hands gesture shaka
@@ -181,6 +204,7 @@ exit
 🖕 middle finger hand fingers rude flipping
 👇 backhand index pointing down fingers hand direction
 ☝️ index pointing up hand fingers direction
+🫵 index pointing at the viewer you recruit
 👍 thumbs up thumbsup yes awesome good agree accept cool hand like +1
 👎 thumbs down thumbsdown no dislike hand -1
 ✊ raised fist fingers hand grasp
@@ -189,11 +213,12 @@ exit
 🤜 right facing fist hand fistbump
 👏 clapping hands praise applause congrats yay
 🙌 raising hands gesture hooray yea celebration
+🫶 heart hands love appreciation support
 👐 open hands fingers butterfly
 🤲 palms up together hands gesture cupped prayer
 🤝 handshake agreement shake
 🙏 folded hands please hope wish namaste highfive pray
-✍️ writing hand lower left ballpoint pen stationery write compose
+✍ writing hand lower left ballpoint pen stationery write compose
 💅 nail polish beauty manicure finger fashion
 🤳 selfie camera phone
 💪 flexed biceps arm flex hand summer strong
@@ -205,12 +230,15 @@ exit
 🦻 ear with hearing aid accessibility
 👃 nose smell sniff
 🧠 brain smart intelligent
+🫀 anatomical heart health heartbeat
+🫁 lungs breathe
 🦷 tooth teeth dentist
 🦴 bone skeleton
 👀 eyes look watch stalk peek see
 👁️ eye face look see watch stare
 👅 tongue mouth playful
 👄 mouth kiss
+🫦 biting lip flirt sexy pain worry
 👶 baby child boy girl toddler
 🧒 child gender-neutral young
 👦 boy man male guy teenager
@@ -219,10 +247,13 @@ exit
 👱 person blond hair hairstyle
 👨 man mustache father dad guy classy sir moustache
 🧔 man beard person bewhiskered
-👨‍🦰 man red hair hairstyle
+🧔 man beard facial hair
+🧔‍♀️ woman beard facial hair
 👨‍🦱 man curly hair hairstyle
+👨‍🦰 man red hair hairstyle
 👨‍🦳 man white hair old elder
 👨‍🦲 man bald hairless
+👱‍♂️ man blond hair male boy blonde guy person
 👩 woman female girls lady
 👩‍🦰 woman red hair hairstyle
 🧑‍🦰 person red hair hairstyle
@@ -233,7 +264,6 @@ exit
 👩‍🦲 woman bald hairless
 🧑‍🦲 person bald hairless
 👱‍♀️ woman blond hair female girl blonde person
-👱‍♂️ man blond hair male boy blonde guy person
 🧓 older person human elder senior gender-neutral
 👴 old man human male men elder senior
 👵 old woman human female women lady elder senior
@@ -329,6 +359,7 @@ exit
 👷‍♀️ woman construction worker female human wip build labor
 🤴 prince boy man male crown royal king
 👸 princess girl woman female blond crown royal queen
+🫅 person with crown royalty power
 👳 person wearing turban headdress
 👳‍♂️ man wearing turban male indian hinduism arabs
 👳‍♀️ woman wearing turban female indian hinduism arabs
@@ -368,12 +399,24 @@ exit
 🧟 zombie dead
 🧟‍♂️ man zombie male dracula undead walking dead
 🧟‍♀️ woman zombie female undead walking dead
+🧌 troll mystical monster
 💆 person getting massage relax
 💆‍♂️ man getting massage male boy head
 💆‍♀️ woman getting massage female girl head
 💇 person getting haircut hairstyle
 💇‍♂️ man getting haircut male boy
 💇‍♀️ woman getting haircut female girl
+🥷 ninja ninjutsu skills japanese
+🤵‍♂️ man in tuxedo formal fashion
+🤵‍♀️ woman in tuxedo formal fashion
+👰‍♂️ man with veil wedding marriage
+👰‍♀️ woman with veil wedding marriage
+👩‍🍼 woman feeding baby birth food
+👨‍🍼 man feeding baby birth food
+🧑‍🍼 person feeding baby birth food
+🧑‍🎄 mx santa claus christmas
+🫃 pregnant man baby belly
+🫄 pregnant person baby belly
 🚶 person walking move
 🚶‍♂️ man walking human feet steps
 🚶‍♀️ woman walking human feet steps female
@@ -393,8 +436,8 @@ exit
 👨‍🦽 man in manual wheelchair disability accessibility
 👩‍🦽 woman in manual wheelchair disability accessibility
 🏃 person running move
-🏃‍♂️ man running walking exercise race
-🏃‍♀️ woman running walking exercise race female
+🏃‍♂ man running walking exercise race
+🏃‍♀ woman running walking exercise race female
 💃 woman dancing female girl fun
 🕺 man dancing male boy fun dancer
 🕴️ man in suit levitating business levitate hover jump
@@ -415,8 +458,8 @@ exit
 🏌️‍♂️ man golfing sport
 🏌️‍♀️ woman golfing sports business female
 🏄 person surfing sport sea
-🏄‍♂️ man surfing sports ocean sea summer beach
-🏄‍♀️ woman surfing sports ocean sea summer beach female
+🏄‍♂ man surfing sports ocean sea summer beach
+🏄‍♀ woman surfing sports ocean sea summer beach female
 🚣 person rowing boat sport move
 🚣‍♂️ man rowing boat sports hobby water ship
 🚣‍♀️ woman rowing boat sports hobby water ship female
@@ -496,7 +539,13 @@ exit
 🗣️ speaking head user person human sing say talk
 👤 bust in silhouette user person human
 👥 busts in silhouette user person human group team
+🫂 people hugging care
 👣 footprints feet tracking walking beach
+🫆 fingerprint thumbprint finger identity forensics safety traces
+🦰 hair ginger
+🦱 hair
+🦳 hair grey silver
+🦲 bald head
 🐵 monkey face animal nature circus
 🐒 monkey animal nature banana circus
 🦍 gorilla animal nature circus
@@ -516,6 +565,8 @@ exit
 🐅 tiger animal nature roar
 🐆 leopard animal nature
 🐴 horse face animal brown nature
+🫎 animal moose elk antlers
+🫏 animal donkey stubbornness work
 🐎 horse animal gamble luck
 🦄 unicorn animal nature mystical
 🦓 zebra animal nature stripes safari
@@ -568,10 +619,15 @@ exit
 🦅 eagle animal nature bird
 🦆 duck animal nature bird mallard
 🦢 swan animal nature bird
+🪶 feather bird fly
+🪽 wing freedom flight lightness grace angel
 🦉 owl animal nature bird hoot
 🦩 flamingo animal
 🦚 peacock animal nature peahen bird
 🦜 parrot animal nature bird pirate talk
+🐦‍⬛ animal black bird
+🪿 animal goose honk silly
+🐦‍🔥 phoenix mythical bird rising ashes fire renewal
 🐸 frog animal nature croak toad
 🐊 crocodile animal nature reptile lizard alligator
 🐢 turtle animal slow nature tortoise
@@ -584,12 +640,20 @@ exit
 🐳 spouting whale animal nature sea ocean
 🐋 whale animal nature sea ocean
 🐬 dolphin animal nature fish sea ocean flipper fins beach
+🫍 animal orca sea ocean
 🐟 fish animal food nature
 🐠 tropical fish animal swim ocean beach nemo
 🐡 blowfish animal nature food sea ocean
 🦈 shark animal nature fish sea ocean jaws fins beach
-🐙 octopus animal creature ocean sea nature beach
 🐚 spiral shell nature sea beach
+🪸 coral ocean sea reef
+🪼 animal jellyfish sea ocean tentacles sting
+🐙 octopus animal creature ocean sea nature beach
+🦀 crab animal crustacean
+🦞 lobster animal nature bisque claws seafood
+🦐 shrimp animal ocean nature seafood
+🦑 squid animal nature ocean sea
+🦪 animal oyster
 🐌 snail slow animal shell
 🦋 butterfly animal insect nature caterpillar
 🐛 bug animal insect nature worm
@@ -601,10 +665,22 @@ exit
 🕸️ spider web animal insect arachnid silk
 🦂 scorpion animal arachnid
 🦟 mosquito animal nature insect malaria
+🐈‍⬛ animal black cat superstition luck
+🦬 animal bison ox
+🦣 animal mammoth elephant tusks
+🦫 beaver animal rodent
+🐻‍❄️ polar bear animal arctic
+🦤 dodo animal bird
+🦭 seal animal creature sea
+🪲 animal beetle insect
+🪳 animal cockroach insect pests
+🪰 animal fly insect
+🪱 worm animal
 🦠 microbe amoeba bacteria germs virus
 💐 bouquet flowers nature spring
 🌸 cherry blossom nature plant spring flower
 💮 white flower japanese spring
+🪷 lotus flower calm meditation
 🏵️ rosette flower decoration military
 🌹 rose flowers valentines love spring
 🥀 wilted flower plant nature
@@ -612,6 +688,7 @@ exit
 🌻 sunflower nature plant fall
 🌼 blossom nature flowers yellow
 🌷 tulip flowers plant nature summer spring
+🪻 flower plant nature spring
 🌱 seedling plant nature grass lawn spring
 🌲 evergreen tree plant nature
 🌳 deciduous tree plant nature
@@ -629,6 +706,7 @@ exit
 🍉 watermelon fruit food picnic summer
 🍊 tangerine food fruit nature orange
 🍋 lemon fruit nature
+🍋‍🟩 lime acid nature fruit
 🍌 banana fruit food monkey
 🍍 pineapple fruit nature food
 🥭 mango fruit food tropical
@@ -647,17 +725,30 @@ exit
 🥕 carrot vegetable food orange
 🌽 ear of corn food vegetable plant
 🌶️ hot pepper food spicy chilli chili
-🥒 cucumber fruit food pickle
+🥒 cucumber fruit food pickle vegetable
 🥬 leafy green food vegetable plant bok choy cabbage kale lettuce
 🥦 broccoli fruit food vegetable
+🪴 potted plant greenery house
+🫐 blueberries fruit
+🫒 olive fruit vegetable
+🫑 bell pepper fruit plant vegetable
 🧄 garlic food spice cook
 🧅 onion cook food spice
+🪹 empty nest bird
+🪺 nest with eggs bird
+🍄‍🟫 mushroom plant vegetable
 🍄 mushroom plant vegetable
+🪾 leafless tree dead branches autumn winter drought
 🥜 peanuts food nut
+🫘 beans food
 🌰 chestnut food squirrel
+🫚 ginger root spice
+🫛 pea pod
+🫜 root vegetable radish turnip
 🍞 bread food wheat breakfast toast
 🥐 croissant food bread french
 🥖 baguette bread food french
+🫓 flatbread flour food
 🥨 pretzel food bread twisted
 🥯 bagel food bread bakery schmear
 🥞 pancakes food breakfast flapjacks hotcakes
@@ -674,12 +765,14 @@ exit
 🥪 sandwich food lunch bread
 🌮 taco food mexican
 🌯 burrito food mexican
+🫔 tamale food masa
 🥙 stuffed flatbread food gyro
 🧆 falafel food
 🥚 egg food chicken breakfast
 🍳 cooking food breakfast kitchen egg
 🥘 shallow pan of food cooking casserole paella
 🍲 pot of food meat soup
+🫕 fondue cheese pot food
 🥣 bowl with spoon food breakfast cereal oatmeal porridge
 🥗 green salad food healthy lettuce
 🍿 popcorn food movie theater films snack
@@ -703,11 +796,6 @@ exit
 🥟 dumpling food empanada pierogi potsticker
 🥠 fortune cookie food prophecy
 🥡 takeout box food leftovers
-🦀 crab animal crustacean
-🦞 lobster animal nature bisque claws seafood
-🦐 shrimp animal ocean nature seafood
-🦑 squid animal nature ocean sea
-🦪 oyster food
 🍦 soft ice cream food hot dessert summer
 🍧 shaved ice hot dessert summer
 🍨 ice cream food hot dessert
@@ -725,6 +813,7 @@ exit
 🍼 baby bottle food container milk
 🥛 glass of milk beverage drink cow
 ☕ hot beverage caffeine latte espresso coffee
+🫖 teapot drink hot
 🍵 teacup without handle drink bowl breakfast green british
 🍶 sake wine drink drunk beverage japanese alcohol booze
 🍾 bottle with popping cork drink wine celebration
@@ -735,7 +824,9 @@ exit
 🍻 clinking beer mugs relax beverage drink drunk party pub summer alcohol booze
 🥂 clinking glasses beverage drink party alcohol celebrate cheers wine champagne toast
 🥃 tumbler glass drink beverage drunk alcohol liquor booze bourbon scotch whisky shot
+🫗 pouring liquid cup water
 🥤 cup with straw drink soda
+🧋 bubble tea taiwan boba milk straw
 🧃 beverage box drink
 🧉 mate drink tea beverage
 🧊 ice water cold
@@ -744,6 +835,7 @@ exit
 🍴 fork and knife cutlery kitchen
 🥄 spoon cutlery kitchen tableware
 🔪 kitchen knife blade cutlery weapon
+🫙 jar container sauce
 🏺 amphora vase jar
 🌍 globe showing europe africa world international
 🌎 globe showing americas world USA international
@@ -765,6 +857,9 @@ exit
 🏛️ classical building art culture history
 🏗️ building construction wip working progress
 🧱 brick bricks
+🪨 rock stone
+🪵 wood nature timber trunk
+🛖 hut house structure
 🏘️ houses buildings photo
 🏚️ derelict house abandon evict broken building
 🏠 house building home
@@ -803,6 +898,7 @@ exit
 🌉 bridge at night photo sanfrancisco
 ♨️ hot springs bath warm relax
 🎠 carousel horse photo carnival
+🛝 playground slide fun park
 🎡 ferris wheel photo carnival londoneye
 🎢 roller coaster carnival playground photo fun
 💈 barber pole hair salon style
@@ -832,6 +928,7 @@ exit
 🚗 automobile red transportation vehicle
 🚘 oncoming automobile car vehicle transportation
 🚙 sport utility vehicle transportation
+🛻 pickup truck car transportation
 🚚 delivery truck cars transportation
 🚛 articulated lorry vehicle cars transportation express
 🚜 tractor vehicle car farming agriculture
@@ -844,17 +941,20 @@ exit
 🚲 bicycle sports exercise hipster
 🛴 kick scooter vehicle razor
 🛹 skateboard board
+🛼 roller skate footwear sports
 🚏 bus stop transportation wait
 🛣️ motorway road cupertino interstate highway
 🛤️ railway track train transportation
 🛢️ oil drum barrell
 ⛽ fuel pump gas station petroleum
+🛞 wheel car transport
 🚨 police car light ambulance 911 emergency alert error pinged law legal
 🚥 horizontal traffic light transportation signal
 🚦 vertical traffic light transportation driving
 🛑 stop sign
 🚧 construction wip progress caution warning
 ⚓ anchor ship ferry sea boat
+🛟 ring buoy life saver preserver
 ⛵ sailboat ship summer transportation water sailing
 🛶 canoe boat paddle water ship
 🚤 speedboat ship transportation vehicle summer
@@ -920,24 +1020,23 @@ exit
 🌚 new moon face nature twilight planet space night evening sleep
 🌛 first quarter moon face nature twilight planet space night evening sleep
 🌜 last quarter moon face nature twilight planet space night evening sleep
-🌡️ thermometer weather temperature hot cold
-☀️ sun weather nature brightness summer beach spring
 🌝 full moon face nature twilight planet space night evening sleep
-🌞 sun with face nature morning sky
+🌞 sun face nature morning sky
 🪐 ringed planet outerspace
 ⭐ star night yellow
 🌟 glowing star night sparkle awesome good magic
 🌠 shooting star night photo
 🌌 milky way photo space stars
-☁️ cloud weather sky
-⛅ sun behind cloud weather nature cloudy morning fall spring
-⛈️ cloud with lightning and rain weather
+☀️ sun weather nature brightness summer beach spring
 🌤️ sun behind small cloud weather
+⛅ sun behind cloud weather nature cloudy morning fall spring
 🌥️ sun behind large cloud weather
 🌦️ sun behind rain cloud weather
-🌧️ cloud with rain weather
-🌨️ cloud with snow weather
-🌩️ cloud with lightning weather thunder
+☁️ cloud weather sky
+🌧️ cloud rain weather
+🌨️ cloud snow weather
+⛈️ cloud lightning and rain weather
+🌩️ cloud lightning weather thunder
 🌪️ tornado weather cyclone twister
 🌫️ fog weather
 🌬️ wind face gust air
@@ -948,6 +1047,7 @@ exit
 ☔ umbrella with rain drops rainy weather spring
 ⛱️ umbrella on ground weather summer
 ⚡ high voltage thunder weather lightning bolt fast
+🌡️ thermometer weather temperature hot cold
 ❄️ snowflake winter season cold weather christmas xmas
 ☃️ snowman winter season cold weather christmas xmas frozen
 ⛄ snowman without snow winter season cold weather christmas xmas frozen
@@ -1014,6 +1114,7 @@ exit
 🪁 kite wind fly
 🎱 pool 8 ball hobby game luck magic
 🔮 crystal ball disco party magic circus fortune teller
+🪄 magic wand supernature power
 🧿 nazar amulet bead charm
 🎮 video game play console PS4 controller
 🕹️ joystick game play
@@ -1021,6 +1122,9 @@ exit
 🎲 game die dice random tabletop play luck
 🧩 puzzle piece interlocking
 🧸 teddy bear plush stuffed
+🪅 pinata mexico candy celebration
+🪩 mirror ball disco dance party
+🪆 nesting dolls matryoshka toy
 ♠️ spade suit poker cards suits magic
 ♥️ heart suit poker cards magic suits
 ♦️ diamond suit poker cards magic suits
@@ -1033,7 +1137,9 @@ exit
 🖼️ framed picture photography
 🎨 artist palette design paint draw colors
 🧵 thread needle sewing spool string
-🧶 yarn ball crochet knit
+🪡 sewing needle stitches
+🧶 yarn ball crochet knit wool
+🪢 knot rope scout
 👓 glasses fashion accessories eyesight nerdy dork geek
 🕶️ sunglasses face cool accessories
 🥽 goggles eyes protection safety
@@ -1054,11 +1160,13 @@ exit
 🩳 shorts clothing
 👙 bikini swimming female woman girl fashion beach summer
 👚 woman s clothes fashion shopping bags female
+🪭 folding hand fan hot cooling
 👛 purse fashion accessories money sales shopping
 👜 handbag fashion accessory accessories shopping
 👝 clutch bag accessories shopping
 🛍️ shopping bags mall buy purchase
 🎒 backpack student education bag
+🩴 thong sandal footwear summer
 👞 man s shoe fashion male
 👟 running shoe shoes sports sneakers
 🥾 hiking boot backpacking camping
@@ -1067,11 +1175,13 @@ exit
 👡 woman s sandal shoes fashion flip flops
 🩰 ballet shoes dance
 👢 woman s boot shoes fashion
+🪮 hair pick afro
 👑 crown king kod leader royalty lord
 👒 woman s hat fashion accessories female lady spring
 🎩 top hat magic gentleman classy circus
 🎓 graduation cap school college degree university hat legal learn education
 🧢 billed cap baseball
+🪖 military helmet army protection
 ⛑️ rescue worker s helmet construction build
 📿 prayer beads dhikr religious
 💄 lipstick female girl fashion woman
@@ -1096,12 +1206,17 @@ exit
 🎧 headphone music score gadgets
 📻 radio communication music podcast program
 🎷 saxophone music instrument jazz blues
+🪗 accordion music
 🎸 guitar music instrument
+🪇 instrument music maracas
+🪈 instrument music flute
+🪉 instrument music harp
 🎹 musical keyboard piano instrument compose
 🎺 trumpet music brass
 🎻 violin music instrument orchestra symphony
 🪕 banjo music instructment
 🥁 drum music instrument drumsticks snare
+🪘 long drum music
 📱 mobile phone technology apple gadgets dial
 📲 mobile phone with arrow iphone incoming
 ☎️ telephone technology communication dial
@@ -1109,6 +1224,7 @@ exit
 📟 pager bbcall oldschool 90s
 📠 fax machine communication technology
 🔋 battery power energy sustain
+🪫 low battery drained dead
 🔌 electric plug charger power
 💻 laptop technology screen display monitor
 🖥️ desktop computer technology computing screen
@@ -1155,6 +1271,7 @@ exit
 🔖 bookmark favorite label save
 🏷️ label sale tag
 💰 money bag dollar payment coins sale
+🪙 coin money currency
 💴 yen banknote money sales japanese dollar currency
 💵 dollar banknote money sales bill currency
 💶 euro banknote money sales dollar currency
@@ -1222,18 +1339,26 @@ exit
 🗡️ dagger weapon
 ⚔️ crossed swords weapon
 🔫 pistol violence weapon revolver
+💣 bomb boom explode explosion terrorism
+🪃 boomerang weapon
 🏹 bow and arrow sports
 🛡️ shield protection security
+🪚 carpentry saw cut chop
 🔧 wrench tools diy ikea fix maintainer
+🪛 screwdriver tools
 🔩 nut and bolt handy tools fix
 ⚙️ gear cog
 🗜️ clamp tool
 ⚖️ balance scale law fairness weight
 🦯 probing cane accessibility
 🔗 link rings url
+⛓‍💥 link broken free
 ⛓️ chains lock arrest
+🪝 hook tools
 🧰 toolbox tools diy fix maintainer mechanic
 🧲 magnet attraction magnetic
+🪜 ladder tools
+🪏 shovel tool digging groundwork
 ⚗️ alembic distilling science experiment chemistry
 🧪 test tube chemistry experiment lab science
 🧫 petri dish bacteria biology culture lab
@@ -1245,28 +1370,40 @@ exit
 🩸 drop of blood period hurt harm wound
 💊 pill health medicine doctor pharmacy drug
 🩹 adhesive bandage heal
+🩼 crutch accessibility assist
 🩺 stethoscope health
+🩻 x-ray skeleton medicine
 🚪 door house entry exit
+🪞 mirror reflection
+🪟 window scenery
 🛏️ bed sleep rest
 🛋️ couch and lamp read chill
 🪑 chair sit furniture
 🚽 toilet restroom wc washroom bathroom potty
+🪠 plunger toilet
 🚿 shower clean water bathroom
 🛁 bathtub clean shower bathroom
+🪤 mouse trap cheese
 🪒 razor cut
 🧴 lotion bottle moisturizer sunscreen
 🧷 safety pin diaper
 🧹 broom cleaning sweeping witch
 🧺 basket laundry
 🧻 roll of paper
+🪣 bucket water container
+🪥 toothbrush hygiene dental
+🫧 bubbles soap fun carbonation sparkling
 🧼 soap bar bathing cleaning lather
 🧽 sponge absorbing cleaning porous
 🧯 fire extinguisher quench
 🛒 shopping cart trolley
 🚬 cigarette kills tobacco joint smoke
 ⚰️ coffin vampire dead die death rip graveyard cemetery casket funeral box
+🪦 headstone death rip grave
 ⚱️ funeral urn dead die death rip ashes
 🗿 moai rock easter island
+🪧 placard announcement
+🪪 identification card document
 🏧 atm sign money sales cash blue-square payment bank
 🚮 litter in bin sign blue-square human info
 🚰 potable water blue-square liquid restroom cleaning faucet
@@ -1280,6 +1417,7 @@ exit
 🛃 customs passport border blue-square
 🛄 baggage claim blue-square airport transport
 🛅 left luggage blue-square travel
+🛗 elevator lift
 ⚠️ warning exclamation wip alert error problem issue
 🚸 children crossing school warning danger sign driving yellow-diamond
 ⛔ no entry limit security privacy bad denied stop circle
@@ -1326,6 +1464,8 @@ exit
 ☮️ peace symbol hippie
 🕎 menorah hanukkah candles jewish
 🔯 dotted six pointed star purple-square religion jewish hexagram
+🪯 khanda sikhism religion
+🪬 hamsa religion protection
 ♈ aries sign purple-square zodiac astrology
 ♉ taurus purple-square sign zodiac astrology
 ♊ gemini sign zodiac purple-square astrology
@@ -1358,15 +1498,29 @@ exit
 ⏺️ record button blue-square
 ⏏️ eject button blue-square
 🎦 cinema blue-square record film movie curtain stage theater
+📶 antenna bars blue-square reception phone internet connection wifi bluetooth signal
+🛜 wifi internet connection signal
+📴 mobile phone off mute orange-square silence quiet
 🔅 dim button sun afternoon warm summer
 🔆 bright button sun light
-📶 antenna bars blue-square reception phone internet connection wifi bluetooth
 📳 vibration mode orange-square phone
-📴 mobile phone off mute orange-square silence quiet
 ♀️ female sign woman women lady girl
 ♂️ male sign man boy men
+⚧️ transgender symbol lgbtq
 ⚕️ medical symbol health hospital
+✖️ multiplication sign math calculation
+➕ plus sign math calculation addition more increase
+➖ minus sign math calculation subtract less
+➗ division sign divide math calculation
+🟰 heavy equals sign math
 ♾️ infinity forever
+‼️ double exclamation mark surprise
+⁉️ exclamation question mark wat punctuation surprise
+❓ question mark doubt confused
+❔ white question mark doubts gray huh confused
+❕ white exclamation mark surprise punctuation gray wow warning
+❗ exclamation mark heavy danger surprise punctuation wow warning
+〰️ wavy dash draw line moustache mustache squiggle scribble
 ♻️ recycling symbol arrow environment garbage trash
 ⚜️ fleur de lis decorative scout
 🔱 trident emblem weapon spear
@@ -1376,28 +1530,18 @@ exit
 ✅ check mark button green-square ok agree vote election answer tick
 ☑️ check box with ok agree confirm black-square vote election yes tick
 ✔️ check mark ok nike answer yes tick
-✖️ multiplication sign math calculation
 ❌ cross mark no delete remove cancel red
 ❎ cross mark button x green-square no deny
-➕ plus sign math calculation addition more increase
-➖ minus sign math calculation subtract less
-➗ division sign divide math calculation
 ➰ curly loop scribble draw shape squiggle
 ➿ double curly loop tape cassette
 〽️ part alternation mark graph presentation stats business economics bad
 ✳️ eight spoked asterisk star sparkle green-square
 ✴️ eight pointed star orange-square shape polygon
 ❇️ sparkle stars green-square awesome good fireworks
-‼️ double exclamation mark surprise
-⁉️ exclamation question mark wat punctuation surprise
-❓ question mark doubt confused
-❔ white question mark doubts gray huh confused
-❕ white exclamation mark surprise punctuation gray wow warning
-❗ exclamation mark heavy danger surprise punctuation wow warning
-〰️ wavy dash draw line moustache mustache squiggle scribble
 ©️ copyright ip license circle law legal
 ®️ registered alphabet circle
 ™️ trade mark trademark brand law legal
+🫟 splash paint stain
 #️⃣ keycap symbol blue-square twitter
 *️⃣ keycap star
 0️⃣ keycap 0 numbers blue-square null
@@ -1419,6 +1563,7 @@ exit
 🅰️ a button red-square alphabet letter
 🆎 ab button red-square alphabet
 🅱️ b button red-square alphabet letter
+🅾️ o button alphabet red-square letter
 🆑 cl button alphabet words red-square
 🆒 cool button words blue-square
 🆓 free button blue-square words
@@ -1427,7 +1572,6 @@ exit
 Ⓜ️ circled m alphabet blue-circle letter
 🆕 new button blue-square words start
 🆖 ng button blue-square words shape icon
-🅾️ o button alphabet red-square letter
 🆗 ok button good agree yes blue-square
 🅿️ p button cars blue-square alphabet letter
 🆘 sos button help red-square words emergency 911
@@ -1470,8 +1614,6 @@ exit
 ⬜ white large square shape icon stone button
 ◼️ black medium square shape button icon
 ◻️ white medium square shape stone icon
-◾ black medium small square icon shape button
-◽ white medium small square shape stone icon button
 ▪️ black small square shape icon
 ▫️ white small square shape icon
 🔶 large orange diamond shape jewel gem
@@ -1490,6 +1632,7 @@ exit
 🏴 black flag pirate
 🏳️ white flag losing loser lost surrender give up fail
 🏳️‍🌈 rainbow flag pride gay lgbt glbt queer homosexual lesbian bisexual transgender
+🏳️‍⚧️ transgender flag lgbtq
 🏴‍☠️ pirate flag skull crossbones banner
 🇦🇨 flag ascension island
 🇦🇩 flag andorra ad nation country banner
@@ -1752,114 +1895,4 @@ exit
 🏴󠁧󠁢󠁥󠁮󠁧󠁿 flag england english
 🏴󠁧󠁢󠁳󠁣󠁴󠁿 flag scotland scottish
 🏴󠁧󠁢󠁷󠁬󠁳󠁿 flag wales welsh
-🥲 smiling face with tear sad cry pretend
-🥸 disguised face pretent brows glasses moustache
-🤌 pinched fingers size tiny small
-🫀 anatomical heart health heartbeat
-🫁 lungs breathe
-🥷 ninja ninjutsu skills japanese
-🤵‍♂️ man in tuxedo formal fashion
-🤵‍♀️ woman in tuxedo formal fashion
-👰‍♂️ man with veil wedding marriage
-👰‍♀️ woman with veil wedding marriage
-👩‍🍼 woman feeding baby birth food
-👨‍🍼 man feeding baby birth food
-🧑‍🍼 person feeding baby birth food
-🧑‍🎄 mx claus christmas
-🫂 people hugging care
-🐈‍⬛ black cat superstition luck
-🦬 bison ox
-🦣 mammoth elephant tusks
-🦫 beaver animal rodent
-🐻‍❄️ polar bear animal arctic
-🦤 dodo animal bird
-🪶 feather bird fly
-🦭 seal animal creature sea
-🪲 beetle insect
-🪳 cockroach insect pests
-🪰 fly insect
-🪱 worm animal
-🪴 potted plant greenery house
-🫐 blueberries fruit
-🫒 olive fruit
-🫑 bell pepper fruit plant
-🫓 flatbread flour food
-🫔 tamale food masa
-🫕 fondue cheese pot food
-🫖 teapot drink hot
-🧋 bubble tea taiwan boba milk straw
-🪨 rock stone
-🪵 wood nature timber trunk
-🛖 hut house structure
-🛻 pickup truck car transportation
-🛼 roller skate footwear sports
-🪄 magic wand supernature power
-🪅 pinata mexico candy celebration
-🪆 nesting dolls matryoshka toy
-🪡 sewing needle stitches
-🪢 knot rope scout
-🩴 thong sandal footwear summer
-🪖 military helmet army protection
-🪗 accordion music
-🪘 long drum music
-🪙 coin money currency
-🪃 boomerang weapon
-🪚 carpentry saw cut chop
-🪛 screwdriver tools
-🪝 hook tools
-🪜 ladder tools
-🛗 elevator lift
-🪞 mirror reflection
-🪟 window scenery
-🪠 plunger toilet
-🪤 mouse trap cheese
-🪣 bucket water container
-🪥 toothbrush hygiene dental
-🪦 headstone death rip grave
-🪧 placard announcement
-⚧️ transgender symbol lgbtq
-🏳️‍⚧️ transgender flag lgbtq
-😶‍🌫️ face in clouds shower steam dream
-😮‍💨 face exhaling relieve relief tired sigh
-😵‍💫 face with spiral eyes sick ill confused nauseous nausea
-❤️‍🔥 heart on fire passionate enthusiastic
-❤️‍🩹 mending heart broken bandage wounded
-🧔‍♂️ man beard facial hair
-🧔‍♀️ woman beard facial hair
-🫠 melting face hot heat
-🫢 face with open eyes and hand over mouth silence secret shock surprise
-🫣 face with peeking eye scared frightening embarrassing
-🫡 saluting face respect salute
-🫥 dotted line face invisible lonely isolation depression
-🫤 face with diagonal mouth skeptic confuse frustrated indifferent
-🥹 face holding back tears touched gratitude
-🫱 rightwards hand palm offer
-🫲 leftwards hand palm offer
-🫳 palm down hand drop
-🫴 palm up hand lift offer demand
-🫰 hand with index finger and thumb crossed heart love money expensive
-🫵 index pointing at the viewer you recruit
-🫶 heart hands love appreciation support
-🫦 biting lip flirt sexy pain worry
-🫅 person with crown royalty power
-🫃 pregnant man baby belly
-🫄 pregnant person baby belly
-🧌 troll mystical monster
-🪸 coral ocean sea reef
-🪷 lotus flower calm meditation
-🪹 empty nest bird
-🪺 nest with eggs bird
-🫘 beans food
-🫗 pouring liquid cup water
-🫙 jar container sauce
-🛝 playground slide fun park
-🛞 wheel car transport
-🛟 ring buoy life saver preserver
-🪬 hamsa religion protection
-🪩 mirror ball disco dance party
-🪫 low battery drained dead
-🩼 crutch accessibility assist
-🩻 x-ray skeleton medicine
-🫧 bubbles soap fun carbonation sparkling
-🪪 identification card document
-🟰 heavy equals sign math
+🇨🇶 drapeau sercq shark
