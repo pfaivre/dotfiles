@@ -27,6 +27,7 @@
       - htop
       - lm_sensors
       - lolcat
+      - luarocks
       - most
       - ncdu
       # - neovim  # TODO: prevent the installation of nodejs (it is a weak dependency for some reason)

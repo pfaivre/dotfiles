@@ -112,8 +112,8 @@ exit
 😫 tired face sick whine upset frustrated
 🥱 yawning face tired sleepy
 😤 face with steam from nose gas phew proud pride
-😠 angry face mad annoyed frustrated
 😡 pouting face angry mad hate despise
+😠 angry face mad annoyed frustrated
 🤬 face with symbols on mouth swearing cursing cussing profanity expletive
 😈 smiling face with horns devil
 👿 angry face with horns devil
@@ -150,8 +150,8 @@ exit
 💟 heart decoration purple-square love like
 ❣️ heart exclamation decoration love
 💔 broken heart sad sorry break heartbreak
-❤‍🔥 fire flames heart passion desire
-❤‍🩹 bandages heal heart repair
+❤️‍🔥 fire flames heart passion desire
+❤️‍🩹 bandages heal heart repair
 ❤️ red heart love like valentines
 🩷 pink heart love like valentines adorable
 🧡 orange heart love like affection valentines
@@ -173,7 +173,7 @@ exit
 💨 dashing away wind air fast shoo fart smoke puff
 🕳️ hole embarrassing
 💬 speech balloon bubble words message talk chatting
-👁‍🗨 eye in speech bubble info
+👁️‍🗨️ eye in speech bubble info
 🗨️ left speech bubble words message talk chatting
 🗯️ right anger bubble caption speech thinking mad
 💭 thought balloon bubble cloud speech thinking dream
@@ -497,6 +497,7 @@ exit
 🧘‍♂️ man in lotus position male meditation yoga serenity zen mindfulness
 🧘‍♀️ woman in lotus position female meditation yoga serenity zen mindfulness
 🛀 person taking bath clean shower bathroom
+🛏️ bed sleep rest
 🛌 person in bed rest
 🧑‍🤝‍🧑 people holding hands friendship
 👭 women holding hands pair friendship couple love like female people human
@@ -1020,6 +1021,8 @@ exit
 🌚 new moon face nature twilight planet space night evening sleep
 🌛 first quarter moon face nature twilight planet space night evening sleep
 🌜 last quarter moon face nature twilight planet space night evening sleep
+🌡️ thermometer weather temperature hot cold
+☀️ sun weather nature brightness summer beach spring
 🌝 full moon face nature twilight planet space night evening sleep
 🌞 sun face nature morning sky
 🪐 ringed planet outerspace
@@ -1027,7 +1030,6 @@ exit
 🌟 glowing star night sparkle awesome good magic
 🌠 shooting star night photo
 🌌 milky way photo space stars
-☀️ sun weather nature brightness summer beach spring
 🌤️ sun behind small cloud weather
 ⛅ sun behind cloud weather nature cloudy morning fall spring
 🌥️ sun behind large cloud weather
@@ -1047,7 +1049,6 @@ exit
 ☔ umbrella with rain drops rainy weather spring
 ⛱️ umbrella on ground weather summer
 ⚡ high voltage thunder weather lightning bolt fast
-🌡️ thermometer weather temperature hot cold
 ❄️ snowflake winter season cold weather christmas xmas
 ☃️ snowman winter season cold weather christmas xmas frozen
 ⛄ snowman without snow winter season cold weather christmas xmas frozen
@@ -1112,10 +1113,10 @@ exit
 🎯 direct hit game play bar target bullseye
 🪀 yo toy
 🪁 kite wind fly
+🔫 pistol violence weapon revolver gun
 🎱 pool 8 ball hobby game luck magic
 🔮 crystal ball disco party magic circus fortune teller
 🪄 magic wand supernature power
-🧿 nazar amulet bead charm
 🎮 video game play console PS4 controller
 🕹️ joystick game play
 🎰 slot machine bet gamble vegas fruit luck casino
@@ -1208,15 +1209,15 @@ exit
 🎷 saxophone music instrument jazz blues
 🪗 accordion music
 🎸 guitar music instrument
-🪇 instrument music maracas
-🪈 instrument music flute
-🪉 instrument music harp
 🎹 musical keyboard piano instrument compose
 🎺 trumpet music brass
 🎻 violin music instrument orchestra symphony
 🪕 banjo music instructment
 🥁 drum music instrument drumsticks snare
 🪘 long drum music
+🪇 instrument music maracas
+🪈 instrument music flute
+🪉 instrument music harp
 📱 mobile phone technology apple gadgets dial
 📲 mobile phone with arrow iphone incoming
 ☎️ telephone technology communication dial
@@ -1255,10 +1256,10 @@ exit
 🪔 diya lamp lighting
 📔 notebook with decorative cover classroom notes record paper study
 📕 closed book read library knowledge textbook learn
-📖 open book read library knowledge literature learn study
 📗 green book read library knowledge study
 📘 blue book read library knowledge learn study
 📙 orange book read library knowledge textbook study
+📖 open book read library knowledge literature learn study
 📚 books literature library study
 📓 notebook stationery record notes paper study
 📒 ledger notes paper
@@ -1308,8 +1309,8 @@ exit
 🗂️ card index dividers organizing business stationery
 📅 calendar schedule
 📆 tear off calendar schedule date planning
-🗒️ spiral notepad memo stationery
 🗓️ spiral calendar date schedule planning
+🗒️ spiral notepad memo stationery
 📇 card index business stationery
 📈 chart increasing graph presentation stats recovery business economics money sales good success
 📉 chart decreasing graph presentation stats recession business economics money sales bad failure
@@ -1338,7 +1339,6 @@ exit
 🛠️ hammer and wrench tools build create
 🗡️ dagger weapon
 ⚔️ crossed swords weapon
-🔫 pistol violence weapon revolver
 💣 bomb boom explode explosion terrorism
 🪃 boomerang weapon
 🏹 bow and arrow sports
@@ -1352,7 +1352,7 @@ exit
 ⚖️ balance scale law fairness weight
 🦯 probing cane accessibility
 🔗 link rings url
-⛓‍💥 link broken free
+⛓️‍💥 link broken free
 ⛓️ chains lock arrest
 🪝 hook tools
 🧰 toolbox tools diy fix maintainer mechanic
@@ -1376,7 +1376,6 @@ exit
 🚪 door house entry exit
 🪞 mirror reflection
 🪟 window scenery
-🛏️ bed sleep rest
 🛋️ couch and lamp read chill
 🪑 chair sit furniture
 🚽 toilet restroom wc washroom bathroom potty
@@ -1391,8 +1390,8 @@ exit
 🧺 basket laundry
 🧻 roll of paper
 🪣 bucket water container
-🪥 toothbrush hygiene dental
 🫧 bubbles soap fun carbonation sparkling
+🪥 toothbrush hygiene dental
 🧼 soap bar bathing cleaning lather
 🧽 sponge absorbing cleaning porous
 🧯 fire extinguisher quench
@@ -1401,6 +1400,8 @@ exit
 ⚰️ coffin vampire dead die death rip graveyard cemetery casket funeral box
 🪦 headstone death rip grave
 ⚱️ funeral urn dead die death rip ashes
+🧿 nazar amulet bead charm
+🪬 hamsa religion protection
 🗿 moai rock easter island
 🪧 placard announcement
 🪪 identification card document
@@ -1465,7 +1466,6 @@ exit
 🕎 menorah hanukkah candles jewish
 🔯 dotted six pointed star purple-square religion jewish hexagram
 🪯 khanda sikhism religion
-🪬 hamsa religion protection
 ♈ aries sign purple-square zodiac astrology
 ♉ taurus purple-square sign zodiac astrology
 ♊ gemini sign zodiac purple-square astrology

@@ -1557,10 +1557,10 @@ exit
 ➰ boucle bouclette
 ➿ boucle double
 〽️ alternance symbole
-©️ c copyright auteur droits intellectuelle propriété symbole ©
 ✳️ étoile astérisque
 ✴️ étoile astérisque
 ❇️ étoile astérisque
+©️ c copyright auteur droits intellectuelle propriété symbole ©
 ®️ commerciale déposée marque r ®
 ™️ commerciale déposée marque tm
 🫟 peinture tâche éclaboussure

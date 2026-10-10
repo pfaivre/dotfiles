@@ -284,7 +284,7 @@ def fetch_sunlight_info(
         )
     except Exception as e:
         print(f"Error while fetching sunlight info: {e}", file=sys.stderr)
-        exit(1)
+        sys.exit(1)
 
     return info
 
@@ -298,7 +298,7 @@ def write_hyprsunset_config(config: str) -> None:
         CONFIG_PATH.write_text(config, "utf-8")
     except Exception as e:
         print(f"Error while writing the config file: {e}", file=sys.stderr)
-        exit(1)
+        sys.exit(1)
 
 
 def main():
@@ -330,7 +330,7 @@ def main():
         if mod_time.date() == datetime.now(timezone.utc).date() and not args.force:
             print(f"{CONFIG_PATH} has been generated today already")
             print("ok")
-            exit(0)
+            sys.exit(0)
 
     info = fetch_sunlight_info(args.latitude, args.longitude)
     config = generate_hyprsunset_config(info)

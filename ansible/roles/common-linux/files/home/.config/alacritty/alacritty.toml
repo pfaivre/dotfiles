@@ -10,10 +10,10 @@ decorations = "Full"
 decorations_theme_variant = "Dark"
 
 [font]
-normal.family = "Liberation Mono"
-bold.family = "Liberation Mono"
-italic.family = "Liberation Mono"
-bold_italic.family = "Liberation Mono"
+normal.family = "LiterationMono Nerd Font Mono"
+bold.family = "LiterationMono Nerd Font Mono"
+italic.family = "LiterationMono Nerd Font Mono"
+bold_italic.family = "LiterationMono Nerd Font Mono"
 size = 10.0
 
 [cursor]

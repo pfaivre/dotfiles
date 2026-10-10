@@ -96,6 +96,7 @@ hl.config({
 
   dwindle = {
     preserve_split = true, -- if enabled, the split (side/top) will not change regardless of what happens to the container.
+    precise_mouse_move = true, -- Dragging and dropping windows will place them more precisely, based on where your mouse is
   },
 })
 
@@ -193,7 +194,8 @@ hl.window_rule({
   move = {"(monitor_w-window_w-12)", "(monitor_h-window_h-60)"},
   size = {408, 230},
   content = "video",
-  pin = true
+  pin = true,
+  keep_aspect_ratio = true,
 })
 
 -- No border on Audacious' windows

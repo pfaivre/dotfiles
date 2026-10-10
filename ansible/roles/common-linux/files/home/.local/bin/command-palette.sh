@@ -18,97 +18,97 @@ open_text_file() {
 
 case $selected in
   # Theme
-  "Theme → Summer Night")
+  "🟩 Theme → Summer Night")
     ~/.local/bin/set-theme.sh summer-night
     ;;
-  "Theme → Summer Day")
+  "🟩 Theme → Summer Day")
     ~/.local/bin/set-theme.sh summer-day
     ;;
-  "Theme → Holo Night")
+  "🟩 Theme → Holo Night")
     ~/.local/bin/set-theme.sh holo-night
     ;;
-  "Theme → Ocean Dark")
+  "🟩 Theme → Ocean Dark")
     ~/.local/bin/set-theme.sh ocean-dark
     ;;
-  "Theme → Bliss XP")
+  "🟩 Theme → Bliss XP")
     ~/.local/bin/set-theme.sh bliss-xp
     ;;
 
   # Power
-  "Power → Log-off")
+  "🟥 Power → Log-off")
     loginctl terminate-user $USER
     ;;
-  "Power → Sleep")
+  "🟥 Power → Sleep")
     systemctl suspend
     ;;
-  "Power → Restart (reboot)")
+  "🟥 Power → Restart (reboot)")
     systemctl reboot
     ;;
-  "Power → Shutdown (poweroff)")
+  "🟥 Power → Shutdown (poweroff)")
     systemctl poweroff
     ;;
 
   # Display
-  "Display → Color temperature")
+  "⬜ Display → Color temperature")
     ~/.local/bin/set-screen-temperature.sh
     ;;
 
   # Utils
-  "Utils → Find a file")
+  "🟧 Utils → Find a file")
     alacritty --class Popup --command ~/.local/bin/locate-file.sh
     ;;
-  "Utils → Color picker")
+  "🟧 Utils → Color picker")
     sleep 0.1 # Give Rofi time to close
     color=$(hyprpicker -a)
     python3 ~/.local/bin/color-menu.py "$color"
     # notify-send -e -u low "Color picker" "Color copied to the clipboard: $color"
     ;;
-  "Utils → Screenshot (full screen)")
+  "🟧 Utils → Screenshot (full screen)")
     hyprshot -m output
     ;;
-  "Utils → Screenshot (region)")
+  "🟧 Utils → Screenshot (region)")
     hyprshot -m region
     ;;
-  "Utils → Screenshot (window)")
+  "🟧 Utils → Screenshot (window)")
     hyprshot -m window
     ;;
 
-  "Utils → Select an emoji")
+  "🟧 Utils → Select an emoji")
     ~/.local/bin/select-emoji-fr.sh
     notify-send -e -u low "Emoji" "The selected emoji has been copied to the clipboard"
     ;;
 
   # Personalization
-  "Personalization → Next wallpaper")
+  "🟪 Personalization → Next wallpaper")
     python3 ~/.local/bin/set-wallpaper.py next
     ;;
 
   # Setup
-  "Setup → Audio")
+  "🟦 Setup → Audio")
     alacritty --class Popup --command wiremix
     ;;
 
-  "Setup → Input")
+  "🟦 Setup → Input")
     open_text_file ~/.config/hypr/input.lua
     ;;
 
-  "Setup → Keybindings")
+  "🟦 Setup → Keybindings")
     open_text_file ~/.config/hypr/keybindings.lua
     ;;
 
-  "Setup → Monitors")
+  "🟦 Setup → Monitors")
     open_text_file ~/.config/hypr/monitors.lua
     ;;
 
-  "Setup → Hypridle")
+  "🟦 Setup → Hypridle")
     open_text_file ~/.config/hypr/hypridle.conf
     ;;
 
-  "Setup → Hyprsunset")
+  "🟦 Setup → Hyprsunset")
     open_text_file ~/.config/hypr/hyprsunset.conf
     ;;
 
-  "System → Kill process")
+  "🟨 System → Kill process")
     ps -u $USER -o pid,command | rofi -dmenu | awk "{print $1}" | xargs -r kill
     ;;
 
@@ -118,27 +118,27 @@ esac
 exit 0
 
 ### DATA ###
-Theme → Summer Night
-Theme → Summer Day
-Theme → Holo Night
-Theme → Ocean Dark
-Theme → Bliss XP
-Power → Log-off
-Power → Sleep
-Power → Restart (reboot)
-Power → Shutdown (poweroff)
-Display → Color temperature
-Utils → Find a file
-Utils → Color picker
-Utils → Screenshot (full screen)
-Utils → Screenshot (region)
-Utils → Screenshot (window)
-Utils → Select an emoji
-Personalization → Next wallpaper
-Setup → Audio
-Setup → Input
-Setup → Keybindings
-Setup → Monitors
-Setup → Hypridle
-Setup → Hyprsunset
-System → Kill process
+🟩 Theme → Summer Night
+🟩 Theme → Summer Day
+🟩 Theme → Holo Night
+🟩 Theme → Ocean Dark
+🟩 Theme → Bliss XP
+🟥 Power → Log-off
+🟥 Power → Sleep
+🟥 Power → Restart (reboot)
+🟥 Power → Shutdown (poweroff)
+⬜ Display → Color temperature
+🟧 Utils → Find a file
+🟧 Utils → Color picker
+🟧 Utils → Screenshot (full screen)
+🟧 Utils → Screenshot (region)
+🟧 Utils → Screenshot (window)
+🟧 Utils → Select an emoji
+🟪 Personalization → Next wallpaper
+🟦 Setup → Audio
+🟦 Setup → Input
+🟦 Setup → Keybindings
+🟦 Setup → Monitors
+🟦 Setup → Hypridle
+🟦 Setup → Hyprsunset
+🟨 System → Kill process
