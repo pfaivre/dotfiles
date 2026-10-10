@@ -11,8 +11,11 @@
     When specified, the script will also apply quality-of-life improvements such as:
     - Disabling hibernation
     - Reducing menu show delay for faster navigation
+    - Disabling Windows interface animations
+    - Showing window contents while moving windows
+    - Enabling font smoothing (ClearType)
 .NOTES
-    Last Update: 2026-01-11
+    Last Update: 2026-10-10
     For more settings to disable, see https://github.com/zoicware/RemoveWindowsAI/blob/main/RemoveWindowsAi.ps1
     
     REQUIREMENTS:
@@ -75,10 +78,10 @@ function Disable-Task {
     )
 
     if ($Apply) {
-        Disable-ScheduledTask -TaskPath "$TaskPath" -TaskName "$TaskName" | Out-Null
+        Disable-ScheduledTask -TaskPath "$TaskPath" -TaskName "$TaskName" -ErrorAction SilentlyContinue | Out-Null
     }
 
-    $t = Get-ScheduledTask -TaskName "$TaskName" | Where-Object { $_.TaskPath -eq "$TaskPath" } -ErrorAction SilentlyContinue
+    $t = Get-ScheduledTask -TaskName "$TaskName" -ErrorAction SilentlyContinue | Where-Object { $_.TaskPath -eq "$TaskPath" }
 
     if ($t -eq $null) {
         Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] $TaskName is not present."
@@ -106,7 +109,9 @@ function Set-RegistrySettingDword {
     )
 
     if ($Apply) {
-        New-Item -Path "$Path" -Force | Out-Null
+        if (-not (Test-Path -Path "$Path")) {
+            New-Item -Path "$Path" -Force | Out-Null
+        }
         Set-ItemProperty -Path "$Path" -Name "$Name" -Value $NewValue -Type DWord -Force
     }
 
@@ -131,7 +136,9 @@ function Set-RegistrySettingString {
     )
 
     if ($Apply) {
-        New-Item -Path "$Path" -Force | Out-Null
+        if (-not (Test-Path -Path "$Path")) {
+            New-Item -Path "$Path" -Force | Out-Null
+        }
         Set-ItemProperty -Path "$Path" -Name "$Name" -Value "$NewValue" -Type String -Force
     }
 
@@ -232,7 +239,7 @@ function Disable-TelemetryLogger {
         $i = Get-ChildItem -Path $etlPath
         Write-Verbose "File size $($i.Length) : `"$etlPath`".`n"
     } else {
-        Write-Output -ForegroundColor DarkGray "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Telemetry logger file not found."
+        Write-Output "[ $($PSStyle.Foreground.Green)SET$($PSStyle.Reset) ] Telemetry logger file not found."
         Write-Verbose "File not found: `"$etlPath`".`n"
     }
 }
@@ -315,6 +322,26 @@ function Disable-Hibernation {
     Write-Verbose "$Path\$Name = $($status.HibernateEnabled)`n"
 }
 
+# Function to enable font smoothing (ClearType)
+function Enable-FontSmoothing {
+    Set-RegistrySettingString -Path "HKCU:\Control Panel\Desktop" -Name "FontSmoothing" -NewValue "1"
+    Set-RegistrySettingDword -Path "HKCU:\Control Panel\Desktop" -Name "FontSmoothingType" -NewValue 2
+
+    if ($Apply) {
+        # The registry change alone is only loaded at the next sign-in.
+        # SystemParametersInfo applies it to the running session immediately.
+        if (-not ('Native.WinAPI' -as [type])) {
+            Add-Type -MemberDefinition '[DllImport("user32.dll", SetLastError = true)] public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, IntPtr pvParam, uint fWinIni);' -Name 'WinAPI' -Namespace 'Native'
+        }
+        $SPI_SETFONTSMOOTHING = 0x004B
+        $SPI_SETFONTSMOOTHINGTYPE = 0x004D
+        $SPIF_UPDATEINIFILE = 0x01
+        $SPIF_SENDCHANGE = 0x02
+        [Native.WinAPI]::SystemParametersInfo($SPI_SETFONTSMOOTHING, 1, [IntPtr]::Zero, $SPIF_UPDATEINIFILE -bor $SPIF_SENDCHANGE) | Out-Null
+        [Native.WinAPI]::SystemParametersInfo($SPI_SETFONTSMOOTHINGTYPE, 2, [IntPtr]::Zero, $SPIF_UPDATEINIFILE -bor $SPIF_SENDCHANGE) | Out-Null
+    }
+}
+
 # Main execution
 Write-Output ""
 Write-Output "Base Privacy and Configuration settings..."
@@ -366,6 +393,10 @@ if ($QualityOfLife) {
     Write-Output ""
     Disable-Hibernation
     Set-RegistrySettingString -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -NewValue "0"
+    Set-RegistrySettingString -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -NewValue "0"
+    Set-RegistrySettingDword -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarAnimations" -NewValue 0
+    Set-RegistrySettingString -Path "HKCU:\Control Panel\Desktop" -Name "DragFullWindows" -NewValue "1"
+    Enable-FontSmoothing
 }
 else {
     Write-Output ""
