@@ -29,6 +29,8 @@ source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Don't ask for permission when oh-my-zsh wants to upgrade.
 export DISABLE_UPDATE_PROMPT=true
+# Don't update oh-my-zsh on start up
+export DISABLE_AUTO_UPDATE=true
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh

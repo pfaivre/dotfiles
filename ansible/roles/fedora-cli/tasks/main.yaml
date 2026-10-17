@@ -51,6 +51,7 @@
       - NetworkManager-config-connectivity-fedora
       - xwaylandvideobridge
       - usbmuxd
+      - espeak-ng
 
 #       # Fonts I can't read anyway
 #       - aajohan*

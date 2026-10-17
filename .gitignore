@@ -1,0 +1,47 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors and IDEs
+*.swp
+*.swo
+*~
+~*
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Secrets (keep credentials out of the repo)
+.env
+.env.*
+*.pem
+*.key
+secrets/
+!*.example
+
+# Ansible
+*.retry
+ansible/*.retry
+ansible/inventory/local
+
+# Nix build artifacts
+result
+result-*
+.direnv/
+.envrc
+
+# Python (for utility scripts)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (for docs tooling)
+node_modules/
