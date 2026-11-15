@@ -252,7 +252,7 @@ function Remove-AICBSPackages {
         Get-ChildItem $regPath | ForEach-Object {
             $value = try { Get-ItemPropertyValue "registry::$($_.Name)" -Name Visibility -ErrorAction Stop } catch { $null }
             if ($value -ne $null) {
-                if ($value -eq 2 -and $_.PSChildName -like '*AIX*' -or $_.PSChildName -like '*Recall*' -or $_.PSChildName -like '*Copilot*' -or $_.PSChildName -like '*CoreAI*') {
+                if ($value -eq 2 -and ($_.PSChildName -like '*AIX*' -or $_.PSChildName -like '*Recall*' -or $_.PSChildName -like '*Copilot*' -or $_.PSChildName -like '*CoreAI*')) {
                     Write-Output "Removing $($_.PSChildName)..."
                     Set-ItemProperty "registry::$($_.Name)" -Name Visibility -Value 1 -Force
                     New-ItemProperty "registry::$($_.Name)" -Name DefVis -PropertyType DWord -Value 2 -Force | Out-Null
@@ -287,7 +287,7 @@ function Remove-AICBSPackages {
     Get-ChildItem $regPath | ForEach-Object {
         $value = try { Get-ItemPropertyValue "registry::$($_.Name)" -Name Visibility -ErrorAction Stop } catch { $null }
         if ($value -ne $null) {
-            if ($value -eq 2 -and $_.PSChildName -like '*AIX*' -or $_.PSChildName -like '*Recall*' -or $_.PSChildName -like '*Copilot*' -or $_.PSChildName -like '*CoreAI*') {
+            if ($value -eq 2 -and ($_.PSChildName -like '*AIX*' -or $_.PSChildName -like '*Recall*' -or $_.PSChildName -like '*Copilot*' -or $_.PSChildName -like '*CoreAI*')) {
                 $packagesCount += 1
                 $verboseOutput += " - $($_.PSChildName)`n"
             }

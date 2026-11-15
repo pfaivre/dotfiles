@@ -184,6 +184,18 @@ hl.window_rule({ match = { class = "nvidia-settings" }, float = true })
 
 hl.window_rule({ match = { title = "Opération sur des fichiers en cours" }, float = true })
 
+-- Speedcrunch
+hl.window_rule({
+  name = "speedcrunch-float",
+  match = {
+    class = "org.speedcrunch.SpeedCrunch"
+  },
+  float = true,
+  move = {"(monitor_w/2-window_w/2)", "(monitor_h-window_h-60)"},
+  size = {408, 230},
+  pin = true,
+})
+
 -- Firefox picture in picture in the bottom right on all workspaces
 hl.window_rule({
   name = "firefox-pip",

@@ -1,16 +1,31 @@
 # This role defines tasks specific to Fedora (CLI environment)
 
+# Target: Fedora 44+ only. RPM Fusion signs Fedora 33-46 with the year-based "2020"
+# key. Keys are MoinMoin attachments, so fetch the raw key via ?action=AttachFile&do=get
+# (a plain /keys/<name> path 404s).
+# Free key fingerprint:    E9A4 91A3 DE24 7814 E7E0 67EA E06F 8ECD D651 FF2E
+# Nonfree key fingerprint: 79BD B88F 9BBF 7391 0FD4 095B 6A2A F961 9484 3C65
+- name: Importing RPM Fusion Free GPG key
+  become: true
+  ansible.builtin.rpm_key:
+    state: present
+    key: "https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020"
+
+- name: Importing RPM Fusion Nonfree GPG key
+  become: true
+  ansible.builtin.rpm_key:
+    state: present
+    key: "https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020"
+
 - name: Adding RPM Fusion Free
   become: true
   ansible.builtin.dnf:
-    disable_gpg_check: true
     state: present
     name: "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
 
 - name: Adding RPM Fusion Nonfree
   become: true
   ansible.builtin.dnf:
-    disable_gpg_check: true
     state: present
     name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
 

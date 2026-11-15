@@ -5,18 +5,18 @@
 # Look at .config/mydesktop/themes/ for available themes
 
 # Apply the selected theme, if found
-if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
-    if [ -z "$1" ]; then
-        echo "Please specify a theme name. Available themes:"
-        ls "$HOME/.config/mydesktop/themes/"
-        exit 1
-    fi
+if [ -z "$1" ]; then
+    echo "Please specify a theme name. Available themes:"
+    ls "$HOME/.config/mydesktop/themes/"
+    exit 1
+fi
 
+if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     echo "Found theme ~/.config/mydesktop/themes/$1"
 
     # Replace the base theme folder (with a link)
     rm -f ~/.config/mydesktop/current-theme
-    ln -s ~/.config/mydesktop/themes/$1 ~/.config/mydesktop/current-theme
+    ln -s ~/.config/mydesktop/themes/"$1" ~/.config/mydesktop/current-theme
 
     # Reload components
     python3 ~/.local/bin/set-wallpaper.py &
@@ -25,21 +25,20 @@ if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     killall -INT swaync; hyprctl eval 'hl.exec_cmd("swaync --style ~/.config/mydesktop/current-theme/swaync/style.css --config ~/.config/mydesktop/current-theme/swaync/config.json")'
     touch ~/.config/alacritty/alacritty.toml
 
-    rm -f ~/.config/gtk-3.0/settings.ini
-    rm -f ~/.config/gtk-4.0/settings.ini
-    ln -s ~/.config/mydesktop/themes/$1/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
-    ln -s ~/.config/mydesktop/themes/$1/gtk-4.0/settings.ini ~/.config/gtk-4.0/settings.ini
+    # GTK settings dirs may not exist yet on a fresh install
+    mkdir -p ~/.config/gtk-3.0 ~/.config/gtk-4.0
+    rm -f ~/.config/gtk-3.0/settings.ini ~/.config/gtk-4.0/settings.ini
+    ln -s ~/.config/mydesktop/themes/"$1"/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
+    ln -s ~/.config/mydesktop/themes/"$1"/gtk-4.0/settings.ini ~/.config/gtk-4.0/settings.ini
 
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
     if [[ -f "$HOME/.config/mydesktop/themes/$1/light.mode" ]]; then
         echo "Setting light mode"
         gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
-        gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-        gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
     else
         echo "Setting dark mode"
         gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-        gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-        gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
     fi
 else
     echo "Theme not found ~/.config/mydesktop/themes/$1"

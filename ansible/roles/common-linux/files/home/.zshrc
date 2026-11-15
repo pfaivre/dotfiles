@@ -1,5 +1,5 @@
 # Add user's bin folder to the PATH
-export PATH=$HOME/.local/bin/:$PATH
+export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -7,8 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# Enable command auto-correction.
-ENABLE_CORRECTION="true"
+# Disable command auto-correction (it is very frustrating).
+ENABLE_CORRECTION="false"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -99,15 +99,15 @@ glog() {
 # Interactive git diff -- The selected files are added to the index
 unalias gd
 gd() {
-  preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview | xargs -r git add
+  preview="git diff ${(q)@} --color=always -- {}"
+  git diff "${@}" --name-only -z | fzf -m --ansi --read0 --print0 --preview "$preview" | xargs -0 -r git add --
 }
 
 # Interactive git diff --cached -- The selected files are removed from the index
 unalias gdca
 gdca() {
-  preview="git diff $@ --color=always --cached -- {-1}"
-  git diff $@ --name-only --cached | fzf -m --ansi --preview $preview | xargs -r git reset
+  preview="git diff ${(q)@} --color=always --cached -- {}"
+  git diff "${@}" --name-only --cached -z | fzf -m --ansi --read0 --print0 --preview "$preview" | xargs -0 -r git reset --
 }
 
 

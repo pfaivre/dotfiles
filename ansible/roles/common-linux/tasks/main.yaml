@@ -34,28 +34,29 @@
 # Links to dotfiles #
 #####################
 
-# List all files in the local "./home" folder
+# List all files in the role's "files/home" folder (absolute path, independent of CWD)
 - name: Find files to link
   find:
-    paths: "./roles/common-linux/files/home/"
+    paths: "{{ role_path }}/files/home/"
     recurse: true
     hidden: true
   register: results
 
-# Extract dotfiles paths from find
-- set_fact:
+- name: Extract dotfiles paths from find
+  set_fact:
+    home_src: "{{ role_path }}/files/home"
     dotfiles: "{{ results.files | map(attribute='path') | list }}"
 
+# Strip the "<role_path>/files/home/" prefix to get each path relative to the user's home
 - name: Creating folders for symlinks to user's home
   file:
-    # The split here serves to get the relative path from files/home/ folder
-    path: "~/{{ '/'.join(item.split('/')[4:]) | dirname }}"
+    path: "~/{{ item | regex_replace('^' ~ (home_src | regex_escape) ~ '/', '') | dirname }}"
     state: directory
   with_items: "{{ dotfiles }}"
 
 - name: Creating symlinks to user's home
   file:
-    src: "{{ playbook_dir }}/{{ item }}"
-    path: "~/{{ '/'.join(item.split('/')[4:]) }}"
+    src: "{{ item }}"
+    path: "~/{{ item | regex_replace('^' ~ (home_src | regex_escape) ~ '/', '') }}"
     state: link
   with_items: "{{ dotfiles }}"

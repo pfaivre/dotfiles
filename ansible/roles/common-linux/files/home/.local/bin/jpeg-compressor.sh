@@ -6,30 +6,31 @@ function print_usage() {
     echo "Usage: $0 QUALITY FILE..."
 }
 
-if ! [[ -n $1 ]]; then
+if ! [[ -n "$1" ]]; then
     echo "Missing quality. Please specify a number between 1 and 100."
     print_usage
     exit 1
 fi
-if ! (( $1 >= 1 && $1 <= 100 )); then
+if ! [[ "$1" =~ ^[0-9]+$ ]] || (( $1 < 1 || $1 > 100 )); then
     echo "Quality must be a number between 1 and 100."
     print_usage
     exit 1
 fi
-if ! [[ -n $2 ]]; then
+if ! [[ -n "$2" ]]; then
     echo "Missing an image. Please specify one or more JPEG files."
     print_usage
     exit 1
 fi
 
 target_quality=$1
-input_files="${@:2}"
+shift
+input_files=("$@")
 
 
 # Displays a number of bytes in a human readable format
 # $1 bytes
 disp() {
-    s=$1
+    s="$1"
     i=1
     while [ $(echo "$s >= 1024" | bc -l) = "1" ]; do
         s=$(bc <<< "scale=2;$s/1024")
@@ -45,7 +46,7 @@ disp() {
         6) s+="P" ;;
     esac
 
-    printf "%s" $s
+    printf "%s" "$s"
 }
 
 RESET="\x1B[0m"
@@ -55,10 +56,10 @@ total_source_size=0
 total_compressed_size=0
 total_destination_size=0
 
-echo -e "\nLimiting quality of $(ls -1q $input_files | wc -l) files to $target_quality% JPEG...\n"
+echo -e "\nLimiting quality of ${#input_files[@]} files to $target_quality% JPEG...\n"
 
-for source_path in $input_files; do
-    if ! [ -f $source_path ]; then
+for source_path in "${input_files[@]}"; do
+    if ! [ -f "$source_path" ]; then
         echo "Ignoring $source_path"
         continue
     fi
@@ -69,7 +70,7 @@ for source_path in $input_files; do
     destination_path="c_${source_path%.*}.jpg" # Impose jpg extension to tell convert JPEG is the target format
 
     if [[ $source_quality -ge $target_quality ]]; then
-        magick -quality $target_quality "$source_path" "$destination_path"
+        magick -quality "$target_quality" "$source_path" "$destination_path"
     else
         cp "$source_path" "$destination_path"
     fi
@@ -85,7 +86,7 @@ for source_path in $input_files; do
         fg_color="\x1B[0m "
     fi
 
-    printf "%s: %3s %8s => %3s $fg_color%8s$RESET\n" $source_path $source_quality $(disp $source_size) $destination_quality $(disp $destination_size)
+    printf "%s: %3s %8s => %3s $fg_color%8s$RESET\n" "$source_path" "$source_quality" "$(disp "$source_size")" "$destination_quality" "$(disp "$destination_size")"
 
     total_source_size=$(($total_source_size + $source_size))
     total_destination_size=$(($total_destination_size + $destination_size))
@@ -102,4 +103,4 @@ else
 fi
 
 echo ""
-printf "total: %1s => $fg_color%1s$RESET\n" $(disp $total_source_size) $(disp $total_destination_size)
+printf "total: %1s => $fg_color%1s$RESET\n" "$(disp "$total_source_size")" "$(disp "$total_destination_size")"

@@ -26,5 +26,5 @@
 - name: Changing shell to zsh
   become: true
   user:
-    name: pierre
+    name: "{{ ansible_facts['user_id'] }}"
     shell: /bin/zsh

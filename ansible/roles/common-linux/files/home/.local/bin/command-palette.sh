@@ -4,15 +4,15 @@
 # Allows to perform various kinds of actions on the system.
 
 selected=$(pkill rofi; \
-           sed '1,/^### DATA ###$/d' $0 | \
+           sed '1,/^### DATA ###$/d' "$0" | \
            rofi -dmenu -p "Command palette :")
 
 # Open the given file in a neovim popup window (with Alacritty), or in default text editor if neovim is not installed
 open_text_file() {
   if [ -x "$(command -v nvim)" ]; then
-    alacritty --class Popup --command nvim $1
+    alacritty --class Popup --command nvim "$1"
   else
-    xdg-open $1
+    xdg-open "$1"
   fi
 }
 
@@ -36,7 +36,7 @@ case $selected in
 
   # Power
   "🟥 Power → Log-off")
-    loginctl terminate-user $USER
+    loginctl terminate-user "$USER"
     ;;
   "🟥 Power → Sleep")
     systemctl suspend
@@ -109,7 +109,7 @@ case $selected in
     ;;
 
   "🟨 System → Kill process")
-    ps -u $USER -o pid,command | rofi -dmenu | awk "{print $1}" | xargs -r kill
+    ps -u "$USER" -o pid=,command= | rofi -dmenu | awk '{print $1}' | xargs -r kill
     ;;
 
   # Suggestions for more: toggle idle inhibitor, toggle wifi/bluetooth, etc.
