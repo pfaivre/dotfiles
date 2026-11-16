@@ -11,6 +11,14 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+# Reject path traversal: the theme name must be a single path component
+case $1 in
+    */*|*..*)
+        echo "Invalid theme name: $1"
+        exit 1
+        ;;
+esac
+
 if [[ -d "$HOME/.config/mydesktop/themes/$1" ]]; then
     echo "Found theme ~/.config/mydesktop/themes/$1"
 

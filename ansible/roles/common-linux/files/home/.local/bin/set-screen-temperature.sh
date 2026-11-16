@@ -4,15 +4,18 @@
 # It relies on hyprsunset
 
 selected=$(pkill rofi; \
-           sed '1,/^### DATA ###$/d' $0 | \
+           sed '1,/^### DATA ###$/d' "$0" | \
            rofi -dmenu -p "foo")
 
-echo $selected
+# Rofi cancelled (empty selection)
+if [ -z "$selected" ]; then
+    exit 0
+fi
 
 if [[ "$selected" == Identity* ]]; then
     hyprctl hyprsunset identity
 else
-    hyprctl hyprsunset temperature $selected
+    hyprctl hyprsunset temperature "$selected"
 fi
 
 exit 0

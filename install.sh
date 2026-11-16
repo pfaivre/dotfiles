@@ -47,7 +47,7 @@ function run_ansible() {
 
     ansible --version | grep core
 
-    ansible-playbook --ask-become-pass $(dirname "$0")/ansible/main.yaml
+    ansible-playbook --ask-become-pass "$(dirname "$0")/ansible/main.yaml"
 }
 
 
@@ -101,7 +101,7 @@ echo -ne "$CLREOL"
 read -p "Do you wish to continue? (y/N) " confirm
 echo -e "$RESET"
 
-if [ $confirm = "y" ]; then
+if [[ $confirm == "y" ]]; then
     install
     echo ""
 else

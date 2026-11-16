@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Don't show if the terminal is too small
-if [ $1 -lt 65 ];then
-    exit
+if [[ ${1:-0} -lt 65 ]]; then
+    exit 0
 fi
 
 memtotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
@@ -30,7 +30,7 @@ highlighted_bars=$(( ($memused * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($me
 ret="#[fg=colour240,bg=colour240,none]|#[fg=$colour,bg=colour240,none]"
 for (( i=1; i<=$highlighted_bars; i++ )); do
     ret+="━"
-    ((count++))
+    ((++count))
 done
 
 # Second bar: cached memory
@@ -38,16 +38,16 @@ highlighted_bars=$(( ($memcached * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($
 ret+="#[fg=colour246,dim]"
 for (( i=1; i<=$highlighted_bars; i++ )); do
     ret+="━"
-    ((count++))
+    ((++count))
 done
 
 # Third bar: free space
 ret+="#[fg=colour242,dim]"
 while [ $count -lt $NB_BARS ]; do
     ret+="━"
-    ((count++))
+    ((++count))
 done
 
 ret+=" #[fg=colour240,bg=default]─"
 
-echo $ret
+echo "$ret"

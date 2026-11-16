@@ -11,7 +11,7 @@ if ! [[ -n "$1" ]]; then
     print_usage
     exit 1
 fi
-if ! [[ "$1" =~ ^[0-9]+$ ]] || (( $1 < 1 || $1 > 100 )); then
+if ! [[ "$1" =~ ^[0-9]{1,3}$ ]] || (( 10#$1 < 1 || 10#$1 > 100 )); then
     echo "Quality must be a number between 1 and 100."
     print_usage
     exit 1
@@ -22,7 +22,7 @@ if ! [[ -n "$2" ]]; then
     exit 1
 fi
 
-target_quality=$1
+target_quality=$((10#$1)) # normalize to base 10 (avoid octal on leading zeros)
 shift
 input_files=("$@")
 
@@ -65,11 +65,15 @@ for source_path in "${input_files[@]}"; do
     fi
 
     source_quality=$(identify -format '%Q' "$source_path")
+    if ! [[ "$source_quality" =~ ^[0-9]+$ ]]; then
+        echo "Could not read quality of $source_path, skipping"
+        continue
+    fi
     source_size=$(stat -c %s "$source_path")
 
     destination_path="c_${source_path%.*}.jpg" # Impose jpg extension to tell convert JPEG is the target format
 
-    if [[ $source_quality -ge $target_quality ]]; then
+    if (( source_quality >= target_quality )); then
         magick -quality "$target_quality" "$source_path" "$destination_path"
     else
         cp "$source_path" "$destination_path"

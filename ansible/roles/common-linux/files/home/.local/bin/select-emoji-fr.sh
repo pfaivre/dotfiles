@@ -46,7 +46,11 @@
 # authorization of the copyright holder.
 
 
-emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' $0 | rofi -dmenu -normalize-match | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' "$0" | rofi -dmenu -normalize-match | cut -d ' ' -f 1 | tr -d '\n')"
+# Rofi cancelled (empty selection): don't wipe the clipboard
+if [ -z "$emoji" ]; then
+    exit 0
+fi
 wl-copy "${emoji}"
 exit
 ### DATA ###

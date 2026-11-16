@@ -15,12 +15,29 @@ else
 fi
 
 if [ -d $BATPATH ]; then
-    BAT_FULL=$BATPATH/charge_full
-    BAT_NOW=$BATPATH/charge_now
-    bf=$(cat $BAT_FULL)
-    bn=$(cat $BAT_NOW)
+    # Some batteries expose energy_* instead of charge_*
+    if [ -r "$BATPATH/charge_full" ]; then
+        BF_FILE=$BATPATH/charge_full
+        BN_FILE=$BATPATH/charge_now
+    elif [ -r "$BATPATH/energy_full" ]; then
+        BF_FILE=$BATPATH/energy_full
+        BN_FILE=$BATPATH/energy_now
+    else
+        exit 0
+    fi
 
-    level=$(( (100 * $bn + ($bf/2)) / $bf )) # ($bf/2) is here to round the division
+    bf=$(<"$BF_FILE")
+    bn=$(<"$BN_FILE")
+
+    # Guard against empty/non-numeric readings and division by zero
+    if ! [[ "$bf" =~ ^[0-9]+$ && "$bn" =~ ^[0-9]+$ ]] || (( bf == 0 )); then
+        exit 0
+    fi
+
+    level=$(( (100 * bn + (bf/2)) / bf )) # (bf/2) is here to round the division
+    # Clamp to 0-100
+    (( level < 0 )) && level=0
+    (( level > 100 )) && level=100
 
     NB_HEARTS=6
 
@@ -35,12 +52,12 @@ if [ -d $BATPATH ]; then
 
     for (( i=1; i<=$alive_heart; i++ )); do
         ret="$ret♥"
-        ((count++))
+        ((++count))
     done
     ret="$ret</span><span color=\\\"#777777\\\">"
     while [ $count -lt $NB_HEARTS ]; do
         ret="$ret♥"
-        ((count++))
+        ((++count))
     done
 
     ret+="</span>"

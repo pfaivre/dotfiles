@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Don't show if the terminal is too small
-if [ $1 -lt 56 ];then
-    exit
+if [[ ${1:-0} -lt 56 ]]; then
+    exit 0
 fi
 
 # Get the highest temperature reading (integer value)
@@ -20,5 +20,5 @@ if [[ $t && ${t-x} ]]; then
 
     ret+=" #[fg=colour240,bg=default,none]─"
 
-    echo $ret
+    echo "$ret"
 fi
