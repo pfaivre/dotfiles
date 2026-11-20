@@ -1,7 +1,7 @@
 /* Summer day style for Waybar */
 
 * {
-  font-family: Liberation Mono, FontAwesome;
+  font-family: "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   font-weight: bold;
 }
 
@@ -22,11 +22,15 @@ tooltip * {
 }
 
 window#waybar {
-  background-color: #5c6a72;
+  background-color: transparent;
   transition-property: background-color;
   transition-duration: .5s;
-  border-radius: 0px 0px 15px 15px;
   font-size: 16px;
+}
+
+window#waybar > box {
+  background-color: #5c6a72;
+  border-radius: 0px 0px 15px 15px;
 
   border-bottom-width: 5px;
   border-bottom-color: #2e3538;
@@ -174,7 +178,7 @@ window#waybar {
   background-color: #f85552;
   color: #fdf6e3;
   border-bottom-color: #951c1f;
-  font-size: 28px;
+  font-size: 16px;
 
   margin-right: 15px;
   padding-left: 20px;

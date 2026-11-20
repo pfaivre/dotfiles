@@ -1,7 +1,7 @@
 /* Bliss-XP style for Waybar */
 
 * {
-  font-family: Tahoma, Verdana, "Liberation Sans", sans;
+  font-family: Tahoma, Verdana, "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   font-weight: normal;
   font-size: 12px;
 }
@@ -59,31 +59,56 @@ tooltip * {
 /* ~~~~~~~~~~~~ */
 
 #custom-launcher-bliss-xp {
-  padding-left: 32px;
-  padding-right: 22px;
+  padding-left: 36px;
+  padding-right: 24px;
 
   color: white;
   font-size: 17px;
   font-style: italic;
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  border-radius: 0 24px 24px 0;
-  border-radius: 0% 5% 5% 0% / 0% 40% 60% 0%;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45);
+  border-radius: 0 5px 5px 0 / 0 16px 16px 0;
 
-  background: no-repeat 8px / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
-              linear-gradient(90deg, #4abc4a 85%, #206d25 100%);
-  box-shadow: 0 -2px 3px 2px rgba(17, 16, 16, 0.3) inset,
-              3px 3px 4px 2px rgba(255, 255, 255, 0.5) inset,
-              1px 2px 1px rgba(255, 255, 255, 0.12),
-              1px -2px 1px rgba(0, 0, 0, 0.08);
-  border-top: 1px solid #27892e;
-  border-bottom: 1px solid #30863b;
-  border-left: 1px solid #1d6f45;
+  background: no-repeat 10px center / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
+              radial-gradient(ellipse 85% 60% at 40% 5%,
+                rgba(150, 205, 150, 0.45) 0%,
+                rgba(150, 205, 150, 0.15) 55%,
+                rgba(150, 205, 150, 0) 100%),
+              linear-gradient(90deg,
+                rgba(0, 0, 0, 0) 80%,
+                rgba(0, 30, 0, 0.4) 100%),
+              linear-gradient(180deg,
+                #3a7c3a 0%,
+                #92c194 7%,
+                #70ae70 20%,
+                #47a047 33%,
+                #3aa53a 50%,
+                #3cb53c 67%,
+                #38a838 83%,
+                #247130 100%);
+
+  border-left: 1px solid #196346;
+  border-right: 1px solid #115f12;
 }
 
 #custom-launcher-bliss-xp:hover {
-  background: no-repeat 8px / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
-              linear-gradient(90deg, #5ecc5e 70%, #3da043 100%);
+  background: no-repeat 10px center / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
+              radial-gradient(ellipse 85% 60% at 40% 5%,
+                rgba(150, 205, 150, 0.5) 0%,
+                rgba(150, 205, 150, 0.18) 55%,
+                rgba(150, 205, 150, 0) 100%),
+              linear-gradient(90deg,
+                rgba(0, 0, 0, 0) 80%,
+                rgba(0, 30, 0, 0.35) 100%),
+              linear-gradient(180deg,
+                #218821 0%,
+                #94d092 7%,
+                #71c171 20%,
+                #41ab41 33%,
+                #37b536 50%,
+                #3cc53b 67%,
+                #38bf38 83%,
+                #278a3c 100%);
 }
 
 
@@ -212,27 +237,75 @@ tooltip * {
   padding-top: 0;
 }
 
-#custom-arrowleft {
+#extra #custom-arrowleft {
   min-width: 19px;
-  padding-top: 0;
+  padding: 0;
+  margin-bottom: 2px;
   border: none;
-  background: no-repeat 50% / 19px url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left.png");
+  background: no-repeat 100% / 19px url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left.png");
   color: transparent;
   /* image-rendering: pixelated; */
 }
 
-#custom-arrowleft:hover {
+#extra #custom-arrowleft:hover {
   background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left-hover.png");
 }
 
+/* Expanded drawer: waybar sets :prelight on the group box, flip the arrow to point right */
+#extra:prelight #custom-arrowleft {
+  background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-right.png");
+}
+
+#extra:prelight #custom-arrowleft:hover {
+  background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-right-hover.png");
+}
+
 #extra {
-  border-left: 1px solid #0b3051;
-  box-shadow: rgba(24, 187, 255, 0.8) 1px 0px 1px inset;
+  /* The arrow button sits at the group's left edge, 19px wide, so its middle is at
+     9.5px: draw the seam there (2px dark + 1px cyan, like the old border + inset shadow)
+     instead of at the group's left edge, and start the light gradient after the seam.
+     This keeps the button inside the group (the drawer clips overflowing children)
+     while making it straddle the two blue sections. Integer stops keep the seam crisp. */
+  border-left: none;
+  box-shadow: none;
+  background-image:
+    linear-gradient(90deg,
+      transparent 0,
+      transparent 8px,
+      #0b3051 8px,
+      #0b3051 9px,
+      rgba(24, 187, 255, 0.8) 9px,
+      rgba(24, 187, 255, 0.8) 10px,
+      transparent 10px,
+      transparent 100%),
+    linear-gradient(
+      rgb(12, 89, 185) 1%,
+      rgb(19, 158, 233) 6%,
+      rgb(24, 181, 242) 10%,
+      rgb(19, 155, 235) 14%,
+      rgb(18, 144, 232) 19%,
+      rgb(13, 141, 234) 63%,
+      rgb(13, 159, 241) 81%,
+      rgb(15, 158, 237) 88%,
+      rgb(17, 155, 233) 91%,
+      rgb(19, 146, 226) 94%,
+      rgb(19, 126, 215) 97%,
+      rgb(9, 91, 201) 100%);
+  background-repeat: no-repeat;
+  background-position: 0 0, 10px 0;
+  background-size: 100% 100%, 100% 100%;
 }
 
 #extra * {
   padding-left: 4px;
   padding-right: 4px;
+}
+
+/* Expanded drawer: small gap between the leader (which sits on the seam) and the content.
+   Padding on the drawer's inner box (waybar puts the "drawer" class on the revealer)
+   only takes effect while the drawer is revealed, so the folded leader stays put. */
+#extra .drawer > box {
+  padding-left: 8px;
 }
 
 #cpu.warning, #memory.warning, #disk.warning, #temperature.warning {

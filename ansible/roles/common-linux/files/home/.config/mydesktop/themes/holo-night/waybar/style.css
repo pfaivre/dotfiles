@@ -1,7 +1,7 @@
 /* Holo Night style for Waybar */
 
 * {
-  font-family: Liberation Mono, FontAwesome;
+  font-family: "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   /* font-size: 14px; */
   font-weight: normal;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);

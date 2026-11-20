@@ -303,8 +303,9 @@ button:active {
 }
 
 .control-center .control-center-list-placeholder image {
-  pixel-size: 32px;
-  -gtk-dpi: 32px;
+  /* swaync hardcodes pixel-size: 96px on this GtkImage (a GTK4 widget property,
+     so CSS pixel-size/-gtk-dpi have no effect); scale the painted icon instead */
+  -gtk-icon-transform: scale(0.333);
 }
 
 .control-center .control-center-list {

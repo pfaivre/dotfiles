@@ -1,7 +1,7 @@
 /* Base16-ocean inspired style for Waybar */
 
 * {
-  font-family: Liberation Mono, FontAwesome;
+  font-family: "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   /* font-size: 14px; */
   font-weight: normal;
 }
@@ -174,7 +174,7 @@ window#waybar {
 #custom-powermenu {
   background-color: #ce5564;
   color: #2b303b;
-  font-size: 28px;
+  font-size: 16px;
   padding-left: 20px;
   padding-right: 20px;
 }

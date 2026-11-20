@@ -370,8 +370,9 @@ button:active {
 }
 
 .control-center .control-center-list-placeholder image {
-  pixel-size: 32px;
-  -gtk-dpi: 32px;
+  /* swaync hardcodes pixel-size: 96px on this GtkImage (a GTK4 widget property,
+     so CSS pixel-size/-gtk-dpi have no effect); scale the painted icon instead */
+  -gtk-icon-transform: scale(0.333);
 }
 
 .control-center .control-center-list {
@@ -581,8 +582,15 @@ button:active {
   border-right: 1px solid #f3f2ea;
   border-bottom: 1px solid #f3f2ea;
   border-radius: 2px;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 #9d9c99, -1px -1px 0 #9d9c99,
-      0 -1px 0 #9d9c99, -1px 1px 0 white, 1px -1px #9d9c99;
+  box-shadow:
+     1px  0   0 #ffffff,
+     1px  1px 0 #ffffff,
+     0    1px 0 #ffffff,
+    -1px  0   0 #9d9c99,
+    -1px -1px 0 #9d9c99,
+     0   -1px 0 #9d9c99,
+    -1px  1px 0 #ffffff,
+    1px  -1px 0 #9d9c99;
 }
 
 .widget-volume scale trough slider {

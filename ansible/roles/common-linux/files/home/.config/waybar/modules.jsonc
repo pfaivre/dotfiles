@@ -213,7 +213,7 @@
             "click-to-reveal": true,
             "transition-duration": 300,
             "children-class": "extra-icons",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },
         "modules": [
             "custom/arrowleft",
