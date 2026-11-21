@@ -1,5 +1,10 @@
 /* Holo Night style for Waybar */
 
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Base ―――――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 * {
   font-family: "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   /* font-size: 14px; */
@@ -21,14 +26,19 @@ window#waybar {
   border: none;
   color: #eff1f5;
   transition-property: background-color;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .modules-left, .modules-center, .modules-right {
+  background: rgba(43, 48, 59, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
-  background: rgba(43, 48, 59, 0.5);
 }
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Modules ――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #clock,
 #custom-arrowleft,
@@ -55,7 +65,6 @@ window#waybar {
   padding-right: 4px;
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 6px;
-
   background-color: transparent;
   color: #eff1f5;
 }
@@ -90,16 +99,14 @@ box:hover > #custom-battery,
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Module states ――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 #bluetooth.connected {
   color: #afcfff;
   text-shadow: 0 0 6px #d1e3ff, 0 0 8px #7badff;
-}
-
-#clock {
-  padding: 0 8px;
-}
-
-#clock.date {
 }
 
 #cpu.warning, #memory.warning, #disk.warning, #temperature.warning {
@@ -116,9 +123,6 @@ box:hover > #custom-battery,
   color: #eff1f5;
 }
 
-#power-profiles-daemon {
-}
-
 #power-profiles-daemon.power-saver {
   color: #98c38c;
   text-shadow: 0 0 6px #98c38c;
@@ -129,16 +133,27 @@ box:hover > #custom-battery,
   text-shadow: 0 0 6px #efcd86;
 }
 
-#custom-notificationcenter {
-}
-
-#pulseaudio {
-}
-
 #pulseaudio.muted {
   color: #ffd5da;
   text-shadow: 0 0 3px #ffb5b5, 0 0 12px #ff0000;
 }
+
+/* #clock.date, #power-profiles-daemon, #custom-notificationcenter, #pulseaudio, #mpris:
+   intentionally unstyled */
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Clock ――――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+#clock {
+  padding: 0 8px;
+}
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Pulseaudio slider ――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #pulseaudio-slider {
   margin: 2px;
@@ -147,38 +162,36 @@ box:hover > #custom-battery,
 }
 
 #pulseaudio-slider slider {
-  min-height: 0;
   min-width: 0;
-  opacity: 0;
+  min-height: 0;
   border: none;
-
+  opacity: 0;
   background-image: none;
   box-shadow: none;
 }
 
 #pulseaudio-slider trough {
-  min-height: 4px;
   min-width: 48px;
+  min-height: 4px;
   border: none;
   border-radius: 5px;
-
   background-color: rgba(255, 255, 255, 0.463);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.44);
 }
 
 #pulseaudio-slider highlight {
   min-width: 0;
-  padding: 0;
   margin: 0;
+  padding: 0;
   border: none;
   border-radius: 5px;
-
   background-color: #a9ff9a;
 }
 
-#mpris {
 
-}
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Workspaces ―――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #workspaces {
   margin: 0;
@@ -192,12 +205,12 @@ box:hover > #custom-battery,
   margin: 2px;
   padding: 0 12px;
   background: none;
-  color: #eff1f5;
-  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0);
-  transition: none;
+  border-radius: 6px;
   box-shadow: none;
+  color: #eff1f5;
   text-shadow: none;
+  transition: none;
 }
 
 #workspaces button:hover {
@@ -222,13 +235,17 @@ box:hover > #custom-battery,
   opacity: 1;
 }
 
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Custom modules ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 #custom-launcher {
   margin: 2px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0);
-
+  border-radius: 6px;
   color: #eff1f5;
 }
 
@@ -243,9 +260,8 @@ box:hover > #custom-launcher {
   margin: 2px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0);
-  
+  border-radius: 6px;
   color: #eff1f5;
   font-size: 28px;
 }

@@ -7,9 +7,9 @@
 }
 
 
-/* ~~~~~~~~~~~~~ */
-/* Task bar body */
-/* ~~~~~~~~~~~~~ */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Task bar body ――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 window#waybar {
   color: white;
@@ -33,14 +33,14 @@ window#waybar {
 }
 
 
-/* ~~~~~~~~ */
-/* Tooltips */
-/* ~~~~~~~~ */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Tooltips ―――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 tooltip {
   padding: 0;
-  border-radius: 0;
   border: 1px solid black;
+  border-radius: 0;
   background-color: #ffffe2;
   text-shadow: none;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -54,21 +54,21 @@ tooltip * {
 }
 
 
-/* ~~~~~~~~~~~~ */
-/* Start button */
-/* ~~~~~~~~~~~~ */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Start button ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #custom-launcher-bliss-xp {
   padding-left: 36px;
   padding-right: 24px;
-
   color: white;
   font-size: 17px;
   font-style: italic;
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45);
+  border-left: 1px solid #196346;
+  border-right: 1px solid #115f12;
   border-radius: 0 5px 5px 0 / 0 16px 16px 0;
-
   background: no-repeat 10px center / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
               radial-gradient(ellipse 85% 60% at 40% 5%,
                 rgba(150, 205, 150, 0.45) 0%,
@@ -86,9 +86,6 @@ tooltip * {
                 #3cb53c 67%,
                 #38a838 83%,
                 #247130 100%);
-
-  border-left: 1px solid #196346;
-  border-right: 1px solid #115f12;
 }
 
 /* Waybar 0.16 moved the #custom-* name onto the inner label while :hover stays on
@@ -115,18 +112,22 @@ box:hover > #custom-launcher-bliss-xp {
 }
 
 
-/* ~~~~~~~~~~~~~~ */
-/* Shortcuts zone */
-/* ~~~~~~~~~~~~~~ */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Shortcuts zone ―――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #workspaces, #taskbar {
-  padding: 0px;
+  margin: 5px 4px 3px 8px;
+  padding: 0;
   background-color: transparent;
   background-image: none;
-  margin: 4px;
-  margin-left: 8px;
-  margin-top: 5px;
-  margin-bottom: 3px;
+  transition: none;
+}
+
+#workspaces button, #taskbar button {
+  padding: 0 6px;
+  color: white;
+  border-radius: 3px;
   transition: none;
 }
 
@@ -137,43 +138,27 @@ box:hover > #custom-launcher-bliss-xp {
 
 #taskbar button {
   min-width: 158px;
-  padding: 0 6px;
-  color: white;
-  border-radius: 3px;
-  transition: none;
-
   background: #3980f4;
   background-image: none;
-
   border-top: 1px solid #2c5fb2;
   border-left: 1px solid #306fd9;
   border-bottom: 1px solid #1d4196;
   border-right: 1px solid #1f408c;
   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.25);
-}
-
-#workspaces button, #taskbar button {
-  padding: 0 6px;
-  color: white;
-  border-radius: 3px;
-  transition: none;
 }
 
 #workspaces button:hover, #taskbar button:hover {
   background: #53a3ff;
-
   border-top: 1px solid #2c5fb2;
   border-left: 1px solid #306fd9;
   border-bottom: 1px solid #1d4196;
   border-right: 1px solid #1f408c;
   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.25);
-
   text-shadow: none;
 }
 
 #workspaces button.active, #taskbar button.active {
   background: #1e52b7;
-
   border-top: 1px solid #1c62d2;
   border-left: 1px solid #115be9;
   border-bottom: 1px solid #0c3cae;
@@ -186,9 +171,9 @@ box:hover > #custom-launcher-bliss-xp {
 }
 
 
-/* ~~~~~~~~~~~~~~~~~ */
-/* Notification area */
-/* ~~~~~~~~~~~~~~~~~ */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Notification area ――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #clock,
 #mpris,
@@ -209,7 +194,6 @@ box:hover > #custom-launcher-bliss-xp {
   padding-left: 0;
   padding-right: 0;
   padding-top: 4px;
-
   background: rgba(0, 0, 0, 0) linear-gradient(
     rgb(12, 89, 185) 1%,
     rgb(19, 158, 233) 6%,
@@ -229,21 +213,21 @@ box:hover > #custom-launcher-bliss-xp {
 }
 
 #clock {
+  padding-top: 0;
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 0;
 }
 
 #clock.date {
+  padding-top: 0;
   padding-left: 6px;
   padding-right: 8px;
-  padding-top: 0;
 }
 
 #extra #custom-arrowleft {
   min-width: 19px;
-  padding: 0;
   margin-bottom: 2px;
+  padding: 0;
   border: none;
   background: no-repeat 100% / 19px url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left.png");
   color: transparent;
@@ -323,11 +307,7 @@ box:hover > #custom-launcher-bliss-xp {
   text-shadow: 0 0 2px rgba(255, 69, 69, 0.5), 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
-#tray menu {
-}
-
-#power-profiles-daemon {
-}
+/* #tray menu: intentionally unstyled */
 
 #power-profiles-daemon.power-saver {
   color: #9bea9c;
@@ -337,21 +317,15 @@ box:hover > #custom-launcher-bliss-xp {
   color: #ffcc00;
 }
 
-#custom-notificationcenter {
-}
-
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-}
+/* #power-profiles-daemon, #custom-notificationcenter, #pulseaudio, #pulseaudio.muted:
+   intentionally unstyled */
 
 #custom-powermenu {
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #de5c2f;
   color: white;
   font-size: 28px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 #custom-powermenu:hover,

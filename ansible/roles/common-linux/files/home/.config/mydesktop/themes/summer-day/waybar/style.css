@@ -1,5 +1,10 @@
 /* Summer day style for Waybar */
 
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Base ―――――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 * {
   font-family: "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   font-weight: bold;
@@ -7,40 +12,45 @@
 
 tooltip {
   padding: 16px;
-  border-radius: 15px;
   background-color: #5c6a72;
   border-width: 0 0 5px 0;
-  border-color: #2e3538;
   border-style: solid;
+  border-color: #2e3538;
+  border-radius: 15px;
   text-shadow: none;
 }
 
 tooltip * {
   color: #fdf6e3;
   font-size: 12px;
-  font-size: 12px;
 }
 
 window#waybar {
   background-color: transparent;
-  transition-property: background-color;
-  transition-duration: .5s;
   font-size: 16px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 window#waybar > box {
   background-color: #5c6a72;
-  border-radius: 0px 0px 15px 15px;
-
+  border-radius: 0 0 15px 15px;
   border-bottom-width: 5px;
-  border-bottom-color: #2e3538;
   border-bottom-style: solid;
+  border-bottom-color: #2e3538;
 }
 
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Module overrides ―――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* NOTE: this section must stay before the Modules group — the group re-sets
+   margin-top on #tray and wins by cascade order, as in the original file */
+
 #tray {
-  color: #5c6a72;
   margin-top: 2px;
   margin-right: 4px;
+  color: #5c6a72;
 }
 
 #power-profiles-daemon {
@@ -54,6 +64,15 @@ window#waybar > box {
 #power-profiles-daemon.performance {
   color: #dfa000;
 }
+
+#pulseaudio.muted {
+  color: #f85552;
+}
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Modules ――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #custom-launcher,
 #bluetooth,
@@ -72,18 +91,16 @@ window#waybar > box {
 #temperature,
 #tray,
 #trayicons {
-  background-color: #fdf6e3;
-  color: #5c6a72;
-
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 7px;
   margin-bottom: 12px;
-	border-radius: 10px;
-
+  background-color: #fdf6e3;
+  border-radius: 10px;
   border-bottom-width: 5px;
-  border-bottom-color: #bdc3af;
   border-bottom-style: solid;
+  border-bottom-color: #bdc3af;
+  color: #5c6a72;
 }
 
 /* Waybar 0.16 moved the #custom-* name onto the inner label while :hover stays on
@@ -111,9 +128,10 @@ box:hover > #custom-powermenu,
   border-bottom-width: 7px;
 }
 
-#pulseaudio.muted {
-  color: #f85552;
-}
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Workspaces ―――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #workspaces {
   padding: 0;
@@ -123,29 +141,28 @@ box:hover > #custom-powermenu,
 
 #workspaces button {
   background: #fdf6e3;
-  color: #5c6a72;
-  border-radius: 0;
   border-width: 0 0 5px 0;
   border-style: solid;
   border-color: #bdc3af;
-  transition: none;
+  border-radius: 0;
   box-shadow: none;
+  color: #5c6a72;
+  transition: none;
 }
 
 #workspaces button:hover {
-  background: #fffaeb;
-  text-shadow: none;
   margin-top: -2px;
+  background: #fffaeb;
   border-bottom-width: 7px;
   border-bottom-color: #ced4bf;
+  text-shadow: none;
 }
 
 #workspaces button.active {
   background-color: #3a94c5;
-  color: #fdf6e3;
-
-	border-radius: 0;
   border-color: #1c4a62;
+  border-radius: 0;
+  color: #fdf6e3;
 }
 
 #workspaces button:first-child {
@@ -158,14 +175,18 @@ box:hover > #custom-powermenu,
   border-bottom-right-radius: 10px;
 }
 
-#custom-launcher {
-  background-color: #8da101;
-  color: #fdf6e3;
-  border-bottom-color: #465000;
 
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Custom modules ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+#custom-launcher {
   margin-left: 15px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #8da101;
+  border-bottom-color: #465000;
+  color: #fdf6e3;
 }
 
 #custom-launcher:hover,
@@ -175,20 +196,19 @@ box:hover > #custom-launcher {
 }
 
 #custom-launcher:active {
+  margin-top: 12px;
   background-color: #f85552;
-  margin-top:12px;
   border-bottom-width: 0;
 }
 
 #custom-powermenu {
-  background-color: #f85552;
-  color: #fdf6e3;
-  border-bottom-color: #951c1f;
-  font-size: 16px;
-
   margin-right: 15px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #f85552;
+  border-bottom-color: #951c1f;
+  color: #fdf6e3;
+  font-size: 16px;
 }
 
 #custom-powermenu:hover,
@@ -196,4 +216,3 @@ box:hover > #custom-powermenu {
   margin-top: 5px;
   border-bottom-width: 7px;
 }
-

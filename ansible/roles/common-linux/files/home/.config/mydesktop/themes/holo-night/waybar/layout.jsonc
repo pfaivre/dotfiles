@@ -30,7 +30,7 @@
         "custom/battery",
         "power-profiles-daemon",
         // "idle_inhibitor",
-        "backlight",
+        // "backlight",
         "custom/notificationcenter",
         "pulseaudio",
         "pulseaudio/slider"

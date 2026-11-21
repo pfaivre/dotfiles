@@ -89,7 +89,7 @@ exit
 🫢 bouche choqué embarrassé gêné impressionné main ouverts stupéfait surpris yeux étonné
 🫣 cacher captivé coup œil doigts effrayé entre fasciné fixement jeter regarde regarder ses timide
 🤫 bouche bruit chut dit doigt pas silence tête
-🤔 hum méditer penser pleine réflexion réfléchir
+🤔 hum méditer penser pleine réflexion réfléchir hmm
 🫡 armée bonne chance compris fait militaire ok oui respect salut
 🤐 bouche cousue fermeture motus secret taire éclair
 🤨 euh hein incrédule levé méfiant pas quoi relevés sceptique sourcil sourcils surprise tête vrai

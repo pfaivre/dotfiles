@@ -1,38 +1,5 @@
 /* Bliss-XP colors for Wlogout */
 
-@define-color bg_dim #2b303b;
-@define-color bg0 #E6EAD8;
-@define-color bg1 #E6EAD8;
-@define-color bg2 #E6EAD8;
-@define-color bg3 #E6EAD8;
-@define-color bg4 #808080;
-@define-color bg5 #808080;
-@define-color bg_visual #543a48;
-@define-color bg_red #514045;
-@define-color bg_green #425047;
-@define-color bg_blue #3a515d;
-@define-color bg_yellow #4d4c43;
-@define-color fg #ffffff;
-@define-color red #de482b;
-@define-color orange #FF9933;
-@define-color yellow #fccf03;
-@define-color green #81c046;
-@define-color aqua #5DB3FF;
-@define-color blue #3b77bc;
-@define-color purple #bd88ac;
-@define-color orange2 #FF9933;
-@define-color grey0 #808080;
-@define-color grey1 #B8B4A3;
-@define-color grey2 #E6EAD8;
-
-@define-color taskbar_blue #0062EA;
-@define-color taskbar_blue_active #5DB3FF;
-@define-color taskbar_status_blue #14A5F4;
-@define-color startmenu_green #008D00;
-@define-color startmenu_green_hover #31A431;
-
-
-
 * {
 	background-image: none;
 	box-shadow: none;
@@ -85,8 +52,8 @@ button:focus, button:active {
 }
 
 #logout:hover {
-	background-color: @blue;
-	border-color: @bg_blue;
+	background-color: #3b77bc;
+	border-color: #3a515d;
 }
 
 #suspend {
@@ -94,8 +61,8 @@ button:focus, button:active {
 }
 
 #suspend:hover {
-	background-color: @green;
-	border-color: @bg_green;
+	background-color: #81c046;
+	border-color: #425047;
 }
 
 #shutdown {
@@ -103,8 +70,8 @@ button:focus, button:active {
 }
 
 #shutdown:hover {
-	background-color: @red;
-	border-color: @bg_red;
+	background-color: #de482b;
+	border-color: #514045;
 }
 
 #reboot {
@@ -112,6 +79,6 @@ button:focus, button:active {
 }
 
 #reboot:hover {
-	background-color: @yellow;
-	border-color: @bg_yellow;
+	background-color: #fccf03;
+	border-color: #4d4c43;
 }

@@ -1,5 +1,10 @@
 /* Base16-ocean inspired style for Waybar */
 
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Base ―――――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 * {
   font-family: "Liberation Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", "LiterationMono Nerd Font Mono";
   /* font-size: 14px; */
@@ -16,11 +21,16 @@ tooltip {
 
 window#waybar {
   background-color: transparent;
+  border-radius: 0;
   color: #2b303b;
   transition-property: background-color;
-  transition-duration: .5s;
-  border-radius: 0;
+  transition-duration: 0.5s;
 }
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Modules ――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #clock,
 #custom-arrowleft,
@@ -43,11 +53,10 @@ window#waybar {
   min-width: 28px;
   padding-left: 4px;
   padding-right: 4px;
-
   background-color: #2b303b;
-  color: #eff1f5;
-  border-radius: 0;
   border: none;
+  border-radius: 0;
+  color: #eff1f5;
 }
 
 /* Waybar 0.16 moved the #custom-* name onto the inner label while :hover stays on
@@ -77,25 +86,14 @@ box:hover > #custom-hyprshade {
   background-color: #62737f;
 }
 
-#clock {
-  padding-left: 12px;
-  padding-right: 10px;
-}
-
-#clock.date {
-  padding-left: 10px;
-  padding-right: 12px;
-}
-
 #custom-arrowleft {
   color: white;
 }
 
-#extra {
-}
 
-#extra * {
-}
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Module states ――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #cpu.warning, #memory.warning, #disk.warning, #temperature.warning {
   color: rgb(255, 211, 154);
@@ -111,9 +109,6 @@ box:hover > #custom-hyprshade {
   color: #eff1f5;
 }
 
-#power-profiles-daemon {
-}
-
 #power-profiles-daemon.power-saver {
   color: #98c38c;
 }
@@ -122,18 +117,35 @@ box:hover > #custom-hyprshade {
   color: #efcd86;
 }
 
-#custom-notificationcenter {
-}
-
-#pulseaudio {
-}
-
 #pulseaudio.muted {
   color: #ce5564;
 }
 
+/* #extra, #extra *, #power-profiles-daemon, #custom-notificationcenter, #pulseaudio:
+   intentionally unstyled */
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Clock ――――――――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+#clock {
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
+#clock.date {
+  padding-left: 10px;
+  padding-right: 12px;
+}
+
+
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Workspaces ―――――――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 #workspaces {
-  padding: 0px;
+  padding: 0;
   background: #2b303b;
   border: none;
 }
@@ -141,33 +153,36 @@ box:hover > #custom-hyprshade {
 #workspaces button {
   padding: 0 14px;
   background: none;
-  color: #eff1f5;
-  border-radius: 0;
   border: none;
-  transition: none;
+  border-radius: 0;
   box-shadow: none;
+  color: #eff1f5;
+  transition: none;
 }
 
 #workspaces button:hover {
   background: #62737f;
-  text-shadow: none;
   border: none;
+  text-shadow: none;
 }
 
 #workspaces button.active {
   background: #8ca1b4;
-  color: #2b303b;
-
-  border-radius: 0;
   border: none;
+  border-radius: 0;
+  color: #2b303b;
 }
 
-#custom-launcher {
-  background-color: #98c38c;
-  color: #2b303b;
 
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* ―――― Custom modules ―――――――――――――――――――――――――――――――――――――――――――― */
+/* ////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+#custom-launcher {
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #98c38c;
+  color: #2b303b;
 }
 
 #custom-launcher:hover,
@@ -180,11 +195,11 @@ box:hover > #custom-launcher {
 }
 
 #custom-powermenu {
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #ce5564;
   color: #2b303b;
   font-size: 16px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 #custom-powermenu:hover,

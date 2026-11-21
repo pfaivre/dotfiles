@@ -1,29 +1,5 @@
 /* Summer day theme for Wlogout */
 
-@define-color bg_dim #efebd4;
-@define-color bg0 #fdf6e3;
-@define-color bg1 #f4f0d9;
-@define-color bg2 #efebd4;
-@define-color bg3 #e6e2cc;
-@define-color bg4 #e0dcc7;
-@define-color bg5 #bdc3af;
-@define-color bg_visual #eaedc8;
-@define-color bg_red #fbe3da;
-@define-color bg_green #f0f1d2;
-@define-color bg_blue #e9f0e9;
-@define-color bg_yellow #faedcd;
-@define-color fg #5c6a72;
-@define-color red #f85552;
-@define-color orange #f57d26;
-@define-color yellow #dfa000;
-@define-color green #8da101;
-@define-color aqua #35a77c;
-@define-color blue #3a94c5;
-@define-color purple #df69ba;
-@define-color grey0 #a6b0a0;
-@define-color grey1 #939f91;
-@define-color grey2 #829181;
-
 * {
 	background-image: none;
 	box-shadow: none;
@@ -37,15 +13,15 @@ button {
 	margin: 64px 0;
 	border-radius: 0;
     border: none;
-	text-decoration-color: @fg;
+	text-decoration-color: #5c6a72;
 
-	color: @fg;
-	background-color: @bg3;
+	color: #5c6a72;
+	background-color: #e6e2cc;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 15%;
 
-	border-color: @bg5;
+	border-color: #bdc3af;
 	border-style: solid;
 	border-width: 0 0 8px 0;
 }
@@ -66,7 +42,7 @@ button:hover {
 }
 
 button:focus, button:active {
-	outline: 3px solid @fg;
+	outline: 3px solid #5c6a72;
 }
 
 #logout {
@@ -74,9 +50,9 @@ button:focus, button:active {
 }
 
 #logout:hover {
-	background-color: @green;
-	/* box-shadow: 0 0 8px @green; */
-	border-color: @grey2;
+	background-color: #8da101;
+	/* box-shadow: 0 0 8px #8da101; */
+	border-color: #829181;
 }
 
 #suspend {
@@ -84,9 +60,9 @@ button:focus, button:active {
 }
 
 #suspend:hover {
-	background-color: @blue;
-	/* box-shadow: 0 0 8px @blue; */
-	border-color: @grey2;
+	background-color: #3a94c5;
+	/* box-shadow: 0 0 8px #3a94c5; */
+	border-color: #829181;
 }
 
 #shutdown {
@@ -94,9 +70,9 @@ button:focus, button:active {
 }
 
 #shutdown:hover {
-	background-color: @red;
-	/* box-shadow: 0 0 8px @red; */
-	border-color: @grey2;
+	background-color: #f85552;
+	/* box-shadow: 0 0 8px #f85552; */
+	border-color: #829181;
 }
 
 #reboot {
@@ -104,7 +80,7 @@ button:focus, button:active {
 }
 
 #reboot:hover {
-	background-color: @yellow;
-	/* box-shadow: 0 0 8px @yellow; */
-	border-color: @grey2;
+	background-color: #dfa000;
+	/* box-shadow: 0 0 8px #dfa000; */
+	border-color: #829181;
 }
