@@ -74,8 +74,8 @@ case $selected in
     ;;
 
   "🟧 Utils → Select an emoji")
-    ~/.local/bin/select-emoji-fr.sh
-    notify-send -e -u low "Emoji" "The selected emoji has been copied to the clipboard"
+    ~/.local/bin/select-emoji-fr.sh && \
+      notify-send -e -u low "Emoji" "The selected emoji has been copied to the clipboard"
     ;;
 
   # Personalization

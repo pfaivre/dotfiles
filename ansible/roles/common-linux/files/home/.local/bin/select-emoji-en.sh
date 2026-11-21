@@ -6,14 +6,15 @@
 # https://github.com/MathisP75/summer-day-and-night
 
 emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' "$0" | rofi -dmenu | cut -d ' ' -f 1 | tr -d '\n')"
-# Rofi cancelled (empty selection): don't wipe the clipboard
+# Rofi cancelled (empty selection): don't wipe the clipboard, and exit
+# non-zero so callers (e.g. the command palette) can skip follow-up actions
 if [ -z "$emoji" ]; then
-    exit 0
+    exit 1
 fi
 wl-copy "${emoji}"
 exit
 ### DATA ###
-😀 grinning face smile happy joy :D grin
+😀 grinning face smile happy joy :D
 😃 grinning face with big eyes happy joy haha :D :) smile funny
 😄 grinning face with smiling eyes happy joy funny haha laugh like :D :) smile
 😁 beaming face with smiling eyes happy smile joy kawaii
@@ -80,12 +81,15 @@ exit
 🥵 hot face feverish heat red sweating
 🥶 cold face blue freezing frozen frostbite icicles
 🥴 woozy face dizzy intoxicated tipsy wavy
-😵 dizzy face spent unconscious xox
+😵 dizzy face spent unconscious
 😵‍💫 face with spiral eyes sick ill confused nauseous nausea
 🤯 exploding head face shocked mind blown
+🫫 cracking face break crumble shatter crack
+🫪 distorted face warped weird strange
+🫯 fight cloud cartoon punch comic dust anger
 🤠 cowboy hat face cowgirl
 🥳 partying face celebration woohoo
-🥸 disguised face pretent brows glasses moustache
+🥸 disguised face pretend brows glasses moustache
 😎 smiling face with sunglasses cool smile summer beach sunglass
 🤓 nerd face nerdy geek dork
 🧐 face with monocle stuffy wealthy
@@ -96,7 +100,7 @@ exit
 ☹️ frowning face sad upset frown
 😮 face with open mouth surprise impressed wow whoa :O
 😯 hushed face woo shh
-😲 astonished face xox surprised poisoned
+😲 astonished face surprised
 😳 flushed face blush shy flattered
 🥺 pleading face begging mercy
 🥹 face holding back tears touched gratitude
@@ -182,7 +186,7 @@ exit
 🗯️ right anger bubble caption speech thinking mad
 💭 thought balloon bubble cloud speech thinking dream
 💤 zzz sleepy tired dream
-👋 waving hand hands gesture goodbye solong farewell hello hi palm
+👋 waving hand hands gesture goodbye so long farewell hello hi palm
 🤚 raised back of hand fingers backhand
 🖐 hand with fingers splayed palm
 ✋ raised hand fingers stop highfive palm ban
@@ -191,8 +195,8 @@ exit
 🫲 leftwards hand palm offer
 🫳 palm down hand drop
 🫴 palm up hand lift offer demand
-🫷 stop left high five halt push wait
-🫸 stop right high five halt push wait
+🫷 stop left halt push wait
+🫸 stop right halt push wait
 👌 ok hand fingers limbs perfect okay
 🤌 pinched fingers size tiny small
 🤏 pinching hand tiny small size
@@ -211,6 +215,8 @@ exit
 🫵 index pointing at the viewer you recruit
 👍 thumbs up thumbsup yes awesome good agree accept cool hand like +1
 👎 thumbs down thumbsdown no dislike hand -1
+🫹 leftward thumb left hand gesture point
+🫺 rightward thumb right hand gesture point
 ✊ raised fist fingers hand grasp
 👊 oncoming fist angry violence hit attack hand
 🤛 left facing fist hand fistbump
@@ -249,9 +255,8 @@ exit
 👧 girl female woman teenager
 🧑 person gender-neutral
 👱 person blond hair hairstyle
-👨 man mustache father dad guy classy sir moustache
-🧔 man beard person bewhiskered
-🧔 man beard facial hair
+👨 man father dad guy classy sir
+🧔 man beard person bewhiskered facial hair
 🧔‍♀️ woman beard facial hair
 👨‍🦱 man curly hair hairstyle
 👨‍🦰 man red hair hairstyle
@@ -292,7 +297,7 @@ exit
 🧏 deaf person accessibility
 🧏‍♂️ deaf man accessibility
 🧏‍♀️ deaf woman accessibility
-🙇 person bowing respectiful
+🙇 person bowing respectful
 🙇‍♂️ man bowing male boy
 🙇‍♀️ woman bowing female girl
 🤦 person facepalming disappointed
@@ -404,6 +409,7 @@ exit
 🧟‍♂️ man zombie male dracula undead walking dead
 🧟‍♀️ woman zombie female undead walking dead
 🧌 troll mystical monster
+🫈 hairy creature bigfoot sasquatch yeti cryptid monster
 💆 person getting massage relax
 💆‍♂️ man getting massage male boy head
 💆‍♀️ woman getting massage female girl head
@@ -444,6 +450,7 @@ exit
 🏃‍♀ woman running walking exercise race female
 💃 woman dancing female girl fun
 🕺 man dancing male boy fun dancer
+🧑‍🩰 ballet dancer person dance neutral
 🕴️ man in suit levitating business levitate hover jump
 👯 people with bunny ears perform costume
 👯‍♂️ men with bunny ears male boys
@@ -661,6 +668,7 @@ exit
 🦪 animal oyster
 🐌 snail slow animal shell
 🦋 butterfly animal insect nature caterpillar
+🫌 monarch butterfly orange insect nature
 🐛 bug animal insect nature worm
 🐜 ant animal insect nature bug
 🐝 honeybee animal insect nature bug spring honey
@@ -726,11 +734,12 @@ exit
 🥥 coconut fruit nature food palm
 🥑 avocado fruit food
 🍆 eggplant vegetable nature food aubergine
-🥔 potato food tuber vegatable starch
+🥔 potato food tuber vegetable starch
 🥕 carrot vegetable food orange
 🌽 ear of corn food vegetable plant
 🌶️ hot pepper food spicy chilli chili
 🥒 cucumber fruit food pickle vegetable
+🫝 pickle pickled gherkin brine
 🥬 leafy green food vegetable plant bok choy cabbage kale lettuce
 🥦 broccoli fruit food vegetable
 🪴 potted plant greenery house
@@ -758,7 +767,7 @@ exit
 🥯 bagel food bread bakery schmear
 🥞 pancakes food breakfast flapjacks hotcakes
 🧇 waffle food breakfast
-🧀 cheese wedge food chadder
+🧀 cheese wedge food cheddar
 🍖 meat on bone good food drumstick
 🍗 poultry leg food meat drumstick bird chicken turkey
 🥩 cut of meat food cow chop lambchop porkchop
@@ -852,10 +861,11 @@ exit
 🏔️ snow capped mountain photo nature environment winter cold
 ⛰️ mountain photo nature environment
 🌋 volcano photo nature disaster
+🛘 landslide disaster mountain rocks avalanche
 🗻 mount fuji photo mountain nature japanese
 🏕️ camping photo outdoors tent
 🏖️ beach with umbrella weather summer sunny sand mojito
-🏜️ desert photo warm saharah
+🏜️ desert photo warm sahara
 🏝️ desert island photo tropical mojito
 🏞️ national park photo environment nature
 🏟️ stadium photo place sports concert venue
@@ -874,7 +884,7 @@ exit
 🏤 post office building email
 🏥 hospital building health surgery doctor
 🏦 bank building money sales cash business enterprise
-🏨 hotel building accomodation checkin
+🏨 hotel building accommodation checkin
 🏩 love hotel like affection dating
 🏪 convenience store building shopping groceries
 🏫 school building student education learn teach
@@ -885,6 +895,7 @@ exit
 💒 wedding love like affection couple marriage bride groom
 🗼 tokyo tower photo japanese
 🗽 statue of liberty american newyork
+🛙 lighthouse beacon tower sea coast light
 ⛪ church building religion christ
 🕌 mosque islam worship minaret
 🛕 hindu temple religion
@@ -950,7 +961,7 @@ exit
 🚏 bus stop transportation wait
 🛣️ motorway road cupertino interstate highway
 🛤️ railway track train transportation
-🛢️ oil drum barrell
+🛢️ oil drum barrel
 ⛽ fuel pump gas station petroleum
 🛞 wheel car transport
 🚨 police car light ambulance 911 emergency alert error pinged law legal
@@ -1057,6 +1068,7 @@ exit
 ☃️ snowman winter season cold weather christmas xmas frozen
 ⛄ snowman without snow winter season cold weather christmas xmas frozen
 ☄️ comet space
+🪋 meteor space rock asteroid shooting star fire
 🔥 fire hot cook flame
 💧 droplet water drip faucet spring
 🌊 water wave sea nature tsunami disaster
@@ -1109,6 +1121,7 @@ exit
 ⛳ flag in hole sports business summer
 ⛸️ ice skate sports
 🎣 fishing pole food hobby summer
+🪍 net handle catch bug landing
 🤿 diving mask sport ocean
 🎽 running shirt play pageant
 🎿 skis sports winter cold snow
@@ -1164,7 +1177,7 @@ exit
 🩲 briefs clothing
 🩳 shorts clothing
 👙 bikini swimming female woman girl fashion beach summer
-👚 woman s clothes fashion shopping bags female
+👚 woman clothes fashion shopping bags female
 🪭 folding hand fan hot cooling
 👛 purse fashion accessories money sales shopping
 👜 handbag fashion accessory accessories shopping
@@ -1172,22 +1185,22 @@ exit
 🛍️ shopping bags mall buy purchase
 🎒 backpack student education bag
 🩴 thong sandal footwear summer
-👞 man s shoe fashion male
+👞 man shoe fashion male
 👟 running shoe shoes sports sneakers
 🥾 hiking boot backpacking camping
 🥿 flat shoe ballet slip-on slipper
 👠 high heeled shoe fashion shoes female pumps stiletto
-👡 woman s sandal shoes fashion flip flops
+👡 woman sandal shoes fashion flip flops
 🩰 ballet shoes dance
-👢 woman s boot shoes fashion
+👢 woman boot shoes fashion
 🪮 hair pick afro
-👑 crown king kod leader royalty lord
-👒 woman s hat fashion accessories female lady spring
+👑 crown king leader royalty lord
+👒 woman hat fashion accessories female lady spring
 🎩 top hat magic gentleman classy circus
 🎓 graduation cap school college degree university hat legal learn education
 🧢 billed cap baseball
 🪖 military helmet army protection
-⛑️ rescue worker s helmet construction build
+⛑️ rescue worker helmet construction build
 📿 prayer beads dhikr religious
 💄 lipstick female girl fashion woman
 💍 ring wedding propose marriage valentines diamond fashion jewelry gem engagement
@@ -1215,8 +1228,9 @@ exit
 🎸 guitar music instrument
 🎹 musical keyboard piano instrument compose
 🎺 trumpet music brass
+🪊 trombone music instrument brass slide
 🎻 violin music instrument orchestra symphony
-🪕 banjo music instructment
+🪕 banjo music instrument
 🥁 drum music instrument drumsticks snare
 🪘 long drum music
 🪇 instrument music maracas
@@ -1276,6 +1290,7 @@ exit
 🔖 bookmark favorite label save
 🏷️ label sale tag
 💰 money bag dollar payment coins sale
+🪎 treasure chest pirate gold box loot
 🪙 coin money currency
 💴 yen banknote money sales japanese dollar currency
 💵 dollar banknote money sales bill currency
@@ -1301,6 +1316,7 @@ exit
 📮 postbox email letter envelope
 🗳️ ballot box with election vote
 ✏️ pencil stationery write paper writing school study
+🪌 eraser rubber pencil remove
 ✒️ black nib pen stationery writing write
 🖋️ fountain pen stationery writing write
 🖊️ pen stationery writing write
@@ -1413,8 +1429,8 @@ exit
 🚮 litter in bin sign blue-square human info
 🚰 potable water blue-square liquid restroom cleaning faucet
 ♿ wheelchair symbol blue-square disabled accessibility
-🚹 men s room toilet restroom wc blue-square gender male
-🚺 women s room purple-square woman female toilet loo restroom gender
+🚹 men room toilet restroom wc blue-square gender male
+🚺 women room purple-square woman female toilet loo restroom gender
 🚻 restroom blue-square toilet refresh wc gender
 🚼 baby symbol orange-square child
 🚾 water closet toilet restroom blue-square
@@ -1618,6 +1634,8 @@ exit
 ⬜ white large square shape icon stone button
 ◼️ black medium square shape button icon
 ◻️ white medium square shape stone icon
+◾️ black medium small square shape icon
+◽️ white medium small square shape icon
 ▪️ black small square shape icon
 ▫️ white small square shape icon
 🔶 large orange diamond shape jewel gem
@@ -1876,7 +1894,7 @@ exit
 🇹🇿 flag tanzania united republic nation country banner
 🇺🇦 flag ukraine ua nation country banner
 🇺🇬 flag uganda ug nation country banner
-🇺🇲 flag u s outlying islands
+🇺🇲 flag us outlying islands
 🇺🇳 flag united nations un banner
 🇺🇸 flag united states america nation country banner
 🇺🇾 flag uruguay uy nation country banner
@@ -1885,7 +1903,7 @@ exit
 🇻🇨 flag st vincent grenadines saint nation country banner
 🇻🇪 flag venezuela ve bolivarian republic nation country banner
 🇻🇬 flag british virgin islands bvi nation country banner
-🇻🇮 flag u s virgin islands us nation country banner
+🇻🇮 flag us virgin islands nation country banner
 🇻🇳 flag vietnam viet nam nation country banner
 🇻🇺 flag vanuatu vu nation country banner
 🇼🇫 flag wallis futuna nation country banner
@@ -1899,4 +1917,4 @@ exit
 🏴󠁧󠁢󠁥󠁮󠁧󠁿 flag england english
 🏴󠁧󠁢󠁳󠁣󠁴󠁿 flag scotland scottish
 🏴󠁧󠁢󠁷󠁬󠁳󠁿 flag wales welsh
-🇨🇶 drapeau sercq shark
+🇨🇶 flag sercq shark

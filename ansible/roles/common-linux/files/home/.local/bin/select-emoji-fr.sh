@@ -47,9 +47,10 @@
 
 
 emoji="$(pkill rofi; sed '1,/^### DATA ###$/d' "$0" | rofi -dmenu -normalize-match | cut -d ' ' -f 1 | tr -d '\n')"
-# Rofi cancelled (empty selection): don't wipe the clipboard
+# Rofi cancelled (empty selection): don't wipe the clipboard, and exit
+# non-zero so callers (e.g. the command palette) can skip follow-up actions
 if [ -z "$emoji" ]; then
-    exit 0
+    exit 1
 fi
 wl-copy "${emoji}"
 exit
@@ -140,6 +141,7 @@ exit
 😲 choc choqué impossible incroyable omd stupéfait étonné :o
 😳 chaud comment gêné hébété impressionné incroyable incrédule quoi rouge rougissant rougit stupéfait ébahi étonné
 🫪 déformé yeux exorbités pression
+🫫 craquer effondrement masquer résilience révéler tension transformation
 🥺 battus chiens embarrassé excuse gros implorant pardon pitié plaît il supplication supplie yeux
 🥹 admiration fierté gratitude joie larmes pleurs retenant retenir ses triste ému
 😦 bouche dépourvu déçu effrayé mécontent ouverte peur pris surpris
@@ -213,7 +215,7 @@ exit
 💋 baiser bise bisou bouche embrasser lèvres rendez-vous rouge sexy trace
 💯 100 cent points score
 💢 bande bd colère dessin dessinée furieux symbole
-🫯 bande dessinée bd combat bagare
+🫯 bande dessinée bd combat bagarre désaccord discussion dispute grabuge lutte
 💥 bande bd bombe boum collision dessinée détonation explosion étincelles
 💫 bande bd dessinée filante tournis voir étincelles étoile étoiles étourdissement
 💦 bande bd dessinée eau effort entraînement gouttes sueur éclabousser éclaboussures
@@ -236,6 +238,8 @@ exit
 🫴 appeler attirer faire haut main offre paume venir vers
 🫷 arrêter attendre bloquer cinq five gauche halte high main pousse pousser refuser stop tape top vers
 🫸 arrêter attendre bloquer cinq droite five halte high main pousse pousser refuser stop tape top vers
+🫹 gauche neutre poing stop point main
+🫺 droite neutre poing stop point main
 👌 bien compris accord geste main nickel ok parfait super tout va
 🤌 ! agacement argumentation bout doigts geste interrogation joints main mains parler patience silence
 🤏 deux doigts index petit petite peu pouce quantité rapprochés somme
@@ -310,6 +314,7 @@ exit
 🧑‍🦳 personne cheveux gris
 👩‍🦲 femme chauve
 🧑‍🦲 personne chauve
+🧑‍🩰 ballerine ballet danse classique danseuse
 👱‍♀ femme blonde cheveux personne
 🧓 adulte genre neutre non-genré personne âgé âgée
 👴 chauve grand-père homme monsieur papi personne sage vieux âgé âgée
@@ -596,7 +601,7 @@ exit
 🫎 animal bois cervidé mammifère orignal ramure élan
 🫏 animal bourricot mammifère mule têtu âne
 🐎 animal cheval course hippique hippodrome tiercé
-🦄 animal licorne licrone tête
+🦄 animal licorne tête
 🦓 animal blanc noir rayure rayures zèbre zébrure
 🦌 animal bois cerf
 🦬 animal bison buffle cornes herbivore nature troupeau
@@ -638,6 +643,7 @@ exit
 🦨 animal mouffette odeur puer putois
 🦘 animal austalie joey kangoo kangourou marsupial marsupiaux saut
 🦡 animal blaireau ratel
+🫈 bigfoot cryptide forêt géant homme sauvage poilu sasquatch yéti
 🐾 animaux empreintes pattes
 🦃 animal action dinde dindon grâces oiseau thanksgiving volaille
 🐔 animal coq ferme oiseau poule poulet volaille
@@ -703,6 +709,7 @@ exit
 🦟 animal fièvre infection insecte maladie malaria moustique piqûre virus
 🪰 animal asticot insecte maladie mouche nuisible pourrissement puanteur putréfaction tsé-tsé
 🪱 animal annélide insecte lombric parasite terre ver
+🫌 chenille fragile insecte métamorphose papillon
 🦠 amibe bactérie biologie microbe microorganisme phagocytose pseudopode science virus
 💐 amoureux anniversaire bouquet fleur fleurs plante rendez-vous roses
 🌸 bourgeon cerisier fleur plante printemps
@@ -761,6 +768,7 @@ exit
 🌶️ nourriture piment piquant rouge
 🫑 légume piment poivron rouge vert nourriture
 🥒 concombre cornichon légume nourriture
+🫝 condiment cornichon concombre pickle saumure vinaigre
 🥬 bok chinois chou choy feuilles frisé kale laitue légume pommé salade vertes nourriture
 🥦 broccoli brocoli chou légume sauvage nourriture
 🧄 ail aromate assaisonnement condiment légume vampire nourriture
@@ -874,6 +882,8 @@ exit
 🏔️ enneigée froid montagne neige sommet voyage
 ⛰️ montagne nature sommet voyage
 🌋 lave nature volcan éruption
+🛘 avalanche catastrophe coulée boue danger glissement terrain montagne rochers tremblement terre
+🛙 phare lumière mer navigation repère signal tour
 🗻 fuji mont montagne nature sommet voyage
 🏕️ camping nature sapin tente voyage
 🏖️ parasol plage voyage
@@ -964,7 +974,7 @@ exit
 🛵 scooter
 🦽 accessibilité fauteuil handicap manuel roulant
 🦼 accessibilité fauteuil handicap motorisé roulant
-🛺 rickshaw taxi thaï tricycle tukc transport
+🛺 rickshaw taxi thaï tricycle tuk tuk-tuk transport
 🚲 bicyclette cyclisme moyen transport voyage vélo
 🛴 trottinette
 🛹 glisse longboard planche roulettes skate skateboard
@@ -1079,6 +1089,7 @@ exit
 ☃️ bonhomme flocons neige
 ⛄ bonhomme flocons froid neige
 ☄️ comète espace météore
+🪋 apocalypse boule feu chute espace étoile gravité roche météore
 🔥 allumer brûler chaud feu flamme fournaise incendie
 💧 bande bd eau dessinée froid froides goutte larme météo nature pluie sueur sueurs tristesse
 🌊 eau kanagawa lame large marée mer nature océan remous rouleau surf vague
@@ -1214,6 +1225,7 @@ exit
 💄 cosmétiques lèvres maquillage rendez-vous rouge
 💍 alliance amour bague brillant diamant fiançailles mariage solitaire étincelant
 💎 argent bijou diamant fiançailles joyau mariage pierre précieuse romantique
+🪎 argent argenterie bijoux butin objets valeur or pierre précieuse richesse trésor
 🔇 barré chut enceinte haut-parleur muet silence son sourdine
 🔈 bas enceinte enceintes faible haut-parleur son volume
 🔉 enceinte enceintes haut-parleur moyen son volume
@@ -1237,6 +1249,7 @@ exit
 🎸 guitare instrument musique électrique
 🎹 clavier instrument musique piano touches
 🎺 instrument musique trompette
+🪊 cuivre instrument jazz musique trombone
 🎻 instrument musique violon
 🪕 banjo cordes instrument musique
 🥁 baguette baguettes batterie musique tambour
@@ -1352,6 +1365,7 @@ exit
 🗃️ boîte classeur dossier dossiers
 🗄️ classement classer classeur dossier dossiers meuble
 🗑️ corbeille papiers poubelle
+🪌 annuler dessin effacer erreur oups supprimer
 🔒 cadenas fermé privé verrouiller verrouillé
 🔓 cadenas déverrouiller ouvert ouvrir
 🔏 cadenas confidentiel fermé plume privé stylo verrouillé
@@ -1409,6 +1423,7 @@ exit
 🚿 douche eau pommeau
 🛁 baignoire bain mousse
 🪤 appât apât fromage leurre piège rat souris tapette
+🪍 attraper capturer épuisette filet piège
 🪒 coupant lame raser rasoir tranchant
 🧴 bouteille corps crème flacon hydratant hydratante lotion shampooing solaire
 🧷 couche imperdable lange nourrice punk rock sûreté épingle
@@ -1660,265 +1675,265 @@ exit
 🏳️‍🌈 drapeau arc-en-ciel lgbt
 🏳️‍⚧️ drapeau blanc bleu clair rose transgenre
 🏴‍☠️ drapeau pillage piller pirate trésor
-🇦🇨 drapeau ascension island
-🇦🇩 drapeau andorra ad nation pays
-🇦🇪 drapeau united arab emirates nation pays
+🇦🇨 drapeau île ascension ac nation pays
+🇦🇩 drapeau andorre ad nation pays
+🇦🇪 drapeau émirats arabes unis ae nation pays
 🇦🇫 drapeau afghanistan af nation pays
-🇦🇬 drapeau antigua barbuda nation pays
+🇦🇬 drapeau antigua barbuda ag nation pays
 🇦🇮 drapeau anguilla ai nation pays
-🇦🇱 drapeau albania al nation pays
-🇦🇲 drapeau armenia am nation pays
+🇦🇱 drapeau albanie al nation pays
+🇦🇲 drapeau arménie am nation pays
 🇦🇴 drapeau angola ao nation pays
-🇦🇶 drapeau antarctica aq nation pays
-🇦🇷 drapeau argentina ar nation pays
-🇦🇸 drapeau american samoa ws nation pays
-🇦🇹 drapeau austria at nation pays
-🇦🇺 drapeau australia au nation pays
+🇦🇶 drapeau antarctique aq nation pays
+🇦🇷 drapeau argentine ar nation pays
+🇦🇸 drapeau samoa américaines as nation pays
+🇦🇹 drapeau autriche at nation pays
+🇦🇺 drapeau australie au nation pays
 🇦🇼 drapeau aruba aw nation pays
-🇦🇽 drapeau aland islands Åland nation pays
-🇦🇿 drapeau azerbaijan az nation pays
-🇧🇦 drapeau bosnia herzegovina nation pays
-🇧🇧 drapeau barbados bb nation pays
+🇦🇽 drapeau îles land ax nation pays
+🇦🇿 drapeau azerbaïdjan az nation pays
+🇧🇦 drapeau bosnie herzégovine ba nation pays
+🇧🇧 drapeau barbade bb nation pays
 🇧🇩 drapeau bangladesh bd nation pays
-🇧🇪 drapeau belgium be nation pays belgique
-🇧🇫 drapeau burkina faso nation pays
-🇧🇬 drapeau bulgaria bg nation pays
-🇧🇭 drapeau bahrain bh nation pays
+🇧🇪 drapeau belgique be nation pays
+🇧🇫 drapeau burkina faso bf nation pays
+🇧🇬 drapeau bulgarie bg nation pays
+🇧🇭 drapeau bahreïn bh nation pays
 🇧🇮 drapeau burundi bi nation pays
-🇧🇯 drapeau benin bj nation pays
-🇧🇱 drapeau st barthelemy saint barthélemy nation pays
-🇧🇲 drapeau bermuda bm nation pays
-🇧🇳 drapeau brunei bn darussalam nation pays
-🇧🇴 drapeau bolivia bo nation pays
-🇧🇶 drapeau caribbean netherlands bonaire nation pays
-🇧🇷 drapeau brazil br nation pays
+🇧🇯 drapeau bénin bj nation pays
+🇧🇱 drapeau saint barthélemy bl nation pays
+🇧🇲 drapeau bermudes bm nation pays
+🇧🇳 drapeau brunei bn nation pays
+🇧🇴 drapeau bolivie bo nation pays
+🇧🇶 drapeau pays bas caribéens bq nation pays
+🇧🇷 drapeau brésil br nation pays
 🇧🇸 drapeau bahamas bs nation pays
-🇧🇹 drapeau bhutan bt nation pays
-🇧🇻 drapeau bouvet island norway
+🇧🇹 drapeau bhoutan bt nation pays
+🇧🇻 drapeau île bouvet bv nation pays
 🇧🇼 drapeau botswana bw nation pays
-🇧🇾 drapeau belarus by nation pays
+🇧🇾 drapeau biélorussie by nation pays
 🇧🇿 drapeau belize bz nation pays
 🇨🇦 drapeau canada ca nation pays
-🇨🇨 drapeau cocos islands keeling nation pays
-🇨🇩 drapeau congo kinshasa democratic republic nation pays
-🇨🇫 drapeau central african republic nation pays
-🇨🇬 drapeau congo brazzaville nation pays
-🇨🇭 drapeau switzerland ch nation pays
-🇨🇮 drapeau cote d ivoire ivory coast nation pays
-🇨🇰 drapeau cook islands nation pays
-🇨🇱 drapeau chile nation pays
-🇨🇲 drapeau cameroon cm nation pays
-🇨🇳 drapeau china chinese prc pays nation
-🇨🇴 drapeau colombia co nation pays
-🇨🇵 drapeau clipperton island
-🇨🇷 drapeau costa rica nation pays
+🇨🇨 drapeau îles cocos cc nation pays
+🇨🇩 drapeau congo kinshasa cd nation pays
+🇨🇫 drapeau république centrafricaine cf nation pays
+🇨🇬 drapeau congo brazzaville cg nation pays
+🇨🇭 drapeau suisse ch nation pays
+🇨🇮 drapeau côte ivoire ci nation pays
+🇨🇰 drapeau îles cook ck nation pays
+🇨🇱 drapeau chili cl nation pays
+🇨🇲 drapeau cameroun cm nation pays
+🇨🇳 drapeau chine cn nation pays
+🇨🇴 drapeau colombie co nation pays
+🇨🇵 drapeau île clipperton cp nation pays
+🇨🇷 drapeau costa rica cr nation pays
 🇨🇺 drapeau cuba cu nation pays
-🇨🇻 drapeau cape verde cabo nation pays
-🇨🇼 drapeau curacao curaçao nation pays
-🇨🇽 drapeau christmas island nation pays
-🇨🇾 drapeau cyprus cy nation pays
-🇨🇿 drapeau czechia cz nation pays
-🇩🇪 drapeau germany german nation pays
-🇩🇬 drapeau diego garcia
+🇨🇻 drapeau cap vert cv nation pays
+🇨🇼 drapeau curaçao cw nation pays
+🇨🇽 drapeau île christmas cx nation pays
+🇨🇾 drapeau chypre cy nation pays
+🇨🇿 drapeau tchéquie cz nation pays
+🇩🇪 drapeau allemagne de nation pays
+🇩🇬 drapeau diego garcia dg nation pays
 🇩🇯 drapeau djibouti dj nation pays
-🇩🇰 drapeau denmark dk nation pays
-🇩🇲 drapeau dominica dm nation pays
-🇩🇴 drapeau dominican republic nation pays
-🇩🇿 drapeau algeria dz nation pays
-🇪🇦 drapeau ceuta melilla
-🇪🇨 drapeau ecuador ec nation pays
-🇪🇪 drapeau estonia ee nation pays
-🇪🇬 drapeau egypt eg nation pays
-🇪🇭 drapeau western sahara nation pays
-🇪🇷 drapeau eritrea er nation pays
-🇪🇸 drapeau spain nation pays
-🇪🇹 drapeau ethiopia et nation pays
-🇪🇺 drapeau european union
-🇫🇮 drapeau finland fi nation pays
-🇫🇯 drapeau fiji fj nation pays
-🇫🇰 drapeau falkland islands malvinas nation pays
-🇫🇲 drapeau micronesia federated states nation pays
-🇫🇴 drapeau faroe islands nation pays
-🇫🇷 drapeau france nation french pays
+🇩🇰 drapeau danemark dk nation pays
+🇩🇲 drapeau dominique dm nation pays
+🇩🇴 drapeau république dominicaine do nation pays
+🇩🇿 drapeau algérie dz nation pays
+🇪🇦 drapeau ceuta melilla ea nation pays
+🇪🇨 drapeau équateur ec nation pays
+🇪🇪 drapeau estonie ee nation pays
+🇪🇬 drapeau égypte eg nation pays
+🇪🇭 drapeau sahara occidental eh nation pays
+🇪🇷 drapeau érythrée er nation pays
+🇪🇸 drapeau espagne es nation pays
+🇪🇹 drapeau éthiopie et nation pays
+🇪🇺 drapeau union européenne eu nation pays
+🇫🇮 drapeau finlande fi nation pays
+🇫🇯 drapeau fidji fj nation pays
+🇫🇰 drapeau îles malouines fk nation pays
+🇫🇲 drapeau micronésie fm nation pays
+🇫🇴 drapeau îles féroé fo nation pays
+🇫🇷 drapeau france fr nation pays
 🇬🇦 drapeau gabon ga nation pays
-🇬🇧 drapeau united kingdom great britain northern ireland nation pays british UK english england union jack
-🇬🇩 drapeau grenada gd nation pays
-🇬🇪 drapeau georgia ge nation pays
-🇬🇫 drapeau french guiana nation pays
-🇬🇬 drapeau guernsey gg nation pays
+🇬🇧 drapeau royaume uni gb nation pays
+🇬🇩 drapeau grenade gd nation pays
+🇬🇪 drapeau géorgie ge nation pays
+🇬🇫 drapeau guyane française gf nation pays
+🇬🇬 drapeau guernesey gg nation pays
 🇬🇭 drapeau ghana gh nation pays
 🇬🇮 drapeau gibraltar gi nation pays
-🇬🇱 drapeau greenland gl nation pays
-🇬🇲 drapeau gambia gm nation pays
-🇬🇳 drapeau guinea gn nation pays
+🇬🇱 drapeau groenland gl nation pays
+🇬🇲 drapeau gambie gm nation pays
+🇬🇳 drapeau guinée gn nation pays
 🇬🇵 drapeau guadeloupe gp nation pays
-🇬🇶 drapeau equatorial guinea gn nation pays
-🇬🇷 drapeau greece gr nation pays
-🇬🇸 drapeau south georgia islands nation pays sandwich
+🇬🇶 drapeau guinée équatoriale gq nation pays
+🇬🇷 drapeau grèce gr nation pays
+🇬🇸 drapeau géorgie sud îles sandwich sud gs nation pays
 🇬🇹 drapeau guatemala gt nation pays
 🇬🇺 drapeau guam gu nation pays
-🇬🇼 drapeau guinea bissau gw nation pays
+🇬🇼 drapeau guinée bissau gw nation pays
 🇬🇾 drapeau guyana gy nation pays
-🇭🇰 drapeau hong kong sar china nation pays
-🇭🇲 drapeau heard mcdonald islands
+🇭🇰 drapeau ras chinoise hong kong hk nation pays
+🇭🇲 drapeau îles heard macdonald hm nation pays
 🇭🇳 drapeau honduras hn nation pays
-🇭🇷 drapeau croatia hr nation pays
-🇭🇹 drapeau haiti ht nation pays
-🇭🇺 drapeau hungary hu nation pays
-🇮🇨 drapeau canary islands nation pays
-🇮🇩 drapeau indonesia nation pays
-🇮🇪 drapeau ireland ie nation pays
-🇮🇱 drapeau israel il nation pays
-🇮🇲 drapeau isle of man nation pays
-🇮🇳 drapeau india in nation pays
-🇮🇴 drapeau british nation pays indian ocean territory
-🇮🇶 drapeau iraq iq nation pays
-🇮🇷 drapeau iran islamic republic nation pays
-🇮🇸 drapeau iceland is nation pays
-🇮🇹 drapeau italy nation pays
+🇭🇷 drapeau croatie hr nation pays
+🇭🇹 drapeau haïti ht nation pays
+🇭🇺 drapeau hongrie hu nation pays
+🇮🇨 drapeau îles canaries ic nation pays
+🇮🇩 drapeau indonésie id nation pays
+🇮🇪 drapeau irlande ie nation pays
+🇮🇱 drapeau israël il nation pays
+🇮🇲 drapeau île man im nation pays
+🇮🇳 drapeau inde in nation pays
+🇮🇴 drapeau territoire britannique océan indien io nation pays
+🇮🇶 drapeau irak iq nation pays
+🇮🇷 drapeau iran ir nation pays
+🇮🇸 drapeau islande is nation pays
+🇮🇹 drapeau italie it nation pays
 🇯🇪 drapeau jersey je nation pays
-🇯🇲 drapeau jamaica jm nation pays
-🇯🇴 drapeau jordan jo nation pays
-🇯🇵 drapeau japan japanese nation pays
+🇯🇲 drapeau jamaïque jm nation pays
+🇯🇴 drapeau jordanie jo nation pays
+🇯🇵 drapeau japon jp nation pays
 🇰🇪 drapeau kenya ke nation pays
-🇰🇬 drapeau kyrgyzstan kg nation pays
-🇰🇭 drapeau cambodia kh nation pays
+🇰🇬 drapeau kirghizstan kg nation pays
+🇰🇭 drapeau cambodge kh nation pays
 🇰🇮 drapeau kiribati ki nation pays
-🇰🇲 drapeau comoros km nation pays
-🇰🇳 drapeau st kitts nevis saint nation pays
-🇰🇵 drapeau north korea nation pays
-🇰🇷 drapeau south korea nation pays
-🇰🇼 drapeau kuwait kw nation pays
-🇰🇾 drapeau cayman islands nation pays
+🇰🇲 drapeau comores km nation pays
+🇰🇳 drapeau saint christophe niévès kn nation pays
+🇰🇵 drapeau corée nord kp nation pays
+🇰🇷 drapeau corée sud kr nation pays
+🇰🇼 drapeau koweït kw nation pays
+🇰🇾 drapeau îles caïmans ky nation pays
 🇰🇿 drapeau kazakhstan kz nation pays
-🇱🇦 drapeau laos lao democratic republic nation pays
-🇱🇧 drapeau lebanon lb nation pays
-🇱🇨 drapeau st lucia saint nation pays
+🇱🇦 drapeau laos la nation pays
+🇱🇧 drapeau liban lb nation pays
+🇱🇨 drapeau sainte lucie lc nation pays
 🇱🇮 drapeau liechtenstein li nation pays
-🇱🇰 drapeau sri lanka nation pays
+🇱🇰 drapeau sri lanka lk nation pays
 🇱🇷 drapeau liberia lr nation pays
 🇱🇸 drapeau lesotho ls nation pays
-🇱🇹 drapeau lithuania lt nation pays
+🇱🇹 drapeau lituanie lt nation pays
 🇱🇺 drapeau luxembourg lu nation pays
-🇱🇻 drapeau latvia lv nation pays
-🇱🇾 drapeau libya ly nation pays
-🇲🇦 drapeau morocco ma nation pays
+🇱🇻 drapeau lettonie lv nation pays
+🇱🇾 drapeau libye ly nation pays
+🇲🇦 drapeau maroc ma nation pays
 🇲🇨 drapeau monaco mc nation pays
-🇲🇩 drapeau moldova republic nation pays
-🇲🇪 drapeau montenegro me nation pays
-🇲🇫 drapeau saint martin
+🇲🇩 drapeau moldavie md nation pays
+🇲🇪 drapeau monténégro me nation pays
+🇲🇫 drapeau saint martin mf nation pays
 🇲🇬 drapeau madagascar mg nation pays
-🇲🇭 drapeau marshall islands nation pays
-🇲🇰 drapeau north macedonia nation pays
+🇲🇭 drapeau îles marshall mh nation pays
+🇲🇰 drapeau macédoine nord mk nation pays
 🇲🇱 drapeau mali ml nation pays
-🇲🇲 drapeau myanmar mm nation pays
-🇲🇳 drapeau mongolia mn nation pays
-🇲🇴 drapeau macao sar china nation pays
-🇲🇵 drapeau northern mariana islands nation pays
+🇲🇲 drapeau myanmar birmanie mm nation pays
+🇲🇳 drapeau mongolie mn nation pays
+🇲🇴 drapeau ras chinoise macao mo nation pays
+🇲🇵 drapeau îles mariannes nord mp nation pays
 🇲🇶 drapeau martinique mq nation pays
-🇲🇷 drapeau mauritania mr nation pays
+🇲🇷 drapeau mauritanie mr nation pays
 🇲🇸 drapeau montserrat ms nation pays
-🇲🇹 drapeau malta mt nation pays
-🇲🇺 drapeau mauritius mu nation pays
+🇲🇹 drapeau malte mt nation pays
+🇲🇺 drapeau maurice mu nation pays
 🇲🇻 drapeau maldives mv nation pays
 🇲🇼 drapeau malawi mw nation pays
-🇲🇽 drapeau mexico mx nation pays
-🇲🇾 drapeau malaysia my nation pays
+🇲🇽 drapeau mexique mx nation pays
+🇲🇾 drapeau malaisie my nation pays
 🇲🇿 drapeau mozambique mz nation pays
-🇳🇦 drapeau namibia na nation pays
-🇳🇨 drapeau new caledonia nation pays
+🇳🇦 drapeau namibie na nation pays
+🇳🇨 drapeau nouvelle calédonie nc nation pays
 🇳🇪 drapeau niger ne nation pays
-🇳🇫 drapeau norfolk island nation pays
-🇳🇬 drapeau nigeria nation pays
+🇳🇫 drapeau île norfolk nf nation pays
+🇳🇬 drapeau nigeria ng nation pays
 🇳🇮 drapeau nicaragua ni nation pays
-🇳🇱 drapeau netherlands nl nation pays
-🇳🇴 drapeau norway no nation pays
-🇳🇵 drapeau nepal np nation pays
+🇳🇱 drapeau pays bas nl nation pays
+🇳🇴 drapeau norvège no nation pays
+🇳🇵 drapeau népal np nation pays
 🇳🇷 drapeau nauru nr nation pays
 🇳🇺 drapeau niue nu nation pays
-🇳🇿 drapeau new zealand nation pays
-🇴🇲 drapeau oman om symbol nation pays
+🇳🇿 drapeau nouvelle zélande nz nation pays
+🇴🇲 drapeau oman om nation pays
 🇵🇦 drapeau panama pa nation pays
-🇵🇪 drapeau peru pe nation pays
-🇵🇫 drapeau french polynesia nation pays
-🇵🇬 drapeau papua new guinea nation pays
+🇵🇪 drapeau pérou pe nation pays
+🇵🇫 drapeau polynésie française pf nation pays
+🇵🇬 drapeau papouasie nouvelle guinée pg nation pays
 🇵🇭 drapeau philippines ph nation pays
 🇵🇰 drapeau pakistan pk nation pays
-🇵🇱 drapeau poland pl nation pays
-🇵🇲 drapeau st pierre miquelon saint nation pays
-🇵🇳 drapeau pitcairn islands nation pays
-🇵🇷 drapeau puerto rico nation pays
-🇵🇸 drapeau palestinian territories palestine nation pays
+🇵🇱 drapeau pologne pl nation pays
+🇵🇲 drapeau saint pierre miquelon pm nation pays
+🇵🇳 drapeau îles pitcairn pn nation pays
+🇵🇷 drapeau porto rico pr nation pays
+🇵🇸 drapeau territoires palestiniens ps nation pays
 🇵🇹 drapeau portugal pt nation pays
-🇵🇼 drapeau palau pw nation pays
+🇵🇼 drapeau palaos pw nation pays
 🇵🇾 drapeau paraguay py nation pays
 🇶🇦 drapeau qatar qa nation pays
-🇷🇪 drapeau reunion réunion nation pays
-🇷🇴 drapeau romania ro nation pays
-🇷🇸 drapeau serbia rs nation pays
-🇷🇺 drapeau russia russian federation nation pays
+🇷🇪 drapeau réunion re nation pays
+🇷🇴 drapeau roumanie ro nation pays
+🇷🇸 drapeau serbie rs nation pays
+🇷🇺 drapeau russie ru nation pays
 🇷🇼 drapeau rwanda rw nation pays
-🇸🇦 drapeau saudi arabia nation pays
-🇸🇧 drapeau solomon islands nation pays
+🇸🇦 drapeau arabie saoudite sa nation pays
+🇸🇧 drapeau îles salomon sb nation pays
 🇸🇨 drapeau seychelles sc nation pays
-🇸🇩 drapeau sudan sd nation pays
-🇸🇪 drapeau sweden se nation pays
-🇸🇬 drapeau singapore sg nation pays
-🇸🇭 drapeau st helena saint ascension tristan cunha nation pays
-🇸🇮 drapeau slovenia si nation pays
-🇸🇯 drapeau svalbard jan mayen
-🇸🇰 drapeau slovakia sk nation pays
-🇸🇱 drapeau sierra leone nation pays
-🇸🇲 drapeau san marino nation pays
-🇸🇳 drapeau senegal sn nation pays
-🇸🇴 drapeau somalia so nation pays
+🇸🇩 drapeau soudan sd nation pays
+🇸🇪 drapeau suède se nation pays
+🇸🇬 drapeau singapour sg nation pays
+🇸🇭 drapeau sainte hélène sh nation pays
+🇸🇮 drapeau slovénie si nation pays
+🇸🇯 drapeau svalbard jan mayen sj nation pays
+🇸🇰 drapeau slovaquie sk nation pays
+🇸🇱 drapeau sierra leone sl nation pays
+🇸🇲 drapeau saint marin sm nation pays
+🇸🇳 drapeau sénégal sn nation pays
+🇸🇴 drapeau somalie so nation pays
 🇸🇷 drapeau suriname sr nation pays
-🇸🇸 drapeau south sudan sd nation pays
-🇸🇹 drapeau sao tome principe nation pays
-🇸🇻 drapeau el salvador nation pays
-🇸🇽 drapeau sint maarten dutch nation pays
-🇸🇾 drapeau syria syrian arab republic nation pays
+🇸🇸 drapeau soudan sud ss nation pays
+🇸🇹 drapeau sao tomé principe st nation pays
+🇸🇻 drapeau salvador sv nation pays
+🇸🇽 drapeau saint martin partie néerlandaise sx nation pays
+🇸🇾 drapeau syrie sy nation pays
 🇸🇿 drapeau eswatini sz nation pays
-🇹🇦 drapeau tristan da cunha
-🇹🇨 drapeau turks caicos islands nation pays
-🇹🇩 drapeau chad td nation pays
-🇹🇫 drapeau french southern territories nation pays
+🇹🇦 drapeau tristan da cunha ta nation pays
+🇹🇨 drapeau îles turques caïques tc nation pays
+🇹🇩 drapeau tchad td nation pays
+🇹🇫 drapeau terres australes françaises tf nation pays
 🇹🇬 drapeau togo tg nation pays
-🇹🇭 drapeau thailand th nation pays
-🇹🇯 drapeau tajikistan tj nation pays
+🇹🇭 drapeau thaïlande th nation pays
+🇹🇯 drapeau tadjikistan tj nation pays
 🇹🇰 drapeau tokelau tk nation pays
-🇹🇱 drapeau timor leste nation pays
-🇹🇲 drapeau turkmenistan nation pays
-🇹🇳 drapeau tunisia tn nation pays
+🇹🇱 drapeau timor oriental tl nation pays
+🇹🇲 drapeau turkménistan tm nation pays
+🇹🇳 drapeau tunisie tn nation pays
 🇹🇴 drapeau tonga to nation pays
-🇹🇷 drapeau turkey nation pays
-🇹🇹 drapeau trinidad tobago nation pays
-🇹🇻 drapeau tuvalu nation pays
-🇹🇼 drapeau taiwan tw nation pays
-🇹🇿 drapeau tanzania united republic nation pays
+🇹🇷 drapeau turquie tr nation pays
+🇹🇹 drapeau trinité tobago tt nation pays
+🇹🇻 drapeau tuvalu tv nation pays
+🇹🇼 drapeau taïwan tw nation pays
+🇹🇿 drapeau tanzanie tz nation pays
 🇺🇦 drapeau ukraine ua nation pays
-🇺🇬 drapeau uganda ug nation pays
-🇺🇲 drapeau u s outlying islands
-🇺🇳 drapeau united nations un onu unies
-🇺🇸 drapeau united states america nation pays etats unis
+🇺🇬 drapeau ouganda ug nation pays
+🇺🇲 drapeau îles mineures éloignées états unis um nation pays
+🇺🇳 drapeau nations unies un nation pays
+🇺🇸 drapeau états unis us nation pays
 🇺🇾 drapeau uruguay uy nation pays
-🇺🇿 drapeau uzbekistan uz nation pays
-🇻🇦 drapeau vatican city nation pays
-🇻🇨 drapeau st vincent grenadines saint nation pays
-🇻🇪 drapeau venezuela ve bolivarian republic nation pays
-🇻🇬 drapeau british virgin islands bvi nation pays
-🇻🇮 drapeau u s virgin islands us nation pays
-🇻🇳 drapeau vietnam viet nam nation pays
+🇺🇿 drapeau ouzbékistan uz nation pays
+🇻🇦 drapeau état cité vatican va nation pays
+🇻🇨 drapeau saint vincent grenadines vc nation pays
+🇻🇪 drapeau venezuela ve nation pays
+🇻🇬 drapeau îles vierges britanniques vg nation pays
+🇻🇮 drapeau îles vierges états unis vi nation pays
+🇻🇳 drapeau viêt nam vn nation pays
 🇻🇺 drapeau vanuatu vu nation pays
-🇼🇫 drapeau wallis futuna nation pays
+🇼🇫 drapeau wallis futuna wf nation pays
 🇼🇸 drapeau samoa ws nation pays
 🇽🇰 drapeau kosovo xk nation pays
-🇾🇪 drapeau yemen ye nation pays
+🇾🇪 drapeau yémen ye nation pays
 🇾🇹 drapeau mayotte yt nation pays
-🇿🇦 drapeau south africa nation pays
-🇿🇲 drapeau zambia zm nation pays
+🇿🇦 drapeau afrique sud za nation pays
+🇿🇲 drapeau zambie zm nation pays
 🇿🇼 drapeau zimbabwe zw nation pays
-🏴󠁧󠁢󠁥󠁮󠁧󠁿 drapeau england english angleterrre
-🏴󠁧󠁢󠁳󠁣󠁴󠁿 drapeau scotland scottish
-🏴󠁧󠁢󠁷󠁬󠁳󠁿 drapeau wales welsh pays Galles
-🇨🇶 drapeau sercq shark
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 drapeau angleterre gb-eng nation pays
+🏴󠁧󠁢󠁳󠁣󠁴󠁿 drapeau écosse gb-sct nation pays
+🏴󠁧󠁢󠁷󠁬󠁳󠁿 drapeau pays galles gb-wls nation pays
+🇨🇶 drapeau sercq cq nation pays
