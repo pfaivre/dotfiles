@@ -91,7 +91,10 @@ tooltip * {
   border-right: 1px solid #115f12;
 }
 
-#custom-launcher-bliss-xp:hover {
+/* Waybar 0.16 moved the #custom-* name onto the inner label while :hover stays on
+   the wrapper box, so custom modules are matched through their parent box */
+#custom-launcher-bliss-xp:hover,
+box:hover > #custom-launcher-bliss-xp {
   background: no-repeat 10px center / 24px url("/home/pierre/.config/mydesktop/current-theme/waybar/windows-logo.png"),
               radial-gradient(ellipse 85% 60% at 40% 5%,
                 rgba(150, 205, 150, 0.5) 0%,
@@ -247,7 +250,8 @@ tooltip * {
   /* image-rendering: pixelated; */
 }
 
-#extra #custom-arrowleft:hover {
+#extra #custom-arrowleft:hover,
+#extra box:hover > #custom-arrowleft {
   background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-left-hover.png");
 }
 
@@ -256,13 +260,14 @@ tooltip * {
   background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-right.png");
 }
 
-#extra:prelight #custom-arrowleft:hover {
+#extra:prelight #custom-arrowleft:hover,
+#extra:prelight box:hover > #custom-arrowleft {
   background-image: url("/home/pierre/.config/mydesktop/current-theme/waybar/arrow-right-hover.png");
 }
 
 #extra {
-  /* The arrow button sits at the group's left edge, 19px wide, so its middle is at
-     9.5px: draw the seam there (2px dark + 1px cyan, like the old border + inset shadow)
+  /* The arrow button sits at the group's left edge, 24px wide, so its middle is at
+     12px: draw the seam there (2px dark + 1px cyan, like the old border + inset shadow)
      instead of at the group's left edge, and start the light gradient after the seam.
      This keeps the button inside the group (the drawer clips overflowing children)
      while making it straddle the two blue sections. Integer stops keep the seam crisp. */
@@ -271,12 +276,12 @@ tooltip * {
   background-image:
     linear-gradient(90deg,
       transparent 0,
-      transparent 8px,
-      #0b3051 8px,
-      #0b3051 9px,
-      rgba(24, 187, 255, 0.8) 9px,
-      rgba(24, 187, 255, 0.8) 10px,
-      transparent 10px,
+      transparent 12px,
+      #0b3051 12px,
+      #0b3051 13px,
+      rgba(24, 187, 255, 0.8) 13px,
+      rgba(24, 187, 255, 0.8) 14px,
+      transparent 14px,
       transparent 100%),
     linear-gradient(
       rgb(12, 89, 185) 1%,
@@ -292,7 +297,7 @@ tooltip * {
       rgb(19, 126, 215) 97%,
       rgb(9, 91, 201) 100%);
   background-repeat: no-repeat;
-  background-position: 0 0, 10px 0;
+  background-position: 0 0, 14px 0;
   background-size: 100% 100%, 100% 100%;
 }
 
@@ -349,6 +354,7 @@ tooltip * {
   padding-right: 20px;
 }
 
-#custom-powermenu:hover {
+#custom-powermenu:hover,
+box:hover > #custom-powermenu {
   background-color: #df9982;
 }

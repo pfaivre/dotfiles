@@ -50,8 +50,12 @@ window#waybar {
   border: none;
 }
 
+/* Waybar 0.16 moved the #custom-* name onto the inner label while :hover stays on
+   the wrapper box, so custom modules are matched through their parent box */
 #custom-launcher:hover,
+box:hover > #custom-launcher,
 #custom-arrowleft:hover,
+box:hover > #custom-arrowleft,
 #clock:hover,
 #disk:hover,
 #pulseaudio:hover,
@@ -61,12 +65,15 @@ window#waybar {
 #cpu:hover,
 #memory:hover,
 #custom-notificationcenter:hover,
+box:hover > #custom-notificationcenter,
 #custom-powermenu:hover,
+box:hover > #custom-powermenu,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
 #temperature:hover,
 #upower:hover,
-#custom-hyprshade:hover {
+#custom-hyprshade:hover,
+box:hover > #custom-hyprshade {
   background-color: #62737f;
 }
 
@@ -163,7 +170,8 @@ window#waybar {
   padding-right: 20px;
 }
 
-#custom-launcher:hover {
+#custom-launcher:hover,
+box:hover > #custom-launcher {
   background: #b4d6ac;
 }
 
@@ -179,6 +187,7 @@ window#waybar {
   padding-right: 20px;
 }
 
-#custom-powermenu:hover {
+#custom-powermenu:hover,
+box:hover > #custom-powermenu {
   background-color: #d8848e;
 }

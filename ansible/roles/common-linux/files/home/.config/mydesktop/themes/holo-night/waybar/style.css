@@ -60,8 +60,12 @@ window#waybar {
   color: #eff1f5;
 }
 
+/* Waybar 0.16 moved the #custom-* name onto the inner label while :hover stays on
+   the wrapper box, so custom modules are matched through their parent box */
 #custom-launcher:hover,
+box:hover > #custom-launcher,
 #custom-arrowleft:hover,
+box:hover > #custom-arrowleft,
 #clock:hover,
 #disk:hover,
 #mpris:hover,
@@ -72,8 +76,11 @@ window#waybar {
 #cpu:hover,
 #memory:hover,
 #custom-notificationcenter:hover,
+box:hover > #custom-notificationcenter,
 #custom-powermenu:hover,
+box:hover > #custom-powermenu,
 #custom-battery:hover,
+box:hover > #custom-battery,
 #idle_inhibitor:hover,
 #temperature:hover,
 #power-profiles-daemon:hover,
@@ -225,7 +232,8 @@ window#waybar {
   color: #eff1f5;
 }
 
-#custom-launcher:hover {
+#custom-launcher:hover,
+box:hover > #custom-launcher {
   border: 1px solid rgba(255, 255, 255, 0.612);
   background: rgba(164, 228, 150, 0.565);
   box-shadow: 0 0 2px rgba(164, 228, 150, 0.3), inset 0 0 6px rgba(209, 255, 199, 0.3);
@@ -242,7 +250,8 @@ window#waybar {
   font-size: 28px;
 }
 
-#custom-powermenu:hover {
+#custom-powermenu:hover,
+box:hover > #custom-powermenu {
   border: 1px solid rgba(255, 255, 255, 0.612);
   background: rgba(228, 150, 150, 0.565);
   box-shadow: 0 0 2px rgba(228, 150, 150, 0.3), inset 0 0 6px rgba(255, 199, 199, 0.3);

@@ -42,6 +42,7 @@
       # - qt5ct
       # - qt6-qtwayland
       # - qt6ct
+      - python3-pyatspi  # used to re-open Thunar windows
       - rofi
       - SwayNotificationCenter
       - thunar
@@ -49,3 +50,20 @@
       - wiremix
       - wlogout
       - xdg-desktop-portal-hyprland
+
+# SpeedCrunch calculator, launched by the SUPER+C binding (hyprland.lua).
+- name: Adding Flathub remote (system-wide)
+  become: true
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: system
+    state: present
+
+- name: Installing SpeedCrunch flatpak (system-wide)
+  become: true
+  community.general.flatpak:
+    name: org.speedcrunch.SpeedCrunch
+    remote: flathub
+    method: system
+    state: present

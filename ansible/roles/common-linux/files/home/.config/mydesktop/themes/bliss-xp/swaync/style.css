@@ -578,6 +578,9 @@ button:active {
 
 /* right side of the bar */
 .widget-volume scale trough {
+  /* 2 px track (min-height is content-box, so 1 px + 1 px border); the sunken
+     look comes from the box-shadow below */
+  min-height: 1px;
   background: #ecebe4;
   border-right: 1px solid #f3f2ea;
   border-bottom: 1px solid #f3f2ea;
@@ -594,6 +597,14 @@ button:active {
 }
 
 .widget-volume scale trough slider {
+  /* Windows XP handle is 11 px long x 22 px tall (min sizes are content-box,
+     so subtract the 1 px borders on each side) */
+  min-width: 9px;
+  min-height: 20px;
+  /* GTK4 sizes the trough to the slider's margin box; without this Adwaita's
+     -8px vertical margin keeps the track at 22-16=6 px. -10px makes the
+     margin box 2 px, so the track renders 2 px + 1 px border */
+  margin: -10px 0;
   background: linear-gradient(
     90deg,
     #f7f7f4 0%,
@@ -602,7 +613,7 @@ button:active {
     #c3c3c0 100%
   );
   border-radius: 2px;
-  padding: 1px 0;
+  padding: 0;
   border-left: 1px solid #b5c4cd;
   border-top: 1px solid #b5c4cd;
   border-right: 1px solid #778892;

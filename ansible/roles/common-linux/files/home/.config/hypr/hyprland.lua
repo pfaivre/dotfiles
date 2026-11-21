@@ -9,6 +9,7 @@
 
 TERMINAL     = "alacritty"
 FILE_MANAGER = "thunar"
+CALCULATOR   = "flatpak run org.speedcrunch.SpeedCrunch"
 MENU         = "pkill rofi; rofi -show drun -show-icons"
 
 

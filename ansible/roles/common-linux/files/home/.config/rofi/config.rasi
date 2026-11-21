@@ -46,7 +46,6 @@ configuration {
 /*	dpi: -1;*/
 /*	scroll-method: 0;*/
 /*	window-format: "{w}    {c}   {t}";*/
-/*	click-to-exit: true;*/
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	combi-display-format: "{mode} {text}";*/
@@ -153,20 +152,21 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 
-sort: false;
-steal-focus: true;
-case-smart: true;
-cycle: false;
-threads: 1;
+    sort: false;
+    steal-focus: true;
+    case-smart: true;
+    cycle: false;
+    threads: 1;
+    click-to-exit: true;
 
-timeout {
-  action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
 }
 
 @theme "~/.config/mydesktop/current-theme/rofi/style.rasi"
