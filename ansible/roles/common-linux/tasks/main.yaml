@@ -47,16 +47,28 @@
     home_src: "{{ role_path }}/files/home"
     dotfiles: "{{ results.files | map(attribute='path') | list }}"
 
-# Strip the "<role_path>/files/home/" prefix to get each path relative to the user's home
-- name: Creating folders for symlinks to user's home
-  file:
-    path: "~/{{ item | regex_replace('^' ~ (home_src | regex_escape) ~ '/', '') | dirname }}"
-    state: directory
-  with_items: "{{ dotfiles }}"
+# Strip the "<role_path>/files/home/" prefix to get each path relative to the user's home.
+# One shell task creates all folders and symlinks (one module execution instead of one per file),
+# printing "ok" or "linked" per file so reruns are idempotent and per-file results stay visible.
+- name: Creating folders and symlinks to user's home
+  shell: |
+    set -euo pipefail
+    src_root="{{ home_src }}"
+    {% for src in dotfiles %}
+    src="{{ src }}"
+    rel="${src#$src_root/}"
+    dst="$HOME/$rel"
+    mkdir -p "$(dirname "$dst")"
+    if [ -L "$dst" ] && [ "$(readlink "$dst")" = "$src" ]; then
+      echo "ok      $rel"
+    else
+      ln -sfn "$src" "$dst"
+      echo "linked  $rel"
+    fi
+    {% endfor %}
+  register: link_result
+  changed_when: "link_result.stdout is search('(?m)^linked')"
 
-- name: Creating symlinks to user's home
-  file:
-    src: "{{ item }}"
-    path: "~/{{ item | regex_replace('^' ~ (home_src | regex_escape) ~ '/', '') }}"
-    state: link
-  with_items: "{{ dotfiles }}"
+- name: Show per-file link results
+  debug:
+    msg: "{{ link_result.stdout_lines }}"

@@ -16,7 +16,7 @@ zstyle ':vcs_info:git:*' formats '%F{cyan}(%b)%f'
 
 display_prompt() {
     if [ "`pwd`" = "$HOME" ]; then
-        echo "${ret_status}%f"
+        echo "\n${ret_status}%f"
     else
         echo "\n%F{blue}%~%f ${vcs_info_msg_0_}\n${ret_status}%f"
     fi

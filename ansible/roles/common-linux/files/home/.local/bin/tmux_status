@@ -1,0 +1,184 @@
+#!/usr/bin/env bash
+#
+# Single tmux status-right script: prints every status segment whose
+# minimum width fits the current terminal.
+#
+# Usage: tmux_status <client_width>
+
+width=${1:-0}
+
+# Minimum terminal width required to show each segment
+readonly MIN_WIDTH_LOADAVG=82
+readonly MIN_WIDTH_RAM=65
+readonly MIN_WIDTH_TEMP=56
+readonly MIN_WIDTH_BATTERY=47
+
+# --- Segments ---------------------------------------------------------------
+# Each function prints its own segment (with trailing separator), or nothing
+# when the terminal is too narrow.
+
+segment_loadavg() {
+    # Don't show if the terminal is too small
+    [[ $width -lt $MIN_WIDTH_LOADAVG ]] && return 0
+
+    local load1m load5m load15m
+    read -r load1m load5m load15m _ < /proc/loadavg
+
+    local ret="#[bg=colour240] $load1m #[fg=colour249]$load5m #[fg=colour245]$load15m"
+    ret+=" #[fg=colour240,bg=default] "
+
+    echo "$ret"
+}
+
+segment_ram() {
+    # Don't show if the terminal is too small
+    [[ $width -lt $MIN_WIDTH_RAM ]] && return 0
+
+    local memtotal memavailable memused memcached level colour
+    memtotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+    memavailable=$(grep MemAvailable /proc/meminfo | awk '{print $2}')
+    memused=$(( memtotal - memavailable ))
+    memcached=$(( $(grep "^Cached*" /proc/meminfo | awk '{print $2}') + $(grep Buffers /proc/meminfo | awk '{print $2}') ))
+
+    level=$(( ($memused * 100 + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
+
+    # Change used memory bar color depending of usage
+    if [ $level -le 75 ]; then
+        colour="colour40" # Green
+    elif [ $level -le 90 ]; then
+        colour="colour227" # Yellow
+    else
+        colour="colour196" # Red
+    fi
+
+    local NB_BARS=6
+    local count=0
+    local highlighted_bars i ret
+
+    # First bar: used memory
+    highlighted_bars=$(( ($memused * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
+    ret="#[fg=colour240,bg=colour240,none]|#[fg=$colour,bg=colour240,none]"
+    for (( i=1; i<=$highlighted_bars; i++ )); do
+        ret+="━"
+        ((++count))
+    done
+
+    # Second bar: cached memory
+    highlighted_bars=$(( ($memcached * $NB_BARS + ($memtotal/2)) / $memtotal )) # ($memtotal/2) is here to round the division
+    ret+="#[fg=colour246,dim]"
+    for (( i=1; i<=$highlighted_bars; i++ )); do
+        ret+="━"
+        ((++count))
+    done
+
+    # Third bar: free space
+    ret+="#[fg=colour242,dim]"
+    while [ $count -lt $NB_BARS ]; do
+        ret+="━"
+        ((++count))
+    done
+
+    ret+=" #[fg=colour240,bg=default] "
+
+    echo "$ret"
+}
+
+segment_temp() {
+    # Don't show if the terminal is too small
+    [[ $width -lt $MIN_WIDTH_TEMP ]] && return 0
+
+    # Get the highest temperature reading (integer value)
+    local t
+    t=$(sensors | grep 'temp[0-9]\|Core [0-9]' | cut -d '(' -f1 | cut -d '+' -f2 | cut -d '.' -f1 | sort -n | tail -n 1)
+
+    # Display the badge with a different style depending on the threshold value
+    if [[ $t && ${t-x} ]]; then
+        local style ret
+        if [ $t -ge 70 ]; then
+            style="#[fg=colour232,bg=colour196,bold]"
+        else
+            style="#[fg=default,bg=colour240,none]"
+        fi
+
+        ret="$style $t°C"
+        ret+=" #[fg=colour240,bg=default,none] "
+
+        echo "$ret"
+    fi
+}
+
+segment_battery() {
+    # Don't show if the terminal is too small
+    [[ $width -lt $MIN_WIDTH_BATTERY ]] && return 0
+
+    local BATPATH
+    if [ -d /sys/class/power_supply/BAT0 ]; then
+        BATPATH=/sys/class/power_supply/BAT0
+    else
+        BATPATH=/sys/class/power_supply/BAT1
+    fi
+
+    [ -d "$BATPATH" ] || return 0
+
+    local BF_FILE BN_FILE bf bn level alive_heart style_alert ret count=0 i
+    local NB_HEARTS=6
+
+    # Some batteries expose energy_* instead of charge_*
+    if [ -r "$BATPATH/charge_full" ]; then
+        BF_FILE=$BATPATH/charge_full
+        BN_FILE=$BATPATH/charge_now
+    elif [ -r "$BATPATH/energy_full" ]; then
+        BF_FILE=$BATPATH/energy_full
+        BN_FILE=$BATPATH/energy_now
+    else
+        return 0
+    fi
+
+    bf=$(<"$BF_FILE")
+    bn=$(<"$BN_FILE")
+
+    # Guard against empty/non-numeric readings and division by zero
+    if ! [[ "$bf" =~ ^[0-9]+$ && "$bn" =~ ^[0-9]+$ ]] || (( bf == 0 )); then
+        return 0
+    fi
+
+    level=$(( (100 * bn + (bf/2)) / bf )) # (bf/2) is here to round the division
+    # Clamp to 0-100
+    (( level < 0 )) && level=0
+    (( level > 100 )) && level=100
+
+    alive_heart=$(( ($level * $NB_HEARTS + (100/2)) / 100))
+
+    style_alert=""
+    if [ $level -lt 15 ]; then
+        style_alert="#[fg=colour0,bg=colour196,bold]"
+    fi
+
+    ret="#[fg=colour196,bg=colour240,bold]$style_alert "
+    for (( i=1; i<=$alive_heart; i++ )); do
+        ret+="❤"
+        ((++count))
+    done
+    ret+="#[fg=colour250]$style_alert"
+    while [ $count -lt $NB_HEARTS ]; do
+        ret+="❤"
+        ((++count))
+    done
+
+    ret+=" #[fg=colour240,bg=default,none] "
+
+    echo "$ret"
+}
+
+# --- Assembly ---------------------------------------------------------------
+
+main() {
+    local out=""
+    out+="$(segment_loadavg)"
+    out+="$(segment_ram)"
+    out+="$(segment_temp)"
+    out+="$(segment_battery)"
+    echo "$out"
+}
+
+main

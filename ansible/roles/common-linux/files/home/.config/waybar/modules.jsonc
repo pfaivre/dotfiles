@@ -238,6 +238,7 @@
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
+        "tooltip": false,
         "format": "{}",
         "format-icons": {
             "urgent": "",

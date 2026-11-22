@@ -27,7 +27,7 @@
     "shell",
     // "display",
     // "de",
-    "wm",
+    "wm"
     // "cursor",
     // "terminal",
     // "terminalfont",
@@ -35,7 +35,7 @@
     // "gpu",
     // "memory",
     // "disk",
-    "break"
+    // "break"
     // "colors"
   ]
 }
