@@ -11,9 +11,9 @@
       - fonts-crosextra-carlito
       - gimp
       - inkscape
-      - ttf-mscorefonts-installer
+      # - ttf-mscorefonts-installer
       - vlc
-      
+
       # Disabled because it is not well supported on Ubuntu
       # # Hyprland desktop
       # - alacritty

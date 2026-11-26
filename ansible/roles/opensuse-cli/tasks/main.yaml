@@ -5,18 +5,22 @@
   package:
     state: present
     name:
+      - bc
       - btop
       - cmatrix
       - fastfetch
       - fzf
       - git
       - htop
+      - ImageMagick
       - most
       - ncdu
       - neovim
       - pv
       - pwgen
+      - python3-requests
       - ranger
+      - sensors
       - tmux
       - toilet
       - wireguard-tools

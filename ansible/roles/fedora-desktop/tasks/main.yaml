@@ -25,6 +25,8 @@
       # Hyprland desktop
       - alacritty
       - blueman
+      - brightnessctl
+      - ddccontrol
       - fontawesome-fonts-all
       - gtk-murrine-engine
       - hypridle
@@ -38,6 +40,7 @@
       - libnotify
       - network-manager-applet
       - pavucontrol
+      - playerctl
       # - qt5-qtwayland
       # - qt5ct
       # - qt6-qtwayland
@@ -48,6 +51,7 @@
       - thunar
       - waybar
       - wiremix
+      - wl-clipboard
       - wlogout
       - xdg-desktop-portal-hyprland
 

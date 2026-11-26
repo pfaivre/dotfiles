@@ -34,21 +34,22 @@
   ansible.builtin.dnf:
     state: present
     name:
+      - bc
       - btop
       - cmatrix
       - fastfetch
       - fzf
       - git
       - htop
+      - ImageMagick
       - lm_sensors
       - lolcat
       - luarocks
       - most
       - ncdu
-      # - neovim  # TODO: prevent the installation of nodejs (it is a weak dependency for some reason)
-      # - p7zip  # Dangerously outdated, do not install
       - pv
       - pwgen
+      - python3-requests
       - ranger
       - sloccount
       - tmux

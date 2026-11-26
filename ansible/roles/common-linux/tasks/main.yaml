@@ -40,6 +40,9 @@
     paths: "{{ role_path }}/files/home/"
     recurse: true
     hidden: true
+    excludes:
+      - '*__pycache__*'
+      - '*.py[co]'
   register: results
 
 - name: Extract dotfiles paths from find

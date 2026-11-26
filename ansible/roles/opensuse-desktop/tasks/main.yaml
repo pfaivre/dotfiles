@@ -16,6 +16,7 @@
       - alacritty
       - blueman
       - brightnessctl
+      - ddccontrol
       - file-roller
       - fontawesome-fonts
       - gnome-themes-extras
@@ -32,6 +33,7 @@
       - libnotify
       - NetworkManager-applet
       - pavucontrol
+      - playerctl
       - power-profiles-daemon
       # - qt5-qtwayland
       # - qt5ct
@@ -46,6 +48,7 @@
       - thunar-volman
       - waybar
       # - wiremix
+      - wl-clipboard
       - wlogout
       - xdg-desktop-portal-hyprland
 

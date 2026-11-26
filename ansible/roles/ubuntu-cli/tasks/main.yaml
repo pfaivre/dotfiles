@@ -14,12 +14,14 @@
   ansible.builtin.apt:
     state: present
     name:
+      - bc
       - btop
       - cmatrix
       - fastfetch
       - fzf
       - git
       - htop
+      - lm-sensors
       - lolcat
       - most
       - ncdu
